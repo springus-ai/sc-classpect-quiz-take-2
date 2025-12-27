@@ -9,6 +9,36 @@ let state = {
 
 let activeQuestion = null;
 
+const aspectSynopses = {
+    Time: "<strong>Tempo</strong> é o aspecto do Ritmo, do Fim e da Ação. Pragmáticos e focados na inevitabilidade, os Time-bound entendem que tudo tem um fim e que a luta e o conflito são necessários para o progresso.",
+    Space: "<strong>Espaço</strong> é o aspecto da Criação, do Início e da Matéria. Os Space-bound focam no quadro geral, na paciência e na arte de 'deixar ser'. Eles lidam com o potencial latente e a localização física das coisas.",
+    Void: "<strong>Vazio</strong> é o aspecto do Segredo, do Desconhecido e da Irrelevância. O Void-bound opera nas sombras, lidando com o potencial do que não existe ou não é visto.",
+    Light: "<strong>Luz</strong> é o aspecto da Informação, Acaso e Relevância. O Light-bound busca iluminar o caminho, buscando conhecimento e foco, muitas vezes ignorando o que está nas sombras.",
+    Mind: "<strong>Mente</strong> é o aspecto da Lógica, Decisão e Consequência. É a racionalização do mundo, focando em escolhas, fachadas e justiça. O Mind-bound vê o mundo como um sistema a ser entendido e navegado.",
+    Heart: "<strong>Coração</strong> é o aspecto da Alma, Identidade e Emoção. Foca no 'Eu' interno, nos impulsos irracionais e na autenticidade. O Heart-bound é guiado por quem ele é, não pelo que faz sentido.",
+    Rage: "<strong>Raiva</strong> é o aspecto da Verdade e do Ceticismo. É a rejeição das mentiras confortáveis e a força para derrubar sistemas falsos. O Rage-bound foca na realidade física e inegável.",
+    Hope: "<strong>Esperança</strong> é o aspecto da Crença e do Poder Ilimitado. É a rejeição da realidade em favor do que 'deveria ser'. O Hope-bound molda o mundo através de pura convicção.",
+    Doom: "<strong>Condenação</strong> é o aspecto das Regras, Sacrifício e Limitações. O Doom-bound entende que sistemas têm limites e que o sofrimento ou o fim são partes funcionais do todo.",
+    Life: "<strong>Vida</strong> é o aspecto do Crescimento, Otimismo e Energia Bruta. É a força que quebra o asfalto. O Life-bound foca em curar, crescer e aumentar, às vezes sem controle.",
+    Blood: "<strong>Sangue</strong> é o aspecto do Vínculo, Obrigação e Unidade. O oposto de Breath, foca nas correntes que nos unem, na lealdade e na responsabilidade para com o grupo.",
+    Breath: "<strong>Suspiro</strong> é o aspecto da Liberdade, Direção e Desapego. O Breath-bound busca se soltar das amarras sociais e físicas, fluindo e mudando de direção conforme a necessidade."
+};
+
+const classSynopses = {
+    Prince: "O <strong>Príncipe</strong> é uma classe ativa de destruição. Você destrói o seu aspecto ou destrói através dele. Frequentemente manifesta uma personalidade oposta ao seu aspecto, agindo com uma confiança rígida para eliminar o que considera fraco ou desnecessário.",
+    Bard: "O <strong>Bardo</strong> é uma classe passiva de destruição. Você permite que o seu aspecto seja destruído ou convida a destruição através dele. É uma força caótica e imprevisível, muitas vezes agindo como um 'coringa' que altera o curso da narrativa de forma dramática.",
+    Thief: "O <strong>Ladrão</strong> é uma classe ativa de apropriação. Você rouba o seu aspecto para benefício próprio. Movido por uma sensação de falta ou insegurança, você acumula a matéria-prima do universo para si, privando os outros dela para se sentir completo.",
+    Rogue: "O <strong>Ladino</strong> é uma classe passiva de apropriação. Você rouba o seu aspecto para redistribuí-lo. Você lida com o excesso do aspecto movendo-o para onde ele é mais necessário, agindo como um mediador que evita o fardo de possuir o aspecto sozinho.",
+    Knight: "O <strong>Cavaleiro</strong> é uma classe ativa de exploração. Você utiliza o seu aspecto como uma arma ou escudo. Escondendo inseguranças atrás de uma máscara de competência, você trabalha exaustivamente para compensar uma falta percebida na realidade.",
+    Page: "O <strong>Escudeiro</strong> é uma classe passiva de exploração. Você provê o seu aspecto aos outros enquanto desenvolve seu próprio potencial latente. Sua jornada é longa e árdua, começando do zero para eventualmente se tornar uma fonte inesgotável de poder.",
+    Maid: "A <strong>Dama</strong> é uma classe ativa de criação. Você se mantém através do seu aspecto ou o cria para si mesma. Começando muitas vezes em uma posição de servidão à sua realidade, você aprende a dominar as regras do seu aspecto para servir aos seus próprios objetivos.",
+    Sylph: "A <strong>Silfide</strong> é uma classe passiva de criação. Você cura o seu aspecto ou cura através dele. Agindo como uma presença organizadora, você busca restaurar a integridade da realidade e dos seus aliados, muitas vezes de forma opinativa e insistente.",
+    Witch: "A <strong>Bruxa</strong> é uma classe ativa de manipulação. Você altera o seu aspecto e as leis que o regem. Com uma natureza rebelde e criativa, você se recusa a aceitar a realidade como ela é, moldando as regras do jogo para que elas trabalhem a seu favor.",
+    Heir: "O <strong>Herdeiro</strong> é uma classe passiva de manipulação. Você se torna o seu aspecto ou permite que ele te proteja. A realidade flui através de você de forma natural e instintiva, muitas vezes tornando-o um avatar vivo das forças que regem o seu destino.",
+    Mage: "O <strong>Mago</strong> é uma classe ativa de conhecimento. Você conhece o seu aspecto através da experiência direta, muitas vezes sofrendo por causa dele. Esse conhecimento íntimo e doloroso permite que você navegue pela realidade com uma precisão que outros desconhecem.",
+    Seer: "O <strong>Vidente</strong> é uma classe passiva de conhecimento. Você compreende o seu aspecto através da observação e do estudo das ramificações. Sua função é guiar os outros, enxergando o caminho mais favorável em meio ao caos das probabilidades."
+};
+
 // FASE 1: ASPECTO (MATÉRIA-PRIMA)
 const aspectQuestions = [
     {
@@ -769,12 +799,15 @@ function handleInput(optIndex) {
 function finishAspectPhase() {
     let sorted = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
     state.dominantAspect = sorted[0][0];
-    
+
+    let description = aspectSynopses[state.dominantAspect];
+
     render(`
         <div class="fade-in">
             <h1>ASPECTO: ${state.dominantAspect.toUpperCase()}</h1>
-            <p>O universo te vê através da lente do <strong>${state.dominantAspect}</strong>. Este é o seu desafio existencial.</p>
-            <p>Agora, vamos observar como você <strong>responde</strong> a essa carga.</p>
+            <p>${description}</p>
+            <hr style="border: 1px dashed #005500; margin: 30px 0; opacity: 0.5;">
+            <p style="font-size: 16px; color: #00aa00;">Agora que entendemos sua realidade, vamos observar como você <strong>responde</strong> a ela.</p>
             <button onclick="startClassPhase()">CONTINUAR PARA CLASSES</button>
         </div>
     `);
@@ -790,17 +823,24 @@ function startClassPhase() {
 function finishClassPhase() {
     let sorted = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
     state.likelyClass = sorted[0][0];
-    
+
+    let classDesc = classSynopses[state.likelyClass];
+    let aspectDesc = aspectSynopses[state.dominantAspect];
+
     render(`
         <div class="result-box fade-in">
             <h1 style="font-size: 32px;">${state.likelyClass.toUpperCase()} OF ${state.dominantAspect.toUpperCase()}</h1>
-            <p>Sua análise está completa. Diante da realidade do <strong>${state.dominantAspect}</strong>, sua estratégia de sobrevivência é a do <strong>${state.likelyClass}</strong>.</p>
+            
+            <div style="text-align: left; margin: 30px 0;">
+                <p style="margin-bottom: 20px;">${classDesc}</p>
+                <p>${aspectDesc}</p>
+            </div>
+
             <div class="debug">Potencial de erro: ${sorted.slice(0,3).map(x=>x[0]+":"+x[1]).join(" | ")}</div>
             <button onclick="location.reload()">REINICIAR SESSÃO</button>
         </div>
     `);
 }
-
 function renderQuestion(q) {
         activeQuestion = q; 
         let html = `<div class="fade-in"><h1>${q.t}</h1>`;
@@ -849,4 +889,5 @@ window.onload = () => {
         </div>
     `);
 };
+
 
