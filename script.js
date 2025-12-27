@@ -802,13 +802,38 @@ function finishClassPhase() {
 }
 
 function renderQuestion(q) {
-    activeQuestion = q; 
-    let html = `<div class="fade-in"><h1>${q.t}</h1>`;
-    q.opts.forEach((opt, idx) => {
-        html += `<button onclick='handleInput(${idx})'>${opt.txt}</button>`;
-    });
+        activeQuestion = q; 
+        let html = `<div class="fade-in"><h1>${q.t}</h1>`;
+        
+        // Renderiza as opções normais
+        q.opts.forEach((opt, idx) => {
+            html += `<button onclick='handleInput(${idx})'>${opt.txt}</button>`;
+        });
+
+        // Adiciona o botão de pular/nenhuma
+        html += `<button class="skip-button" onclick="handleSkip()">Nenhuma das anteriores / Não se aplica</button>`;
+        
     render(html);
 }
+
+function handleSkip() {
+        // Simplesmente avança sem somar pontos a nada 
+        state.questionCount++;
+        
+        if (state.stage === "aspect_quiz") {
+            if (state.questionCount < aspectQuestions.length) {
+                renderQuestion(aspectQuestions[state.questionCount]);
+            } else {
+                finishAspectPhase();
+            }
+        } else if (state.stage === "class_quiz") {
+            if (state.questionCount < state.currentQueue.length) {
+                renderQuestion(state.currentQueue[state.questionCount]);
+            } else {
+                finishClassPhase();
+            }
+        }
+    }
 
 function render(html) {
     document.getElementById('content').innerHTML = html;
