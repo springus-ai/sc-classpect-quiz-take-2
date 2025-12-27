@@ -257,7 +257,24 @@ const questionsByAspect = {
     { txt: "É uma ferramenta. O conhecimento do passado serve apenas para eu prever e manipular o que virá.", w: { Mage: 3, Seer: 2, Thief: 1, Rogue: -1 } },
     { txt: "Legado é o passado tentando colonizar o futuro. Prefiro destruir velhas tradições para dar espaço à inovação.", w: { Prince: 3, Bard: 2, Knight: -2, Page: -3 } },
     { txt: "É algo coletivo. Eu sou apenas um elo passando o que recebi para quem precisa mais.", w: { Rogue: 3, Sylph: 2, Heir: 1, Thief: -2 } }
-]}
+]},
+ { t: "Uma oportunidade única passou e você falhou no prazo. Como você reage no dia seguinte?", opts: [
+    { txt: "Eu invalido a importância do que passou; se o tempo para aquilo acabou, não deve ocupar mais espaço.", w: { Prince: 3, Bard: 2, Sylph: -2, Maid: -2 } },
+    { txt: "Eu me recuso a aceitar o 'não'. Tento convencer os responsáveis a abrirem uma nova vaga só para mim.", w: { Witch: 3, Maid: 2, Thief: 1, Seer: -2 } },
+    { txt: "Ajudo amigos com os prazos deles, tentando 'consertar' o tempo alheio já que quebrei o meu.", w: { Sylph: 3, Rogue: 2, Prince: -2, Bard: -2 } },
+    { txt: "Crio uma regra rígida na minha rotina para que eu nunca mais perca uma chance por desleixo.", w: { Page: 3, Knight: 2, Mage: 1, Heir: -2 } }
+]}, 
+ { t: "Você está em uma fila de mercado que não anda e tem um compromisso importante logo em seguida.", opts: [
+    { txt: "Tento trocar de fila ou apressar as pessoas ao redor. Não admito que o atraso dos outros mude os meus planos.", w: { Thief: 3, Witch: 2, Prince: 1, Heir: -2 } },
+    { txt: "Assumo a liderança da situação se puder. Ajudo a organizar as compras ou oriento quem está confuso para o tempo fluir.", w: { Maid: 3, Sylph: 2, Knight: 1, Prince: -2 } },
+    { txt: "Mantenho a calma. Sei que o tempo tem seu próprio curso e que me estressar não vai fazer a fila andar mais rápido.", w: { Heir: 3, Bard: 2, Rogue: 1, Knight: -3 } },
+    { txt: "Calculo o tempo exato que ainda posso esperar antes de desistir. Tomo a decisão baseada na probabilidade de chegar atrasado.", w: { Seer: 3, Mage: 2, Page: 1, Witch: -1 } }
+]},
+    { t: "Alguém te pede um favor que vai ocupar todas as horas do seu único dia de descanso na semana.", opts: [
+    { txt: "Digo não prontamente. O meu tempo livre é o limite que estabeleço para não ser consumido pelas demandas externas.", w: { Prince: 3, Knight: 2, Thief: 1, Sylph: -3 } },
+    { txt: "Cedo o tempo por pressão, mas passo o dia sentindo que estou sendo drenado e perdendo minha própria vida.", w: { Rogue: 3, Page: 2, Maid: 1, Witch: -2 } },
+    { txt: "Ajudo da maneira mais rápida possível. Uso todo o meu conhecimento para terminar a tarefa na metade do tempo previsto.", w: { Witch: 3, Maid: 2, Mage: 1, Knight: -1 } },
+    { txt: "Aceito o favor como parte do dia. Se o tempo deve ser gasto assim, eu me adapto e encontro satisfação no processo.", w: { Heir: 3, Sylph: 2, Seer: 1, Prince: -3 } }
 ],
     "Space": [
 { t: "Você divide o quarto com alguém extremamente desorganizado que está 'vazando' objetos para o seu lado da mesa. Como você reage?", opts: [
@@ -889,5 +906,6 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
