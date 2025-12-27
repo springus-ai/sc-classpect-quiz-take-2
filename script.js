@@ -811,7 +811,7 @@ function renderQuestion(q) {
         });
 
         // Adiciona o botão de pular/nenhuma
-        html += `<button class="skip-button" onclick="handleSkip()">Nenhuma das anteriores / Não se aplica</button>`;
+        html += `<button class="skip-button" onclick="handleSkip()">Nenhuma das anteriores.</button>`;
         
     render(html);
 }
@@ -849,3 +849,4 @@ window.onload = () => {
         </div>
     `);
 };
+
