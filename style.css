@@ -79,7 +79,6 @@ p {
     background: rgba(20, 20, 20, 0.8);
     color: #55aa55;
     border: 1px dashed #004400;
-    font-style: italic;
     margin-top: 20px;
 }
 .skip-button:hover {
@@ -88,3 +87,4 @@ p {
     box-shadow: none;
     border-color: #008800;
 }
+
