@@ -838,23 +838,30 @@ function startClassPhase() {
 }
 
 function finishClassPhase() {
-    let sorted = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
-    state.likelyClass = sorted[0][0];
+    let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
+    let cls = sortedClasses[0][0]; 
+    
+    let asp = state.dominantAspect; //
 
-    let classDesc = classSynopses[state.likelyClass];
-    let aspectDesc = aspectSynopses[state.dominantAspect];
+    let clsSyn = classSynopses[cls];
 
     render(`
         <div class="result-box fade-in">
-            <h1 style="font-size: 32px;">${state.likelyClass.toUpperCase()} OF ${state.dominantAspect.toUpperCase()}</h1>
+            <h1 style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">${cls.toUpperCase()} OF ${asp.toUpperCase()}</h1>
+            <p style="font-size: 20px; color: #fff;">Sua análise foi concluída.</p>
             
-            <div style="text-align: left; margin: 30px 0;">
-                <p style="margin-bottom: 20px;">${classDesc}</p>
-                <p>${aspectDesc}</p>
+            <div style="text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
+                <p><strong>${cls}:</strong> ${clsSyn}</p>
+                <p style="margin-top: 15px;">Ao confrontar a realidade do <strong>${asp}</strong>, você adotou a estratégia do <strong>${cls}</strong>. Esta é a sua ferramenta de sobrevivência e sua identidade no jogo.</p>
             </div>
 
-            <div class="debug">Potencial de erro: ${sorted.slice(0,3).map(x=>x[0]+":"+x[1]).join(" | ")}</div>
-            <button onclick="location.reload()">REINICIAR SESSÃO</button>
+            <div class="debug">
+                <p>Potencial de Erro (Top 3): ${sortedClasses.slice(0,3).map(x => x[0] + ":" + x[1]).join(" | ")}</p>
+            </div>
+            
+            <p style="font-style: italic; color: #88ff88;">Lembre-se: Esse teste não será suficiente para te definir. Leia nossas análises e confirme sua verdadeira essência.</p>
+            
+            <button onclick="location.reload()" style="margin-top:20px;">REINICIAR SESSÃO</button>
         </div>
     `);
 }
@@ -906,6 +913,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
