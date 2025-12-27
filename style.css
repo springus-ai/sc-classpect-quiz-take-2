@@ -75,3 +75,16 @@ p {
     margin-top: 20px; 
     text-align: right; 
 }
+.skip-button {
+    background: rgba(20, 20, 20, 0.8);
+    color: #55aa55;
+    border: 1px dashed #004400;
+    font-style: italic;
+    margin-top: 20px;
+}
+.skip-button:hover {
+    background: #222;
+    color: #88ff88;
+    box-shadow: none;
+    border-color: #008800;
+}
