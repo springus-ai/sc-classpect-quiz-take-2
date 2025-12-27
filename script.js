@@ -275,6 +275,7 @@ const questionsByAspect = {
     { txt: "Cedo o tempo por pressão, mas passo o dia sentindo que estou sendo drenado e perdendo minha própria vida.", w: { Rogue: 3, Page: 2, Maid: 1, Witch: -2 } },
     { txt: "Ajudo da maneira mais rápida possível. Uso todo o meu conhecimento para terminar a tarefa na metade do tempo previsto.", w: { Witch: 3, Maid: 2, Mage: 1, Knight: -1 } },
     { txt: "Aceito o favor como parte do dia. Se o tempo deve ser gasto assim, eu me adapto e encontro satisfação no processo.", w: { Heir: 3, Sylph: 2, Seer: 1, Prince: -3 } }
+]}
 ],
     "Space": [
 { t: "Você divide o quarto com alguém extremamente desorganizado que está 'vazando' objetos para o seu lado da mesa. Como você reage?", opts: [
@@ -841,7 +842,7 @@ function finishClassPhase() {
     let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
     let cls = sortedClasses[0][0]; 
     
-    let asp = state.dominantAspect; //
+    let asp = state.dominantAspect; 
 
     let clsSyn = classSynopses[cls];
 
@@ -913,6 +914,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
