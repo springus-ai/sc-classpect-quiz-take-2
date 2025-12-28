@@ -1098,44 +1098,12 @@ function render(html) {
 }
 
 window.onload = () => {
-    // --- INÍCIO DO CÓDIGO DA TELA DE CARREGAMENTO ---
-    const loader = document.getElementById('fake-loader');
-    
-    // Verifica se o elemento existe para evitar erros paradoxais
-    if (loader) {
-        // Define quanto tempo a tela de carregamento ficará visível (ex: 2000ms = 2 segundos)
-        setTimeout(() => {
-            // Inicia o fade-out alterando a opacidade
-            loader.style.opacity = '0';
-            
-            // Aguarda o fim da transição CSS (ex: 1000ms = 1 segundo) para remover o elemento
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 1000); 
-            
-        }, 2000); 
-    }
-    // --- FIM DO CÓDIGO DA TELA DE CARREGAMENTO ---
-
     render(`
         <div class="fade-in">
             <h1>TESTE DE CLASSPECT DO STREETCRUSH</h1>
             <p>Opa, SC aqui. Antes de tudo, não fiz um simples "copia e cola" de testes que já existem, e isso também não é uma tradução. Tudo aqui é baseado nos textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com alguns amigos. Confia que dá bom.</p>
             <p>Vamos descobrir o que te torna especial.</p>
-            <button onclick="startQuiz()">COMEÇAR</button>
+            <button onclick="start()">Bora ver.</button>
         </div>
     `);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
