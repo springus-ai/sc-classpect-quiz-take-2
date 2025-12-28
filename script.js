@@ -1022,7 +1022,7 @@ function finishAspectPhase() {
     let description = aspectSynopses[state.dominantAspect];
 
     const introText = state.isNull 
-        ? "Huh, você não recebeu nenhum resultado. Pro beta não sobra nem o aspecto, hein?."
+        ? "Huh, você não recebeu nenhum resultado. Pro beta não sobra nem o aspecto, hein?"
         : description;
 
     render(`
@@ -1147,6 +1147,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
