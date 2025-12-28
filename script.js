@@ -1008,17 +1008,33 @@ function handleInput(optIndex) {
 }
 
 function finishAspectPhase() {
-    let sorted = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
-    state.dominantAspect = sorted[0][0];
+    const allZero = Object.values(state.aspectScores).every(score => score === 0);
+
+    if (allZero) {
+        state.isNull = true;
+        state.dominantAspect = "Void";
+    } else {
+        state.isNull = false;
+        let sorted = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
+        state.dominantAspect = sorted[0][0];
+    }
 
     let description = aspectSynopses[state.dominantAspect];
+
+    const introText = state.isNull 
+        ? "Huh, você não recebeu nenhum resultado. Pro beta não sobra nem o aspecto, hein?."
+        : description;
 
     render(`
         <div class="fade-in">
             <h1>ASPECTO: ${state.dominantAspect.toUpperCase()}</h1>
-            <p>${description}</p>
+            <p>${introText}</p>
             <hr style="border: 1px dashed #005500; margin: 30px 0; opacity: 0.5;">
-            <p style="font-size: 16px; color: #00aa00;">Agora que entendemos sua realidade, vamos observar como você <strong>responde</strong> a ela.</p>
+            <p style="font-size: 16px; color: #00aa00;">
+                ${state.isNull 
+                    ? "Mesmo sem um aspecto definido, o sistema exige uma <strong>classe</strong>. Prossiga." 
+                    : "Agora que entendemos sua realidade, vamos observar como você <strong>responde</strong> a ela."}
+            </p>
             <button onclick="startClassPhase()">CONTINUAR PARA CLASSES</button>
         </div>
     `);
@@ -1032,11 +1048,16 @@ function startClassPhase() {
 }
 
 function finishClassPhase() {
+    const allClassZero = Object.values(state.classScores).every(score => score === 0);
+
+    if (state.isNull && allClassZero) {
+        renderNullEnding(); 
+        return;
+    }
+
     let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
     let cls = sortedClasses[0][0]; 
-    
     let asp = state.dominantAspect; 
-
     let clsSyn = classSynopses[cls];
 
     render(`
@@ -1059,6 +1080,25 @@ function finishClassPhase() {
         </div>
     `);
 }
+
+function renderNullEnding() {
+    const html = `
+        <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
+            <h1>O OBSERVADOR</h1>
+            <p style="font-style: italic; opacity: 0.8;">[NULL OF NULL]</p>
+            
+            <div class="analysis-text" style="margin-top: 2rem;">
+                <p>Você clicou, avançou e observou. Mas não escolheu absolutamente nada. Não sobrou nem classe, nem aspecto.</p>
+                
+                <p><strong>Você venceu? Talvez. A única forma de não perder no SBURB é não jogar.</strong></p>
+            </div>
+            
+            <button class="retry-button" onclick="location.reload()">Tente novamente.</button>
+        </div>
+    `;
+    render(html);
+}
+
 function renderQuestion(q) {
         activeQuestion = q; 
         let html = `<div class="fade-in"><h1>${q.t}</h1>`;
@@ -1107,6 +1147,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
