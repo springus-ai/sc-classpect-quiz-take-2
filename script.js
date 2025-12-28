@@ -159,7 +159,7 @@ const aspectQuestions = [
             { txt: "Eliminar o Acaso. Ninguém nunca errará, a vida é um roteiro fixo.", w: { Doom: 3, Time: 2, Breath: -2, Life: -1 } }, 
             { txt: "Eliminar o Segredo. Toda a verdade é acessível a todos.", w: { Light: 4, Void: -4 } }, 
             { txt: "Não alteraria nada, pois a perfeição não existe.", w: { Rage: 4, Hope: -3 } }, 
-            { txt: "Não alteraria nada, pois a imperfeição rege o mundo.", w: { Space: 3, Blood: 2, Time: -1 } } 
+            { txt: "Não alteraria nada, pois a imperfeição faz parte do mundo.", w: { Space: 3, Blood: 2, Time: -1 } } 
         ]
     },
     {
@@ -914,6 +914,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
