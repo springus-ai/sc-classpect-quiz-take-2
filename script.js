@@ -4,7 +4,9 @@ let state = {
     classScores: { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 },
     dominantAspect: "",
     questionCount: 0,
-    currentQueue: []
+    currentQueue: [],
+    isNull: false,
+    history: [] 
 };
 
 let activeQuestion = null;
@@ -25,18 +27,18 @@ const aspectSynopses = {
 };
 
 const classSynopses = {
-    Prince: "<strong>O Príncipe:</strong> Você é a força imparável. Você não lida com nuances; você elimina o problema pela raiz. Ao destruir seu Aspecto (ou destruir com ele), você abre caminho para o novo, agindo com uma precisão quase cirúrgica. Você frequentemente age como o oposto do seu Aspecto porque está ocupado demais tentando aniquilá-lo dentro de si mesmo. Seu perfeccionismo é destrutivo, e você corre o risco de reinar sobre um monte de cinzas se não tiver cuidado.",
-    Bard: "<strong>O Bardo:</strong> Você é o coringa do baralho. Ninguém sabe o que esperar de você, e talvez nem você saiba. Você permite que a destruição aconteça passivamente, até o momento em que decide virar a mesa de repente. Você oscila entre a total apatia e a catástrofe explosiva. Sua natureza imprevisível é um mecanismo de defesa para evitar responsabilidades, mas sua recusa em escolher um lado acaba sendo uma escolha por si só.",
-    Thief: "<strong>O Ladrão:</strong> O que você quer, você pega. Você tem a agência e a ousadia para roubar o Aspecto para seu próprio benefício. Você é proativo, engenhoso e não pede desculpas por sobreviver. Seu egoísmo aparente esconde um medo profundo de privação. Você rouba porque, no fundo, sente que não tem nada de valor próprio. Você preenche o vazio interno com o poder que tira dos outros.",
-    Rogue: "<strong>O Ladino:</strong> Você rouba, mas não para si. Você redistribui o Aspecto, tirando de onde sobra e colocando onde falta. Você é o equalizador do grupo, agindo nas sombras para ajudar os amigos. Você tem dificuldade em aceitar o crédito ou o poder para si mesmo. Você doa o Aspecto porque não se sente digno de mantê-lo ou capaz de lidar com ele. Seu altruísmo é, ironicamente, uma forma de evitar o conflito direto.",
-    Knight: "<strong>O Cavaleiro:</strong> Você é o escudo da equipe e a arma mais eficiente do grupo. Você explora seu Aspecto com uma habilidade técnica invejável, usando-o para proteger seus aliados a qualquer custo. Toda essa competência e bravata é uma máscara — literalmente ou metaforicamente. Você morre de medo de não ser bom o suficiente, e por isso se esforça em dobro. Você luta para esconder suas próprias inseguranças.",
-    Page: "<strong>O Escudeiro:</strong> Sua jornada começa difícil. Você parece ter menos do seu Aspecto do que qualquer outra pessoa. Mas, se você sobreviver aos tropeços e à humilhação inicial, seu teto de crescimento é infinito. Você é um investimento de longo prazo. Seu desafio é superar a própria falta e o complexo de inferioridade para se tornar a potência que está destinada a ser. A paciência não é uma virtude, é sua necessidade vital.",
-    Maid: "<strong>A Dama:</strong> No início você serve, mas no fim, você é feita de pura ação. Você arruma o Aspecto e cria soluções onde não havia nada. Você é quem garante que o trabalho seja feito, custe o que custar. Você tende a começar a história dependente da vontade alheia. Sua jornada é parar de ser uma ferramenta nas mãos dos outros e começar a servir aos seus próprios interesses, tornando-se a mestre do seu destino.",
-    Sylph: "<strong>A Silfide:</strong> Você restaura o que está quebrado e cura o que está ferido. Você tem uma noção inata de como as coisas (e as pessoas) deveriam ser e trabalha incansavelmente para consertá-las. Sua vontade de ajudar pode beirar a interferência. Você acha que sabe o que é melhor para todos, muitas vezes ignorando se eles querem ser curados ou não. Seu desafio é entender que nem tudo precisa do seu toque mágico.",
-    Witch: "<strong>A Bruxa:</strong> Energética, confiante e muitas vezes perigosa. Você não apenas usa o Aspecto; você o dobra, torce e manipula para servir aos seus caprichos. As leis da física e da magia são meras sugestões para você. Você exibe um controle absoluto sobre seus poderes para compensar a sensação de que não tem controle nenhum sobre sua própria vida ou destino. Sua rebeldia é um grito por autonomia.",
-    Heir: "<strong>O Herdeiro:</strong> Você é aquele que o universo parece favorecer naturalmente. Onde outros lutam para controlar o Aspecto, você simplesmente se torna ele. As soluções tendem a cair no seu colo, e o vento sopra a seu favor. Sua grande força é também sua armadilha: você costuma ser levado pela correnteza. Seu desafio é parar de ser um passageiro da própria lenda e assumir o volante, antes que sua passividade o torne irrelevante.",
-    Mage: "<strong>O Mago:</strong> Você entende o seu Aspecto porque viveu o pior lado dele. Ninguém precisa lhe explicar como o mundo funciona; você tem as cicatrizes para provar que já sabe. Você é o especialista solitário que viu a verdade nua e crua. Seu conhecimento vem da experiência direta, geralmente dolorosa. Você tende a se isolar porque acha que ninguém mais conseguiria compreender o peso do que você sabe. E, muitas vezes, você está certo.",
-    Seer: "<strong>O Vidente:</strong> Você vê o caminho dourado. Enquanto os outros tateiam no escuro, você tem o mapa, a bússola e o manual de instruções. Você não luta na linha de frente; você diz aos outros onde bater para vencer. O conhecimento é um fardo pesado. Você sofre com a responsabilidade de saber o resultado de cada má decisão que seus amigos tomam. Seu desafio é agir com as informações que tem, em vez de paralisar analisando-as."
+    Prince: "Você é a força imparável. Você não lida com nuances; você elimina o problema pela raiz. Ao destruir seu Aspecto (ou destruir com ele), você abre caminho para o novo, agindo com uma precisão quase cirúrgica. Você frequentemente age como o oposto do seu Aspecto porque está ocupado demais tentando aniquilá-lo dentro de si mesmo. Seu perfeccionismo é destrutivo, e você corre o risco de reinar sobre um monte de cinzas se não tiver cuidado.",
+    Bard: "Você é o coringa do baralho. Ninguém sabe o que esperar de você, e talvez nem você saiba. Você permite que a destruição aconteça passivamente, até o momento em que decide virar a mesa de repente. Você oscila entre a total apatia e a catástrofe explosiva. Sua natureza imprevisível é um mecanismo de defesa para evitar responsabilidades, mas sua recusa em escolher um lado acaba sendo uma escolha por si só.",
+    Thief: "O que você quer, você pega. Você tem a agência e a ousadia para roubar o Aspecto para seu próprio benefício. Você é proativo, engenhoso e não pede desculpas por sobreviver. Seu egoísmo aparente esconde um medo profundo de privação. Você rouba porque, no fundo, sente que não tem nada de valor próprio. Você preenche o vazio interno com o poder que tira dos outros.",
+    Rogue: "Você rouba, mas não para si. Você redistribui o Aspecto, tirando de onde sobra e colocando onde falta. Você é o equalizador do grupo, agindo nas sombras para ajudar os amigos. Você tem dificuldade em aceitar o crédito ou o poder para si mesmo. Você doa o Aspecto porque não se sente digno de mantê-lo ou capaz de lidar com ele. Seu altruísmo é, ironicamente, uma forma de evitar o conflito direto.",
+    Knight: "Você é o escudo da equipe e a arma mais eficiente do grupo. Você explora seu Aspecto com uma habilidade técnica invejável, usando-o para proteger seus aliados a qualquer custo. Toda essa competência e bravata é uma máscara — literalmente ou metaforicamente. Você morre de medo de não ser bom o suficiente, e por isso se esforça em dobro. Você luta para esconder suas próprias inseguranças.",
+    Page: "Sua jornada começa difícil. Você parece ter menos do seu Aspecto do que qualquer outra pessoa. Mas, se você sobreviver aos tropeços e à humilhação inicial, seu teto de crescimento é infinito. Você é um investimento de longo prazo. Seu desafio é superar a própria falta e o complexo de inferioridade para se tornar a potência que está destinada a ser. A paciência não é uma virtude, é sua necessidade vital.",
+    Maid: "No início você serve, mas no fim, você é feita de pura ação. Você arruma o Aspecto e cria soluções onde não havia nada. Você é quem garante que o trabalho seja feito, custe o que custar. Você tende a começar a história dependente da vontade alheia. Sua jornada é parar de ser uma ferramenta nas mãos dos outros e começar a servir aos seus próprios interesses, tornando-se a mestre do seu destino.",
+    Sylph: "Você restaura o que está quebrado e cura o que está ferido. Você tem uma noção inata de como as coisas (e as pessoas) deveriam ser e trabalha incansavelmente para consertá-las. Sua vontade de ajudar pode beirar a interferência. Você acha que sabe o que é melhor para todos, muitas vezes ignorando se eles querem ser curados ou não. Seu desafio é entender que nem tudo precisa do seu toque mágico.",
+    Witch: "Energética, confiante e muitas vezes perigosa. Você não apenas usa o Aspecto; você o dobra, torce e manipula para servir aos seus caprichos. As leis da física e da magia são meras sugestões para você. Você exibe um controle absoluto sobre seus poderes para compensar a sensação de que não tem controle nenhum sobre sua própria vida ou destino. Sua rebeldia é um grito por autonomia.",
+    Heir: "Você é aquele que o universo parece favorecer naturalmente. Onde outros lutam para controlar o Aspecto, você simplesmente se torna ele. As soluções tendem a cair no seu colo, e o vento sopra a seu favor. Sua grande força é também sua armadilha: você costuma ser levado pela correnteza. Seu desafio é parar de ser um passageiro da própria lenda e assumir o volante, antes que sua passividade o torne irrelevante.",
+    Mage: "Você entende o seu Aspecto porque viveu o pior lado dele. Ninguém precisa lhe explicar como o mundo funciona; você tem as cicatrizes para provar que já sabe. Você é o especialista solitário que viu a verdade nua e crua. Seu conhecimento vem da experiência direta, geralmente dolorosa. Você tende a se isolar porque acha que ninguém mais conseguiria compreender o peso do que você sabe. E, muitas vezes, você está certo.",
+    Seer: "Você vê o caminho dourado. Enquanto os outros tateiam no escuro, você tem o mapa, a bússola e o manual de instruções. Você não luta na linha de frente; você diz aos outros onde bater para vencer. O conhecimento é um fardo pesado. Você sofre com a responsabilidade de saber o resultado de cada má decisão que seus amigos tomam. Seu desafio é agir com as informações que tem, em vez de paralisar analisando-as."
 };
 
 // FASE 1: ASPECTO 
@@ -461,11 +463,11 @@ const questionsByAspect = {
         { txt: "Aceito que o mundo é um lugar de ruído e que tentar encontrar 'sentido' em tudo é uma perda de tempo exaustiva.", w: { Prince: 3, Bard: 3, Maid: -3, Sylph: -2 } },
         { txt: "Tento usar o impacto do evento para chamar atenção para causas que eu considero importantes, moldando a narrativa do ocorrido.", w: { Thief: 3, Witch: 2, Rogue: -2, Seer: -1 } }
     ]},
-    { t: "Ao se deparar com várias versões conflitantes de uma mesma história, como você decide em qual acreditar?", opts: [
-        { txt: "Busco a versão factual e lógica, por mais nua e crua que seja. A verdade não deve ser moldada pela conveniência.", w: { Seer: 3, Mage: 3, Witch: -3, Thief: -2 } },
-        { txt: "Escolho a versão que melhor serve aos meus objetivos ou que cria a narrativa mais útil para o momento.", w: { Witch: 3, Thief: 2, Seer: -3, Mage: -2 } },
-        { txt: "Acredito que não existe uma verdade absoluta; deixo que cada versão flua e o tempo revele qual delas terá mais peso.", w: { Heir: 3, Bard: 3, Knight: -3, Maid: -2 } },
-        { txt: "Adoto a versão que exige mais responsabilidade e ação da minha parte, usando-a como um mapa para o que devo fazer a seguir.", w: { Knight: 3, Page: 2, Bard: -2, Heir: -1 } }
+    { t: "Você está em uma discussão acalorada onde sabe, com 100% de certeza, que a outra pessoa está errada sobre um fato técnico ou histórico. Como você age?", opts: [
+        { txt: "Interrompo a pessoa e apresento as provas e fontes imediatamente. Não suporto ver a desinformação prosperar quando a verdade está disponível.", w: { Maid: 3, Sylph: 2, Knight: 2, Prince: -3, Bard: -2 } },
+        { txt: "Deixo que ela continue falando o que quiser. A ignorância alheia é irrelevante para mim e não sinto necessidade de iluminar quem não quer ver.", w: { Prince: 3, Bard: 3, Mage: -2, Seer: -2 } },
+        { txt: "Uso o erro dela como uma vantagem estratégica, deixando que ela se exponha até que eu possa usar a verdade para desarmá-la no momento certo.", w: { Thief: 3, Witch: 2, Seer: 2, Rogue: -2 } },
+        { txt: "Tento corrigir a pessoa de forma sutil, compartilhando o conhecimento como se fosse algo que 'nós' estamos descobrindo juntos para não criar mal-estar.", w: { Rogue: 3, Heir: 2, Thief: -3, Knight: -1 } }
     ]},
     { t: "Em uma situação tensa, você percebe que a transparência total está causando conflitos. Qual sua atitude?", opts: [
         { txt: "Defendo que a clareza é a única cura. Tudo deve ser exposto para que possamos resolver o problema pela raiz.", w: { Sylph: 3, Seer: 2, Prince: -3, Bard: -2 } },
@@ -1100,17 +1102,18 @@ function renderNullEnding() {
 }
 
 function renderQuestion(q) {
-        activeQuestion = q; 
-        let html = `<div class="fade-in"><h1>${q.t}</h1>`;
-        
-        // Renderiza as opções normais
-        q.opts.forEach((opt, idx) => {
-            html += `<button onclick='handleInput(${idx})'>${opt.txt}</button>`;
-        });
+    activeQuestion = q;
+    let html = `<h2>${q.text}</h2>`;
 
-        // Adiciona o botão de pular/nenhuma
-        html += `<button class="skip-button" onclick="handleSkip()">Nenhuma das anteriores.</button>`;
-        
+    html += `<div class="navigation-controls" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">`;
+
+    if (state.questionCount > 0) {
+        html += `<button class="back-button" onclick="handleBack()">Voltar</button>`;
+    }
+    
+    html += `<button class="skip-button" onclick="handleSkip()">Nenhuma das anteriores.</button>`;
+    html += `</div>`;
+    
     render(html);
 }
 
@@ -1129,9 +1132,24 @@ function handleSkip() {
                 renderQuestion(state.currentQueue[state.questionCount]);
             } else {
                 finishClassPhase();
-            }
         }
     }
+}
+
+function handleBack() {
+    if (state.history.length === 0) return;
+
+    const lastState = state.history.pop();
+    
+    state.aspectScores = { ...lastState.aspectScores };
+    state.classScores = { ...lastState.classScores };
+    state.questionCount = lastState.questionCount;
+    state.stage = lastState.stage;
+    state.currentQueue = lastState.currentQueue;
+    
+    const currentList = state.stage === "aspect_quiz" ? aspectQuestions : state.currentQueue;
+    renderQuestion(currentList[state.questionCount]);
+}
 
 function render(html) {
     document.getElementById('content').innerHTML = html;
@@ -1147,6 +1165,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
