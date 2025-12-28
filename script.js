@@ -1084,13 +1084,13 @@ function finishClassPhase() {
 function renderNullEnding() {
     const html = `
         <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
-            <h1>O OBSERVADOR</h1>
-            <p style="font-style: italic; opacity: 0.8;">[NULL OF NULL]</p>
+            <h1>TEM ALGO DE ERRADO AQUI.</h1>
+            <p style="font-style: italic; opacity: 0.8;">[NADA OF NADA]</p>
             
             <div class="analysis-text" style="margin-top: 2rem;">
                 <p>Você clicou, avançou e observou. Mas não escolheu absolutamente nada. Não sobrou nem classe, nem aspecto.</p>
                 
-                <p><strong>Você venceu? Talvez. A única forma de não perder no SBURB é não jogar.</strong></p>
+                <p><strong>Você venceu, eu acho?</strong></p>
             </div>
             
             <button class="retry-button" onclick="location.reload()">Tente novamente.</button>
@@ -1147,6 +1147,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
