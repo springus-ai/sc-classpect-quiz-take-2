@@ -984,6 +984,14 @@ function handleInput(optIndex) {
     let currentQ = activeQuestion;
     if (!currentQ) return; 
 
+    state.history.push(JSON.parse(JSON.stringify({
+        aspectScores: state.aspectScores,
+        classScores: state.classScores,
+        questionCount: state.questionCount,
+        stage: state.stage,
+        currentQueue: state.currentQueue
+    })));
+
     let selectedOpt = currentQ.opts[optIndex];
     
     if (state.stage === "aspect_quiz") {
@@ -1008,7 +1016,6 @@ function handleInput(optIndex) {
         }
     }
 }
-
 function finishAspectPhase() {
     const allZero = Object.values(state.aspectScores).every(score => score === 0);
 
@@ -1103,22 +1110,27 @@ function renderNullEnding() {
 
 function renderQuestion(q) {
     activeQuestion = q;
-    let html = `<h2>${q.text}</h2>`;
+    let html = `<h2>${q.t}</h2>`;
+
+    html += `<div class="options-container" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">`;
+    q.opts.forEach((opt, index) => {
+        html += `<button onclick="handleInput(${index})">${opt.txt}</button>`;
+    });
+    html += `</div>`;
 
     html += `<div class="navigation-controls" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">`;
 
-    if (state.questionCount > 0) {
-        html += `<button class="back-button" onclick="handleBack()">Voltar</button>`;
+    if (state.questionCount > 0 || state.stage === "class_quiz") {
+        html += `<button class="back-button" onclick="handleBack()" style="background: #444;">Voltar</button>`;
     }
     
-    html += `<button class="skip-button" onclick="handleSkip()">Nenhuma das anteriores.</button>`;
+    html += `<button class="skip-button" onclick="handleSkip()" style="background: #222;">Nenhuma das anteriores.</button>`;
     html += `</div>`;
     
     render(html);
 }
 
 function handleSkip() {
-        // Simplesmente avança sem somar pontos a nada 
         state.questionCount++;
         
         if (state.stage === "aspect_quiz") {
@@ -1165,6 +1177,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
