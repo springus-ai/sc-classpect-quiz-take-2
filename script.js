@@ -1053,7 +1053,7 @@ function finishClassPhase() {
                 <p>Potencial de Erro (Top 3): ${sortedClasses.slice(0,3).map(x => x[0] + ":" + x[1]).join(" | ")}</p>
             </div>
             
-            <p style="font-style: italic; color: #88ff88;">Lembre-se: Esse teste não será suficiente para te definir. Por favor, comente no memo de Classpecting para mais informações.</p>
+            <p style="font-style: italic; color: #88ff88;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
             
             <button onclick="location.reload()" style="margin-top:20px;">REINICIAR SESSÃO</button>
         </div>
@@ -1107,5 +1107,6 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
