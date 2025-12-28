@@ -39,6 +39,15 @@ button {
     position: relative; 
     z-index: 10;
 }
+
+.navigation-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
 button:hover { 
     background: #00ff00; 
     color: #000; 
@@ -76,10 +85,14 @@ p {
     text-align: right; 
 }
 .skip-button {
-    background: rgba(20, 20, 20, 0.8);
-    color: #55aa55;
-    border: 1px dashed #004400;
-    margin-top: 20px;
+    background: rgba(20, 20, 20, 0.8) !important;
+    color: #55aa55 !important;
+    border: 1px dashed #004400 !important;
+    padding: 8px 20px !important;
+    width: auto !important;
+    font-size: 12px !important;
+    text-align: center !important;
+    margin-top: 0 !important; 
 }
 .skip-button:hover {
     background: #222;
@@ -88,16 +101,19 @@ p {
     border-color: #008800;
 }
 .back-button {
-    background-color: #444 !important; /* Cor neutra */
-    color: #ccc;
-    border: 1px solid #666;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 14px;
+    background-color: #222 !important; 
+    color: #888 !important;
+    border: 1px solid #444 !important;
+    padding: 8px 20px !important; 
+    width: auto !important;
+    font-size: 12px !important;
+    text-align: center !important;
+    text-transform: uppercase;
 }
 
 .back-button:hover {
     background-color: #666 !important;
     color: #fff;
 }
+
 
