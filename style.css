@@ -124,5 +124,10 @@ p {
     color: #fff;
 }
 
+#class-display-area p {
+    white-space: pre-line;
+}
+
+
 
 
