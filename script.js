@@ -184,7 +184,6 @@ const aspectQuestions = [
         { txt: "A expressão. Ser quem eu sou sem filtros ou máscaras.", w: { Heart: 3, Rage: 1 }, destroys: "Mind" },
         { txt: "O controle. Ser o dono do meu próprio tempo e ritmo.", w: { Time: 3, Mind: 1 } }
     ]}
-    ],
     };
 
 // FASE 2: CLASSES (REPOSTA À REALIDADE)
@@ -1183,6 +1182,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
