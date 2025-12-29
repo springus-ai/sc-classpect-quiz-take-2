@@ -42,6 +42,15 @@ const classSynopses = {
     Seer: "<strong>Vidente:</strong> Você vê o caminho dourado. Enquanto os outros tateiam no escuro, você tem o mapa, a bússola e o manual de instruções. Você não luta na linha de frente; você diz aos outros onde bater para vencer. O conhecimento é um fardo pesado. Você sofre com a responsabilidade de saber o resultado de cada má decisão que seus amigos tomam. Seu desafio é agir com as informações que tem, em vez de paralisar analisando-as."
 };
 
+const oppositeAspects = {
+    "Time": "Space", "Space": "Time",
+    "Mind": "Heart", "Heart": "Mind",
+    "Hope": "Rage", "Rage": "Hope",
+    "Light": "Void", "Void": "Light",
+    "Life": "Doom", "Doom": "Life",
+    "Breath": "Blood", "Blood": "Breath"
+};
+
 // FASE 1: ASPECTO 
 const aspectQuestions = [
     { t: "1. Um grupo de amigos insiste em manter uma tradição anual que você acha cansativa. O que você faz?", opts: [
@@ -988,37 +997,31 @@ function finishAspectPhase() {
         finalCalculations[asp] = state.aspectScores[asp] + (state.destructionScores[asp] || 0);
     }
 
-    const allZero = Object.values(finalCalculations).every(score => score === 0);
-    
-    if (allZero) {
-        state.isNull = true;
-        state.dominantAspect = "Void";
-    } else {
-        state.isNull = false;
-        let sorted = Object.entries(finalCalculations).sort((a, b) => b[1] - a[1]);
-        state.dominantAspect = sorted[0][0];
-    }
+    let sorted = Object.entries(finalCalculations).sort((a, b) => b[1] - a[1]);
+    state.dominantAspect = sorted[0][0];
 
-    if (state.destructionScores[state.dominantAspect] > 0) {
+    let score = state.aspectScores[state.dominantAspect];
+    let dest = state.destructionScores[state.dominantAspect];
+
+    state.highDestruction = (dest > score);
+
+    if (state.highDestruction) {
         state.classScores.Prince += 5;
+        state.classScores.Bard += 3;
     }
 
     let description = aspectSynopses[state.dominantAspect];
 
-    const introText = state.isNull 
-        ? "Huh, você não recebeu nenhum resultado. Pro beta não sobra nem o aspecto, hein?"
-        : description;
+    let transitionText = state.highDestruction
+        ? `Sua relação com ${state.dominantAspect} é... complicada. Vamos ver como você lida com isso.`
+        : "Agora que entendemos sua realidade, vamos observar como você <strong>responde</strong> a ela.";
 
     render(`
         <div class="fade-in">
             <h1>ASPECTO: ${state.dominantAspect.toUpperCase()}</h1>
-            <p>${introText}</p>
+            <p>${description}</p>
             <hr style="border: 1px dashed #005500; margin: 30px 0; opacity: 0.5;">
-            <p style="font-size: 16px; color: #00aa00;">
-                ${state.isNull 
-                    ? "Mesmo sem um aspecto definido, o sistema exige uma <strong>classe</strong>. Prossiga." 
-                    : "Agora que entendemos sua realidade, vamos observar como você <strong>responde</strong> a ela."}
-            </p>
+            <p style="font-size: 16px; color: #00aa00;">${transitionText}</p>
             <button onclick="startClassPhase()">CONTINUAR PARA CLASSES</button>
         </div>
     `);
@@ -1032,54 +1035,29 @@ function startClassPhase() {
 }
 
 function finishClassPhase() {
-    const allClassZero = Object.values(state.classScores).every(score => score === 0);
-
-    if (state.isNull && allClassZero) {
-        renderNullEnding(); 
-        return;
+    let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
+    let topClass = sortedClasses[0][0];
+    
+    if ((topClass === "Prince" || topClass === "Bard") && state.highDestruction) {
+        let hatedAspect = state.dominantAspect;
+        let trueAspect = oppositeAspects[hatedAspect];
+        
+        state.dominantAspect = trueAspect;
+        
+        console.log(`Inversão de Classpect Detectada: De ${hatedAspect} para ${trueAspect}`);
     }
 
-    let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
-    let cls = sortedClasses[0][0]; 
-    let asp = state.dominantAspect; 
-    let clsSyn = classSynopses[cls];
-    let aspSyn = aspectSynopses[asp]; 
-    let top3 = sortedClasses.slice(0, 3);
+    const resultTitle = `${topClass} of ${state.dominantAspect}`;
+    const resultDesc = `${classSynopses[topClass]} <br><br> ${aspectSynopses[state.dominantAspect]}`;
 
     render(`
-        <div class="result-box fade-in">
-            <h1 style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">${cls.toUpperCase()} OF ${asp.toUpperCase()}</h1>
-            <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
-            
-            <div style="text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
-                <p style="margin-bottom: 20px;">${aspSyn}</p> 
-                
-                <hr style="border: 0; border-top: 1px solid #005500; margin: 20px 0;">
-                
-                <div id="class-display-area">
-                    <p>${clsSyn}</p>
-                </div>
-
-                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-                    Ao confrontar a realidade do <strong>${asp}</strong>, você adotou a estratégia do <strong>${cls}</strong>. 
-                    Esta é a sua ferramenta de sobrevivência e sua identidade no jogo.
-                </p>
+        <div class="fade-in result-container">
+            <h1>SEU CLASSPECT É:</h1>
+            <h2 style="color: #4CAF50; font-size: 2.5em; margin: 20px 0;">${resultTitle.toUpperCase()}</h2>
+            <div class="result-box" style="text-align: left; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px;">
+                <p>${resultDesc}</p>
             </div>
-
-            <div class="top3-explorer" style="margin: 25px 0; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
-                <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR POTENCIALIDADES:</p>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    ${top3.map(item => `
-                        <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 8px 12px; font-size: 12px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
-                            ${item[0]} (${item[1]} pts)
-                        </button>
-                    `).join('')}
-                </div>
-            </div>
-            
-            <p style="font-style: italic; color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
-            
-            <button onclick="location.reload()" style="margin-top:20px;">REINICIAR SESSÃO</button>
+            <button class="retry-button" onclick="location.reload()" style="margin-top: 30px;">REINICIAR SESSÃO</button>
         </div>
     `);
 }
@@ -1183,4 +1161,5 @@ window.onload = () => {
         </div>
     `);
 };
+
 
