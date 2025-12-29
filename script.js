@@ -1069,29 +1069,56 @@ function finishClassPhase() {
     let asp = state.dominantAspect; 
     let clsSyn = classSynopses[cls];
     let aspSyn = aspectSynopses[asp]; 
+    let top3 = sortedClasses.slice(0, 3);
 
     render(`
         <div class="result-box fade-in">
             <h1 style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">${cls.toUpperCase()} OF ${asp.toUpperCase()}</h1>
-            <p style="font-size: 20px; color: #fff;">Sua análise foi concluída.</p>
+            <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
             
             <div style="text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
                 <p style="margin-bottom: 20px;">${aspSyn}</p> 
+                
                 <hr style="border: 0; border-top: 1px solid #005500; margin: 20px 0;">
-                <p>${clsSyn}</p>
-                <p style="margin-top: 15px;">Ao confrontar a realidade do <strong>${asp}</strong>, você adotou a estratégia do <strong>${cls}</strong>. Esta é a sua ferramenta de sobrevivência e sua identidade no jogo.</p>
+                
+                <div id="class-display-area">
+                    <p>${clsSyn}</p>
+                </div>
+
+                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    Ao confrontar a realidade do <strong>${asp}</strong>, você adotou a estratégia do <strong>${cls}</strong>. 
+                    Esta é a sua ferramenta de sobrevivência e sua identidade no jogo.
+                </p>
             </div>
 
-            <div class="debug">
-                <p>Potencial de Erro (Top 3): ${sortedClasses.slice(0,3).map(x => x[0] + ":" + x[1]).join(" | ")}</p>
+            <div class="top3-explorer" style="margin: 25px 0; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
+                <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR POTENCIALIDADES:</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    ${top3.map(item => `
+                        <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 8px 12px; font-size: 12px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
+                            ${item[0]} (${item[1]} pts)
+                        </button>
+                    `).join('')}
+                </div>
             </div>
             
-            <p style="font-style: italic; color: #88ff88;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
+            <p style="font-style: italic; color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
             
             <button onclick="location.reload()" style="margin-top:20px;">REINICIAR SESSÃO</button>
         </div>
     `);
 }
+
+window.updateClassView = function(className) {
+    const displayArea = document.getElementById('class-display-area');
+    if (displayArea) {
+        displayArea.style.opacity = '0';
+        setTimeout(() => {
+            displayArea.innerHTML = `<p>${classSynopses[className]}</p>`;
+            displayArea.style.opacity = '1';
+        }, 150);
+    }
+};
 
 function renderNullEnding() {
     const html = `
@@ -1180,6 +1207,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
