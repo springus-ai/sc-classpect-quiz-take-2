@@ -813,17 +813,17 @@ const questionsByAspect = {
     { t: "Você recebe de herança um objeto de família extremamente feio e inútil, mas que sua avó adorava. O que você faz com ele?", opts: [
         { txt: "Mantenho o objeto em destaque na sala. A estética não importa; o que importa é que ele é um âncora material da minha linhagem.", w: { Heir: 3, Maid: 2, Sylph: 1, Prince: -3 } },
         { txt: "Jogo fora ou 'perco' acidentalmente. Não vou deixar que a nostalgia alheia ocupe espaço físico na minha vida atual.", w: { Prince: 3, Bard: 2, Knight: -2, Maid: -2 } },
-        { txt: "Vendo o objeto. Transformo o valor sentimental em recursos que eu possa usar agora.", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -2 } },
+        { txt: "Prefiro trocar o objeto por algo que me dê autonomia real agora, em vez de ser refém de uma herança que não escolhi", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -2 } },
         { txt: "Guardo em uma caixa no fundo do armário. Sinto culpa demais para jogar fora, mas vergonha demais para exibir.", w: { Page: 3, Knight: 2, Rogue: 1, Seer: -1 } }
     ]},
     { t: "Você é convidado para um evento de família importante, mas está exausto e odeia o ambiente. Qual sua escolha?", opts: [
         { txt: "Vou e coloco o meu melhor sorriso. Minha presença é um dever cívico para manter a harmonia da estrutura familiar.", w: { Maid: 3, Heir: 2, Knight: 1, Prince: -3 } },
-        { txt: "Não vou. Minha autonomia e bem-estar não podem ser sacrificados por convenções sociais vazias.", w: { Prince: 3, Bard: 2, Mage: 1, Rogue: -1 } },
-        { txt: "Vou, mas passo o tempo todo observando as tensões entre os parentes, extraindo informações que possam ser úteis no futuro.", w: { Seer: 3, Thief: 2, Mage: 1, Sylph: -2 } },
+        { txt: "Se eu não for relevante lá, prefiro não ir para não me sentir um figurante na minha própria linhagem.", w: { Prince: 3, Bard: 2, Thief: 2, Rogue: -1 } },
+        { txt: "Vou, mas passo o tempo todo observando as tensões entre os parentes, extraindo informações que possam ser úteis no futuro.", w: { Seer: 3, Mage: 1, Sylph: -2 } },
         { txt: "Vou apenas para prestar apoio a alguém específico que eu goste, agindo como um amortecedor emocional para as frustrações dessa pessoa.", w: { Rogue: 3, Page: 2, Sylph: 1, Witch: -1 } }
     ]},
     { t: "Um amigo insubstituível faleceu. O funeral passou, as visitas pararam e agora resta apenas o silêncio. Como você lida com o buraco que ele deixou na sua estrutura de vida?", opts: [
-        { txt: "Sinto uma necessidade feroz de controlar como ele é lembrado, corrigindo quem fala errado sobre ele e guardando seus pertences como se fossem sagrados.", w: { Thief: 3, Witch: 2, Knight: 1 }},
+        { txt: "Me torno o 'guardião oficial' da memória dele. Corrijo quem fala errado sobre ele e guardo seus pertences como se fossem sagrados.", w: { Thief: 3, Witch: 2, Knight: 1 }},
         { txt: "Pego-me usando as gírias dele, ouvindo as músicas dele ou adotando seus hábitos. É como se eu permitisse que ele continuasse vivendo através das minhas ações.", w: { Heir: 3, Rogue: 2, Sylph: 1 }},
         { txt: "Para conseguir continuar funcionando, preciso bloquear as memórias e evitar lugares ou pessoas que me lembrem dele. O vínculo dói demais, então eu o anestesio.", w: { Prince: 3, Bard: 2, Mage: 1 }},
         { txt: "Tento preencher o vazio dedicando-me a terminar o que ele começou ou servindo a uma causa que ele amava, buscando honrar o legado dele pelo esforço.", w: { Page: 3, Maid: 2, Seer: 1 } } 
@@ -836,7 +836,7 @@ const questionsByAspect = {
     ]},
     { t: "Você contraiu uma dívida financeira com um amigo. Ele diz 'pague quando puder', mas a tensão paira no ar.", opts: [
         { txt: "Trabalho obsessivamente para pagar o mais rápido possível. A sensação de dever algo a alguém é uma corrente que me asfixia.", w: { Knight: 3, Maid: 2, Prince: 1, Bard: -2 } },
-        { txt: "Convenço a mim mesmo (e a ele) de que, com tudo que já fiz por ele no passado, estamos quites. A dívida é anulada pelo histórico.", w: { Thief: 3, Witch: 2, Prince: 1, Page: -1 } },
+        { txt: "Sinto que a dívida é injusta porque eu 'invisto' emocionalmente muito mais nessa amizade do que ele. A dívida é anulada pelo histórico.", w: { Thief: 3, Witch: 2, Prince: 1, Page: -1 } },
         { txt: "Sinto-me tão culpado que começo a evitar o amigo, deixando a vergonha corroer a amizade lentamente.", w: { Page: 3, Bard: 2, Rogue: 1, Sylph: -2 } },
         { txt: "Pago a dívida em 'favores' e serviços, integrando essa troca na dinâmica da nossa relação de forma natural.", w: { Heir: 3, Sylph: 2, Seer: 1, Knight: -1 } }
     ]},
@@ -846,11 +846,11 @@ const questionsByAspect = {
         { txt: "Saio de perto dos dois. A instabilidade emocional deles é contagiosa e prefiro não ser arrastado para o drama.", w: { Prince: 3, Bard: 2, Mage: 1, Maid: -2 } },
         { txt: "Absorvo as reclamações de ambos, servindo de lixeira emocional para os dois lados, sem nunca dar minha própria opinião.", w: { Rogue: 3, Page: 2, Maid: 1, Thief: -2 } }
     ]},
-    { t: "Você está em um show lotado, prensado contra estranhos, sentindo o calor e o suor da multidão.", opts: [
-        { txt: "Entro em pânico ou fico furioso. A invasão da minha individualidade por essa massa de carne anônima é insuportável.", w: { Prince: 3, Knight: 2, Thief: 1, Heir: -3 } },
-        { txt: "Deixo-me levar pela onda. A sensação de ser apenas uma gota em um oceano de gente é estranhamente libertadora e segura.", w: { Heir: 3, Bard: 2, Rogue: 1, Knight: -2 } },
-        { txt: "Fico atento a rotas de fuga e à segurança de quem está comigo. Alguém precisa estar sóbrio no meio do caos.", w: { Seer: 3, Maid: 2, Mage: 1, Bard: -2 } },
-        { txt: "Uso a densidade da multidão a meu favor para chegar mais perto do palco, empurrando e manipulando o fluxo de pessoas.", w: { Witch: 3, Thief: 2, Knight: 1, Page: -1 } }
+    { t: "Você está sobrecarregado, mas um grupo que depende de você (seja sua família ou seus amigos) exige um sacrifício pessoal de tempo e saúde. O que você faz?", opts: [
+        { txt: "Eu aceito, mas garanto que todos saibam o quanto estou me sacrificando. Depois dessa, ninguém pode questionar minha autoridade ou me negar favores", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -3 } },
+        { txt: "Se o grupo não consegue sobreviver sem me drenar, a estrutura é falha. Prefiro que o projeto desmorone a permitir que essas obrigações ditem como devo viver minha vida.", w: { Prince: 3, Bard: 2, Thief: 1, Maid: -3 } },
+        { txt: "Eu ignoro meu cansaço e faço o que precisa ser feito. Se eu falhar, o sistema para de funcionar, e isso é inadmissível.", w: { Maid: 3, Knight: 2, Sylph: 1, Prince: -3 } },
+        { txt: "Eu aceito o fardo, mas tento delegar partes dele para outros que estão menos exaustos, mesmo que eu não receba o crédito.", w: { Rogue: 3, Page: 2, Heir: 1, Thief: -3 } }
     ]},
     { t: "Você precisa usar um uniforme ridículo para o trabalho ou escola. Todos usam, mas você se sente humilhado.", opts: [
         { txt: "Customizo o uniforme, alterando detalhes para recuperar minha identidade. Posso ser parte do grupo, mas nos meus termos.", w: { Witch: 3, Thief: 2, Knight: 1, Maid: -2 } },
@@ -859,16 +859,16 @@ const questionsByAspect = {
         { txt: "Recuso-me ou 'esqueço' de usar partes dele. Prefiro ser punido a me submeter a essa homogeneização forçada.", w: { Prince: 3, Bard: 2, Mage: 1, Heir: -2 } }
     ]},
     { t: "Você descobre que seus amigos mais próximos criaram um grupo de mensagens sem você para planejar algo.", opts: [
-        { txt: "Fico obcecado em descobrir o que estão falando. Sinto que me 'roubaram' o direito de estar no centro e começo a agir de forma invasiva para recuperar meu lugar.", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -2 } }, 
-        { txt: "Confronto o grupo com agressividade. Se a lealdade deles não é total e absoluta, então esse vínculo está morto para mim e eu mesmo o encerro aqui.", w: { Prince: 3, Knight: 2, Sylph: -3, Maid: -2 } }, 
+        { txt: "Sinto uma ansiedade paralisante por estar 'fora'. Fico obcecado em descobrir o que estão falando sem mim.", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -2 } }, 
+        { txt: "Confronto o grupo com agressividade. Se a lealdade deles não é verdadeira, então esse vínculo está morto para mim e eu mesmo o encerro aqui.", w: { Prince: 3, Knight: 2, Sylph: -3, Maid: -2 } }, 
         { txt: "Aceito a exclusão em silêncio, sentindo que talvez eu seja o peso morto que eles precisam deixar para trás para que o grupo flua melhor.", w: { Rogue: 3, Page: 2, Heir: 1, Thief: -3 } }, 
         { txt: "Analiso friamente o comportamento deles. Se sentiram necessidade de me excluir, o grupo já falhou em sua estrutura base e eu apenas observo a queda.", w: { Seer: 3, Mage: 2, Bard: 1, Knight: -1 } }
     ]},       
-    { t: "Você vê alguém se machucar feio na sua frente (fratura exposta ou muito sangue). Qual sua reação visceral?", opts: [
-        { txt: "Sinto a dor como se fosse minha, fico enjoado e quase desmaio. A barreira entre meu corpo e o dele parece sumir.", w: { Mage: 3, Seer: 2, Page: 1, Prince: -1 } },
-        { txt: "Ajo imediatamente para estancar o sangue. Não penso, apenas executo a manutenção necessária para consertar o estrago.", w: { Sylph: 3, Maid: 2, Knight: 1, Bard: -2 } },
-        { txt: "Fico paralisado ou me afasto com repulsa. A fragilidade da carne me aterroriza e não consigo lidar com a realidade crua daquilo.", w: { Prince: 3, Bard: 2, Rogue: 1, Sylph: -3 } },
-        { txt: "Protejo a cena, impedindo que curiosos se aproximem. Assumo o controle do espaço ao redor da vítima.", w: { Knight: 3, Witch: 2, Thief: 1, Page: -1 } }
+    { t: "O grupo em que você está inserido está sem rumo e prestes a se fragmentar por falta de liderança. Como você reage?", opts: [
+        { txt: "Sinto a dor como se fosse minha, fico enjoado e quase desmaio. A barreira entre meu corpo e o dele parece sumir.", w: { Thief: 3, Witch: 2, Prince: 1, Rogue: -3 } },
+        { txt: "Eu me coloco à disposição para fazer o trabalho pesado. Não sei o que estou fazendo, mas quero que todos se sintam seguros.", w: { Knight: 3, Page: 2, Maid: 1, Seer: -1 } },
+        { txt: "Eu tento redistribuir as tarefas. Se alguém está sobrecarregado, eu movo essa responsabilidade para quem está ocioso, buscando equilíbrio sem precisar ser o 'líder' oficial.", w: { Rogue: 3, Sylph: 2, Heir: 1, Thief: -3 } },
+        { txt: "Deixo que se fragmente. Se o grupo não consegue se manter unido por conta própria, ele é fraco e merece acabar.", w: { Prince: 3, Bard: 2, Mage: 1, Maid: -3 } }
     ]}
     ],
     "Breath": [
@@ -1182,6 +1182,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
