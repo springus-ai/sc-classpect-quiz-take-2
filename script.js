@@ -48,8 +48,8 @@ const aspectQuestions = [
         opts: [
             { txt: "Vou mesmo assim. A dívida social e o vínculo são fardos que aceito carregar.", w: { Blood: 3, Breath: -3, Time: 2 } },
             { txt: "Simplesmente não apareço. Se não me faz bem, não vejo razão para me sentir preso.", w: { Breath: 3, Blood: -3, Heart: 2 } },
-            { txt: "Tento sugerir mudanças práticas para que a tradição volte a ter uma utilidade lógica.", w: { Mind: 3, Heart: -3, Space: 2 } },
-            { txt: "Analiso por que me sinto deslocado; talvez a falha esteja na minha própria essência.", w: { Heart: 3, Mind: -3, Light: 2 } }
+            { txt: "Tento sugerir mudanças práticas para que a tradição volte a ser divertida.", w: { Mind: 3, Heart: -3, Space: 2 } },
+            { txt: "Analiso por que me sinto deslocado; talvez a falha esteja na minha própria essência.", w: { Heart: 3, Mind: -3, Light: 2 } },
         ]
     },
     {
@@ -73,7 +73,7 @@ const aspectQuestions = [
     {
         t: "4. Como você lida com uma crítica dura e direta sobre sua competência?",
         opts: [
-            { txt: "Ignoro a agressividade e foco apenas nos dados lógicos para me aprimorar.", w: { Mind: 3, Heart: -3, Space: 2 } },
+            { txt: "Ignoro a agressividade e foco apenas no que é construtivo para me aprimorar.", w: { Mind: 3, Heart: -3, Space: 2 } },
             { txt: "Sinto uma revolta imediata contra a autoridade e a intenção de quem me julgou.", w: { Rage: 3, Hope: -3, Life: 2 } },
             { txt: "Aceito. Se há falha, as consequências e o julgamento são inevitáveis.", w: { Doom: 3, Life: -3, Time: 2 } },
             { txt: "Tento ver o que a pessoa viu. Talvez ela tenha notado um detalhe que me escapou.", w: { Light: 3, Void: -3, Blood: 2 } }
@@ -91,8 +91,8 @@ const aspectQuestions = [
     {
         t: "6. Você tem um final de semana inteiramente livre. Como se sente após algumas horas parado?",
         opts: [
-            { txt: "Inquieto. Sinto que preciso estar organizando ou criando algo no meu espaço.", w: { Space: 3, Time: -3, Time: 2 } },
-            { txt: "Leve. Aproveito o vácuo de obrigações para simplesmente sumir do radar.", w: { Breath: 3, Blood: -3, Void: 2 } },
+            { txt: "Inquieto. Sinto que preciso estar organizando ou criando algo.", w: { Space: 3, Time: -3, Time: 2 } },
+            { txt: "Leve. Aproveito a falta de obrigações para simplesmente sumir do radar.", w: { Breath: 3, Blood: -3, Void: 2 } },
             { txt: "Reflexivo. Mergulho em mim mesmo para tentar entender meus desejos atuais.", w: { Heart: 3, Mind: -3, Mind: 2 } },
             { txt: "Entediado. Preciso de estímulo externo ou informação nova para me sentir útil.", w: { Light: 3, Void: -3, Life: 2 } }
         ]
@@ -261,7 +261,7 @@ const questionsByAspect = {
     ]},
     { t: "Se você pudesse mudar algo em um evento trágico do seu passado, como abordaria isso?", opts: [
         { txt: "Eu não mudaria nada. O trauma é uma lição necessária e o destino não deve ser alterado por caprichos individuais.", w: { Seer: 2, Heir: 3, Bard: 2, Witch: -3 } },
-        { txt: "Eu destruiria a causa do evento sem hesitar. Regras temporais não justificam o sofrimento; a liberdade de mudar é mais importante.", w: { Prince: 3, Witch: 3, Knight: 2, Mage: -2 } },
+        { txt: "Eu destruiria a causa do evento sem hesitar. O tempo não justifica o sofrimento; a liberdade de mudar é mais importante.", w: { Prince: 3, Witch: 3, Knight: 2, Mage: -2 } },
         { txt: "Eu me prepararia melhor. Se eu soubesse o que aconteceria, teria trabalhado o dobro para proteger o que perdi.", w: { Knight: 3, Maid: 2, Page: 2, Bard: -2 } },
         { txt: "Eu tentaria tirar algo de bom da tragédia para ajudar outros que passam pelo mesmo, transformando a dor em um recurso útil.", w: { Rogue: 3, Sylph: 2, Heir: 1, Thief: -2 } }
     ]},
@@ -277,11 +277,11 @@ const questionsByAspect = {
         { txt: "Ajudo da maneira mais rápida possível. Uso todo o meu conhecimento para terminar a tarefa na metade do tempo previsto.", w: { Witch: 3, Maid: 2, Mage: 2, Knight: -1 } },
         { txt: "Aceito o favor como parte do dia. Se o tempo deve ser gasto assim, eu me adapto e encontro satisfação no processo.", w: { Heir: 3, Sylph: 2, Seer: 1, Prince: -3 } }
     ]},
-    { t: "Você encontra uma ampulheta antiga que dizem poder desacelerar a percepção do tempo. O que você faz?", opts: [
-        { txt: "Uso para prolongar meus momentos de prazer ou descanso, sem me importar com o resto do mundo.", w: { Thief: 3, Witch: 2, Rogue: -2, Heir: -1 } },
-        { txt: "Uso para ter mais tempo de estudar e compreender a estrutura da realidade.", w: { Mage: 3, Seer: 3, Page: 1, Prince: -2 } },
-        { txt: "Quebro a ampulheta. Ninguém deveria ter o poder de mexer no fluxo natural das coisas.", w: { Prince: 3, Bard: 2, Knight: 1, Witch: -3 } },
-        { txt: "Uso para dar mais tempo de vida ou de reação para quem está em perigo.", w: { Sylph: 3, Rogue: 2, Maid: 1, Thief: -2 } }
+    { t: "Você está assistindo a um filme ou lendo um livro e percebe que o final será triste e inevitável. Como você reage?", opts: [
+        { txt: "Paro de ler ou ver imediatamente. Recuso-me a gastar meu tempo com uma conclusão que já aceitei. Prefiro imaginar possibilidades infinitas.", w: { Prince: 3, Witch: 2, Seer: -2, Mage: -2 } },
+        { txt: "Vou até o fim, mesmo sofrendo. Preciso ver como a estrutura da tragédia foi montada para entender como evitar algo assim na vida real.", w: { Mage: 3, Seer: 2, Knight: 1, Bard: -2 } },
+        { txt: "Tento convencer outras pessoas a verem comigo. Dividir a carga emocional do final triste torna a experiência menos solitária e pesada.", w: { Rogue: 3, Sylph: 2, Page: 1, Thief: -2 } },
+        { txt: "Fico obcecado com os detalhes técnicos da obra (direção, edição) para me distanciar da passagem da trama em direção à morte.", w: { Knight: 3, Maid: 2, Heir: -1, Bard: -1 } }
     ]},
     { t: "Qual sua relação com a pontualidade alheia?", opts: [
         { txt: "Exijo precisão absoluta. O atraso dos outros é uma ofensa à ordem que tento manter.", w: { Maid: 3, Knight: 2, Page: 2, Bard: -2 } },
@@ -409,9 +409,9 @@ const questionsByAspect = {
     ]},
     { t: "Você precisa escolher entre ser honesto e perder uma chance, ou mentir e conseguir o que quer.", opts: [
         { txt: "Falo a verdade doa a quem doer. A verdade é o único caminho real.", w: { Mage: 3, Seer: 3, Heir: 3, Thief: -3 } },
-        { txt: "Minto se isso mantiver a paz ou minha esperança; a verdade bruta é destrutiva.", w: { Bard: 3, Prince: 2, Knight: -3, Maid: -2 } },
+        { txt: "Minto se isso mantiver a minha paz ou minha esperança; a verdade bruta é destrutiva.", w: { Bard: 3, Prince: 2, Knight: -3, Maid: -2 } },
         { txt: "Sou honesto de forma agressiva, punindo quem me forçou a escolher.", w: { Knight: 3, Page: 3, Maid: 2, Thief: 2 } },
-        { txt: "Minto se isso for ajudar mais pessoas, manipulando a verdade por um bem maior.", w: { Sylph: 3, Rogue: 3, Witch: 3, Prince: -2 } }
+        { txt: "Minto se isso for ajudar mais pessoas, escondendo a verdade por um bem maior.", w: { Sylph: 3, Rogue: 3, Witch: 3, Prince: -2 } }
     ]}
     ],
     "Light": [
@@ -431,7 +431,7 @@ const questionsByAspect = {
         { txt: "Confio que a sorte estará ao meu lado. Sinto que as probabilidades costumam conspirar a meu favor sem que eu precise me esforçar.", w: { Heir: 3, Bard: 2, Knight: -3, Mage: -2 } },
         { txt: "Tento encontrar brechas ou influenciar quem decide para garantir que as chances pendam para o meu lado, forçando o resultado desejado.", w: { Witch: 3, Thief: 2, Heir: -2, Seer: -2 } },
         { txt: "Ignoro a ideia de sorte e trabalho exaustivamente nos bastidores para compensar qualquer imprevisto, tentando garantir o êxito pelo esforço.", w: { Knight: 3, Maid: 2, Page: 2, Heir: -3, Bard: -2 } },
-        { txt: "Obsedo-me em calcular cada variável e sinal possível, tentando prever o desfecho para que a incerteza não me pegue desprevenido.", w: { Seer: 3, Mage: 3, Heir: -2, Bard: -1 } }
+        { txt: "Me preocupo em calcular cada variável e sinal possível, tentando prever o desfecho para que a incerteza não me pegue desprevenido.", w: { Seer: 3, Mage: 3, Heir: -2, Bard: -1 } }
     ]},
     { t: "Um erro pessoal seu é exposto publicamente e você se torna o centro das atenções e julgamentos. Como reage?", opts: [
         { txt: "Decido que a opinião alheia é irrelevante. Trato a exposição como algo sem valor e sigo em frente como se nada tivesse acontecido.", w: { Prince: 3, Bard: 2, Knight: -3, Page: -2 } },
@@ -1207,6 +1207,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
