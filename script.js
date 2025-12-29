@@ -1177,9 +1177,10 @@ window.onload = () => {
         <div class="fade-in">
             <h1>TESTE DE CLASSPECT DO STREETCRUSH</h1>
             <p>Opa, SC aqui. Aquele do MEMO_BRASIL.</p>
-            <p>Antes de tudo, vamos contextualizar sobre esse teste. Não fiz um simples "copia e cola" de testes que já existem, levei duas semanas mexendo (e um dia!) nesse projeto por um motivo. As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com alguns dos meus amigos.</p>
-            <p>Agora que tiramos isso do caminho, vamos cortar o papo e descobrir um pouco sobre você.</p>
+            <p>Antes de tudo, vamos contextualizar sobre esse teste. Não fiz um simples "copia e cola" de testes que já existem, levei duas semanas mexendo (e um dia!) nesse projeto por um motivo. As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com alguns dos meus amigos da Midnight Crew.</p>
+            <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
             <button onclick="start()">Bora ver.</button>
         </div>
     `);
 };
+
