@@ -4,7 +4,6 @@ let state = {
     destructionScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
     classScores: { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 },
     dominantAspect: "",
-    isPrinceCandidate: false,
     questionCount: 0,
     currentQueue: [],
     isNull: false,
@@ -1184,6 +1183,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
