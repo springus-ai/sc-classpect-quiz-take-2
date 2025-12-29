@@ -61,7 +61,7 @@ const aspectQuestions = [
         { txt: "Analiso meu deslocamento; talvez a falha esteja na minha essência.", w: { Heart: 3, Light: 2 } }
     ]},
     { t: "2. Você descobre um erro grave de um colega de trabalho que é seu amigo. Isso pode prejudicá-lo no futuro. O que você faz?", opts: [
-        { txt: "Exponho o erro imediatamente. A verdade é absoluta e não poupa ninguém.", w: { Light: 3, Rage: 1 }, destroys: ["Void"] }, 
+        { txt: "Exponho o erro imediatamente. Mesmo que doa, ele precisa saber a verdade.", w: { Light: 3, Rage: 1 }, destroys: ["Void"] }, 
         { txt: "Mantenho o sigilo. Expor isso traria uma atenção negativa desnecessária.", w: { Void: 3, Light: -2 } }, 
         { txt: "Fico em silêncio. O que deve ser, será; não me cabe interferir.", w: { Doom: 3, Void: 2 } },
         { txt: "Ajudo ele em segredo. Priorizo nossa aliança acima de tudo.", w: { Blood: 3, Void: 2 } },
@@ -139,9 +139,9 @@ const aspectQuestions = [
     ]},
     { t: "13. Você está em um local onde ninguém te conhece. Como se sente?", opts: [
         { txt: "Livre. Sem expectativas, posso agir sem ser rotulado.", w: { Void: 3, Breath: 2 } },
-        { txt: "Desesperado. Preciso encontrar alguém para validar minha existência.", w: { Light: 3, Heart: 2 } },
+        { txt: "Irrelevante. Preciso encontrar alguém para validar minha existência.", w: { Light: 3, Heart: 2 } },
         { txt: "Observador. Chance perfeita para analisar a lógica do local.", w: { Mind: 3, Time: 1 } },
-        { txt: "Proativo. Não deixo nada no escuro; trarei a verdade à tona.", w: { Light: 3, Void: -2 }, destroys: ["Void"] }, 
+        { txt: "Inquieto. O anonimato me incomoda; vou logo me apresentar e entender o cenário.", w: { Light: 3, Void: -2 }, destroys: ["Void"] }, 
         { txt: "Desconectado. Procuro criar um vínculo para não ser um fantasma.", w: { Blood: 3, Heart: 2 } }
     ]},
     { t: "14. Você precisa magoar alguém para um objetivo. O que dói?", opts: [
@@ -1171,6 +1171,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
