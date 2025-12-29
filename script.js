@@ -1,5 +1,4 @@
 let state = {
-    let state = {
     stage: "intro",
     aspectScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
     destructionScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
@@ -1185,6 +1184,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
