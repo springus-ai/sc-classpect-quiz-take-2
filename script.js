@@ -1,12 +1,13 @@
 let state = {
     stage: "intro",
     aspectScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
+    destructionScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
     classScores: { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 },
     dominantAspect: "",
+    highDestruction: false,
     questionCount: 0,
     currentQueue: [],
-    isNull: false,
-    history: [] 
+    history: []
 };
 
 let activeQuestion = null;
@@ -43,129 +44,145 @@ const classSynopses = {
 
 // FASE 1: ASPECTO 
 const aspectQuestions = [
-    { t: "1. Um grupo de amigos insiste em manter uma tradição anual que você acha cansativa e sem propósito. O que você faz?", opts: [
-        { txt: "Vou mesmo assim. A dívida social e o vínculo são fardos que aceito carregar.", w: { Blood: 3, Breath: -3, Time: 2 } },
-        { txt: "Simplesmente não apareço. Se não me faz bem, não vejo razão para me sentir preso.", w: { Breath: 3, Blood: -3, Heart: 2 } },
-        { txt: "Tento sugerir mudanças práticas para que a tradição volte a ser divertida.", w: { Mind: 3, Heart: -3, Space: 2 } },
-        { txt: "Analiso por que me sinto deslocado; talvez a falha esteja na minha própria essência.", w: { Heart: 3, Mind: -3, Light: 2 } },
+    { t: "1. Um grupo de amigos insiste em manter uma tradição anual que você acha cansativa. O que você faz?", opts: [
+        { txt: "Vou mesmo assim. O vínculo social é um fardo que aceito carregar.", w: { Blood: 3, Breath: -2 } },
+        { txt: "Exijo que todos vão. Se quebrarmos a corrente agora, nossa união não vale nada.", w: { Blood: 3, Doom: 2 } },
+        { txt: "Não apareço. Se não me faz bem, não faz sentido me sentir preso.", w: { Breath: 3, Blood: -3 }, destroys: "Blood" }, 
+        { txt: "Sugiro mudanças práticas para que a tradição volte a ser divertida.", w: { Mind: 3, Space: 2 } },
+        { txt: "Analiso meu deslocamento; talvez a falha esteja na minha essência.", w: { Heart: 3, Light: 2 } }
     ]},
-    { t: "2. Você descobre um erro grave no trabalho de um colega que é seu amigo. Isso pode prejudicá-lo no futuro. Como age?", opts: [
-        { txt: "Aponto o erro imediatamente. A clareza da verdade evita desastres maiores.", w: { Light: 3, Void: -3, Mind: 2 } },
-        { txt: "Fico em silêncio. O que deve ser, será; não me cabe interferir no segredo alheio.", w: { Void: 3, Light: -3, Doom: 2 } },
-        { txt: "Ajudo ele a consertar em segredo. Priorizo a nossa aliança acima da regra.", w: { Blood: 3, Breath: -3, Void: 2 } },
-        { txt: "Deixo que ele perceba. O crescimento nasce da experiência direta do erro.", w: { Life: 3, Doom: -3, Time: 2 } }
+    { t: "2. Você descobre um erro grave de um colega de trabalho que é seu amigo. Isso pode prejudicá-lo no futuro. O que você faz?", opts: [
+        { txt: "Exponho o erro imediatamente. Mesmo que doa, ele precisa saber a verdade.", w: { Light: 3, Rage: 1 }, destroys: "Void" }, 
+        { txt: "Mantenho o sigilo. Expor isso traria uma atenção negativa desnecessária.", w: { Void: 3, Light: -2 } }, 
+        { txt: "Fico em silêncio. O que deve ser, será; não me cabe interferir.", w: { Doom: 3, Void: 2 } },
+        { txt: "Ajudo ele em segredo. Priorizo nossa aliança acima de tudo.", w: { Blood: 3, Void: 2 } },
+        { txt: "Deixo que ele perceba. O crescimento nasce da experiência do erro.", w: { Life: 3, Time: 2 } }
     ]},
     { t: "3. Ao iniciar um novo projeto pessoal, qual é a sua maior preocupação?", opts: [
-        { txt: "Se terei o espaço, os materiais e o ambiente certo para dar forma à ideia.", w: { Space: 3, Time: -3, Life: 2 } },
-        { txt: "Se terei tempo para terminar antes que a entropia ou o tédio destruam o plano.", w: { Time: 3, Space: -3, Doom: 2 } },
-        { txt: "Se isso reflete quem eu sou de verdade ou se estou apenas seguindo um impulso.", w: { Heart: 3, Mind: -3, Rage: 2 } },
-        { txt: "Se isso tem o potencial de se tornar algo grande e mudar minha realidade.", w: { Hope: 3, Rage: -3, Light: 2 } }
+        { txt: "Ter controle milimétrico de cada detalhe para que saia perfeito.", w: { Space: 3, Mind: 2 }, destroys: "Space" },
+        { txt: "Se terei tempo para terminar antes que o tédio destrua o plano.", w: { Time: 3, Doom: 2 } }, 
+        { txt: "Se isso reflete quem eu sou ou se é apenas um impulso passageiro.", w: { Heart: 3, Rage: 2 } },
+        { txt: "Preciso desapegar do velho. Criar exige limpar o que já existe.", w: { Space: -2, Time: 3 }, destroys: "Space" }, 
+        { txt: "Se isso tem o potencial de crescer e mudar minha realidade.", w: { Hope: 3, Light: 2 } }
     ]},
-    { t: "4. Como você lida com uma crítica dura e direta sobre sua competência?", opts: [
-        { txt: "Ignoro a agressividade e foco apenas no que é construtivo para me aprimorar.", w: { Mind: 3, Heart: -3, Space: 2 } },
-        { txt: "Sinto uma revolta imediata contra a autoridade e a intenção de quem me julgou.", w: { Rage: 3, Hope: -3, Life: 2 } },
-        { txt: "Aceito. Se há falha, as consequências e o julgamento são inevitáveis.", w: { Doom: 3, Life: -3, Time: 2 } },
-        { txt: "Tento ver o que a pessoa viu. Talvez ela tenha notado um detalhe que me escapou.", w: { Light: 3, Void: -3, Blood: 2 } }
-
+    { t: "4. Como você lida com uma crítica dura sobre sua competência?", opts: [
+        { txt: "Uso minha lógica para desmontar o argumento do crítico peça por peça.", w: { Mind: 3, Rage: 1 }, destroys: "Mind" }, 
+        { txt: "Foco no que é construtivo para me aprimorar tecnicamente.", w: { Mind: 3, Space: 2 } },
+        { txt: "Sinto revolta contra a autoridade e a intenção de quem julgou.", w: { Rage: 3, Life: 2 } },
+        { txt: "Aceito. Se há falha, as consequências e o julgamento virão.", w: { Doom: 3, Time: 2 } },
+        { txt: "Tento ver o que a pessoa viu. Talvez me escapou um detalhe.", w: { Light: 3, Blood: 2 } }
     ]},
-    { t: "5. Em uma discussão acalorada, qual comportamento mais te irrita nos outros?", opts: [
-        { txt: "A hipocrisia de quem ignora fatos óbvios para manter uma narrativa confortável.", w: { Rage: 3, Hope: -3, Light: 2 } },
-        { txt: "O pessimismo de quem desiste de soluções só porque 'as regras não permitem'.", w: { Hope: 3, Rage: -3, Life: 2 } },
-        { txt: "A falta de humanidade. Tratar pessoas como se fossem apenas funções mecânicas.", w: { Heart: 3, Mind: -3, Blood: 2 } },
-        { txt: "A desorganização. Gente que grita sem ter um plano ou uma estrutura mínima.", w: { Mind: 3, Heart: -3, Doom: 2 } }
+    { t: "5. Em uma discussão acalorada, o que mais te irrita nos outros?", opts: [
+        { txt: "A hipocrisia de quem ignora fatos para manter uma narrativa.", w: { Rage: 3, Light: 2 }, destroys: "Hope" }, 
+        { txt: "O pessimismo de quem desiste só porque as regras não deixam.", w: { Hope: 3, Life: 2 }, destroys: "Rage" }, 
+        { txt: "A falta de humanidade. Tratar pessoas como funções mecânicas.", w: { Heart: 3, Blood: 2 } },
+        { txt: "A desorganização. Gente que grita sem ter um plano estruturado.", w: { Mind: 3, Doom: 2 } },
+        { txt: "O drama excessivo. Eu corto a emoção para forçar a calma.", w: { Rage: -2, Hope: 3 }, destroys: "Rage" } 
     ]},
-    { t: "6. Você tem um final de semana inteiramente livre. Como se sente após algumas horas parado?", opts: [
-        { txt: "Inquieto. Sinto que preciso estar organizando ou criando algo.", w: { Space: 3, Time: -3, Time: 2 } },
-        { txt: "Leve. Aproveito a falta de obrigações para simplesmente sumir do radar.", w: { Breath: 3, Blood: -3, Void: 2 } },
-        { txt: "Reflexivo. Mergulho em mim mesmo para tentar entender meus desejos atuais.", w: { Heart: 3, Mind: -3, Mind: 2 } },
-        { txt: "Entediado. Preciso de estímulo externo ou informação nova para me sentir útil.", w: { Light: 3, Void: -3, Life: 2 } }
+    { t: "6. Você tem um final de semana livre. Como se sente parado?", opts: [
+        { txt: "Inquieto. Preciso preencher cada segundo com produtividade.", w: { Time: 3, Life: 1 }, destroys: "Time" }, 
+        { txt: "Me imponho tarefas para não sentir que existo sem utilidade.", w: { Breath: -3, Blood: 1 }, destroys: "Breath" }, 
+        { txt: "Leve. Aproveito a falta de obrigações para sumir do radar.", w: { Breath: 3, Void: 2 } }, 
+        { txt: "Reflexivo. Mergulho em mim para entender meus desejos atuais.", w: { Heart: 3, Mind: 2 } },
+        { txt: "Entediado. Preciso de estímulo externo constante.", w: { Life: 3, Light: 2 } }
     ]},
     { t: "7. O que mais te atrai em alguém que você acabou de conhecer?", opts: [
-        { txt: "A alma. A sensação de que a pessoa é autêntica e não uma máscara social.", w: { Heart: 3, Mind: -3, Rage: 2 } },
-        { txt: "A clareza. A capacidade de raciocinar e explicar o mundo de forma brilhante.", w: { Mind: 3, Heart: -3, Light: 2 } },
-        { txt: "A presença física. Alguém que parece sólido, estável e 'pé no chão'.", w: { Space: 3, Time: -3, Blood: 2 } },
-        { txt: "O mistério. O que a pessoa não diz e o que ela mantém escondido.", w: { Void: 3, Light: -3, Breath: 2 } }
+        { txt: "A alma. Quero dissecar quem a pessoa é de verdade.", w: { Heart: 3, Mind: 1 }, destroys: "Heart" }, 
+        { txt: "A clareza. A capacidade de explicar o mundo de forma brilhante.", w: { Mind: 3, Light: 2 } }, 
+        { txt: "A objetividade. Alguém que não deixa o ego atrapalhar o dever.", w: { Heart: -3, Mind: 1 }, destroys: "Heart" }, 
+        { txt: "A estabilidade. Alguém que parece sólido e pé no chão.", w: { Space: 3, Blood: 2 } },
+        { txt: "O mistério. O que a pessoa não diz e mantém escondido.", w: { Void: 3, Breath: 2 } }
     ]},
-    { t: "8. Você precisa demitir alguém esforçado que não traz resultados. Como você lida?", opts: [
-        { txt: "Priorizo o sistema. Se a peça não funciona, ela compromete todo o mecanismo.", w: { Doom: 3, Life: -3, Mind: 2 } },
-        { txt: "Priorizo a vida. Tento remanejar a pessoa; o crescimento individual importa.", w: { Life: 3, Doom: -3, Hope: 2 } },
-        { txt: "Priorizo o grupo. Sinto o peso de quebrar a promessa de estabilidade da equipe.", w: { Blood: 3, Breath: -3, Heart: 2 } },
-        { txt: "Priorizo a clareza. Explico os dados técnicos frios que levaram a essa conclusão.", w: { Light: 3, Void: -3, Space: 2 } }
+    { t: "8. Você precisa demitir alguém esforçado sem resultados. Como lida?", opts: [
+        { txt: "Priorizo o sistema. Elimino a peça falha sem hesitação.", w: { Doom: 3, Mind: 2 }, destroys: "Blood" }, 
+        { txt: "Tento consertar a pessoa. Forço um crescimento que ela não aguenta.", w: { Life: 3, Power: 1 } }, 
+        { txt: "Priorizo o grupo. Sinto o peso de quebrar a união da equipe.", w: { Blood: 3, Heart: 2 } },
+        { txt: "Sou direto. Manter a esperança falsa é crueldade.", w: { Rage: 3, Doom: 2 }, destroys: "Hope" }, 
+        { txt: "Priorizo a clareza. Explico os dados técnicos da conclusão.", w: { Light: 3, Space: 2 } }
     ]},
     { t: "9. Qual é a sua relação com lembranças, fotos e o passado?", opts: [
-        { txt: "Preservação. O passado é a matéria-prima que prova que eu existo e onde estou.", w: { Space: 3, Time: -3, Blood: 2 } },
-        { txt: "Análise. O passado é um arquivo de erros que estudo para não repetir no futuro.", w: { Time: 3, Space: -3, Mind: 2 } },
-        { txt: "Desapego. O que passou não tem mais força; foco no que ainda pode ser criado.", w: { Hope: 3, Rage: -3, Breath: 2 } },
-        { txt: "Nebulosidade. O passado é irrelevante; sou definido apenas pelas minhas escolhas agora.", w: { Void: 3, Light: -3, Heart: 1 } }
-
+        { txt: "Obsessiva. Guardo tudo para impedir que o tempo leve algo de mim.", w: { Space: 3, Time: -2 }, destroys: "Time" }, 
+        { txt: "Análise. O passado é um arquivo de erros que estudo.", w: { Time: 3, Mind: 2 } },
+        { txt: "Pragmatismo. O passado não dita quem sou; prefiro o novo começo.", w: { Time: -3, Space: 1 }, destroys: "Time" }, 
+        { txt: "Crença. Minhas memórias são a fundação da minha fé no futuro.", w: { Hope: 3, Memory: 2 } },
+        { txt: "Nebulosidade. O passado é irrelevante; sou minhas escolhas agora.", w: { Void: 3, Heart: 1 } }
     ]},
-    { t: "10. Diante de um impasse que parece não ter solução, qual sua reação instintiva?", opts: [
-        { txt: "Resistência. Vou forçar o caminho na base da teimosia até que algo quebre.", w: { Rage: 3, Hope: -3, Life: 1 } },
-        { txt: "Aceitação. Entendo que existem limites intransponíveis e paro de lutar.", w: { Doom: 3, Life: -3, Void: 1 } },
-        { txt: "Invenção. Se o caminho está fechado, vou criar um novo por uma via lateral.", w: { Space: 3, Time: -3, Breath: 2 } },
-        { txt: "Investigação. Se não há solução, é porque ainda não enxerguei a verdade total.", w: { Light: 3, Void: -3, Mind: 2 } }
+    { t: "10. Diante de um impasse sem solução, qual sua reação?", opts: [
+        { txt: "Fúria. Destruo o obstáculo na base da força bruta.", w: { Rage: 3, Blood: 1 }, destroys: "Hope" }, 
+        { txt: "Desconstrução. Se as regras criaram o erro, elas devem ser mudadas.", w: { Doom: -3, Life: 1 }, destroys: "Doom" }, 
+        { txt: "Fatalismo. Se parou aqui, é porque era o destino final.", w: { Doom: 3, Void: 1 } }, 
+        { txt: "Invenção. Se o caminho fechou, crio um novo por outra via.", w: { Space: 3, Breath: 2 } },
+        { txt: "Investigação. Se não há solução, não vi a verdade total ainda.", w: { Light: 3, Mind: 2 } }
     ]},
-    { t: "11. Um segredo perigoso chega até você. Qual é o seu primeiro pensamento?", opts: [
-        { txt: "Isso é um compromisso. Agora estou amarrado a quem me contou esse fardo.", w: { Blood: 3, Breath: -3, Doom: 1 } },
-        { txt: "Isso é uma vantagem. Conhecimento é poder para quem sabe quando usá-lo.", w: { Light: 3, Void: -3, Mind: 2 } },
-        { txt: "Isso é suspeito. Provavelmente é uma distorção da realidade para me manipular.", w: { Rage: 3, Hope: -3, Heart: 1 } },
-        { txt: "Isso é ruído. Verdades escondidas não mudam o fluxo inevitável do tempo.", w: { Void: 3, Light: -3, Time: 2 } }
+    { t: "11. Um segredo perigoso chega até você. O que pensa?", opts: [
+        { txt: "É um compromisso. Levarei para o túmulo, custe o que custar.", w: { Blood: 3, Doom: 2 } }, 
+        { txt: "Conhecimento é poder. Revelar isso trará a clareza necessária.", w: { Light: 3, Mind: 2 }, destroys: "Void" }, 
+        { txt: "Isso é suspeito. Deve ser uma distorção para me manipular.", w: { Rage: 3, Heart: 1 } },
+        { txt: "Não quero saber. Ignoro para manter minha paz.", w: { Void: 3, Hope: 1 }, destroys: ["Light", "Blood"] }, 
+        { txt: "É ruído. Segredos não mudam o fluxo inevitável das coisas.", w: { Void: 3, Time: 2 } }
     ]},
-    { t: "12. O grupo insiste em um plano fadado ao erro por puro 'otimismo'. O que você faz?", opts: [
-        { txt: "Exponho a falha lógica e me retiro. Não vou cair junto com um erro óbvio.", w: { Mind: 3, Heart: -3, Doom: 2 } },
-        { txt: "Observo o desastre. Vou usar os destroços para aprender algo novo depois.", w: { Time: 3, Space: -3, Space: 1 } },
-        { txt: "Expresso meu desprezo. A mentira que eles contam a si mesmos me enoja.", w: { Rage: 3, Hope: -3, Light: 2 } },
-        { txt: "Tento dobrar a realidade. Se acreditarmos o suficiente, podemos forçar o sucesso.", w: { Hope: 3, Rage: -3, Life: 2 } }
+    { t: "12. O grupo insiste em um plano fadado ao erro por otimismo. O que faz?", opts: [
+        { txt: "Destruo a ilusão deles. A verdade dói, mas salva.", w: { Rage: 3, Light: 2 }, destroys: "Hope" }, 
+        { txt: "Exponho a falha lógica e me retiro. Não vou cair com eles.", w: { Mind: 3, Doom: 2 }, destroys: "Void" }, 
+        { txt: "Observo o desastre. Vou usar os destroços para aprender depois.", w: { Time: 3, Space: 1 } },
+        { txt: "Apoio cegamente. Minha fé no grupo é maior que a lógica.", w: { Hope: 3, Blood: 2 } }, 
+        { txt: "Tento dobrar a realidade. Com fé, podemos forçar o sucesso.", w: { Hope: 3, Life: 2 } }
     ]},
-    { t: "13. Você está em um ambiente onde ninguém te conhece e você não tem importância. Como se sente?", opts: [
-        { txt: "Livre. Sem expectativas alheias, posso agir sem ser rotulado ou preso.", w: { Void: 3, Light: -3, Breath: 2 } },
-        { txt: "Invisível. Sinto necessidade de mostrar quem sou ou ser útil para ter relevância.", w: { Light: 3, Void: -3, Space: 2 } },
-        { txt: "Observador. É a chance perfeita para analisar a lógica do local sem interferências.", w: { Mind: 3, Heart: -3, Time: 1 } },
-        { txt: "Desconectado. Procuro alguém para criar um vínculo e não me sentir um fantasma.", w: { Blood: 3, Breath: -3, Heart: 2 } }
-     ]},
-    { t: "14. Você precisa magoar alguém próximo para atingir um objetivo necessário. O que te dói?", opts: [
-        { txt: "A traição da lealdade. O dano causado ao contrato invisível entre nós.", w: { Blood: 3, Breath: -3, Heart: 1 } },
-        { txt: "A falha de cálculo. A agonia de saber que talvez houvesse outra saída lógica.", w: { Mind: 3, Heart: -3, Light: 1 } },
-        { txt: "A inevitabilidade. Aceitar que o sofrimento é uma regra mecânica do progresso.", w: { Doom: 3, Life: -3, Time: 2 } },
-        { txt: "Nada. Se a realidade exige ação, hesitar por sentimento é uma fraqueza.", w: { Rage: 3, Hope: -3, Space: 1 } }
+    { t: "13. Você está em um local onde ninguém te conhece. Como se sente?", opts: [
+        { txt: "Livre. Sem expectativas, posso agir sem ser rotulado.", w: { Void: 3, Breath: 2 } },
+        { txt: "Irrelevante. Preciso encontrar alguém para validar minha existência.", w: { Light: 3, Heart: 2 }, destroys: "Breath" },
+        { txt: "Observador. Chance perfeita para analisar a lógica do local.", w: { Mind: 3, Time: 1 } },
+        { txt: "Inquieto. O anonimato me incomoda; vou logo me apresentar e entender o cenário.", w: { Light: 3, Void: -2 }, destroys: "Void" }, 
+        { txt: "Desconectado. Procuro criar um vínculo para não ser um fantasma.", w: { Blood: 3, Heart: 2 } }
     ]},
-    { t: "15. Qual o seu maior medo em relação ao que está por vir?", opts: [
-        { txt: "Ficar preso em um papel ou rotina que eu não escolhi para mim.", w: { Breath: 3, Blood: -3, Heart: 2 } },
-        { txt: "Perder o controle do que construí e ver meu mundo físico desmoronar.", w: { Space: 3, Time: -3, Time: 1 } },
-        { txt: "Descobrir que tudo o que fiz foi irrelevante e não deixou marca na história.", w: { Light: 3, Void: -3, Hope: 2 } },
-        { txt: "O tempo acabar antes que eu consiga realizar o que é necessário.", w: { Time: 3, Space: -3, Doom: 1 } }
+    { t: "14. Você precisa magoar alguém para um objetivo. O que dói?", opts: [
+        { txt: "A traição da lealdade. O dano ao contrato entre nós.", w: { Blood: 3, Heart: 1 } },
+        { txt: "A estagnação. Parar por medo de sacrifício é o verdadeiro erro.", w: { Doom: -3, Life: 1 }, destroys: "Doom" }, 
+        { txt: "A falha de cálculo. A agonia de não ter achado outra saída.", w: { Mind: 3, Light: 1 } },
+        { txt: "A necessidade. Odeio que o universo exija sofrimento.", w: { Rage: 3, Life: 2 }, destroys: "Life" }, 
+        { txt: "Nada. Se a realidade exige ação, o sentimento é uma fraqueza.", w: { Heart: -3, Space: 1 }, destroys: "Heart" } 
     ]},
-    { t: "16. Você recebe uma tarefa repetitiva e monótona. Como seu cérebro reage?", opts: [
-        { txt: "Dissociação. Minha mente viaja enquanto meu corpo cumpre a função no vácuo.", w: { Void: 3, Light: -3, Breath: 2 } },
-        { txt: "Competição. Tento vencer o relógio e terminar cada vez mais rápido.", w: { Time: 3, Space: -3, Life: 1 } },
-        { txt: "Agonia. A falta de mudança e crescimento me faz sentir que estou morrendo.", w: { Life: 3, Doom: -3, Rage: 2 } },
-        { txt: "Otimização. Analiso o processo para torná-lo matematicamente mais eficiente.", w: { Mind: 3, Heart: -3, Space: 2 } }
+    { t: "15. Qual o seu maior medo em relação ao futuro?", opts: [
+        { txt: "Ficar confinado a um lugar. A ideia de estagnação me apavora.", w: { Breath: 3, Life: 2 }, destroys: "Blood" }, 
+        { txt: "Perder o controle do que construí e ver tudo desmoronar.", w: { Space: 3, Time: 1 } },
+        { txt: "Descobrir que tudo foi irrelevante e não deixou marca.", w: { Light: 3, Hope: 2 } },
+        { txt: "Ser exposto. Tenho pavor que vejam quem sou de verdade.", w: { Void: 3, Light: -2 }, destroys: "Light" }, 
+        { txt: "Não ter tempo suficiente. O relógio é meu inimigo.", w: { Time: 3, Doom: 1 } }
     ]},
-
-    { t: "17. Em uma competição, o que é o 'sucesso' para você?", opts: [
-        { txt: "A vitória absoluta. Provar que minha vontade pode superar qualquer limite.", w: { Hope: 3, Rage: -3, Light: 1 } },
-        { txt: "A integridade. Ter seguido as regras e a ordem, independente do resultado.", w: { Doom: 3, Life: -3, Blood: 2 } },
-        { txt: "A evolução. Sentir que saí daquela experiência mais forte ou mais vivo.", w: { Life: 3, Doom: -3, Heart: 2 } },
-        { txt: "A maestria. Executar cada detalhe com a precisão física e técnica máxima.", w: { Space: 3, Time: -3, Mind: 2 } }
+    { t: "16. Você recebe uma tarefa repetitiva. Como reage?", opts: [
+        { txt: "Dissociação. Minha mente viaja enquanto o corpo cumpre a função.", w: { Void: 3, Breath: 2 } },
+        { txt: "Competição. Tento vencer o relógio e terminar mais rápido.", w: { Time: 3, Life: 1 }, destroys: "Space" }, 
+        { txt: "Revolta. Recuso-me a ser tratado como engrenagem.", w: { Rage: 3, Breath: 2 }, destroys: ["Mind", "Blood"] }, 
+        { txt: "Conforto. A repetição me dá segurança e propósito.", w: { Doom: 3, Mind: 2 } }, 
+        { txt: "Otimização. Analiso o processo para ser mecanicamente eficaz.", w: { Mind: 3, Space: 2 } }
     ]},
-    { t: "18. Você descobre que uma verdade em que acreditava a vida toda é uma mentira. O que faz?", opts: [
-        { txt: "Aceito os fatos. Apego emocional a mentiras é um erro de julgamento.", w: { Mind: 3, Heart: -3, Rage: 2 } },
-        { txt: "Busco novo propósito. Preciso de algo real para acreditar e não cair no caos.", w: { Hope: 3, Rage: -3, Blood: 1 } },
-        { txt: "Investigo o culpado. Quero saber quem lucrou ao esconder a luz de mim.", w: { Light: 3, Void: -3, Heart: 2 } },
-        { txt: "Não me importo. Verdade e mentira são apenas ferramentas; uso o que funcionar.", w: { Void: 3, Light: -3, Space: 1 } }
+    { t: "17. Em uma competição, o que é o sucesso?", opts: [
+        { txt: "A vitória absoluta. Ser o único de pé no final.", w: { Hope: 3, Rage: 2 }, destroys: "Doom" }, 
+        { txt: "A lição de realidade. Ver que ideais falham diante da prática.", w: { Rage: 3, Hope: -2 }, destroys: "Hope" }, 
+        { txt: "A integridade. Seguir as regras é mais importante que ganhar.", w: { Blood: 3, Doom: 2 } }, 
+        { txt: "A evolução. Sentir que saí da experiência mais vivo.", w: { Life: 3, Heart: 2 } },
+        { txt: "A perfeição técnica. Execução sem falhas.", w: { Space: 3, Mind: 2 }, destroys: "Time" }
     ]},
-    {t: "19. Como você prefere ser lembrado após partir?", opts: [
-        { txt: "Como alguém que foi livre e nunca se deixou acorrentar por ninguém.", w: { Breath: 3, Blood: -3, Void: 1 } },
-        { txt: "Como alguém que deixou um legado físico e tangível no mundo.", w: { Space: 3, Time: -3, Light: 2 } },
-        { txt: "Como alguém que foi leal e cumpriu suas obrigações até o fim.", w: { Blood: 3, Breath: -3, Doom: 1 } },
-        { txt: "Como alguém que buscou a verdade, não importa quão cruel ela fosse.", w: { Light: 3, Void: -3, Rage: 2 } }
-
+    { t: "18. Você descobre que sua crença de vida é uma mentira. O que faz?", opts: [
+        { txt: "Fico com raiva. Destruo quem me enganou.", w: { Rage: 3, Doom: 1 }, destroys: "Hope" }, 
+        { txt: "Busco novo propósito imediatamente. Não vivo sem crer.", w: { Hope: 3, Void: -2 }, destroys: "Rage" }, 
+        { txt: "Investigo o culpado. Quem lucrou ao esconder a luz de mim?", w: { Light: 3, Heart: 2 } },
+        { txt: "Reinício absoluto. Apago quem eu era e começo de novo.", w: { Heart: -3, Void: 2 }, destroys: "Heart" }, 
+        { txt: "Adapto-me. A verdade é fluida, eu também sou.", w: { Blood: 3, Mind: 1 } }
     ]},
-    { t: "20. O que é 'liberdade' para você no cotidiano?", opts: [
-        { txt: "O silêncio. Não ter ninguém esperando nada ou exigindo minha presença.", w: { Breath: 3, Blood: -3, Void: 2 } },
-        { txt: "A vitalidade. Ter saúde e recursos para agir sem limitações físicas.", w: { Life: 3, Doom: -3, Space: 2 } },
-        { txt: "A expressão. Poder dizer e ser quem eu sou sem filtros ou máscaras lógicas.", w: { Heart: 3, Mind: -3, Rage: 1 } },
-        { txt: "O controle. Ser o dono do meu próprio tempo e ritmo de vida.", w: { Time: 3, Space: -3, Mind: 1 } }
+    { t: "19. Como você prefere ser lembrado?", opts: [
+        { txt: "Como uma lenda. Alguém maior que a própria vida.", w: { Hope: 3, Light: 2 } },
+        { txt: "Como quem deixou um legado físico e tangível no mundo.", w: { Space: 3, Light: 2 } },
+        { txt: "Como um pilar. Quem segurou o mundo quando ele ia cair.", w: { Blood: 3, Doom: 1 } },
+        { txt: "Não quero ser lembrado. Quero paz no esquecimento.", w: { Void: 3, Doom: 2 }, destroys: "Light" }, 
+        { txt: "Como quem destruiu as mentiras e revelou o real.", w: { Rage: 3, Light: 1 }, destroys: "Hope" }
+    ]},
+    { t: "20. O que é liberdade para você?", opts: [
+        { txt: "O silêncio. Não ter ninguém esperando nada de mim.", w: { Breath: 3, Void: 2 } },
+        { txt: "A vitalidade. Ter recursos infinitos para gastar.", w: { Life: 3, Space: 2 } },
+        { txt: "O desapego. Não me sentir preso a nenhuma obrigação.", w: { Rage: 3, Breath: 2 }, destroys: "Blood" }, 
+        { txt: "A expressão pura. Gritar quem eu sou.", w: { Heart: 3, Rage: 1 }, destroys: "Mind" },
+        { txt: "O autocontrole. Ser escravo apenas da minha própria mente.", w: { Mind: 3, Heart: -2 }, destroys: "Heart" }
     ]}
 ]; 
 
@@ -928,7 +945,6 @@ function handleInput(optIndex) {
     let currentQ = activeQuestion;
     if (!currentQ) return; 
 
-    // Salva histórico sem a variável quebrada de destruição
     state.history.push(JSON.parse(JSON.stringify({
         aspectScores: state.aspectScores,
         classScores: state.classScores,
@@ -944,12 +960,24 @@ function handleInput(optIndex) {
             state.aspectScores[key] = (state.aspectScores[key] || 0) + val;
         }
 
+        if (selectedOpt.destroys) {
+            const targets = Array.isArray(selectedOpt.destroys) ? selectedOpt.destroys : [selectedOpt.destroys];
+            
+            targets.forEach(aspect => {
+                if (state.destructionScores.hasOwnProperty(aspect)) {
+                    state.destructionScores[aspect] += 5;
+                    console.log(`Destruição registrada em: ${aspect}`);
+                }
+            });
+        }
+
         state.questionCount++;
         if (state.questionCount < aspectQuestions.length) {
             renderQuestion(aspectQuestions[state.questionCount]);
         } else {
             finishAspectPhase();
         }
+
     } else if (state.stage === "class_quiz") {
         for (let [cls, val] of Object.entries(selectedOpt.w)) {
             state.classScores[cls] = (state.classScores[cls] || 0) + val;
@@ -962,19 +990,37 @@ function handleInput(optIndex) {
         }
     }
 }
+
 function finishAspectPhase() {
-    let sorted = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
+    let finalTotals = {};
+
+    for (let asp in state.aspectScores) {
+        finalTotals[asp] = (state.aspectScores[asp] || 0) + (state.destructionScores[asp] || 0);
+    }
+
+    let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
     state.dominantAspect = sorted[0][0];
 
+    let score = state.aspectScores[state.dominantAspect] || 0;
+    let dest = state.destructionScores[state.dominantAspect] || 0;
+    
+    state.highDestruction = (dest > score);
+
+    if (state.highDestruction) {
+        state.classScores.Prince += 5;
+        state.classScores.Bard += 3;
+    }
+
     let description = aspectSynopses[state.dominantAspect];
-    let transitionText = "Agora que entendemos sua realidade, vamos observar como você <strong>responde</strong> a ela.";
+    let transitionText = state.highDestruction
+        ? `Sua conexão com ${state.dominantAspect} é... complicada. Vamos ver como você lida com esse fardo.`
+        : `Você parece alinhado com ${state.dominantAspect}. Vamos ver como você responde a essa realidade.`;
 
     render(`
         <div class="fade-in">
-            <h1>ASPECTO (PRELIMINAR): ${state.dominantAspect.toUpperCase()}</h1>
+            <h1>ASPECTO: ${state.dominantAspect.toUpperCase()}</h1>
             <p>${description}</p>
-            <hr style="border: 1px dashed #005500; margin: 30px 0; opacity: 0.5;">
-            <p style="font-size: 16px; color: #00aa00;">${transitionText}</p>
+            <p style="color: #00aa00;">${transitionText}</p>
             <button onclick="startClassPhase()">CONTINUAR PARA CLASSES</button>
         </div>
     `);
@@ -1122,6 +1168,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
