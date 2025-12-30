@@ -991,10 +991,6 @@ function finishClassPhase() {
     let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
     let topClass = sortedClasses[0][0];
     
-    // CORREÇÃO DO BUG "PRINCE OF UNDEFINED":
-    // Se for Príncipe ou Bardo, o Aspecto verdadeiro é aquele com a MENOR pontuação (rejeição).
-    // Se for outra classe, mantém o Aspecto com a MAIOR pontuação (afinidade).
-    
     if (topClass === "Prince" || topClass === "Bard") {
         let hatedAspect = Object.keys(state.aspectScores).reduce((a, b) => state.aspectScores[a] < state.aspectScores[b] ? a : b);
         
@@ -1126,6 +1122,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
