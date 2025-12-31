@@ -672,11 +672,11 @@ const questionsByAspect = {
         { txt: "Manipulo sutilmente as circunstâncias para que o caminho arriscado pareça a única opção segura e lógica.", w: { Witch: 3, Prince: 1, Sylph: 1, Knight: -1 } },
         { txt: "Vou na frente sozinho. Se eu sobreviver e der certo, eles me seguirão naturalmente pelo exemplo.", w: { Rogue: 3, Maid: 2, Heir: 1, Bard: -1 } }
     ]},
-    { t: "Você encara um 'bloqueio criativo': a tela branca ou o espaço vazio que precisa preencher. Qual sua reação?", opts: [
-        { txt: "O vazio é um insulto à minha produtividade. Destruo a tela ou mudo de foco imediatamente para algo onde eu possa ver progresso real agora.", w: { Prince: 2, Witch: 1 } },
-        { txt: "O vazio confirma meu medo de que não tenho nada de original para oferecer. Tento ocupar o espaço com tendências para não parecer oco.", w: { Thief: 2, Rogue: 1 } },
-        { txt: "Observo o vazio e tento entender as leis que o regem. Procuro inspiração na geometria ou na estrutura antes de agir.", w: { Mage: 2, Seer: 2, Heir: 1 } },
-        { txt: "Começo a preencher o espaço com pequenos ajustes, cuidando do ambiente até que a ideia certa se sinta segura para emergir.", w: { Sylph: 2, Maid: 1, Knight: 1 } }
+    { t: "Os dados e a lógica garantem que seu objetivo atual é impossível. Qual sua reação imediata?", opts: [
+        { txt: "Recuso essa 'verdade'. Se a realidade diz não, eu quebro as regras ou forço um caminho na marra.", w: { Prince: 2, Witch: 1 } },
+        { txt: "Entro em pânico. Busco validação em outras pessoas para sustentar minha crença que está desmoronando.", w: { Thief: 2, Rogue: 1 } },
+        { txt: "Analiso friamente. Tento entender a lógica da falha e, se for real, aceito e sigo o fluxo.", w: { Mage: 2, Seer: 2, Heir: 1 } },
+        { txt: "Mantenho as aparências. Continuo agindo como se fosse dar certo para preservar a moral e o esforço.", w: { Sylph: 2, Maid: 1, Knight: 1 } }
     ]},
     { t: "Você está sozinho em um quarto em silêncio absoluto. Como essa ausência de estímulo te afeta?", opts: [
         { txt: "A inércia me desespera. Começo a organizar coisas freneticamente; preciso sentir que o tempo está passando e algo está sendo feito.", w: { Prince: 1, Knight: 2, Maid: 1 } },
@@ -1183,6 +1183,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
