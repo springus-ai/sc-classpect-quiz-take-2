@@ -95,7 +95,7 @@ const aspectQuestions = [
     ]},
     { t: "8. Você precisa demitir alguém esforçado sem resultados. Como lida?", opts: [
         { txt: "Priorizo o sistema. Elimino a peça falha sem hesitação.", w: { Doom: 3, Mind: 2 }, destroys: "Blood" }, 
-        { txt: "Tento consertar a pessoa. Forço um crescimento que ela não aguenta.", w: { Life: 3, Power: 1 } }, 
+        { txt: "Tento consertar a pessoa. Forço um crescimento que ela não aguenta.", w: { Life: 3, Hope: 2 } }, 
         { txt: "Priorizo o grupo. Sinto o peso de quebrar a união da equipe.", w: { Blood: 3, Heart: 2 } },
         { txt: "Sou direto. Manter a esperança falsa é crueldade.", w: { Rage: 3, Doom: 2 }, destroys: "Hope" }, 
         { txt: "Priorizo a clareza. Explico os dados técnicos da conclusão.", w: { Light: 3, Space: 2 } }
@@ -104,7 +104,7 @@ const aspectQuestions = [
         { txt: "Obsessiva. Guardo tudo para impedir que o tempo leve algo de mim.", w: { Space: 3, Time: -2 }, destroys: "Time" }, 
         { txt: "Análise. O passado é um arquivo de erros que estudo.", w: { Time: 3, Mind: 2 } },
         { txt: "Pragmatismo. O passado não dita quem sou; prefiro o novo começo.", w: { Time: -3, Space: 1 }, destroys: "Time" }, 
-        { txt: "Crença. Minhas memórias são a fundação da minha fé no futuro.", w: { Hope: 3, Memory: 2 } },
+        { txt: "Crença. Minhas memórias são a fundação da minha fé no futuro.", w: { Hope: 3, Time: 2 } },
         { txt: "Nebulosidade. O passado é irrelevante; sou minhas escolhas agora.", w: { Void: 3, Heart: 1 } }
     ]},
     { t: "10. Diante de um impasse sem solução, qual sua reação?", opts: [
@@ -699,7 +699,7 @@ const questionsByAspect = {
         { txt: "Pulo fora antes do impacto final. Minha prioridade é salvar a minha pele, pois não vejo sentido em afundar junto com o barco.", w: { Thief: 3, Prince: 2, Witch: 1, Rogue: -3 } }
     ]},
     { t: "Você descobre uma falha técnica em um contrato ou nos termos de uso de um serviço que permite obter vantagens ilimitadas (dinheiro, acesso, itens).", opts: [
-        { txt: "Exploro a falha ao máximo para ganho pessoal. Se o sistema deixou uma porta aberta, a culpa é de quem escreveu as regras, não minha.", w: { Thief: 3, Vriska: 0, Witch: 2, Prince: 1, Seer: -2 } },
+        { txt: "Exploro a falha ao máximo para ganho pessoal. Se o sistema deixou uma porta aberta, a culpa é de quem escreveu as regras, não minha.", w: { Thief: 3, Witch: 2, Prince: 1, Seer: -2 } },
         { txt: "Reporto o erro aos administradores. Regras existem para manter o equilíbrio, e um sistema quebrado prejudica a todos a longo prazo.", w: { Sylph: 3, Seer: 2, Heir: 1, Thief: -3 } },
         { txt: "Compartilho o 'glitch' com meus amigos próximos para que todos nós possamos nos beneficiar antes que consertem.", w: { Rogue: 3, Maid: 2, Page: 1, Prince: -1 } },
         { txt: "Fico paranoico de que usar isso trará consequências terríveis ou punições cármicas, então prefiro não tocar.", w: { Mage: 3, Knight: 2, Bard: -1, Witch: -2 } }
@@ -1168,6 +1168,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
