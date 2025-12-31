@@ -49,7 +49,7 @@ const aspectQuestions = [
         { txt: "Exijo que todos vão. Se quebrarmos a corrente agora, nossa união não vale nada.", w: { Blood: 3, Doom: 2 } },
         { txt: "Não apareço. Se não me faz bem, não faz sentido me sentir preso.", w: { Breath: 3, Blood: -3 }, destroys: "Blood" }, 
         { txt: "Sugiro mudanças práticas para que a tradição volte a ser divertida.", w: { Mind: 3, Space: 2 } },
-        { txt: "Analiso meu deslocamento; talvez a falha esteja na minha essência.", w: { Heart: 3, Light: 2 } }
+        { txt: "Analiso o motivo do meu cansaço. Talvez a falha esteja em mim, não na tradição.", w: { Heart: 3, Light: 2 } }
     ]},
     { t: "2. Você descobre um erro grave de um colega de trabalho que é seu amigo. Isso pode prejudicá-lo no futuro. O que você faz?", opts: [
         { txt: "Exponho o erro imediatamente. Mesmo que doa, ele precisa saber a verdade.", w: { Light: 3, Rage: 1 }, destroys: "Void" }, 
@@ -66,7 +66,7 @@ const aspectQuestions = [
         { txt: "Se isso tem o potencial de crescer e mudar minha realidade.", w: { Hope: 3, Light: 2 } }
     ]},
     { t: "4. Como você lida com uma crítica dura sobre sua competência?", opts: [
-        { txt: "Uso minha lógica para desmontar o argumento do crítico peça por peça.", w: { Mind: 3, Rage: 1 }, destroys: "Mind" }, 
+        { txt: "Uso minha lógica para desmontar o argumento do crítico peça por peça.", w: { Mind: 3, Rage: 1 }, destroys: "Void" }, 
         { txt: "Foco no que é construtivo para me aprimorar tecnicamente.", w: { Mind: 3, Space: 2 } },
         { txt: "Sinto revolta contra a autoridade e a intenção de quem julgou.", w: { Rage: 3, Life: 2 } },
         { txt: "Aceito. Se há falha, as consequências e o julgamento virão.", w: { Doom: 3, Time: 2 } },
@@ -109,7 +109,7 @@ const aspectQuestions = [
     ]},
     { t: "10. Diante de um impasse sem solução, qual sua reação?", opts: [
         { txt: "Fúria. Destruo o obstáculo na base da força bruta.", w: { Rage: 3, Blood: 1 }, destroys: "Hope" }, 
-        { txt: "Desconstrução. Se as regras criaram o erro, elas devem ser mudadas.", w: { Doom: -3, Life: 1 }, destroys: "Doom" }, 
+        { txt: "Desconstrução. Não acredito no impasse. Algo pode ser mudado.", w: { Doom: -3, Hope: 3 }, destroys: "Doom" }, 
         { txt: "Fatalismo. Se parou aqui, é porque era o destino final.", w: { Doom: 3, Void: 1 } }, 
         { txt: "Invenção. Se o caminho fechou, crio um novo por outra via.", w: { Space: 3, Breath: 2 } },
         { txt: "Investigação. Se não há solução, não vi a verdade total ainda.", w: { Light: 3, Mind: 2 } }
@@ -136,11 +136,11 @@ const aspectQuestions = [
         { txt: "Desconectado. Procuro criar um vínculo para não ser um fantasma.", w: { Blood: 3, Heart: 2 } }
     ]},
     { t: "14. Você precisa magoar alguém para um objetivo. O que dói?", opts: [
-        { txt: "A traição da lealdade. O dano ao contrato entre nós.", w: { Blood: 3, Heart: 1 } },
+        { txt: "A traição da lealdade. O dano em nossa amizade entre nós.", w: { Blood: 3, Heart: 1 } },
         { txt: "A estagnação. Parar por medo de sacrifício é o verdadeiro erro.", w: { Doom: -3, Life: 1 }, destroys: "Doom" }, 
         { txt: "A falha de cálculo. A agonia de não ter achado outra saída.", w: { Mind: 3, Light: 1 } },
-        { txt: "A necessidade. Odeio que o universo exija sofrimento.", w: { Rage: 3, Life: 2 }, destroys: "Life" }, 
-        { txt: "Nada. Se a realidade exige ação, o sentimento é uma fraqueza.", w: { Heart: -3, Space: 1 }, destroys: "Heart" } 
+        { txt: "A necessidade. Odeio que o universo exija sofrimento.", w: { Hope: 3, Life: 2 }, destroys: "Life" }, 
+        { txt: "Nada. Se a realidade exige ação, o sentimento é uma fraqueza.", w: { Heart: -3, Rage: 3 }, destroys: "Heart" } 
     ]},
     { t: "15. Qual o seu maior medo em relação ao futuro?", opts: [
         { txt: "Ficar confinado a um lugar. A ideia de estagnação me apavora.", w: { Breath: 3, Life: 2 }, destroys: "Blood" }, 
@@ -1168,6 +1168,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
