@@ -813,7 +813,7 @@ const questionsByAspect = {
     { t: "Você recebe de herança um objeto de família extremamente feio e inútil, mas que sua avó adorava. O que você faz com ele?", opts: [
         { txt: "Mantenho o objeto em destaque na sala. A estética não importa; o que importa é que ele é um âncora material da minha linhagem.", w: { Heir: 3, Maid: 2, Sylph: 1, Prince: -3 } },
         { txt: "Jogo fora ou 'perco' acidentalmente. Não vou deixar que a nostalgia alheia ocupe espaço físico na minha vida atual.", w: { Prince: 3, Bard: 2, Knight: -2, Maid: -2 } },
-        { txt: "Prefiro trocar o objeto por algo que me dê autonomia real agora, em vez de ser refém de uma herança que não escolhi", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -2 } },
+        { txt: "Prefiro trocar o objeto por algo que me dê autonomia real agora, em vez de ser refém de uma herança que não escolhi.", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -2 } },
         { txt: "Guardo em uma caixa no fundo do armário. Sinto culpa demais para jogar fora, mas vergonha demais para exibir.", w: { Page: 3, Knight: 2, Rogue: 1, Seer: -1 } }
     ]},
     { t: "Você é convidado para um evento de família importante, mas está exausto e odeia o ambiente. Qual sua escolha?", opts: [
@@ -848,7 +848,7 @@ const questionsByAspect = {
     ]},
     { t: "Você está sobrecarregado, mas um grupo que depende de você (seja sua família ou seus amigos) exige um sacrifício pessoal de tempo e saúde. O que você faz?", opts: [
         { txt: "Eu aceito, mas garanto que todos saibam o quanto estou me sacrificando. Depois dessa, ninguém pode questionar minha autoridade ou me negar favores", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -3 } },
-        { txt: "Se o grupo não consegue sobreviver sem me drenar, a estrutura é falha. Prefiro que o projeto desmorone a permitir que essas obrigações ditem como devo viver minha vida.", w: { Prince: 3, Bard: 2, Thief: 1, Maid: -3 } },
+        { txt: "Se eles não conseguem sobreviver sem me drenar, o problema é deles.", w: { Prince: 3, Bard: 2, Thief: 1, Maid: -3 } },
         { txt: "Eu ignoro meu cansaço e faço o que precisa ser feito. Se eu falhar, o sistema para de funcionar, e isso é inadmissível.", w: { Maid: 3, Knight: 2, Sylph: 1, Prince: -3 } },
         { txt: "Eu aceito o fardo, mas tento delegar partes dele para outros que estão menos exaustos, mesmo que eu não receba o crédito.", w: { Rogue: 3, Page: 2, Heir: 1, Thief: -3 } }
     ]},
@@ -862,7 +862,7 @@ const questionsByAspect = {
         { txt: "Sinto uma ansiedade paralisante por estar 'fora'. Fico obcecado em descobrir o que estão falando sem mim.", w: { Thief: 3, Witch: 2, Mage: 1, Rogue: -2 } }, 
         { txt: "Confronto o grupo com agressividade. Se a lealdade deles não é verdadeira, então esse vínculo está morto para mim e eu mesmo o encerro aqui.", w: { Prince: 3, Knight: 2, Sylph: -3, Maid: -2 } }, 
         { txt: "Aceito a exclusão em silêncio, sentindo que talvez eu seja o peso morto que eles precisam deixar para trás para que o grupo flua melhor.", w: { Rogue: 3, Page: 2, Heir: 1, Thief: -3 } }, 
-        { txt: "Analiso friamente o comportamento deles. Se sentiram necessidade de me excluir, o grupo já falhou em sua estrutura base e eu apenas observo a queda.", w: { Seer: 3, Mage: 2, Bard: 1, Knight: -1 } }
+        { txt: "Analiso friamente o comportamento deles. Se sentiram necessidade de me excluir, o grupo já falhou e eu apenas observo a queda.", w: { Seer: 3, Mage: 2, Bard: 1, Knight: -1 } }
     ]},       
     { t: "O grupo em que você está inserido está sem rumo e prestes a se fragmentar por falta de liderança. Como você reage?", opts: [
         { txt: "Sinto a dor como se fosse minha, fico enjoado e quase desmaio. A barreira entre meu corpo e o dele parece sumir.", w: { Thief: 3, Witch: 2, Prince: 1, Rogue: -3 } },
@@ -946,12 +946,14 @@ function handleInput(optIndex) {
     if (!currentQ) return; 
 
     state.history.push(JSON.parse(JSON.stringify({
-        aspectScores: state.aspectScores,
-        classScores: state.classScores,
-        questionCount: state.questionCount,
-        stage: state.stage,
-        currentQueue: state.currentQueue
-    })));
+    aspectScores: state.aspectScores,
+    classScores: state.classScores,
+    destructionScores: state.destructionScores, 
+    questionCount: state.questionCount,
+    stage: state.stage,
+    currentQueue: state.currentQueue,
+    dominantAspect: state.dominantAspect
+})));
 
     let selectedOpt = currentQ.opts[optIndex];
     
@@ -1035,28 +1037,40 @@ function startClassPhase() {
 
 function finishClassPhase() {
     let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
+    
+    if (sortedClasses[0][1] <= 0) {
+        renderNullEnding();
+        return;
+    }
+
     let topClass = sortedClasses[0][0];
     
-    if (topClass === "Prince" || topClass === "Bard") {
-        let hatedAspect = Object.keys(state.aspectScores).reduce((a, b) => state.aspectScores[a] < state.aspectScores[b] ? a : b);
-        
-        console.log(`Classe Destruidora (${topClass}) detectada. Invertendo aspecto de ${state.dominantAspect} para ${hatedAspect}.`);
-        state.dominantAspect = hatedAspect;
-    } 
-
     const resultTitle = `${topClass} of ${state.dominantAspect}`;
     
-    const classDesc = classSynopses[topClass] || "Descrição de classe indisponível.";
-    const aspectDesc = aspectSynopses[state.dominantAspect] || "Descrição de aspecto indisponível.";
-    const resultDesc = `${classDesc} <br><br> ${aspectDesc}`;
+    const classDesc = classSynopses[topClass] || "Descrição de classe indisponível. O Arquivo está corrompido.";
+    const aspectDesc = aspectSynopses[state.dominantAspect] || "Descrição de aspecto indisponível. O Vazio consumiu este dado.";
+    
+    // Monta o texto final
+    const resultDesc = `
+        <div class="synopsis-box">
+            <h3>A CLASSE</h3>
+            <p>${classDesc}</p>
+        </div>
+        <div class="synopsis-box">
+            <h3>O ASPECTO</h3>
+            <p>${aspectDesc}</p>
+        </div>
+    `;
 
     render(`
         <div class="fade-in result-container">
             <h1>SEU CLASSPECT É:</h1>
             <h2 style="color: #4CAF50; font-size: 2.5em; margin: 20px 0;">${resultTitle.toUpperCase()}</h2>
+            
             <div class="result-box" style="text-align: left; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px;">
-                <p>${resultDesc}</p>
+                ${resultDesc}
             </div>
+            
             <button class="retry-button" onclick="location.reload()" style="margin-top: 30px;">REINICIAR SESSÃO</button>
         </div>
     `);
@@ -1137,12 +1151,13 @@ function handleBack() {
     
     state.aspectScores = { ...lastState.aspectScores };
     state.classScores = { ...lastState.classScores };
+    state.destructionScores = { ...lastState.destructionScores };
 
     state.questionCount = lastState.questionCount;
     state.stage = lastState.stage;
     
     state.currentQueue = [...lastState.currentQueue]; 
-    state.dominantAspect = lastState.dominantAspect; 
+    state.dominantAspect = lastState.dominantAspect;
     
     const currentList = state.stage === "aspect_quiz" ? aspectQuestions : state.currentQueue;
     
@@ -1168,6 +1183,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
