@@ -1015,8 +1015,8 @@ function finishAspectPhase() {
 
     let description = aspectSynopses[state.dominantAspect];
     let transitionText = state.highDestruction
-        ? `Sua conexão com ${state.dominantAspect} é... complicada. Vamos ver como você lida com esse fardo.`
-        : `Você parece alinhado com ${state.dominantAspect}. Vamos ver como você responde a essa realidade.`;
+        ? `Sua conexão com ${state.dominantAspect} é... complicada. Vamos ver como você interage com esse aspecto.`
+        : `Passamos da primeira parte! Vamos ver como você interage com esse aspecto.`;
 
     render(`
         <div class="fade-in">
@@ -1183,6 +1183,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
