@@ -186,7 +186,7 @@ const aspectQuestions = [
     ]}
 ]; 
 
-// FASE 2: CLASSES (REPOSTA À REALIDADE)
+// FASE 2: CLASSES
 const questionsByAspect = {
 "Time": [
     { t: "Você tem um projeto vital com um prazo impossível que está se esgotando hoje.", opts: [
@@ -1233,6 +1233,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
