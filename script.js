@@ -69,7 +69,7 @@ const aspectQuestions = [
         { txt: "Penso: 'Ok, faz sentido?'. Se a lógica dele estiver certa, eu aceito. Se não, eu ignoro.", w: { Mind: 3, Light: 2 }, destroys: "Void" }, 
         { txt: "Já penso em como ajustar. É só matéria-prima pra deixar o negócio melhor.", w: { Space: 3, Mind: 1 } },
         { txt: "Fico irritado. Quem ele pensa que é pra falar assim comigo? É pessoal.", w: { Rage: 3, Heart: 2 } },
-        { txt: "Sinto o peso e aceito. Talvez eu não seja tão bom quanto pensava, e tá tudo bem.", w: { Doom: 3, Time: 2 } },
+        { txt: "Sinto o peso e aceito. Talvez eu não seja tão bom quanto pensava, e tá tudo bem.", w: { Doom: 3, Rage: 2, Time: 2 } },
         { txt: "Fico curioso. O que ele viu que eu não vi? Quero entender o ponto de vista.", w: { Light: 3, Blood: 1 } }
     ]},
     { t: "5. O que te faz perder a paciência numa discussão?", opts: [
@@ -143,7 +143,7 @@ const aspectQuestions = [
         { txt: "Me trair. Fazer algo que vai contra o que eu acredito que sou.", w: { Heart: 3, Rage: 2 } } 
     ]},
     { t: "15. Quando você pensa no futuro distante, o que te assusta?", opts: [
-        { txt: "Ficar estagnado. A ideia de estar no mesmo lugar fazendo a mesma coisa me mata.", w: { Breath: 3, Life: 2 }, destroys: "Blood" }, 
+        { txt: "Ficar estagnado. A ideia de estar no mesmo lugar fazendo a mesma coisa me mata.", w: { Breath: 3, Life: 2, Rage: 4 }, destroys: "Blood" }, 
         { txt: "Perder tudo. Ver as coisas que eu construí desmoronando.", w: { Space: 3, Doom: 1 } },
         { txt: "Não saber. Passar a vida inteira sem entender qual era o sentido disso tudo.", w: { Light: 3, Mind: 2 } },
         { txt: "Ser exposto. Medo de descobrirem meus podres ou me julgarem.", w: { Void: 3, Doom: 1 }, destroys: "Light" }, 
@@ -1233,6 +1233,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
