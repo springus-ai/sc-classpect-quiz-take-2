@@ -1036,51 +1036,74 @@ function startClassPhase() {
 }
 
 function finishClassPhase() {
+    
     let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
     
+    let sortedAspects = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
+
     if (sortedClasses[0][1] <= 0) {
         renderNullEnding();
         return;
     }
 
     let topClass = sortedClasses[0][0];
-    let domAspect = state.dominantAspect; 
-    
-    // Textos
-    let classDesc = classSynopses[topClass] || "Dados corrompidos na fonte.";
-    let aspectDesc = aspectSynopses[domAspect] || "Dados obscurecidos pelo Vazio.";
-    
-    let top3 = sortedClasses.slice(0, 3);
+    let topAspect = state.dominantAspect; 
+
+    let classDesc = classSynopses[topClass] || "Dados corrompidos.";
+    let aspectDesc = aspectSynopses[topAspect] || "Dados obscurecidos.";
+
+    let top3Classes = sortedClasses.slice(0, 3);
+    let top3Aspects = sortedAspects.slice(0, 3); 
 
     render(`
         <div class="result-box fade-in">
-            <h1 style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">${topClass.toUpperCase()} OF ${domAspect.toUpperCase()}</h1>
+            <h1 style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">${topClass.toUpperCase()} OF ${topAspect.toUpperCase()}</h1>
             <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
             
             <div style="text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
-                <p style="margin-bottom: 20px;">${aspectDesc}</p> 
+                
+                <h3 style="color: #00ff00; font-size: 0.9em; margin-bottom: 5px;">O ASPECTO:</h3>
+                <div id="aspect-display-area">
+                    <p style="margin-bottom: 20px;">${aspectDesc}</p> 
+                </div>
                 
                 <hr style="border: 0; border-top: 1px solid #005500; margin: 20px 0;">
                 
+                <h3 style="color: #00ff00; font-size: 0.9em; margin-bottom: 5px;">A CLASSE:</h3>
                 <div id="class-display-area">
                     <p>${classDesc}</p>
                 </div>
 
-                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-                    Ao confrontar a realidade do <strong>${domAspect}</strong>, você adotou a estratégia do <strong>${topClass}</strong>. 
+                <p style="margin-top: 25px; font-size: 0.9em; opacity: 0.8; border-top: 1px dashed #005500; padding-top: 15px;">
+                    Ao confrontar a realidade do <strong>${topAspect}</strong>, você adotou a estratégia do <strong>${topClass}</strong>. 
                     Esta é a sua ferramenta de sobrevivência e sua identidade no jogo.
                 </p>
             </div>
 
-            <div class="top3-explorer" style="margin: 25px 0; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
-                <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR POTENCIALIDADES:</p>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    ${top3.map(item => `
-                        <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 8px 12px; font-size: 12px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
-                            ${item[0]} (${item[1]} pts)
-                        </button>
-                    `).join('')}
+            <div class="exploration-container" style="display: flex; flex-wrap: wrap; gap: 20px; margin: 25px 0;">
+                
+                <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
+                    <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">POSSÍVEIS CLASSES:</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        ${top3Classes.map(item => `
+                            <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 6px 10px; font-size: 11px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
+                                ${item[0]} (${item[1]})
+                            </button>
+                        `).join('')}
+                    </div>
                 </div>
+
+                <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
+                    <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">POSSÍVEIS ASPECTOS:</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        ${top3Aspects.map(item => `
+                            <button class="top3-btn" onclick="updateAspectView('${item[0]}')" style="padding: 6px 10px; font-size: 11px; background: #000011; border: 1px solid #0088ff; color: #0088ff; cursor: pointer; transition: 0.3s;">
+                                ${item[0]} (${item[1]})
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+
             </div>
             
             <p style="font-style: italic; color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
@@ -1096,6 +1119,18 @@ window.updateClassView = function(className) {
         displayArea.style.opacity = '0';
         setTimeout(() => {
             const newDesc = classSynopses[className] || "Descrição não encontrada.";
+            displayArea.innerHTML = `<p>${newDesc}</p>`;
+            displayArea.style.opacity = '1';
+        }, 150);
+    }
+};
+
+window.updateAspectView = function(aspectName) {
+    const displayArea = document.getElementById('aspect-display-area');
+    if (displayArea) {
+        displayArea.style.opacity = '0';
+        setTimeout(() => {
+            const newDesc = aspectSynopses[aspectName] || "Descrição não encontrada.";
             displayArea.innerHTML = `<p>${newDesc}</p>`;
             displayArea.style.opacity = '1';
         }, 150);
@@ -1199,6 +1234,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
