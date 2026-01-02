@@ -1044,43 +1044,59 @@ function finishClassPhase() {
     }
 
     let topClass = sortedClasses[0][0];
+    let domAspect = state.dominantAspect; 
     
-    const resultTitle = `${topClass} of ${state.dominantAspect}`;
+    // Textos
+    let classDesc = classSynopses[topClass] || "Dados corrompidos na fonte.";
+    let aspectDesc = aspectSynopses[domAspect] || "Dados obscurecidos pelo Vazio.";
     
-    const classDesc = classSynopses[topClass] || "Descrição de classe indisponível. O Arquivo está corrompido.";
-    const aspectDesc = aspectSynopses[state.dominantAspect] || "Descrição de aspecto indisponível. O Vazio consumiu este dado.";
-    
-    // Monta o texto final
-    const resultDesc = `
-        <div class="synopsis-box">
-            <h3>A CLASSE</h3>
-            <p>${classDesc}</p>
-        </div>
-        <div class="synopsis-box">
-            <h3>O ASPECTO</h3>
-            <p>${aspectDesc}</p>
-        </div>
-    `;
+    let top3 = sortedClasses.slice(0, 3);
 
     render(`
-        <div class="fade-in result-container">
-            <h1>SEU CLASSPECT É:</h1>
-            <h2 style="color: #4CAF50; font-size: 2.5em; margin: 20px 0;">${resultTitle.toUpperCase()}</h2>
+        <div class="result-box fade-in">
+            <h1 style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">${topClass.toUpperCase()} OF ${domAspect.toUpperCase()}</h1>
+            <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
             
-            <div class="result-box" style="text-align: left; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px;">
-                ${resultDesc}
+            <div style="text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
+                <p style="margin-bottom: 20px;">${aspectDesc}</p> 
+                
+                <hr style="border: 0; border-top: 1px solid #005500; margin: 20px 0;">
+                
+                <div id="class-display-area">
+                    <p>${classDesc}</p>
+                </div>
+
+                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    Ao confrontar a realidade do <strong>${domAspect}</strong>, você adotou a estratégia do <strong>${topClass}</strong>. 
+                    Esta é a sua ferramenta de sobrevivência e sua identidade no jogo.
+                </p>
+            </div>
+
+            <div class="top3-explorer" style="margin: 25px 0; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
+                <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR POTENCIALIDADES:</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    ${top3.map(item => `
+                        <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 8px 12px; font-size: 12px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
+                            ${item[0]} (${item[1]} pts)
+                        </button>
+                    `).join('')}
+                </div>
             </div>
             
-            <button class="retry-button" onclick="location.reload()" style="margin-top: 30px;">REINICIAR SESSÃO</button>
+            <p style="font-style: italic; color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
+            
+            <button onclick="location.reload()" style="margin-top:20px;">REINICIAR SESSÃO</button>
         </div>
     `);
 }
+
 window.updateClassView = function(className) {
     const displayArea = document.getElementById('class-display-area');
     if (displayArea) {
         displayArea.style.opacity = '0';
         setTimeout(() => {
-            displayArea.innerHTML = `<p>${classSynopses[className]}</p>`;
+            const newDesc = classSynopses[className] || "Descrição não encontrada.";
+            displayArea.innerHTML = `<p>${newDesc}</p>`;
             displayArea.style.opacity = '1';
         }, 150);
     }
@@ -1177,12 +1193,13 @@ window.onload = () => {
         <div class="fade-in">
             <h1>TESTE DE CLASSPECT DO STREETCRUSH</h1>
             <p>Opa, SC aqui. Aquele do MEMO_BRASIL.</p>
-            <p>Antes de tudo, vamos contextualizar sobre esse teste. Não fiz um simples "copia e cola" de testes que já existem, levei duas semanas mexendo (e um dia!) nesse projeto por um motivo. As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC e Vozes de Anjos.</p>
+            <p>Antes de tudo, vamos contextualizar sobre esse teste. Não fiz um simples "copia e cola" de testes que já existem, levei duas semanas mexendo (e um dia!) nesse projeto por um motivo. As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos.</p>
             <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
             <button onclick="start()">Bora ver.</button>
         </div>
     `);
 };
+
 
 
 
