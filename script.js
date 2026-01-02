@@ -1177,19 +1177,29 @@ function renderQuestion(q) {
 }
 
 function handleSkip() {
-        state.questionCount++;
-        
-        if (state.stage === "aspect_quiz") {
-            if (state.questionCount < aspectQuestions.length) {
-                renderQuestion(aspectQuestions[state.questionCount]);
-            } else {
-                finishAspectPhase();
-            }
-        } else if (state.stage === "class_quiz") {
-            if (state.questionCount < state.currentQueue.length) {
-                renderQuestion(state.currentQueue[state.questionCount]);
-            } else {
-                finishClassPhase();
+    state.history.push(JSON.parse(JSON.stringify({
+        aspectScores: state.aspectScores,
+        classScores: state.classScores,
+        destructionScores: state.destructionScores,
+        questionCount: state.questionCount,
+        stage: state.stage,
+        currentQueue: state.currentQueue,
+        dominantAspect: state.dominantAspect
+    })));
+
+    state.questionCount++;
+
+    if (state.stage === "aspect_quiz") {
+        if (state.questionCount < aspectQuestions.length) {
+            renderQuestion(aspectQuestions[state.questionCount]);
+        } else {
+            finishAspectPhase();
+        }
+    } else if (state.stage === "class_quiz") {
+        if (state.questionCount < state.currentQueue.length) {
+            renderQuestion(state.currentQueue[state.questionCount]);
+        } else {
+            finishClassPhase();
         }
     }
 }
@@ -1233,6 +1243,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
