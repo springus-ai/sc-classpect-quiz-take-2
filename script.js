@@ -160,7 +160,7 @@ const aspectQuestions = [
         { txt: "Provar meu ponto. Mostrar que meu jeito de jogar é o melhor.", w: { Hope: 3, Rage: 1 } }, 
         { txt: "Saber tudo. Ler o jogo do adversário e antecipar cada movimento.", w: { Light: 3, Rage: 2 }, destroys: "Void" }, 
         { txt: "O time ganhar. Não importa se eu joguei mal, se o time levou tá valendo.", w: { Blood: 3, Doom: 1 } }, 
-        { txt: "Sair mais forte. O XP e o treino valem mais que o troféu.", w: { Life: 3, Heart: 1 } },
+        { txt: "Sair mais forte. A experiência e o treino valem mais que o troféu.", w: { Life: 3, Heart: 1 } },
         { txt: "Execução perfeita. Fazer a jogada mais bonita ou eficiente possível.", w: { Mind: 3, Space: 1 }, destroys: "Heart" }
     ]},
     { t: "18. Você descobre que algo que acreditava muito era mentira. E agora?", opts: [
@@ -1234,6 +1234,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
