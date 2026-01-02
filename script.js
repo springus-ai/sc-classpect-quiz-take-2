@@ -68,20 +68,20 @@ const aspectQuestions = [
     { t: "4. Alguém faz uma crítica pesada sobre algo que você fez. Como você reage por dentro?", opts: [
         { txt: "Penso: 'Ok, faz sentido?'. Se a lógica dele estiver certa, eu aceito. Se não, eu ignoro.", w: { Mind: 3, Light: 2 }, destroys: "Void" }, 
         { txt: "Já penso em como ajustar. É só matéria-prima pra deixar o negócio melhor.", w: { Space: 3, Mind: 1 } },
-        { txt: "Fico puto. Quem ele pensa que é pra falar assim comigo? É pessoal.", w: { Rage: 3, Heart: 2 } },
-        { txt: "Sinto o peso. Talvez eu não seja tão bom quanto pensava, e tá tudo bem.", w: { Doom: 3, Time: 2 } },
+        { txt: "Fico irritado. Quem ele pensa que é pra falar assim comigo? É pessoal.", w: { Rage: 3, Heart: 2 } },
+        { txt: "Sinto o peso e aceito. Talvez eu não seja tão bom quanto pensava, e tá tudo bem.", w: { Doom: 3, Time: 2 } },
         { txt: "Fico curioso. O que ele viu que eu não vi? Quero entender o ponto de vista.", w: { Light: 3, Blood: 1 } }
     ]},
     { t: "5. O que te faz perder a paciência numa discussão?", opts: [
         { txt: "Gente sonsa. A pessoa sabe que tá errada mas continua fingindo que não.", w: { Rage: 3, Light: 2 }, destroys: "Hope" }, 
-        { txt: "Gente amarga. Aquele tipo que só reclama e corta o barato de quem tá empolgado.", w: { Hope: 3, Life: 2 }, destroys: "Rage" }, 
+        { txt: "Gente amarga. Aquele tipo que só reclama e desanima quem tá empolgado.", w: { Hope: 3, Life: 2 }, destroys: "Rage" }, 
         { txt: "Frieza. Tratar pessoas como números ou estatísticas me tira do sério.", w: { Heart: 3, Blood: 2 } },
         { txt: "Burrice ou teimosia. A pessoa não segue uma linha de raciocínio lógico.", w: { Mind: 3, Doom: 2 } },
-        { txt: "Drama. Odeio quando aumentam as coisas ou fazem cena sem necessidade.", w: { Light: 2, Rage: -1, Mind: 2 }, destroys: "Rage" } 
+        { txt: "Drama. Odeio quando aumentam o peso das coisas ou fazem cena sem necessidade.", w: { Light: 2, Rage: -1, Mind: 2 }, destroys: "Rage" } 
     ]},
     { t: "6. Fim de semana livre, celular desligado, nada pra fazer. Como você se sente?", opts: [
         { txt: "Agoniado. Parece que estou perdendo tempo de vida.", w: { Time: 3, Life: 1 }, destroys: "Space" }, 
-        { txt: "Sozinho. Sem ninguém falando comigo, parece que eu sumo.", w: { Light: 2, Blood: 2 }, destroys: "Breath" }, 
+        { txt: "Sozinho. Sem ninguém falando comigo, parece que eu sumo.", w: { Light: 2, Blood: 4 }, destroys: "Breath" }, 
         { txt: "Aliviado. Finalmente ninguém me enchendo o saco ou exigindo coisas.", w: { Breath: 3, Void: 2 } }, 
         { txt: "Reflexivo. É a hora que eu paro pra conversar comigo mesmo.", w: { Heart: 3, Mind: 2 } },
         { txt: "Entediado. Preciso arranjar alguma coisa pra fazer ou me mexer.", w: { Life: 3, Rage: 1 } }
@@ -123,7 +123,7 @@ const aspectQuestions = [
     ]},
     { t: "12. Todo mundo tá empolgado com uma ideia que você sabe que vai dar errado. Você:", opts: [
         { txt: "Falo na lata. Vocês estão viajando, vai dar ruim.", w: { Rage: 3, Doom: 2 }, destroys: "Hope" }, 
-        { txt: "Explico a lógica. 'Pelos meus cálculos, isso não para em pé'.", w: { Mind: 3, Light: 2 }, destroys: "Void" }, 
+        { txt: "Explico a lógica. Pelos meus cálculos, isso não vai dar bom.", w: { Mind: 3, Light: 2 }, destroys: "Void" }, 
         { txt: "Deixo rolar. Às vezes a gente só aprende quebrando a cara mesmo.", w: { Time: 3, Life: 1 } },
         { txt: "Apoio. A lógica diz que não, mas se todo mundo acreditar, vai que dá?", w: { Hope: 3, Breath: 2 } }, 
         { txt: "Ajudo a fazer. O importante é a gente estar fazendo alguma coisa juntos e evoluindo.", w: { Life: 3, Space: 2 } }
@@ -150,8 +150,8 @@ const aspectQuestions = [
         { txt: "O fim. O tempo acabando e a morte chegando, simples assim.", w: { Time: 3, Doom: 2 } }
     ]},
     { t: "16. Tarefa chata e repetitiva no trabalho/escola. Como você lida?", opts: [
-        { txt: "Viajo na maionese. Faço no automático enquanto penso em outra coisa.", w: { Void: 3, Heart: 1 } },
-        { txt: "Speedrun. Tento ver quão rápido consigo terminar pra me livrar.", w: { Time: 3, Mind: 1 }, destroys: "Space" }, 
+        { txt: "Deixo acontecer naturalmente. Faço no automático enquanto penso em outra coisa.", w: { Void: 3, Heart: 1 } },
+        { txt: "Agilizando tudo. Tento ver quão rápido consigo terminar pra me livrar.", w: { Time: 3, Mind: 1 }, destroys: "Space" }, 
         { txt: "Revolta. Fico irritado de ter que fazer algo que uma máquina faria.", w: { Rage: 3, Breath: 2 }, destroys: ["Mind", "Blood"] }, 
         { txt: "De boa. Pelo menos eu sei o que tenho que fazer, é tranquilo.", w: { Doom: 3, Blood: 2 } }, 
         { txt: "Planejo. Uso esse tempo morto pra organizar minha vida mentalmente.", w: { Space: 3, Light: 1 } }
@@ -1199,6 +1199,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
