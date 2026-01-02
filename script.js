@@ -1061,6 +1061,7 @@ function finishClassPhase() {
             <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
             
             <div style="text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
+                
                 <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 5px;">O ASPECTO:</h3>
                 <div id="aspect-display-area">
                     <p style="margin-bottom: 20px;">${aspectDesc}</p> 
@@ -1078,26 +1079,30 @@ function finishClassPhase() {
                 </p>
             </div>
 
-            <div class="top3-explorer" style="margin: 25px 0; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
-                <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR CLASSES:</p>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    ${top3Classes.map(item => `
-                        <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 8px 12px; font-size: 12px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
-                            ${item[0]} (${item[1]} pts)
-                        </button>
-                    `).join('')}
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 25px 0;">
+                
+                <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
+                    <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR CLASSES:</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        ${top3Classes.map(item => `
+                            <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 6px 10px; font-size: 11px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
+                                ${item[0]} (${item[1]})
+                            </button>
+                        `).join('')}
+                    </div>
                 </div>
-            </div>
 
-            <div class="top3-explorer" style="margin: 25px 0; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
-                <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR ASPECTOS:</p>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    ${top3Aspects.map(item => `
-                        <button class="top3-btn" onclick="updateAspectView('${item[0]}')" style="padding: 8px 12px; font-size: 12px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
-                            ${item[0]} (${item[1]} pts)
-                        </button>
-                    `).join('')}
+                <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
+                    <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR ASPECTOS:</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        ${top3Aspects.map(item => `
+                            <button class="top3-btn" onclick="updateAspectView('${item[0]}')" style="padding: 6px 10px; font-size: 11px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
+                                ${item[0]} (${item[1]})
+                            </button>
+                        `).join('')}
+                    </div>
                 </div>
+
             </div>
             
             <p style="font-style: italic; color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
@@ -1228,6 +1233,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
