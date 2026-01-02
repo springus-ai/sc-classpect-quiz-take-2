@@ -49,7 +49,7 @@ const aspectQuestions = [
         { txt: "Sinto que tenho que ir. Se eu não for, quem vai organizar as coisas? Alguém tem que garantir que aconteça.", w: { Blood: 2, Doom: 3, Rage: 1 } },
         { txt: "Sinceramente? Invento uma desculpa. Não sou obrigado a fazer o que não quero só por pressão social.", w: { Breath: 3, Blood: -3, Void: 2 }, destroys: "Blood" }, 
         { txt: "Proponho mudar o formato. Se a tradição não faz mais sentido lógico, vamos otimizar ou acabar com ela.", w: { Mind: 3, Space: 2 } },
-        { txt: "Fico matutando por que eu não gosto mais. Será que eu mudei? Será que eles mudaram?", w: { Heart: 3, Light: 2 } }
+        { txt: "Fico pensando sobre o por que eu não gosto mais. Será que eu mudei? Será que eles mudaram?", w: { Heart: 3, Light: 2 } }
     ]},
     { t: "2. Um amigo próximo cometeu um erro feio no trabalho que pode custar caro. Qual seu instinto imediato?", opts: [
         { txt: "Não consigo guardar. A verdade vai aparecer uma hora ou outra, melhor limpar o prato logo.", w: { Light: 3, Rage: 2, Hope: -2 }, destroys: "Void" }, 
@@ -1199,6 +1199,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
