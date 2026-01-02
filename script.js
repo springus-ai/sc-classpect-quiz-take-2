@@ -1097,7 +1097,7 @@ function finishClassPhase() {
                     <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">POSSÍVEIS ASPECTOS:</p>
                     <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
                         ${top3Aspects.map(item => `
-                            <button class="top3-btn" onclick="updateAspectView('${item[0]}')" style="padding: 6px 10px; font-size: 11px; background: #000011; border: 1px solid #0088ff; color: #0088ff; cursor: pointer; transition: 0.3s;">
+                            <button class="top3-btn" onclick="updateAspectView('${item[0]}')" style="padding: 6px 10px; font-size: 11px; background: #000011; border: 1px solid ##00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
                                 ${item[0]} (${item[1]})
                             </button>
                         `).join('')}
@@ -1234,6 +1234,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
