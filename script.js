@@ -1009,8 +1009,8 @@ function finishAspectPhase() {
     state.highDestruction = (dest > score);
 
     if (state.highDestruction) {
-        state.classScores.Prince += 5;
-        state.classScores.Bard += 3;
+        state.classScores.Prince += 3;
+        state.classScores.Bard += 2;
     }
 
     let description = aspectSynopses[state.dominantAspect];
@@ -1243,6 +1243,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
