@@ -87,7 +87,7 @@ const aspectQuestions = [
         { txt: "Observo o desastre iminente com uma curiosidade fria, interessado em ver como cada um vai lidar com o impacto.", w: { Time: 3, Light: 2 } }
     ]},
     { t: "8. Em uma festa, você percebe que as pessoas estão rindo de uma piada que você não entendeu. Qual sua reação interna?", opts: [
-        { txt: "Finjo que entendi e rio também; a manutenção da harmonia social é mais importante do que a minha compreensão.", w: { Blood: 3, Mind: 1 } },
+        { txt: "Finjo que entendi e rio também. Posso não fazer ideia do que foi tão engraçado, mas a sensação de exclusão me incomoda.", w: { Blood: 3, Mind: 1 } },
         { txt: "Sinto-me desconectado e invisível, como se eu não estivesse realmente naquela sala com eles.", w: { Void: 3, Heart: 1 } },
         { txt: "Peço que me expliquem a piada; não suporto ser o único a não possuir a informação que o grupo detém.", w: { Light: 3, Rage: 1 }, destroys: "Void" },
         { txt: "Sinto desprezo pela superficialidade da interação e procuro um canto onde possa estar sem obrigações sociais.", w: { Breath: 3, Rage: 2 } }
@@ -1217,6 +1217,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
