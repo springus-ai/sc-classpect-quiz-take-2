@@ -47,7 +47,7 @@ const aspectQuestions = [
     { t: "1. Você está em um projeto fadado ao fracasso. Todos ao seu redor mantêm um sorriso falso. Como você se sente?", opts: [
         { txt: "Sinto que a recusa em reconhecer a falha torna a situação uma farsa patética que me sinto compelido a desmantelar.", w: { Rage: 3, Light: 1 }, destroys: "Hope" },
         { txt: "Sinto que o fracasso é iminente, mas não posso abandonar o grupo; se o navio afundar, eu serei o último a sair para garantir que ninguém fique para trás.", w: { Blood: 3, Doom: 1 } },
-        { txt: "Observo as engrenagens quebrando e já me desvinculei mentalmente para buscar novos caminhos onde meu esforço seja útil.", w: { Mind: 3, Breath: 2 } },
+        { txt: "Observo as engrenagens quebrando e já busco novos caminhos onde meu esforço seja útil.", w: { Mind: 3, Breath: 2 } },
         { txt: "Mantenho a crença de que, se a convicção coletiva for sustentada, podemos manifestar um resultado que a lógica atual nega.", w: { Hope: 3, Life: 1 } }
     ]},
     { t: "2. Um amigo próximo comete um erro moral grave que não afeta você. O que você faz?", opts: [
@@ -1223,6 +1223,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
