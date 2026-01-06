@@ -45,11 +45,11 @@ const classSynopses = {
 // FASE 1: ASPECTO 
 const aspectQuestions = [
     { t: "1. Um grupo de amigos insiste em manter uma tradição anual que você acha cansativa. O que você faz?", opts: [
-        { txt: "Acabo indo. São importantes para mim, então aceito o cansaço como parte do pacote.", w: { Blood: 3, Life: 1, Breath: -2 } },
-        { txt: "Insisto para que todos compareçam. Se a gente começar a abrir exceções, o grupo acaba se perdendo com o tempo.", w: { Doom: 3, Blood: 2, Rage: 1, Breath: -2 } },
+        { txt: "Acabo indo, mas só para cumprir o protocolo. Me incluíram, mas não significa que estou ali de corpo e alma.", w: { Doom: 3, Life: 1, Breath: 1 } },
+        { txt: "Insisto para que todos compareçam. Se a gente começar a abrir exceções, o grupo acaba se perdendo com o tempo.", w: { Blood: 4, Breath: -2 } },
         { txt: "Não vou. Se não está me fazendo bem, não faz sentido me sentir preso a um compromisso só por obrigação.", w: { Breath: 3, Void: 2, Life: 1, Blood: -3 }, destroys: "Blood" }, 
-        { txt: "Tento convencer o pessoal a mudar um pouco o plano para algo que canse menos, mas que ainda sirva para a gente se reunir.", w: { Mind: 3, Space: 2, Heart: -1 } },
-        { txt: "Analiso o motivo do meu cansaço. Talvez a falha esteja em mim, não na tradição.", w: { Heart: 3, Light: 2, Mind: -1 } }
+        { txt: "Tento convencer o pessoal a mudar um pouco o plano para algo que canse menos, mas que ainda sirva para a gente se reunir.", w: { Mind: 3, Life: 2, Space: 2, Heart: -1 } },
+        { txt: "Analiso o motivo do meu cansaço. Pode não ter nada a ver com a tradição em si, mas com algum outro fator na minha vida que esteja me exaurindo.", w: { Heart: 3, Time: 2 } }
     ]},
     { t: "2. Você descobre um erro grave de um colega de trabalho que é seu amigo. Isso pode prejudicá-lo no futuro. O que você faz?", opts: [
         { txt: "Digo a ele exatamente o que vi. Ele precisa ter todos os fatos em mãos para ter clareza sobre a própria situação.", w: { Light: 3, Rage: 2, Void: -3 }, destroys: "Void" }, 
@@ -1243,6 +1243,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
