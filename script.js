@@ -132,7 +132,7 @@ const aspectQuestions = [
         { txt: "Livre. Sem expectativas, posso agir sem ser rotulado.", w: { Breath: 3, Space: 2, Blood: -2, Life: 1 } },
         { txt: "Irrelevante. Preciso encontrar alguém para validar minha existência.", w: { Light: 3, Heart: 2, Void: 2 }, destroys: "Breath" },
         { txt: "Observador. Chance perfeita para analisar a lógica do local.", w: { Mind: 3, Time: 2, Heart: -1 }, destroys: "Void" },
-        { txt: "Inquieto. O anonimato me incomoda; vou logo me apresentar e entender o cenário.", w: { Light: 3, Blood: 1, Void: -3 },
+        { txt: "Inquieto. O anonimato me incomoda; vou logo me apresentar e entender o cenário.", w: { Light: 3, Blood: 1, Void: -3 } },
         { txt: "Desconectado. Sozinho, não tenho um motivo para estar aqui.", w: { Blood: 3, Doom: 2, Breath: -3 } }
     ]},
     { t: "14. Você precisa magoar alguém para um objetivo. O que dói?", opts: [
@@ -1243,6 +1243,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
