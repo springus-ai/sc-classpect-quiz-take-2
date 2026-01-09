@@ -144,7 +144,7 @@ const aspectQuestions = [
     ]},
     { t: "15. Qual o seu maior medo em relação ao futuro?", opts: [
         { txt: "Ficar preso a uma rotina ou a um lugar de onde eu não consiga sair. A ideia de perder a minha autonomia e ser confinado me apavora.", w: { Breath: 3, Void: 2, Time: -3 }, destroys: "Time" }, 
-        { txt: "Ver que tudo o que eu construí com tanto esforço foi desfeito pelo tempo ou que simplesmente não há mais um lugar para as minhas criações no mundo.", w: { Hope: 3, Life: 2, Time: -3 }, destroys: "Time" },
+        { txt: "Perceber que meus ideais eram vazios e que o futuro é apenas um destino inevitável e sem sentido, onde nada do que eu acreditei pode florescer.", w: { Hope: 3, Life: 2, Time: -3 } },
         { txt: "Perceber que a minha existência não teve importância nenhuma ou que eu passarei pelo mundo sem que ninguém realmente me tenha visto.", w: { Light: 3, Heart: 2, Void: -3 } },
         { txt: "Ser exposto de uma forma que eu não consiga controlar. Tenho medo que vasculhem a minha vida e tirem de mim a paz do anonimato.", w: { Void: 3, Rage: 1, Light: -3 }, destroys: "Light" }, 
         { txt: "Não ter tempo suficiente. Sinto uma angústia constante de que o tempo está a acabar e eu não vou conseguir concluir o que é necessário antes que o prazo expire.", w: { Time: 3, Doom: 2, Space: -2 } }
@@ -158,7 +158,7 @@ const aspectQuestions = [
     ]},
     { t: "17. Em uma competição, o que é o sucesso?", opts: [
         { txt: "A vitória de um ideal. O sucesso é mostrar que o que eu acredito é possível e conseguir inspirar os outros com esse resultado.", w: { Hope: 3, Breath: 1, Life: 1, Rage: -3 }, destroys: "Rage" }, 
-        { txt: "A clareza dos fatos. O sucesso é quando a competição revela quem realmente tem a competência, sem mentiras ou favorecimentos.", w: { Rage: 3, Light: 2, Hope: -3 }, destroys: "Hope" }, 
+        { txt: "A clareza dos fatos. O sucesso é quando a competição revela quem realmente tem a competência, sem mentiras ou favorecimentos.", w: { Rage: 2, Light: 3, Hope: -3 } }, 
         { txt: "A união do grupo. O sucesso não é ganhar sozinho, mas garantir que a nossa aliança e lealdade saíram fortalecidas da experiência.", w: { Blood: 3, Heart: 1, Breath: -2 }, destroys: "Breath" }, 
         { txt: "A perfeição do resultado. O sucesso é quando o que foi entregue atinge um nível de excelência técnica e estética que não pode ser contestado.", w: { Space: 3, Mind: 1, Time: -2 } },
         { txt: "A satisfação de ter sido fiel a mim mesmo. Se eu não sacrifiquei a minha identidade para ganhar, então eu já venci, independentemente do placar.", w: { Heart: 3, Void: 1, Mind: -3 } }
@@ -172,7 +172,7 @@ const aspectQuestions = [
     ]},
     { t: "19. Como você prefere ser lembrado?", opts: [
         { txt: "Como alguém que inspirou os outros. Quero que a minha passagem pelo mundo seja vista como um exemplo de que coisas melhores são possíveis.", w: { Hope: 3, Life: 2, Rage: -3 }, destroys: "Rage" },
-        { txt: "Pelas coisas que construí ou criei. Quero deixar um legado físico e duradouro, algo que ocupe um espaço real mesmo quando eu não estiver aqui.", w: { Space: 3, Time: 2, Void: -1 }, destroys: "Time" },
+        { txt: "Pelas coisas que criei. Quero deixar um legado físico e duradouro, algo que ocupe um espaço real mesmo quando eu não estiver aqui.", w: { Space: 3, Time: 2, Void: -1 }, destroys: "Time" },
         { txt: "Como alguém que foi o alicerce de quem precisava. Quero ser lembrado como a pessoa que manteve as coisas unidas quando tudo ia cair.", w: { Blood: 3, Doom: 2, Breath: -2 } },
         { txt: "Prefiro não ser lembrado de forma pública. O meu sucesso é ter vivido a minha vida com privacidade e silêncio, sem precisar de atenção externa.", w: { Void: 3, Mind: 1, Light: -3 }, destroys: "Light" }, 
         { txt: "Como alguém cuja vida teve um significado profundo. Quero que a minha história seja vista como algo importante e que trouxe clareza para o mundo.", w: { Light: 3, Heart: 2, Void: -3 } }
@@ -181,7 +181,7 @@ const aspectQuestions = [
         { txt: "Não ter de dar satisfações. Liberdade é poder ir para onde eu quiser e recomeçar sem os rótulos e as expectativas que os outros me impõem.", w: { Breath: 3, Void: 2, Blood: -3 } },
         { txt: "Ter a segurança de um lugar ao qual pertenço. A verdadeira liberdade é saber que tenho vínculos sólidos que me apoiam se eu cair.", w: { Blood: 3, Doom: 1, Breath: -3 }, destroys: "Breath" },
         { txt: "Poder crescer sem limites. Liberdade é ter saúde, energia e recursos para ir atrás de tudo o que a vida tem para oferecer.", w: { Life: 3, Space: 2, Doom: -3 }, destroys: "Doom" }, 
-        { txt: "Ser quem eu sou de verdade. Liberdade é não ter que usar máscaras ou fingir que sou outra pessoa para ser aceite pela sociedade.", w: { Heart: 3, Rage: 1, Mind: -3 }, destroys: "Mind" },
+        { txt: "Ser quem eu sou de verdade. Liberdade é não ter que usar máscaras ou fingir que sou outra pessoa para ser aceite pela sociedade.", w: { Heart: 3, Rage: 1, Mind: -3 } },
         { txt: "Ter o controle das minhas escolhas. Liberdade é entender os caminhos à minha frente e ser a única pessoa responsável pela direção que decido tomar", w: { Mind: 3, Time: 2, Heart: -3 } }
     ]}
 ]; 
@@ -1243,6 +1243,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
