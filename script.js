@@ -143,8 +143,8 @@ const aspectQuestions = [
         { txt: "A confirmação de que o mundo é cruel. Magoar alguém é apenas a realidade batendo à porta, mostrando que nem tudo se resolve com boas intenções.", w: { Rage: 3, Doom: 1, Hope: -3 }, destroys: "Hope" } 
     ]},
     { t: "15. Qual o seu maior medo em relação ao futuro?", opts: [
-        { txt: "Ficar preso a uma rotina ou a um lugar de onde eu não consiga sair. A ideia de perder a minha autonomia e ser confinado me apavora.", w: { Breath: 3, Void: 2, Blood: -3 }, destroys: "Blood" }, 
-        { txt: "Ver que tudo o que eu construí com tanto esforço foi desfeito pelo tempo ou que simplesmente não há mais um lugar para as minhas criações no mundo.", w: { Space: 3, Life: 2, Time: -3 }, destroys: "Time" },
+        { txt: "Ficar preso a uma rotina ou a um lugar de onde eu não consiga sair. A ideia de perder a minha autonomia e ser confinado me apavora.", w: { Breath: 3, Void: 2, Time: -3 }, destroys: "Time" }, 
+        { txt: "Ver que tudo o que eu construí com tanto esforço foi desfeito pelo tempo ou que simplesmente não há mais um lugar para as minhas criações no mundo.", w: { Hope: 3, Life: 2, Time: -3 }, destroys: "Time" },
         { txt: "Perceber que a minha existência não teve importância nenhuma ou que eu passarei pelo mundo sem que ninguém realmente me tenha visto.", w: { Light: 3, Heart: 2, Void: -3 } },
         { txt: "Ser exposto de uma forma que eu não consiga controlar. Tenho medo que vasculhem a minha vida e tirem de mim a paz do anonimato.", w: { Void: 3, Rage: 1, Light: -3 }, destroys: "Light" }, 
         { txt: "Não ter tempo suficiente. Sinto uma angústia constante de que o tempo está a acabar e eu não vou conseguir concluir o que é necessário antes que o prazo expire.", w: { Time: 3, Doom: 2, Space: -2 } }
@@ -1243,6 +1243,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
