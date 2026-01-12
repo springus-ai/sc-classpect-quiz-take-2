@@ -188,7 +188,8 @@ const aspectQuestions = [
 
 // FASE 2: CLASSES
 const questionsByAspect = {
-t: "Você tem um projeto vital com um prazo impossível que está se esgotando hoje.", 
+    "Time": [
+        { t: "Você tem um projeto vital com um prazo impossível que está se esgotando hoje.", 
         opts: [
             { txt: "Sacrifico meu sono, minha saúde e uso cada segundo para garantir que a entrega seja impecável.", w: { Knight: 3, Maid: 2, Page: 2, Prince: -2 } },
             { txt: "Eu me perco em distrações e acabo perdendo a noção das horas; se o prazo estourar, tudo bem.", w: { Bard: 3, Prince: -1, Knight: -3 } },
@@ -1252,6 +1253,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
