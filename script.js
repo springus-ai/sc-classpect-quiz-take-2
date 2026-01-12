@@ -1097,7 +1097,7 @@ function finishAspectPhase() {
     let finalTotals = {};
 
     for (let asp in state.aspectScores) {
-        finalTotals[asp] = (state.aspectScores[asp] || 0) + (state.destructionScores[asp] || 0);
+        finalTotals[asp] = Math.abs(state.aspectScores[asp] || 0) + (state.destructionScores[asp] || 0);
     }
 
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
@@ -1343,6 +1343,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
