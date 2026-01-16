@@ -11,6 +11,7 @@ body {
     box-sizing: border-box; 
     overflow-y: auto;
 }
+
 #terminal { 
     width: 900px; 
     max-width: 100%; 
@@ -24,6 +25,7 @@ body {
     flex-direction: column; 
     justify-content: center;
 }
+
 button { 
     background: rgba(0, 20, 0, 0.9); 
     color: #00ff00; 
@@ -54,6 +56,7 @@ button:hover {
     font-weight: bold; 
     box-shadow: 0 0 15px #00ff00;
 }
+
 h1 { 
     border-bottom: 2px dashed #00ff00; 
     padding-bottom: 15px; 
@@ -61,39 +64,35 @@ h1 {
     text-transform: uppercase; 
     margin-top: 0;
 }
+
 p { 
     font-size: 18px; 
     line-height: 1.6; 
     margin-bottom: 30px; 
 }
+
 .fade-in { 
     animation: fadeIn 0.8s ease-out; 
 }
+
 @keyframes fadeIn { 
     from { opacity: 0; transform: translateY(10px); } 
     to { opacity: 1; transform: translateY(0); } 
 }
+
 .result-box { 
     border: 4px double #00ff00; 
     padding: 30px; 
     text-align: center; 
 }
+
 .debug { 
     color: #003300; 
     font-size: 10px; 
     margin-top: 20px; 
     text-align: right; 
 }
-.skip-button {
-    background: rgba(20, 20, 20, 0.8) !important;
-    color: #55aa55 !important;
-    border: 1px dashed #004400 !important;
-    padding: 8px 20px !important;
-    width: auto !important;
-    font-size: 12px !important;
-    text-align: center !important;
-    margin-top: 0 !important; 
-}
+
 .skip-button {
     background: rgba(15, 15, 15, 0.9) !important;
     color: #55aa55 !important;
@@ -104,8 +103,8 @@ p {
     font-size: 14px !important;
     text-align: center !important;
     margin-top: 0 !important; 
-    
 }
+
 .back-button {
     background-color: #222 !important; 
     color: #aaa !important;
@@ -128,30 +127,42 @@ p {
     white-space: pre-line;
 }
 
+
 body.red-mode {
     background-color: #050000 !important;
     color: #ff4444 !important;
 }
 
-body.red-mode .result-box, 
-body.red-mode div {
+body.red-mode #terminal {
     border-color: #ff0000 !important;
-    background-color: rgba(40, 0, 0, 0.8) !important;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3) !important;
+    box-shadow: 0 0 30px #660000 !important;
+    background: #0a0000 !important;
 }
 
-body.red-mode h1, 
-body.red-mode h2, 
-body.red-mode strong {
+body.red-mode h1 {
     color: #ff0000 !important;
+    border-bottom-color: #ff0000 !important;
     text-shadow: 0 0 8px #880000 !important;
 }
 
+body.red-mode h2, 
+body.red-mode strong {
+    color: #ff0000 !important;
+    text-shadow: 0 0 5px #aa0000 !important;
+}
+
+body.red-mode .result-box, 
+body.red-mode div[style*="border"] { 
+    border-color: #ff0000 !important;
+    background-color: rgba(40, 0, 0, 0.3) !important;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.2) !important;
+}
+
 body.red-mode button {
-    background-color: #220000 !important;
+    background-color: rgba(40, 0, 0, 0.9) !important;
     color: #ff0000 !important;
     border: 1px solid #ff0000 !important;
-    box-shadow: 0 0 5px #ff0000 !important;
+    box-shadow: 0 0 5px #550000 !important;
 }
 
 body.red-mode button:hover {
@@ -160,8 +171,27 @@ body.red-mode button:hover {
     box-shadow: 0 0 20px #ff0000 !important;
 }
 
+body.red-mode .skip-button,
+body.red-mode .back-button {
+    background: #1a0000 !important;
+    color: #aa4444 !important;
+    border-color: #550000 !important;
+}
+
 body.red-mode hr {
     border-color: #ff0000 !important;
+}
+
+body.red-mode .fade-in {
+    animation: glitch-anim 0.2s infinite !important;
+}
+
+@keyframes glitch-anim {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-1px, 1px); }
+    50% { transform: translate(1px, -1px); }
+    75% { transform: translate(-1px, 0); }
+    100% { transform: translate(0, 0); }
 }
 
 
