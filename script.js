@@ -1055,6 +1055,8 @@ const questionsByAspect = {
 };
 
 function start() {
+    document.body.classList.remove('red-mode');
+    state.stage = "aspect_quiz";
     state.stage = "aspect_quiz";
     state.questionCount = 0;
     renderQuestion(aspectQuestions[0]);
@@ -1423,6 +1425,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
