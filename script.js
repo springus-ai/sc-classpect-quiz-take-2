@@ -67,7 +67,7 @@ const aspectQuestions = [
     ]},
     { t: "4. Como você lida com uma crítica dura sobre sua competência?", opts: [
         { txt: "Avalio se os pontos levantados fazem sentido ou se a pessoa apenas tomou uma decisão errada ao me julgar daquela forma.", w: { Heart: 3, Time: 1 } }, 
-        { txt: "Ignoro o tom da fala e foco apenas no que pode ser útil para melhorar a qualidade técnica do que eu estou entregando.", w: { Space: 3, Mind: 2 }, destroys: "Heart" },
+        { txt: "Me irrito profundamente. Minha competência não deve ser questionada pois exerço meu trabalho sempre com maestria.", w: { Heart: 3, Light: 2 }, destroys: "Void" },
         { txt: "Fico questionando a real intenção por trás da fala. Muita gente critica só para exercer poder ou esconder a própria frustração.", w: { Light: 3, Rage: 2 } },
         { txt: "Aceito o que foi dito. Se eu falhei em ser eficiente, é natural que eu tenha que lidar com as cobranças e os resultados disso.", w: { Doom: 3, Void: 1, Time: 2, Life: -2 }, destroys: "Life" },
         { txt: "Tento enxergar o que a pessoa viu. Às vezes ela percebeu algum detalhe ou uma informação importante que passou batido por mim.", w: { Blood: 3, Light: 2, Void: -2 } }
@@ -1423,6 +1423,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
