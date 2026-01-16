@@ -182,8 +182,5 @@ body.red-mode hr {
     border-color: #ff0000 !important;
 }
 
-body.red-mode .fade-in {
-    animation: glitch-anim 0.2s infinite !important;
-}
 
 
