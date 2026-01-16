@@ -1182,8 +1182,6 @@ function showAspectResultScreen() {
 function renderNullAspectEasterEgg(rngAspect) {
     render(`
         <div class="result-box fade-in" style="text-align: center;">
-            
-            <img src="https://i.imgur.com/zcNK5Dk.png" alt="Void Glitch" style="max-width: 300px; width: 100%; height: auto; margin: 0 auto 20px auto; display: block; border: 1px solid #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.4);">
 
             <h1 style="font-size: 28px; color: #ff0000; text-shadow: 0 0 5px #550000;">DADOS INSUFICIENTES</h1>
             
@@ -1425,6 +1423,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
