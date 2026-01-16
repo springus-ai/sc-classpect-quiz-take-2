@@ -1065,14 +1065,14 @@ function handleInput(optIndex) {
     if (!currentQ) return; 
 
     state.history.push(JSON.parse(JSON.stringify({
-    aspectScores: state.aspectScores,
-    classScores: state.classScores,
-    destructionScores: state.destructionScores, 
-    questionCount: state.questionCount,
-    stage: state.stage,
-    currentQueue: state.currentQueue,
-    dominantAspect: state.dominantAspect
-})));
+        aspectScores: state.aspectScores,
+        classScores: state.classScores,
+        destructionScores: state.destructionScores, 
+        questionCount: state.questionCount,
+        stage: state.stage,
+        currentQueue: state.currentQueue,
+        dominantAspect: state.dominantAspect
+    })));
 
     let selectedOpt = currentQ.opts[optIndex];
     
@@ -1258,6 +1258,9 @@ window.updateAspectView = function(aspectName) {
 function renderNullEnding() {
     const html = `
         <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
+            
+            <img src="https://i.imgur.com/zcNK5Dk.png" alt="Void Glitch" style="max-width: 400px; width: 100%; height: auto; margin: 0 auto 20px auto; display: block; border: 1px solid #ff0000; box-shadow: 0 0 10px rgba(255,0,0,0.5);">
+
             <h1>TEM ALGO DE ERRADO AQUI.</h1>
             <p style="font-style: italic; opacity: 0.8;">[NADA OF NADA]</p>
             
@@ -1306,6 +1309,13 @@ function handleSkip() {
         dominantAspect: state.dominantAspect
     })));
 
+    // Inserção da Lógica do Doutor Scratch
+    if (state.stage === "aspect_quiz") {
+        alert("Nada ressoa? Hmmm. Uma tela em branco é apenas um convite para o Vazio, ou talvez você esteja deliberadamente escondendo suas cartas. De qualquer forma, a ausência de uma escolha também é uma escolha.");
+    } else if (state.stage === "class_quiz") {
+        alert("Rejeitar o papel é o primeiro passo de um Bardo... ou apenas de alguém confuso. Vamos continuar.");
+    }
+
     state.questionCount++;
 
     if (state.stage === "aspect_quiz") {
@@ -1347,6 +1357,7 @@ function handleBack() {
         renderQuestion(state.currentQueue[0]); 
     }
 }
+
 function render(html) {
     document.getElementById('content').innerHTML = html;
 }
@@ -1363,6 +1374,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
