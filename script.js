@@ -1144,9 +1144,10 @@ function finishAspectPhase() {
     showAspectResultScreen();
 }
 
-// Função auxiliar para mostrar a tela de transição de Aspecto
-// (Usada tanto pelo fluxo normal quanto após o Easter Egg)
 function showAspectResultScreen() {
+    document.body.classList.remove('red-mode'); 
+    // ---------------------
+
     let score = state.aspectScores[state.dominantAspect] || 0;
     let dest = state.destructionScores[state.dominantAspect] || 0;
     
@@ -1159,7 +1160,6 @@ function showAspectResultScreen() {
 
     let description = aspectSynopses[state.dominantAspect];
     
-    // Texto diferente se foi sorteado aleatoriamente (checa se o score é baixo e único)
     let isForced = (score === 1 && Object.values(state.aspectScores).reduce((a,b)=>a+b,0) === 1);
     
     let transitionText;
@@ -1426,6 +1426,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
