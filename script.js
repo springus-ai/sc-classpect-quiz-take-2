@@ -82,7 +82,7 @@ const aspectQuestions = [
     { t: "6. Você tem um final de semana livre. Como se sente parado?", opts: [
         { txt: "Inquieto. Sinto que cada hora que passo sem produzir algo concreto é um desperdício de um recurso que não volta mais.", w: { Time: 3, Life: 1, Space: -2 }, destroys: "Space" }, 
         { txt: "Meio culpado. Estar sozinho e parado me faz sentir que estou falhando com as pessoas que dependem de mim ou que estou perdendo o contato com o que importa.", w: { Blood: 3, Rage: 3, Doom: 1, Breath: -3 }, destroys: "Breath" }, 
-        { txt: "Leve. Aproveito a tranquilidade e uso meu tempo para focar no que gosto de fazer e no que me der na telha.", w: {Breath: 3, Space: 3, Hope: 2 Time: -3 }, destroys: "Time" }, 
+        { txt: "Leve. Aproveito a tranquilidade e uso meu tempo para focar no que gosto de fazer e no que me der na telha.", w: {Breath: 3, Space: 3, Hope: 2, Time: -3 }, destroys: "Time" }, 
         { txt: "Reflexivo. Uso o silêncio para tentar entender se o que eu estou fazendo da vida hoje é o que eu realmente quero.", w: { Heart: 3, Life: 2, Mind: -1, Light: -1 } },
         { txt: "Entediado. Se não houver algo novo acontecendo ou algum estímulo externo, sinto como se minha energia estivesse estagnando.", w: { Life: 3, Rage: 1, Mind: 2, Doom: -2 } }
     ]},
@@ -1363,6 +1363,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
