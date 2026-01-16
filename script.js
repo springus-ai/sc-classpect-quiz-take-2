@@ -1120,8 +1120,31 @@ function finishAspectPhase() {
     }
 
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
-    state.dominantAspect = sorted[0][0];
+    
+    // --- LÓGICA DO EASTER EGG ---
+    // Se a maior pontuação for 0, o jogador não escolheu nada.
+    // O Universo escolhe por ele.
+    if (sorted[0][1] <= 0) {
+        const aspects = Object.keys(state.aspectScores);
+        const rngAspect = aspects[Math.floor(Math.random() * aspects.length)];
+        
+        // Forçamos o aspecto no estado
+        state.dominantAspect = rngAspect;
+        // Damos 1 ponto simbólico para não quebrar cálculos futuros
+        state.aspectScores[rngAspect] = 1; 
+        
+        renderNullAspectEasterEgg(rngAspect);
+        return;
+    }
+    // -----------------------------
 
+    state.dominantAspect = sorted[0][0];
+    showAspectResultScreen();
+}
+
+// Função auxiliar para mostrar a tela de transição de Aspecto
+// (Usada tanto pelo fluxo normal quanto após o Easter Egg)
+function showAspectResultScreen() {
     let score = state.aspectScores[state.dominantAspect] || 0;
     let dest = state.destructionScores[state.dominantAspect] || 0;
     
@@ -1133,9 +1156,18 @@ function finishAspectPhase() {
     }
 
     let description = aspectSynopses[state.dominantAspect];
-    let transitionText = state.highDestruction
-        ? `Sua conexão com ${state.dominantAspect} é... complicada. Vamos ver como você interage com esse aspecto.`
-        : `Passamos da primeira parte! Vamos ver como você interage com esse aspecto.`;
+    
+    // Texto diferente se foi sorteado aleatoriamente (checa se o score é baixo e único)
+    let isForced = (score === 1 && Object.values(state.aspectScores).reduce((a,b)=>a+b,0) === 1);
+    
+    let transitionText;
+    if (isForced) {
+         transitionText = `O universo escolheu por você. Tente não desperdiçar essa segunda chance nas Classes.`;
+    } else {
+         transitionText = state.highDestruction
+            ? `Sua conexão com ${state.dominantAspect} é... complicada. Vamos ver como você interage com esse aspecto.`
+            : `Passamos da primeira parte! Vamos ver como você interage com esse aspecto.`;
+    }
 
     render(`
         <div class="fade-in">
@@ -1143,6 +1175,29 @@ function finishAspectPhase() {
             <p>${description}</p>
             <p style="color: #00aa00;">${transitionText}</p>
             <button onclick="startClassPhase()">CONTINUAR PARA CLASSES</button>
+        </div>
+    `);
+}
+
+function renderNullAspectEasterEgg(rngAspect) {
+    render(`
+        <div class="result-box fade-in" style="text-align: center;">
+            
+            <img src="https://i.imgur.com/zcNK5Dk.png" alt="Void Glitch" style="max-width: 300px; width: 100%; height: auto; margin: 0 auto 20px auto; display: block; border: 1px solid #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.4);">
+
+            <h1 style="font-size: 28px; color: #ff0000; text-shadow: 0 0 5px #550000;">DADOS INSUFICIENTES</h1>
+            
+            <div style="text-align: left; margin: 20px 0; border: 1px solid #550000; padding: 20px; background: rgba(20,0,0,0.5);">
+                <p style="color: #ffaaaa; margin-bottom: 15px;">Você se recusou a escolher. Legal, não podemos ter isso.</p>
+                
+                <p>Se você não escolhe, deixa comigo. Você vai ser... hm...</p>
+                
+                <p style="font-size: 1.2em; text-align: center; margin-top: 20px; color: #fff; border-top: 1px dashed #550000; padding-top:10px;">
+                   Ok. O universo decidiu que você é um jogador de <strong style="color: #ff0000; font-size: 1.3em;">${rngAspect.toUpperCase()}</strong>.
+                </p>
+            </div>
+
+            <button onclick="showAspectResultScreen()" style="background: #330000; border: 1px solid #ff0000; color: #ff0000;">ACEITAR O DESTINO</button>
         </div>
     `);
 }
@@ -1265,12 +1320,12 @@ function renderNullEnding() {
             <p style="font-style: italic; opacity: 0.8;">[NADA OF NADA]</p>
             
             <div class="analysis-text" style="margin-top: 2rem;">
-                <p>Você abriu esse teste só para clicar em "Nenhuma das anteriores" tipo, 30 vezes? Poxa.</p>
+                <p>Você me fez morder a fronha. Quer dizer que você abriu esse teste só para clicar em "Nenhuma das anteriores" tipo, 30 vezes? Poxa.</p>
                 
                 <p><strong>Vem, vamos de novo. Eu sei que você quer saber o seu resultado de verdade.</strong></p>
             </div>
             
-            <button class="retry-button" onclick="location.reload()">Deixa de morder a fronha.</button>
+            <button class="retry-button" onclick="location.reload()">Tente novamente.</button>
         </div>
     `;
     render(html);
