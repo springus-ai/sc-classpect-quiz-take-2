@@ -270,7 +270,7 @@ const questionsByAspect = {
     ]},
     { t: "Você está em uma festa onde não conhece ninguém e o ambiente parece vasto e impessoal.", opts: [
         { txt: "Fico num canto tentando entender a mecânica social do lugar, como se fosse um quebra-cabeça que não sei montar.", w: { Page: 3, Mage: 3, Seer: 2, Prince: -2 } },
-        { txt: "Esse lugar me irrita. Sinto vontade de ir embora ou quebrar o clima artificial fazendo algo drástico.", w: { Prince: 3, Witch: 2, Heir: -2, Page: -2 } },
+        { txt: "Se o ambiente não me acolhe, vou embora sem me despedir ou me isolo em um canto, cortando minha conexão com o cenário.", w: { Prince: 3, Witch: 2, Heir: -2, Page: -2 } },
         { txt: "Me sinto invisível, então tento colar em qualquer rodinha para ocupar espaço e me sentir parte do grupo.", w: { Thief: 3, Rogue: 2, Prince: -2, Seer: -1 } },
         { txt: "Eu fico lá existindo. Não tento interagir nem ir embora, só deixo o tempo passar enquanto encaro o teto, alheio ao lugar.", w: { Bard: 3, Heir: 2, Knight: -2, Maid: -2 } },
         { txt: "Vou circulando por aí sem rumo. Se eu achar algo legal, paro; se não, só deixo a música me levar.", w: { Heir: 3, Rogue: 1, Knight: -2, Maid: -1 } }
@@ -283,10 +283,10 @@ const questionsByAspect = {
         { txt: "Entendo que o espaço entre nós mudou. Aceito a saudade e deixo a amizade encontrar seu novo volume.", w: { Seer: 2, Heir: 3, Thief: -2, Knight: -1 } }
     ]},
     { t: "Você decidiu começar um hobby novo, mas não tem as ferramentas certas ou um local adequado.", opts: [
-        { txt: "Eu me viro com o que tenho. Improviso ferramentas; o que importa é criar do nada.", w: { Knight: 3, Maid: 3, Page: 1, Bard: -2 } },
+        { txt: "Eu me viro com o que tenho. Improviso ferramentas; se eu me esforçar, encontro um jeito.", w: { Knight: 3, Maid: 3, Page: 1, Bard: -2 } },
         { txt: "Começo de qualquer jeito, sem medir nada. Se ficar torto ou quebrar no meio do processo, paciência.", w: { Bard: 3, Rogue: 1, Mage: -1, Seer: -2 } },
         { txt: "Passo semanas pesquisando o layout perfeito. Se o cenário não for ideal, a criação não flui.", w: { Mage: 3, Seer: 3, Heir: -1, Knight: -1 } },
-        { txt: "Peço coisas emprestadas e 'esqueço' de devolver. Sinto que preciso desses recursos mais do que eles.", w: { Thief: 3, Rogue: 2, Sylph: -2, Maid: -1 } },
+        { txt: "Peço coisas emprestadas e 'esqueço' de devolver. Eu preciso dessas ferramentas, de qualquer forma.", w: { Thief: 3, Rogue: 2, Sylph: -2, Maid: -1 } },
         { txt: "Desisto. Se o ambiente não colabora, eu elimino a ideia da minha cabeça e busco algo viável.", w: { Prince: 3, Heir: 1, Knight: -3, Maid: -2 } }
     ]},
     { t: "Alguém entra no seu quarto sem bater enquanto você está focado em algo importante.", opts: [
@@ -299,7 +299,7 @@ const questionsByAspect = {
     { t: "Você está em um elevador lotado e desconfortável. Como você se comporta?", opts: [
         { txt: "Tento ocupar o mínimo de espaço possível, quase me fundindo à parede.", w: { Rogue: 3, Page: 2, Sylph: 1, Prince: -2 } },
         { txt: "Analiso a mecânica do elevador ou a posição das pessoas para me distrair do desconforto.", w: { Seer: 3, Mage: 2, Heir: 1, Bard: -1 } },
-        { txt: "Eu 'saio' do meu corpo. Fico olhando pro nada, ignorando o aperto, fingindo que não estou ocupando espaço ali.", w: { Bard: 3, Heir: 2, Mage: 1, Knight: -2 } },
+        { txt: "Eu me distraio com qualquer coisa. Fico olhando pro nada, ignorando o aperto, fingindo que não estou ocupando espaço ali.", w: { Bard: 3, Heir: 2, Mage: 1, Knight: -2 } },
         { txt: "Fico furioso com a falta de espaço e empurro se for preciso para garantir meu lugar.", w: { Prince: 3, Thief: 2, Witch: 1, Rogue: -2 } },
         { txt: "Puxo uma conversa trivial para aliviar a tensão e expandir o conforto do ambiente.", w: { Sylph: 3, Heir: 2, Prince: -3, Mage: -1 } }
     ]},
@@ -1354,14 +1354,16 @@ function render(html) {
 window.onload = () => {
     render(`
         <div class="fade-in">
-            <h1>TESTE DE CLASSPECT DO STREETCRUSH</h1>
-            <p>Opa, SC aqui. Aquele do MEMO_BRASIL.</p>
-            <p>Antes de tudo, vamos contextualizar sobre esse teste. Não fiz um simples "copia e cola" de testes que já existem, levei duas semanas mexendo (e um dia!) nesse projeto por um motivo. As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos.</p>
+            <h1>TESTE DE CLASSPECT DO STREETCRUSH V1.0</h1>
+            <p>SC aqui. Aquele do MEMO_BRASIL, ou simplesmente springus, como a maioria conhece.</p>
+            <p>Antes de tudo, vamos falar sobre essa versão 1.0 do teste. Estarei atualizando constantemente as perguntas e pontuações com as observações da comunidade. Aviso que, como é a primeira versão do teste, esperem algumas imprecisões. No fim, precisamos de algumas cobaias para encontrar e corrigir os resultados errados.>/p>
+            <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos.</p>
             <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
             <button onclick="start()">Bora ver.</button>
         </div>
     `);
 };
+
 
 
 
