@@ -1190,9 +1190,9 @@ function renderNullAspectEasterEgg(rngAspect) {
             <h1 style="font-size: 28px; color: #ff0000; text-shadow: 0 0 5px #550000;">DADOS INSUFICIENTES</h1>
             
             <div style="text-align: left; margin: 20px 0; border: 1px solid #550000; padding: 20px; background: rgba(20,0,0,0.5);">
-                <p style="color: #ffaaaa; margin-bottom: 15px;">Você se recusou a escolher. Legal, não podemos ter isso.</p>
+                <p style="color: #ffaaaa; margin-bottom: 15px;">Você se recusou a escolher. Não tem muito que a gente possa fazer desse jeito, né?.</p>
                 
-                <p>Se você não escolhe, deixa comigo. Você vai ser... hm...</p>
+                <p>Tá, se você não escolhe, deixa comigo. Você vai ser... hm...</p>
                 
                 <p style="font-size: 1.2em; text-align: center; margin-top: 20px; color: #fff; border-top: 1px dashed #550000; padding-top:10px;">
                    Ok. O universo decidiu que você é um jogador de <strong style="color: #ff0000; font-size: 1.3em;">${rngAspect.toUpperCase()}</strong>.
@@ -1426,6 +1426,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
