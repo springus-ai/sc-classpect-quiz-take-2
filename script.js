@@ -1308,14 +1308,6 @@ function handleSkip() {
         currentQueue: state.currentQueue,
         dominantAspect: state.dominantAspect
     })));
-
-    // Inserção da Lógica do Doutor Scratch
-    if (state.stage === "aspect_quiz") {
-        alert("Nada ressoa? Hmmm. Uma tela em branco é apenas um convite para o Vazio, ou talvez você esteja deliberadamente escondendo suas cartas. De qualquer forma, a ausência de uma escolha também é uma escolha.");
-    } else if (state.stage === "class_quiz") {
-        alert("Rejeitar o papel é o primeiro passo de um Bardo... ou apenas de alguém confuso. Vamos continuar.");
-    }
-
     state.questionCount++;
 
     if (state.stage === "aspect_quiz") {
@@ -1374,6 +1366,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
