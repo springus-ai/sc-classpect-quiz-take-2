@@ -1277,8 +1277,8 @@ function finishClassPhase() {
 
             </div>
             
-            <p style="font-style: italic; color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
-            <p style="font-style: italic; color: #88ff88; font-size: 14px;">Se quiser dar qualquer feedback, venha comentar pelo Discord do Projeto Homestuck PT-BR! Temos um canal para falar sobre Classpecting.</p>
+            <p style="color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
+            <p style="color: #88ff88; font-size: 14px;">Se quiser dar qualquer feedback, venha comentar pelo Discord do Projeto Homestuck PT-BR! Temos um canal para falar sobre Classpecting.</p>
             
             <p style="font-size: 11px; color: #aaffaa; opacity: 0.7; margin-top: 5px;">
                 Em breve, faremos um site de análises de classpect. Fiquem de olho, o seu pode ser um dos primeiros a sair!
@@ -1423,6 +1423,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
