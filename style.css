@@ -128,6 +128,41 @@ p {
     white-space: pre-line;
 }
 
+body.red-mode {
+    background-color: #050000 !important;
+    color: #ff4444 !important;
+}
+
+body.red-mode .result-box, 
+body.red-mode div {
+    border-color: #ff0000 !important;
+    background-color: rgba(40, 0, 0, 0.8) !important;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3) !important;
+}
+
+body.red-mode h1, 
+body.red-mode h2, 
+body.red-mode strong {
+    color: #ff0000 !important;
+    text-shadow: 0 0 8px #880000 !important;
+}
+
+body.red-mode button {
+    background-color: #220000 !important;
+    color: #ff0000 !important;
+    border: 1px solid #ff0000 !important;
+    box-shadow: 0 0 5px #ff0000 !important;
+}
+
+body.red-mode button:hover {
+    background-color: #ff0000 !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px #ff0000 !important;
+}
+
+body.red-mode hr {
+    border-color: #ff0000 !important;
+}
 
 
 
