@@ -1262,12 +1262,12 @@ function renderNullEnding() {
             <p style="font-style: italic; opacity: 0.8;">[NADA OF NADA]</p>
             
             <div class="analysis-text" style="margin-top: 2rem;">
-                <p>Você clicou, avançou e observou. Mas não escolheu absolutamente nada. Não sobrou nem classe, nem aspecto.</p>
+                <p>Você abriu esse teste só para clicar em "Nenhuma das anteriores" tipo, 30 vezes? Poxa.</p>
                 
-                <p><strong>Você venceu, eu acho?</strong></p>
+                <p><strong>Vem, vamos de novo. Eu sei que você quer saber o seu resultado de verdade.</strong></p>
             </div>
             
-            <button class="retry-button" onclick="location.reload()">Tente novamente.</button>
+            <button class="retry-button" onclick="location.reload()">Deixa de morder a fronha.</button>
         </div>
     `;
     render(html);
@@ -1355,14 +1355,15 @@ window.onload = () => {
     render(`
         <div class="fade-in">
             <h1>TESTE DE CLASSPECT DO STREETCRUSH V1.0</h1>
-            <p>SC aqui. Aquele do MEMO_BRASIL, ou simplesmente springus, como a maioria conhece.</p>
+            <p>SC aqui, ou simplesmente springus, como a maioria conhece.</p>
             <p>Antes de tudo, vamos falar sobre essa versão 1.0 do teste. Estarei atualizando constantemente as perguntas e pontuações com as observações da comunidade. Aviso que, como é a primeira versão do teste, esperem algumas imprecisões. No fim, precisamos de algumas cobaias para encontrar e corrigir os resultados errados.</p>
-            <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos.</p>
+            <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos, que me ajudaram na confecção desse quiz.</p>
             <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
             <button onclick="start()">Bora ver.</button>
         </div>
     `);
 };
+
 
 
 
