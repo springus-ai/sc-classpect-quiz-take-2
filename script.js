@@ -327,7 +327,7 @@ const classpectDescriptions = {
     <h3>PRINCE OF VOID (PRÍNCIPE DO VAZIO)</h3>
     <p><strong>O que Destrói o Vazio / Destrói com o Vazio.</strong></p>
     <p>Você odeia segredos. Você é o destruidor da ambiguidade. Se algo está oculto, você arranca a tampa. Você não suporta a ideia de "não saber", então você destrói o mistério com lógica brutal ou revelações forçadas.</p>
-    <p>Por outro lado, você pode agir como um niilista agressivo ("destruir com o Vazio"). Você usa a insignificância das coisas como arma para desmotivar os outros. "Por que tentar se nada importa? Por que se importar se somos poeira estelar?". Você apaga a importância das coisas, reduzindo esperanças e sonhos a nada.</p>
+    <p>Por outro lado, você pode agir como um niilista agressivo ("destruir com o Vazio"). Você usa a insignificância das coisas como arma para desmotivar os outros. "Por que tentar se nada importa? Por que se importar se somos poeira estelar?". Você apaga a importância das coisas, destruindo a importância dessas coisas.</p>
 `,
 "Sylph:Void": `
     <h3>SYLPH OF VOID (SILANE DO VAZIO)</h3>
@@ -2214,7 +2214,7 @@ function renderDynamicView() {
         if (combinedContainer) {
             combinedContainer.style.display = 'block';
             comboContent.innerHTML = comboText;
-            comboFooter.innerHTML = `Explorando a combinação: Realidade (${viewerAspect}) + Resposta (${viewerClass})`;
+            comboFooter.innerHTML = `Explorando a combinação: (${viewerAspect}) + (${viewerClass})`;
         }
         if (splitContainer) splitContainer.style.display = 'none';
         
@@ -2436,6 +2436,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
