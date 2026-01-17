@@ -2425,7 +2425,7 @@ function render(html) {
 window.onload = () => {
     render(`
         <div class="fade-in">
-            <h1>TESTE DE CLASSPECT DA SburbBro V1.0</h1>
+            <h1>TESTE DE CLASSPECT DA SBURBIO V1.0</h1>
             <p>Oi! Que bom que encontrou esse teste. Eu sou o SC, popularmente conhecido como springus. Talvez você não me conheça, mas espero que bote fé no projeto.</p>
             <p>Antes de tudo, vamos falar sobre essa versão 1.0 do teste. Estarei atualizando constantemente as perguntas e pontuações com as observações da comunidade. Aviso que, como é a primeira versão do teste, esperem algumas imprecisões. Por isso, precisamos rodar alguns testes para encontrar e corrigir os resultados errados.</p>
             <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos, que me ajudaram na confecção desse quiz.</p>
@@ -2434,6 +2434,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
