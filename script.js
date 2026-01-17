@@ -1418,7 +1418,7 @@ window.onload = () => {
     render(`
         <div class="fade-in">
             <h1>TESTE DE CLASSPECT DO STREETCRUSH V1.0</h1>
-            <p>SC aqui, ou simplesmente springus, como a maioria conhece.</p>
+            <p>Oi! Que bom que encontrou esse teste. Eu sou o SC, popularmente conhecido como springus. Talvez você não me conheça, mas espero que bote fé no meu projeto.</p>
             <p>Antes de tudo, vamos falar sobre essa versão 1.0 do teste. Estarei atualizando constantemente as perguntas e pontuações com as observações da comunidade. Aviso que, como é a primeira versão do teste, esperem algumas imprecisões. Por isso, precisamos rodar alguns testes para encontrar e corrigir os resultados errados.</p>
             <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos, que me ajudaram na confecção desse quiz.</p>
             <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
@@ -1426,6 +1426,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
