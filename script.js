@@ -2044,7 +2044,6 @@ const questionsByAspect = {
 function start() {
     document.body.classList.remove('red-mode');
     state.stage = "aspect_quiz";
-    state.stage = "aspect_quiz";
     state.questionCount = 0;
     renderQuestion(aspectQuestions[0]);
 }
@@ -2111,21 +2110,16 @@ function finishAspectPhase() {
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
     
     // --- LÓGICA DO EASTER EGG ---
-    // Se a maior pontuação for 0, o jogador não escolheu nada.
-    // O Universo escolhe por ele.
     if (sorted[0][1] <= 0) {
         const aspects = Object.keys(state.aspectScores);
         const rngAspect = aspects[Math.floor(Math.random() * aspects.length)];
         
-        // Forçamos o aspecto no estado
         state.dominantAspect = rngAspect;
-        // Damos 1 ponto simbólico para não quebrar cálculos futuros
         state.aspectScores[rngAspect] = 1; 
         
         renderNullAspectEasterEgg(rngAspect);
         return;
     }
-    // -----------------------------
 
     state.dominantAspect = sorted[0][0];
     showAspectResultScreen();
@@ -2133,7 +2127,6 @@ function finishAspectPhase() {
 
 function showAspectResultScreen() {
     document.body.classList.remove('red-mode'); 
-    // ---------------------
 
     let score = state.aspectScores[state.dominantAspect] || 0;
     let dest = state.destructionScores[state.dominantAspect] || 0;
@@ -2190,6 +2183,7 @@ function renderNullAspectEasterEgg(rngAspect) {
         </div>
     `);
 }
+
 function startClassPhase() {
     state.stage = "class_quiz";
     state.questionCount = 0;
@@ -2220,7 +2214,6 @@ function finishClassPhase() {
     const genericAspectText = aspectSynopses[topAspect] || "Descrição indisponível.";
 
     // Define qual visualização começa ativa
-    // Se tiver combo, esconde o split (display: none). Se não tiver, mostra o split.
     const displayCombo = hasCombo ? 'block' : 'none';
     const displaySplit = hasCombo ? 'none' : 'block';
 
@@ -2287,47 +2280,6 @@ function finishClassPhase() {
 
             </div>
             
-            <p style="color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir.</p>
-            <button onclick="location.reload()" style="margin-top:20px;">REINICIAR SESSÃO</button>
-        </div>
-    `);
-}
-    let top3Classes = sortedClasses.slice(0, 3);
-    let top3Aspects = sortedAspects.slice(0, 3); 
-
-    render(`
-        <div class="result-box fade-in">
-            <h1 style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">${topClass.toUpperCase()} OF ${topAspect.toUpperCase()}</h1>
-            <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
-            
-            ${analysisHTML}
-
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 25px 0;">
-                
-                <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
-                    <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR CLASSES:</p>
-                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-                        ${top3Classes.map(item => `
-                            <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 6px 10px; font-size: 11px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
-                                ${item[0]} (${item[1]})
-                            </button>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
-                    <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR ASPECTOS:</p>
-                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-                        ${top3Aspects.map(item => `
-                            <button class="top3-btn" onclick="updateAspectView('${item[0]}')" style="padding: 6px 10px; font-size: 11px; background: #001100; border: 1px solid #00ff00; color: #00ff00; cursor: pointer; transition: 0.3s;">
-                                ${item[0]} (${item[1]})
-                            </button>
-                        `).join('')}
-                    </div>
-                </div>
-
-            </div>
-            
             <p style="color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
             <p style="color: #88ff88; font-size: 14px;">Se quiser dar qualquer feedback, venha comentar pelo Discord do Projeto Homestuck PT-BR! Temos um canal para falar sobre Classpecting.</p>
             
@@ -2339,6 +2291,7 @@ function finishClassPhase() {
         </div>
     `);
 }
+
 function switchToSplitView() {
     const combinedContainer = document.getElementById('combined-view-container');
     const splitContainer = document.getElementById('split-view-container');
@@ -2484,6 +2437,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
