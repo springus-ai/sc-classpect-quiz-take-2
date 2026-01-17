@@ -2230,9 +2230,6 @@ function finishClassPhase() {
                 <div class="combined-analysis">
                     ${comboText}
                 </div>
-                <p style="margin-top: 25px; font-size: 0.9em; opacity: 0.8; border-top: 1px dashed #005500; padding-top: 15px;">
-                   Sua "Realidade" (${topAspect}) encontrou sua "Resposta" (${topClass}).
-                </p>
             </div>
 
             <div id="split-view-container" style="display: ${displaySplit}; text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
@@ -2437,6 +2434,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
