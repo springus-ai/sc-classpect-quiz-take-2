@@ -2041,6 +2041,9 @@ const questionsByAspect = {
 ],
 };
 
+let viewerClass = "";
+let viewerAspect = "";
+
 function start() {
     document.body.classList.remove('red-mode');
     state.stage = "aspect_quiz";
@@ -2109,7 +2112,6 @@ function finishAspectPhase() {
 
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
     
-    // --- LÓGICA DO EASTER EGG ---
     if (sorted[0][1] <= 0) {
         const aspects = Object.keys(state.aspectScores);
         const rngAspect = aspects[Math.floor(Math.random() * aspects.length)];
@@ -2191,6 +2193,46 @@ function startClassPhase() {
     renderQuestion(state.currentQueue[0]);
 }
 
+
+function renderDynamicView() {
+    const key = `${viewerClass}:${viewerAspect}`;
+    const comboText = classpectDescriptions[key]; 
+
+    const title = document.getElementById('result-title');
+    const combinedContainer = document.getElementById('combined-view-container');
+    const splitContainer = document.getElementById('split-view-container');
+    const comboContent = document.getElementById('combined-content');
+    const comboFooter = document.getElementById('combined-footer');
+    
+    const classDisplay = document.getElementById('class-display-area');
+    const aspectDisplay = document.getElementById('aspect-display-area');
+
+    if (title) title.innerHTML = `${viewerClass.toUpperCase()} OF ${viewerAspect.toUpperCase()}`;
+
+    if (comboText) {
+
+        if (combinedContainer) {
+            combinedContainer.style.display = 'block';
+            comboContent.innerHTML = comboText;
+            comboFooter.innerHTML = `Explorando a combinação: Realidade (${viewerAspect}) + Resposta (${viewerClass})`;
+        }
+        if (splitContainer) splitContainer.style.display = 'none';
+        
+    } else {
+        if (combinedContainer) combinedContainer.style.display = 'none';
+        
+        if (splitContainer) {
+            splitContainer.style.display = 'block';
+
+            const cText = classSynopses[viewerClass] || "Classe desconhecida.";
+            classDisplay.innerHTML = `<p>${cText}</p>`;
+            
+            const aText = aspectSynopses[viewerAspect] || "Aspecto desconhecido.";
+            aspectDisplay.innerHTML = `<p>${aText}</p>`;
+        }
+    }
+}
+
 function finishClassPhase() {
     
     let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
@@ -2204,55 +2246,38 @@ function finishClassPhase() {
     let topClass = sortedClasses[0][0];
     let topAspect = state.dominantAspect; 
 
-    // --- PREPARAÇÃO DOS DADOS ---
-    const comboKey = `${topClass}:${topAspect}`;
-    const comboText = classpectDescriptions[comboKey] || "";
-    const hasCombo = !!comboText;
-
-    // Textos genéricos (sempre necessários para o modo de exploração)
-    const genericClassText = classSynopses[topClass] || "Descrição indisponível.";
-    const genericAspectText = aspectSynopses[topAspect] || "Descrição indisponível.";
-
-    // Define qual visualização começa ativa
-    const displayCombo = hasCombo ? 'block' : 'none';
-    const displaySplit = hasCombo ? 'none' : 'block';
+    viewerClass = topClass;
+    viewerAspect = topAspect;
 
     let top3Classes = sortedClasses.slice(0, 3);
     let top3Aspects = sortedAspects.slice(0, 3); 
 
     render(`
         <div class="result-box fade-in">
-            <h1 style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">${topClass.toUpperCase()} OF ${topAspect.toUpperCase()}</h1>
+            <h1 id="result-title" style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">...</h1>
+            
             <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
             
-            <div id="combined-view-container" style="display: ${displayCombo}; text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
+            <div id="combined-view-container" style="display: none; text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
                 <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 15px;">ANÁLISE DE CLASSPECT:</h3>
-                <div class="combined-analysis">
-                    ${comboText}
-                </div>
-            </div>
-
-            <div id="split-view-container" style="display: ${displaySplit}; text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
-                
-                <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 5px;">O ASPECTO:</h3>
-                <div id="aspect-display-area">
-                    <p style="margin-bottom: 20px;">${genericAspectText}</p> 
-                </div>
-                
-                <hr style="border: 0; border-top: 1px solid #005500; margin: 20px 0;">
-                
-                <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 5px;">A CLASSE:</h3>
-                <div id="class-display-area">
-                    <p>${genericClassText}</p>
-                </div>
-
-                <p style="margin-top: 25px; font-size: 0.9em; opacity: 0.8; border-top: 1px dashed #005500; padding-top: 15px;">
-                    Modo de Exploração Ativo.
+                <div id="combined-content" class="combined-analysis">
+                    </div>
+                <p id="combined-footer" style="margin-top: 25px; font-size: 0.9em; opacity: 0.8; border-top: 1px dashed #005500; padding-top: 15px;">
+                   ...
                 </p>
             </div>
 
+            <div id="split-view-container" style="display: none; text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
+                <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 5px;">O ASPECTO:</h3>
+                <div id="aspect-display-area">
+                    </div>
+                <hr style="border: 0; border-top: 1px solid #005500; margin: 20px 0;">
+                <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 5px;">A CLASSE:</h3>
+                <div id="class-display-area">
+                     </div>
+            </div>
+
             <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 25px 0;">
-                
                 <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
                     <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR CLASSES:</p>
                     <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
@@ -2274,7 +2299,6 @@ function finishClassPhase() {
                         `).join('')}
                     </div>
                 </div>
-
             </div>
             
             <p style="color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
@@ -2287,40 +2311,18 @@ function finishClassPhase() {
             <button onclick="location.reload()" style="margin-top:20px;">REINICIAR SESSÃO</button>
         </div>
     `);
-}
 
-function switchToSplitView() {
-    const combinedContainer = document.getElementById('combined-view-container');
-    const splitContainer = document.getElementById('split-view-container');
-    
-    if (combinedContainer) combinedContainer.style.display = 'none';
-    if (splitContainer) splitContainer.style.display = 'block';
+    renderDynamicView();
 }
 
 window.updateClassView = function(className) {
-    switchToSplitView();
-    const displayArea = document.getElementById('class-display-area');
-    if (displayArea) {
-        displayArea.style.opacity = '0';
-        setTimeout(() => {
-            const newDesc = classSynopses[className] || "Descrição não encontrada.";
-            displayArea.innerHTML = `<p>${newDesc}</p>`;
-            displayArea.style.opacity = '1';
-        }, 150);
-    }
+    viewerClass = className;
+    renderDynamicView();
 };
 
 window.updateAspectView = function(aspectName) {
-    switchToSplitView();
-    const displayArea = document.getElementById('aspect-display-area');
-    if (displayArea) {
-        displayArea.style.opacity = '0';
-        setTimeout(() => {
-            const newDesc = aspectSynopses[aspectName] || "Descrição não encontrada.";
-            displayArea.innerHTML = `<p>${newDesc}</p>`;
-            displayArea.style.opacity = '1';
-        }, 150);
-    }
+    viewerAspect = aspectName;
+    renderDynamicView();
 };
 
 function renderNullEnding() {
@@ -2434,6 +2436,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
