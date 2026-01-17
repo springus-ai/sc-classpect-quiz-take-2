@@ -762,7 +762,7 @@ const classpectDescriptions = {
         <h3>ROGUE OF RAGE (LADINO/LADINA DA IRA)</h3>
         <p><strong>O que Rouba a Ira (para redistribuir).</strong></p>
         <p>Você é o para-raios. Quando o clima fica tenso, você absorve a negatividade para que o grupo não precise lidar com ela. Você se torna o bode expiatório, ou usa o humor autodepreciativo para desviar a raiva que seria direcionada a outros.</p>
-        <p>Você "rouba" a frustração do ambiente. É um ato de sacrifício, mas te deixa carregada de veneno emocional que não é seu. Você lida com a realidade cruel tentando protegendo os outros dela, mas acaba ficando cínica e amarga sozinha, enquanto seus amigos permanecem inocentes.</p>
+        <p>Você "rouba" a frustração do ambiente. É um ato de sacrifício, mas te deixa carregada de veneno emocional que não é seu. Você lida com a realidade cruel tentando protegendo os outros dela, mas acaba ficando cínico e amargo sozinho, enquanto seus amigos permanecem inocentes.</p>
     `,
     "Seer:Rage": `
         <h3>SEER OF RAGE (VIDENTE DA IRA)</h3>
@@ -2338,6 +2338,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
