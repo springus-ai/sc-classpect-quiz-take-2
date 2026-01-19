@@ -1025,7 +1025,7 @@ const aspectQuestions = [
         { txt: "Desconectado. Sozinho, não tenho um motivo para estar aqui.", w: { Blood: 3, Doom: 2, Breath: -3 } }
     ]},
     { t: "14. Você precisa magoar alguém para um objetivo. O que dói?", opts: [
-        { txt: "O fato de que estou sendo falso comigo mesmo. Odeio ter que agir contra o que eu sinto que é certo só para cumprir uma meta.", w: { Heart: 3, Blood: 1, Hope: 2 } },
+        { txt: "O fato de que estou sendo falso comigo mesmo. Odeio ter que agir contra o que eu sinto que é certo só para cumprir uma meta.", w: { Heart: 3, Blood: -2, Hope: 2 }, destroys: "Blood" },
         { txt: "A frustração de não ter encontrado uma solução melhor. Magoar alguém foi o sacrifício necessário.", w: { Doom: 3, Light: 3, Heart: -3 }, destroys: "Heart" }, 
         { txt: "A quebra da confiança. Saber que essa atitude vai manchar ou destruir o vínculo que eu tinha com aquela pessoa, talvez para sempre.", w: { Blood: 3, Time: 2, Breath: -2 }, destroys: "Breath" },
         { txt: "A necessidade do sacrifício. É péssimo ter que passar por cima de alguém ou de algo vivo para que o projeto continue avançando.", w: { Life: 3, Breath: 2, Hope: 1, Doom: -3 }, destroys: "Doom" }, 
@@ -1043,7 +1043,7 @@ const aspectQuestions = [
         { txt: "Sinto-me sufocado. Odeio qualquer coisa que me obrigue a ficar parado ou que impeça o meu crescimento e a busca por algo mais vibrante.", w: { Life: 3, Breath: 2, Doom: -3 }, destroys: "Doom" }, 
         { txt: "Tento encontrar o padrão por trás daquilo. Se eu entender como o processo funciona, posso otimizá-lo e executá-lo de forma automática.", w: { Mind: 3, Space: 2, Heart: -1 } }, 
         { txt: "Encaro como uma oportunidade para 'desligar'. Cumpro a função mecanicamente enquanto a minha mente dissocia.", w: { Void: 3, Breath: 3, Light: -2 } }, 
-        { txt: "Questiono a tarefa. Não me importo com a tarefa em si, mas sim com o objetivo dela.", w: { Rage: 2, Light: 3 } }
+        { txt: "Questiono a tarefa. Não me importo em ter que fazê-la, mas sim com o objetivo dela.", w: { Rage: 2, Light: 3 } }
     ]},
     { t: "17. Em uma competição, o que é o sucesso?", opts: [
         { txt: "A perpetuação de um ideal. O sucesso é mostrar que o que eu acredito é possível e conseguir inspirar os outros com esse resultado.", w: { Hope: 3, Breath: 1, Life: 1, Rage: -3 }, destroys: "Rage" }, 
@@ -1067,7 +1067,7 @@ const aspectQuestions = [
         { txt: "Quero que a minha história seja vista como algo importante e que trouxe significado para as pessoas que amei.", w: { Light: 3, Heart: 3, Void: -3 } }
     ]},
     { t: "20. O que é liberdade para você?", opts: [
-        { txt: "Não ter de dar satisfações. Liberdade é poder ir para onde eu quiser e recomeçar sem os rótulos e as expectativas que os outros me impõem.", w: { Breath: 3, Void: 2, Blood: -3 } },
+        { txt: "Não ter de dar satisfações. Liberdade é poder ir para onde eu quiser e recomeçar sem os rótulos e as expectativas que os outros me impõem.", w: { Breath: 3, Void: 2, Blood: -3 }, destroys: "Blood" },
         { txt: "Ter a segurança de um lugar ao qual pertenço. A verdadeira liberdade é saber que tenho pessoas que não irão me abandonar.", w: { Blood: 3, Doom: 1, Breath: -3 }, destroys: "Breath" },
         { txt: "Liberdade é ter saúde, energia e recursos para ir atrás de tudo o que a vida tem para oferecer.", w: { Life: 3, Space: 2, Doom: -3 }, destroys: "Doom" }, 
         { txt: "Ser quem eu sou de verdade. Liberdade é não ter que usar máscaras ou fingir que sou outra pessoa para ser aceito pela sociedade.", w: { Heart: 3, Rage: 3, Mind: -3 } },
@@ -1223,7 +1223,7 @@ const questionsByAspect = {
     ],
     "Rage": [
     { t: "Você descobre que uma regra importante da instituição beneficia apenas os veteranos.", opts: [
-        { txt: "Acredito que deve haver um motivo e que a realidadae é manipulável.", w: { Prince: 3, Sylph: 1, Heir: -3, Knight: -2 } },
+        { txt: "Acredito que deve haver um motivo e que a realidade é manipulável.", w: { Prince: 3, Sylph: 1, Heir: -3, Knight: -2 } },
         { txt: "Exponho a falha publicamente, destruindo a credibilidade da regra sem piedade.", w: { Heir: 3, Mage: 3, Witch: 2, Bard: -3 } },
         { txt: "Faço piada da situação. Se a regra é injusta e estúpida, o mínimo que posso fazer é ridicularizar quem a segue.", w: { Bard: 3, Thief: 1, Page: -1, Seer: -2 } },
         { txt: "Procuro entender quem se beneficia e como posso usar essa brecha para meu ganho.", w: { Thief: 3, Maid: 2, Seer: 2, Page: -1 } },
@@ -1234,14 +1234,14 @@ const questionsByAspect = {
         { txt: "Contorno a proibição e continuo fazendo o que quero, subvertendo a autoridade.", w: { Thief: 3, Witch: 3, Heir: 2, Seer: -2 } },
         { txt: "Assumo a culpa e trabalho o dobro para salvar o que sobrou.", w: { Page: 3, Knight: 3, Maid: 2, Prince: -3 } },
         { txt: "Eu rio do desastre. Tanto esforço para nada? É tão absurdo que chega a ser engraçado. Deixo morrer.", w: { Bard: 3, Heir: 1, Mage: 1, Knight: -3 } },
-        { txt: "Observo a frustração e espero para ver se a verdade aparece sozinha.", w: { Seer: 3, Heir: 2, Mage: 2, Witch: -2 } }
+        { txt: "Observo a frustração e espero para ver se a verdade aparece sozinha.", w: { Seer: 3, Heir: 2, Mage: 2, Rogue: 1, Witch: -2 } }
     ]},
-        { t: "Você está em um evento social onde todos fingem estar felizes e bem-sucedidos, mas você percebe claramente as tensões e mentiras por trás das conversas. Como você se porta?", opts: [
+    { t: "Você está em um evento social onde todos fingem estar felizes e bem-sucedidos, mas você percebe claramente as tensões e mentiras por trás das conversas. Como você se porta?", opts: [
         { txt: "Entro no personagem e sou o mais agradável possível; a harmonia é mais importante do que os meus sentimentos.", w: { Prince: 3, Knight: -3, Mage: -2 } },
         { txt: "Sinto um incômodo físico com a falsidade e fico num canto, catalogando cada hipocrisia.", w: { Seer: 3, Mage: 2, Heir: 1, Prince: -2 } },
         { txt: "Fico lá existindo, meio aéreo. A falsidade deles é problema deles, eu só deixo o clima ficar estranho sem me esforçar.", w: { Bard: 3, Rogue: 1, Maid: -2 } },
-        { txt: "Tento puxar conversas reais, cutucando as feridas de forma sutil para ver quem é autêntico.", w: { Witch: 2, Thief: 3, Sylph: -2, Maid: -2 } },
-        { txt: "Visto uma máscara de competência e tento ser o pilar de estabilidade para quem está sofrendo.", w: { Knight: 3, Page: 2, Maid: 1, Bard: -2 } }
+        { txt: "Tento puxar conversas reais, cutucando as feridas de forma sutil para ver quem é autêntico.", w: { Witch: 2, Thief: 3, Sylph: 1, Maid: -2 } },
+        { txt: "Visto uma máscara de competência e tento ser o pilar de estabilidade para quem está sofrendo.", w: { Knight: 3, Page: 2, Rogue: 2, Maid: 1, Bard: -2 } }
     ]},
     { t: "Você descobre que uma meta que perseguiu por anos é impossível de alcançar devido a uma limitação sua ou do sistema que você não pode mudar. Qual sua reação?", opts: [
         { txt: "Decido imediatamente que a meta era estúpida. Destruo o desejo que eu tinha para me libertar da frustração.", w: { Prince: 3, Mage: -3, Page: -2 } },
@@ -1253,8 +1253,8 @@ const questionsByAspect = {
     { t: "Em um grupo, alguém insiste em uma ideia que você sabe que é falsa.", opts: [
         { txt: "Se a pessoa está feliz acreditando nisso, não vejo por que destruir a ilusão.", w: { Prince: 3, Sylph: 1, Heir: -3, Knight: -2 } },
         { txt: "Eu concordo com a mentira só pela zoeira. Quero ver até onde essa alucinação vai chegar antes de desmoronar.", w: { Bard: 3, Thief: 1, Witch: 1, Seer: -2 } },
-        { txt: "Falo a verdade nua e crua, destruindo o argumento falso na frente de todos.", w: { Heir: 3, Mage: 3, Seer: 2, Thief: 2 } },
-        { txt: "Protejo os outros da ideia ruim, servindo como uma âncora de realidade.", w: { Knight: 3, Maid: 2, Sylph: 2, Page: 1 } },
+        { txt: "Falo a verdade nua e crua, destruindo o argumento falso na frente de todos.", w: { Heir: 3, Mage: 3, Seer: 2, Sylph: 1, Thief: 2 } },
+        { txt: "Protejo os outros da ideia ruim, servindo como uma âncora de realidade.", w: { Knight: 3, Maid: 2, Sylph: 2, Rogue: 2, Page: 1 } },
         { txt: "Explico a situação para quem está confuso, tentando curar a desinformação.", w: { Rogue: 3, Sylph: 3, Page: 2, Heir: 1 } }
     ]},
     { t: "Você percebe que está sendo passado para trás em uma conversa importante.", opts: [
@@ -1267,23 +1267,23 @@ const questionsByAspect = {
     { t: "Como você se sente quando percebe que o mundo é injusto?", opts: [
         { txt: "Isso prova que levar a vida a sério é bobagem. Rio do absurdo e deixo as coisas fluírem.", w: { Bard: 3, Heir: 2, Maid: -3, Knight: -2 } },
         { txt: "Ignoro as notícias ruins. Destruo qualquer coisa que ameace minha paz mental.", w: { Prince: 3, Seer: -3, Mage: -2 } },
-        { txt: "Foco em ser impecável nas minhas obrigações. Minha disciplina é minha resposta ao caos.", w: { Maid: 3, Knight: 3, Page: 2, Bard: -3 } },
-        { txt: "Procuro grupos que compartilham da minha indignação para nos apoiarmos.", w: { Rogue: 3, Sylph: 3, Witch: 2, Heir: 2 } },
+        { txt: "Foco em ser impecável nas minhas obrigações. Minha disciplina é minha resposta ao caos.", w: { Maid: 3, Knight: 3, Page: 2, Bard: -3, Sylph: 1} },
+        { txt: "Procuro grupos que compartilham da minha indignação para nos apoiarmos.", w: { Rogue: 3, Sylph: 2, Witch: 2, Heir: 2 } },
         { txt: "Aceito que o jogo é viciado, mas tento trapacear de volta sempre que posso.", w: { Thief: 3, Witch: 2, Page: -1, Seer: -1 } }
     ]},
     { t: "Você descobre que a pessoa que você mais admirava é, na verdade, uma farsa completa e tudo o que ela pregava era mentira.", opts: [
-        { txt: "Recuso-me a acreditar. Mantenho minha fé na imagem dele apesar da realidade.", w: { Prince: 3, Sylph: 1, Heir: -3, Seer: -3 } },
+        { txt: "Recuso-me a acreditar. Mantenho minha fé na imagem dele apesar da realidade.", w: { Prince: 3, Sylph: 1, Page: 2, Heir: -3, Seer: -3 } },
         { txt: "Não me surpreendo. Todo mundo é meio podre mesmo. Continuo acompanhando pelo entretenimento do desastre.", w: { Bard: 3, Mage: 1, Page: -1 } },
         { txt: "Deixo de respeitar na hora. Apago qualquer rastro de admiração; ele morreu para mim.", w: { Heir: 3, Seer: 2, Knight: 2, Thief: 2 } },
         { txt: "Uso o erro como exemplo para educar os outros e evitar que caiam na mesma cilada.", w: { Witch: 3, Sylph: 3, Rogue: 2, Maid: 2 } },
         { txt: "Fico remoendo a decepção e passo a ser muito mais cético com tudo.", w: { Mage: 3, Page: 3, Heir: 1, Bard: -2 } }
     ]},
-        { t: "Em um ambiente onde todos discutem de forma irracional, qual sua atitude?", opts: [
-        { txt: "Faço uma piada para desviar a atenção e restaurar o clima leve.", w: { Sylph: 2, Heir: 2, Prince: -2, Rogue: 1 } },
-        { txt: "Solto uma frase seca que resume o ridículo, calando a todos com a verdade bruta.", w: { Prince: 3, Seer: 3, Mage: 2, Witch: 2 } },
+    { t: "Em um ambiente onde todos discutem de forma irracional, qual sua atitude?", opts: [
+        { txt: "Faço uma piada para desviar a atenção e restaurar o clima leve.", w: { Sylph: 1, Heir: 2, Prince: -2, Rogue: 2 } },
+        { txt: "Solto uma frase seca que resume o ridículo, calando a todos com a verdade bruta.", w: { Prince: 3, Seer: 3, Mage: 2, Sylph: 2, Witch: 2 } },
         { txt: "Jogo lenha na fogueira. Faço um comentário aleatório só para ver a confusão aumentar.", w: { Bard: 3, Thief: 2, Witch: 1, Knight: -2 } },
         { txt: "Aproveito que ninguém presta atenção para 'roubar' meu tempo e resolver minhas coisas.", w: { Thief: 3, Witch: 2, Page: 2, Rogue: 1 } },
-        { txt: "Mantenho o controle e espero o caos passar, julgando a falta de compostura alheia.", w: { Knight: 3, Maid: 3, Page: 2, Heir: 2 } }
+        { txt: "Mantenho o controle e espero o caos passar, julgando a falta de compostura alheia.", w: { Knight: 3, Maid: 3, Page: 2, Heir: 2, Mage: 1 } }
     ]},
     { t: "Você precisa escolher entre ser honesto e perder uma chance, ou mentir e conseguir o que quer.", opts: [
         { txt: "Falo a verdade doa a quem doer. A verdade é o único caminho real.", w: { Mage: 3, Seer: 3, Heir: 3, Thief: -3 } },
@@ -1378,7 +1378,7 @@ const questionsByAspect = {
         { txt: "Aceito o anonimato. Há uma liberdade imensa em não ser notado, permitindo que eu aja sem o peso da expectativa.", w: { Heir: 3, Rogue: 2, Mage: 1 } },
         { txt: "Isso me fere, então passo a agir com uma competência performática, tentando provar meu valor.", w: { Page: 3, Knight: 2, Maid: 1 } },
         { txt: "Eu forço minha presença. Não aceito ser ignorado; faço barulho ou causo uma cena para que minha relevância seja notada.", w: { Prince: 3, Thief: 2, Witch: 1, Heir: -3 } },
-        { txt: "Procuro outros que também estão sendo excluídos e tento criar um espaço onde nossa 'invisibilidade' seja força.", w: { Rogue: 3, Sylph: 3, Page: 1 } }
+        { txt: "Procuro outros que também estão sendo excluídos e tento criar um espaço onde nossa 'invisibilidade' não seja um desconforto.", w: { Rogue: 3, Sylph: 3, Page: 1 } }
     ]},
     { t: "Você recebe uma tarefa importante, mas não lhe dão instruções ou qualquer pista de como começar.", opts: [
         { txt: "Começo do zero absoluto. Se não há nada construído, eu crio minhas próprias regras e preencho esse vazio.", w: { Maid: 3, Witch: 3, Page: 1 } },
@@ -2052,7 +2052,7 @@ function showAspectResultScreen() {
     } else {
          transitionText = state.highDestruction
             ? `Sua conexão com ${state.dominantAspect} é... complicada. Vamos ver como você interage com esse aspecto.`
-            : `Passamos da primeira parte! Vamos ver como você interage com esse aspecto.`;
+            : `Passamos da primeira parte. Agora vamos ver como você interage com esse aspecto.`;
     }
 
     render(`
@@ -2060,7 +2060,7 @@ function showAspectResultScreen() {
             <h1>ASPECTO: ${state.dominantAspect.toUpperCase()}</h1>
             <p>${description}</p>
             <p style="color: #00aa00;">${transitionText}</p>
-            <button onclick="startClassPhase()">CONTINUAR PARA CLASSES</button>
+            <button onclick="startClassPhase()">CONTINUAR PARA CLASSES.</button>
         </div>
     `);
 }
@@ -2074,16 +2074,16 @@ function renderNullAspectEasterEgg(rngAspect) {
             <h1 style="font-size: 28px; color: #ff0000; text-shadow: 0 0 5px #550000;">DADOS INSUFICIENTES</h1>
             
             <div style="text-align: left; margin: 20px 0; border: 1px solid #550000; padding: 20px; background: rgba(20,0,0,0.5);">
-                <p style="color: #ffaaaa; margin-bottom: 15px;">Você se recusou a escolher. Não tem muito que a gente possa fazer desse jeito, né?.</p>
+                <p style="color: #ffaaaa; margin-bottom: 15px;">Você se recusou a escolher qualquer uma das alternativas. Não tem muito que a gente possa fazer desse jeito, né?.</p>
                 
-                <p>Tá, se você não escolhe, deixa comigo. Você vai ser... hm...</p>
+                <p>Tá, se você não vai me contar nada, deixa que eu faço seu trabalho. Você vai ser... hm...</p>
                 
                 <p style="font-size: 1.2em; text-align: center; margin-top: 20px; color: #fff; border-top: 1px dashed #550000; padding-top:10px;">
                    Ok. O universo decidiu que você é um jogador de <strong style="color: #ff0000; font-size: 1.3em;">${rngAspect.toUpperCase()}</strong>.
                 </p>
             </div>
 
-            <button onclick="showAspectResultScreen()" style="background: #330000; border: 1px solid #ff0000; color: #ff0000;">ACEITAR O DESTINO</button>
+            <button onclick="showAspectResultScreen()" style="background: #330000; border: 1px solid #ff0000; color: #ff0000;">ACEITAR O DESTINO.</button>
         </div>
     `);
 }
@@ -2232,7 +2232,7 @@ function renderNullEnding() {
         <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
             
             <h1>TEM ALGO DE ERRADO AQUI.</h1>
-            <p style="font-style: italic; opacity: 0.8;">[NADA OF NADA]</p>
+            <p style="font-style: italic; opacity: 0.8;">NENHUM CLASSPECT ATRIBUÍDO.</p>
             
             <img src="https://i.imgur.com/zcNK5Dk.png" alt="Void Glitch" style="max-width: 250px; width: 100%; height: auto; margin: 20px auto; display: block; border: 1px solid #ff0000; box-shadow: 0 0 10px rgba(255,0,0,0.5);">
 
@@ -2330,45 +2330,11 @@ window.onload = () => {
     render(`
         <div class="fade-in">
             <h1>TESTE DE CLASSPECT DA SBURBIO V1.0</h1>
-            <p>Oi! Que bom que encontrou esse teste. Eu sou o SC, popularmente conhecido como springus. Talvez você não me conheça, mas espero que bote fé no projeto.</p>
+            <p>Oi! Que bom que encontrou esse teste. Eu sou o SC, popularmente conhecido como springus. Talvez você não me conheça, mas espero que bote fé no projeto Sburbio.</p>
             <p>Antes de tudo, vamos falar sobre essa versão 1.0 do teste. Estarei atualizando constantemente as perguntas e pontuações com as observações da comunidade. Aviso que, como é a primeira versão do teste, esperem algumas imprecisões. Por isso, precisamos rodar alguns testes para encontrar e corrigir os resultados errados.</p>
-            <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos, que me ajudaram na confecção desse quiz.</p>
+            <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas me baseio principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos, que me ajudaram na confecção desse quiz. São as outras pessoas que fazem parte do projeto.</p>
             <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
             <button onclick="start()">Bora ver.</button>
         </div>
     `);
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
