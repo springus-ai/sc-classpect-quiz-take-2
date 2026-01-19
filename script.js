@@ -1972,15 +1972,24 @@ function handleInput(optIndex) {
     if (state.stage === "aspect_quiz") {
         for (let [key, val] of Object.entries(selectedOpt.w)) {
             state.aspectScores[key] = (state.aspectScores[key] || 0) + val;
-        }
 
         if (selectedOpt.destroys) {
             const targets = Array.isArray(selectedOpt.destroys) ? selectedOpt.destroys : [selectedOpt.destroys];
             
             targets.forEach(aspect => {
                 if (state.destructionScores.hasOwnProperty(aspect)) {
-                    state.destructionScores[aspect] += 5;
-                    console.log(`Destruição registrada em: ${aspect}`);
+                    let baseDestruction = 8; 
+                    
+                    let currentAversion = state.aspectScores[aspect] || 0;
+                    let aversionBonus = 0;
+                    
+                    if (currentAversion < 0) {
+                        aversionBonus = Math.abs(currentAversion) * 0.5; 
+                    }
+
+                    state.destructionScores[aspect] += (baseDestruction + aversionBonus);
+                    
+                    console.log(`Destruição em ${aspect}: Base ${baseDestruction} + Bônus Aversão ${aversionBonus.toFixed(1)}`);
                 }
             });
         }
@@ -2007,14 +2016,21 @@ function handleInput(optIndex) {
 
 function finishAspectPhase() {
     let finalTotals = {};
-
+    
     for (let asp in state.aspectScores) {
-        finalTotals[asp] = Math.abs(state.aspectScores[asp] || 0) + (state.destructionScores[asp] || 0);
+        let rawScore = state.aspectScores[asp] || 0;
+        let destScore = state.destructionScores[asp] || 0;
+
+        if (rawScore >= 0) {
+            finalTotals[asp] = rawScore + (destScore * 0.5); 
+        } else {
+            finalTotals[asp] = (destScore * 2) - Math.abs(rawScore);
+        }
     }
 
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
     
-    if (sorted[0][1] <= 0) {
+    if (sorted[0][1] <= -5) { 
         const aspects = Object.keys(state.aspectScores);
         const rngAspect = aspects[Math.floor(Math.random() * aspects.length)];
         
@@ -2035,11 +2051,20 @@ function showAspectResultScreen() {
     let score = state.aspectScores[state.dominantAspect] || 0;
     let dest = state.destructionScores[state.dominantAspect] || 0;
     
-    state.highDestruction = (dest > score);
+    if (score < 0 && dest > 5) {
+        state.highDestruction = true;
+    } else if (score >= 0 && dest > score) {
+        state.highDestruction = true;
+    } else {
+        state.highDestruction = false;
+    }
 
     if (state.highDestruction) {
-        state.classScores.Prince += 3;
-        state.classScores.Bard += 3;
+        state.classScores.Prince = (state.classScores.Prince || 0) + 5;
+        state.classScores.Bard = (state.classScores.Bard || 0) + 5;
+        
+        state.classScores.Thief = (state.classScores.Thief || 0) + 2;
+        state.classScores.Witch = (state.classScores.Witch || 0) + 2;
     }
 
     let description = aspectSynopses[state.dominantAspect];
@@ -2051,7 +2076,7 @@ function showAspectResultScreen() {
          transitionText = `O universo escolheu por você. Tente não desperdiçar essa segunda chance nas Classes.`;
     } else {
          transitionText = state.highDestruction
-            ? `Sua conexão com ${state.dominantAspect} é... complicada. Vamos ver como você interage com esse aspecto.`
+            ? `Sua conexão com ${state.dominantAspect} é... complicada. Parece haver um conflito ou rejeição ativa aqui.`
             : `Passamos da primeira parte. Agora vamos ver como você interage com esse aspecto.`;
     }
 
@@ -2338,6 +2363,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
