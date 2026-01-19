@@ -2074,7 +2074,7 @@ function renderNullAspectEasterEgg(rngAspect) {
             <h1 style="font-size: 28px; color: #ff0000; text-shadow: 0 0 5px #550000;">DADOS INSUFICIENTES</h1>
             
             <div style="text-align: left; margin: 20px 0; border: 1px solid #550000; padding: 20px; background: rgba(20,0,0,0.5);">
-                <p style="color: #ffaaaa; margin-bottom: 15px;">Você se recusou a escolher qualquer uma das alternativas. Não tem muito que a gente possa fazer desse jeito, né?.</p>
+                <p style="color: #ffaaaa; margin-bottom: 15px;">Você se recusou a escolher qualquer uma das alternativas. Não tem muito que a gente possa fazer desse jeito, né?</p>
                 
                 <p>Tá, se você não vai me contar nada, deixa que eu faço seu trabalho. Você vai ser... hm...</p>
                 
@@ -2338,3 +2338,4 @@ window.onload = () => {
         </div>
     `);
 };
+
