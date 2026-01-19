@@ -2083,7 +2083,7 @@ function renderNullAspectEasterEgg(rngAspect) {
                 </p>
             </div>
 
-            <button onclick="showAspectResultScreen()" style="background: #330000; border: 1px solid #ff0000; color: #ff0000;">ACEITAR O DESTINO.</button>
+            <button onclick="showAspectResultScreen()" style="background: #330000; border: 1px solid #ff0000; color: #ff0000;">CONTINUAR PARA CLASSES.</button>
         </div>
     `);
 }
@@ -2338,5 +2338,6 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
