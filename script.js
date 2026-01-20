@@ -1972,7 +1972,7 @@ function handleInput(optIndex) {
     if (state.stage === "aspect_quiz") {
         for (let [key, val] of Object.entries(selectedOpt.w)) {
             state.aspectScores[key] = (state.aspectScores[key] || 0) + val;
-        {
+        } 
 
         if (selectedOpt.destroys) {
             const targets = Array.isArray(selectedOpt.destroys) ? selectedOpt.destroys : [selectedOpt.destroys];
@@ -2364,6 +2364,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
