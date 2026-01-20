@@ -2052,9 +2052,9 @@ function showAspectResultScreen() {
     let score = state.aspectScores[state.dominantAspect] || 0;
     let dest = state.destructionScores[state.dominantAspect] || 0;
     
-    if (dest >= 16) { 
+    if (dest >= 24) { 
         state.highDestruction = true;
-        console.log(`High Destruction ativado para ${state.dominantAspect}. Pontos de Destruição: ${dest} (Minímo necessário: 16)`);
+        console.log(`High Destruction ativado para ${state.dominantAspect}. Pontos de Destruição: ${dest} (Minímo necessário: 24)`);
     } else {
         state.highDestruction = false;
     }
@@ -2364,6 +2364,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
