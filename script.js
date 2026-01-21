@@ -1020,7 +1020,7 @@ const aspectQuestions = [
     { t: "13. Você está em um local onde ninguém te conhece. Como se sente?", opts: [
         { txt: "Livre. Sem expectativas, posso agir sem ser rotulado.", w: { Breath: 3, Space: 2, Blood: -2, Life: 1 }, destroys: "Blood" },
         { txt: "Prostrado. Preciso encontrar algo, ou alguém, que me conforte e valide a minha existência.", w: { Light: 3, Heart: 2, Void: 2, Breath: -3 }, destroys: "Breath" }, 
-        { txt: "Observador. Chance perfeita para analisar a lógica do local, sem me envolver emocionalmente.", w: { Void: 2, Time: 3, Heart: -1 }, destroys: "Heart" },
+        { txt: "Observador. Chance perfeita para analisar a dinâmica do local, sem me envolver.", w: { Void: 2, Time: 3, Heart: -1 }, destroys: "Heart" },
         { txt: "Imaginativo. Tomo o momento para me refugiar na minha própria cabeça.", w: { Hope: 3, Blood: 1, Void: -3 } },
         { txt: "Desconectado. Sozinho, não tenho um motivo para estar aqui.", w: { Blood: 3, Doom: 2, Breath: -3 } }
     ]},
@@ -1047,7 +1047,7 @@ const aspectQuestions = [
     ]},
     { t: "17. Em uma competição, o que é o sucesso?", opts: [
         { txt: "A perpetuação de um ideal. O sucesso é mostrar que o que eu acredito é possível e conseguir inspirar os outros com esse resultado.", w: { Hope: 3, Breath: 1, Life: 1, Rage: -3 }, destroys: "Rage" }, 
-        { txt: "A vitória. O sucesso é quando a competição revela quem realmente tem a competência.", w: { Rage: 2, Light: 3, Hope: -3, Void: -3 } }, 
+        { txt: "A vitória. O sucesso é quando a competição revela quem realmente é competente e quem não é.", w: { Rage: 2, Light: 3, Hope: -3, Void: -3 } }, 
         { txt: "A camaradagem. O sucesso não é ganhar sozinho, mas garantir que todos saíram fortalecidos da experiência.", w: { Blood: 3, Heart: 1, Breath: -2 } },
         { txt: "A perfeição do resultado. O sucesso é quando o que foi entregue atinge um nível de excelência técnica que não pode ser contestado.", w: { Space: 3, Mind: 2, Time: -2 } },
         { txt: "A satisfação de ter dado meu melhor. Se me esforcei, independentemente do placar, estou satisfeito.", w: { Heart: 3, Void: 1, Mind: -3 } }
@@ -2364,6 +2364,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
