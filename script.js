@@ -5,6 +5,7 @@ let state = {
     classScores: { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 },
     dominantAspect: "",
     highDestruction: false,
+    skipCount: 0,
     questionCount: 0,
     currentQueue: [],
     history: []
@@ -991,9 +992,9 @@ const aspectQuestions = [
     ]},
     { t: "9. Qual é a sua relação com lembranças, fotos e o passado?", opts: [
         { txt: "Guardo objetos e fotos com cuidado. Ter algo físico para tocar me ajuda a sentir que aqueles momentos e pessoas ainda ocupam um espaço real na minha vida.", w: { Time: 3, Doom: 2, Space: -2 } },
-        { txt: "Vejo o passado como uma memória que abre um leque de possibilidades para novas experiências que carregarei comigo.", w: { Space: 3, Hope: 3 } },
+        { txt: "Olho para o passado com apreço. O futuro só existe por conta do passado, seja ele bom ou ruim.", w: { Space: 3, Hope: 3 } },
         { txt: "O passado serve como aprendizado. Guardo o que aconteceu apenas para analisar as consequências das minhas escolhas e não cometer o mesmo erro de novo.", w: { Mind: 3, Light: 1 } },
-        { txt: "Minhas memórias são o que me dão força. Acredito que o que vivi de bom é a prova de que coisas melhores ainda podem ser construídas no futuro.", w: { Hope: 3, Breath: 2, Rage: 2 } },
+        { txt: "Minhas memórias são o que me dão força. Acredito que o que vivi é a prova de que coisas melhores ainda podem ser construídas no futuro.", w: { Hope: 3, Breath: 2, Rage: 2 } },
         { txt: "Não dou muita importância. O que passou já perdeu o brilho; prefiro focar no agora sem carregar o peso do que já foi.", w: { Void: 3, Breath: 2, Time: -2 }, destroys: "Time" }
     ]},
     { t: "10. Diante de um impasse sem solução, qual sua reação?", opts: [
@@ -2308,8 +2309,17 @@ function handleSkip() {
         questionCount: state.questionCount,
         stage: state.stage,
         currentQueue: state.currentQueue,
-        dominantAspect: state.dominantAspect
+        dominantAspect: state.dominantAspect,
+        skipCount: state.skipCount 
     })));
+
+    state.skipCount = (state.skipCount || 0) + 1;
+
+    if (state.skipCount >= 10) {
+        renderNullEnding(); // Chama a tela da fronha
+        return; 
+    }
+
     state.questionCount++;
 
     if (state.stage === "aspect_quiz") {
@@ -2368,6 +2378,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
