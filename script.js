@@ -2023,9 +2023,13 @@ function finishAspectPhase() {
         let destScore = state.destructionScores[asp] || 0;
 
         if (rawScore >= 0) {
-            finalTotals[asp] = rawScore + (destScore * 0.5); 
+            finalTotals[asp] = rawScore + destScore; 
         } else {
-            finalTotals[asp] = (destScore * 2) - Math.abs(rawScore);
+            if (destScore < 8) {
+                finalTotals[asp] = rawScore; 
+            } else {
+                finalTotals[asp] = Math.abs(rawScore) + destScore;
+            }
         }
     }
 
@@ -2364,6 +2368,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
