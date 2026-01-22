@@ -192,78 +192,78 @@ const classpectDescriptions = {
         <p>Mas, no modo destrutivo ativo, um Bardo de Sangue é aterrorizante. Você pode atrair um elemento tóxico para o grupo que o destrói por dentro, ou pode gerar uma mentalidade de seita/horda tão intensa e irracional que destrói a individualidade de todos. Você oscila entre o eremita total e o líder de um motim caótico.</p>
     `,
 
-    // --- BREATH (SUSPIRO) ---
+    // --- BREATH (Suspiro) ---
     "Maid:Breath": `
         <h3>MAID OF BREATH (CRIADA/CRIADO DO SUSPIRO)</h3>
-        <p><strong>Que Cria o SUSPIRO / Feita(o) de SUSPIRO.</strong></p>
+        <p><strong>Que Cria o Suspiro / Feita(o) de Suspiro.</strong></p>
         <p>Você trabalha duro para parecer despreocupada. Sua liberdade não é natural; é uma construção trabalhosa. Você provavelmente aprendeu cedo que depender dos outros é perigoso, então você "cria" sua própria independência, resolvendo tudo sozinha e recusando ajuda.</p>
         <p>Sua falha é confundir autossuficiência com isolamento. Você se torna "feita(o) de vento": inalcançável, intocável, sempre ocupada(o) demais ou distante demais para criar raízes. Você corre para não ter que parar e perceber que não tem ninguém te esperando na linha de chegada.</p>
     `,
     "Knight:Breath": `
         <h3>KNIGHT OF BREATH (CAVALEIRO/CAVALEIRA DO SUSPIRO)</h3>
-        <p><strong>O que Explora o SUSPIRO / Protege o SUSPIRO.</strong></p>
+        <p><strong>O que Explora o Suspiro / Protege o Suspiro.</strong></p>
         <p>Você performa o desapego. Você é o "cara legal", o "de boa", aquele que nunca deixa nada atingi-lo. Você usa essa indiferença calculada como um escudo (e uma arma) para navegar situações sociais sem se machucar. Se algo dá errado, você finge que nunca se importou mesmo.</p>
         <p>Mas essa armadura de vento é solitária. Ao se proteger contra o impacto emocional e manter todos a uma distância segura, você acaba protegendo sua liberdade ao custo de nunca ter conexões reais. Você é livre, mas sua liberdade é uma cela.</p>
     `,
     "Thief:Breath": `
         <h3>THIEF OF BREATH (LADRÃO/LADRA DO SUSPIRO)</h3>
-        <p><strong>Que Rouba o SUSPIRO (para si).</strong></p>
+        <p><strong>Que Rouba o Suspiro (para si).</strong></p>
         <p>Você tem uma necessidade voraz de espaço e destaque, e não se importa em pisar nos outros para conseguir isso. Em um grupo, você "rouba o ar" da sala, monopolizando a liberdade de expressão ou de decisão.</p>
         <p>Seu mecanismo de defesa é a fuga egoísta: quando as coisas ficam difíceis ou as obrigações pesam, você pega o único paraquedas e salta, deixando os outros lidarem com a queda. Você valida sua existência sendo o mais livre, o mais rápido e o mais inalcançável, drenando a autonomia de quem está ao redor para inflar a sua.</p>
     `,
     "Mage:Breath": `
         <h3>MAGE OF BREATH (MAGO/MAGA DO SUSPIRO)</h3>
-        <p><strong>O que Conhece o SUSPIRO (pelo sofrimento) / Guiado(a) pelo SUSPIRO.</strong></p>
+        <p><strong>O que Conhece o Suspiro (pelo sofrimento) / Guiado(a) pelo Suspiro.</strong></p>
         <p>Você conhece a solidão intimamente. Você provavelmente já foi deixado à deriva ou teve que aprender a se virar sozinho muito cedo. Sua compreensão da liberdade não é romântica; você sabe que ser livre muitas vezes significa ser esquecido.</p>
         <p>Agora, você usa essa vivência para navegar a vida. Você sabe quando uma situação é uma armadilha e sabe exatamente como escapar. Você é o guia que diz "não se apegue a isso, vai te afundar". Seu desafio é parar de ver toda conexão humana como uma corrente em potencial.</p>
     `,
     "Witch:Breath": `
         <h3>WITCH OF BREATH (BRUXA/BRUXO DO SUSPIRO)</h3>
-        <p><strong>Que Manipula o SUSPIRO.</strong></p>
+        <p><strong>Que Manipula o Suspiro.</strong></p>
         <p>Você é a rebelião encarnada. Você não apenas quebra regras; você torce a direção do vento. Se alguém diz "vá para a esquerda", você vai para a direita por puro despeito. Você manipula a liberdade, tanto a sua quanto a dos outros, frequentemente isolando pessoas ou libertando-as contra a vontade delas.</p>
         <p>Sua personalidade é volátil e impossível de prender. Você muda de ideia, de grupo e de paixão num piscar de olhos. É divertido, mas perigoso: você corre o risco de viver uma vida sem consistência, onde nada é construído porque você derruba tudo assim que se sente entediada.</p>
     `,
     "Prince:Breath": `
         <h3>PRINCE OF BREATH (PRÍNCIPE/PRINCESA DO SUSPIRO)</h3>
-        <p><strong>O que Destrói o SUSPIRO / Destrói com o SUSPIRO.</strong></p>
+        <p><strong>O que Destrói o Suspiro / Destrói com o Suspiro.</strong></p>
         <p>Você é um paradoxo ambulante. Como Príncipe, você destrói seu aspecto. Isso pode se manifestar como um autoritarismo rígido: você odeia a falta de rumo, odeia a indecisão e impõe regras estritas para sufocar a "bagunça" da liberdade alheia.</p>
-        <p>Ou, você destrói *com* o SUSPIRO: você corta laços com uma brutalidade chocante. Quando você decide que acabou, acabou. Você queima pontes e desaparece (ghosting), destruindo relacionamentos através do distanciamento absoluto. Você elimina nuances e caminhos alternativos até sobrar apenas a sua verdade inflexível.</p>
+        <p>Ou, você destrói *com* o Suspiro: você corta laços com uma brutalidade chocante. Quando você decide que acabou, acabou. Você queima pontes e desaparece (ghosting), destruindo relacionamentos através do distanciamento absoluto. Você elimina nuances e caminhos alternativos até sobrar apenas a sua verdade inflexível.</p>
     `,
     "Sylph:Breath": `
         <h3>SYLPH OF BREATH (SÍLFIDE/SILFO DO SUSPIRO)</h3>
-        <p><strong>Que Cura o SUSPIRO / Conserta o SUSPIRO.</strong></p>
+        <p><strong>Que Cura o Suspiro / Conserta o Suspiro.</strong></p>
         <p>Você é a pessoa que diz "calma, respira". Você não suporta ver as pessoas estressadas, presas ou sobrecarregadas. Sua função no grupo é aliviar a tensão, oferecer uma rota de fuga ou simplesmente lembrar a todos que o mundo não vai acabar se eles descansarem.</p>
         <p>O problema é que você pode se tornar uma "habilitadora" da procrastinação ou da irresponsabilidade. Ao tentar "curar" a falta de liberdade dos outros, você pode impedi-los de enfrentar as consequências necessárias de suas ações, mantendo-os numa bolha de conforto que impede o crescimento.</p>
     `,
     "Page:Breath": `
         <h3>PAGE OF BREATH (ESCUDEIRO/ESCUDEIRA DO SUSPIRO)</h3>
-        <p><strong>O que Serve o SUSPIRO / É servido(a) pelo SUSPIRO.</strong></p>
+        <p><strong>O que Serve o Suspiro / É servido(a) pelo Suspiro.</strong></p>
         <p>Inicialmente, você parece incapaz de se defender ou de tomar decisões próprias. Você se sente preso, sufocado pelas expectativas dos outros, sonhando acordado com uma liberdade que parece impossível. Você serve a narrativa dos outros.</p>
         <p>Mas a jornada do Page é a acumulação. Se você não desistir, esse desejo reprimido explode. Você pode se tornar a personificação da liberdade ilimitada, alguém que inspira multidões a se levantarem. O segredo é parar de pedir permissão para viver a sua própria vida.</p>
     `,
     "Rogue:Breath": `
         <h3>ROGUE OF BREATH (LADINO/LADINA DO SUSPIRO)</h3>
-        <p><strong>O que Rouba o SUSPIRO (para redistribuir).</strong></p>
+        <p><strong>O que Rouba o Suspiro (para redistribuir).</strong></p>
         <p>Você abre mão da sua própria voz para que outros possam falar. Você assume responsabilidades chatas e pesadas para que seus amigos possam ser livres e se divertir. Você "rouba" a liberdade de si mesmo e a entrega de bandeja para o grupo.</p>
         <p>É uma atitude nobre, mas exaustiva. Você vive vicariamente através das aventuras dos outros enquanto fica preso na retaguarda segurando as pontas. Você precisa entender que o mártir raramente se diverte, e que você também tem o direito de largar tudo e ir embora às vezes.</p>
     `,
     "Seer:Breath": `
         <h3>SEER OF BREATH (VIDENTE DO SUSPIRO)</h3>
-        <p><strong>Que Vê o SUSPIRO / Guia pelo SUSPIRO.</strong></p>
+        <p><strong>Que Vê o Suspiro / Guia pelo Suspiro.</strong></p>
         <p>Você enxerga os fluxos. Você sabe para onde as coisas estão indo, quais tendências vão pegar e quais caminhos estão livres de obstáculos. Você não necessariamente se move, mas aponta a direção: "o caminho mais fácil é por ali".</p>
         <p>Sua relação com a liberdade é analítica. Você entende a motivação e a autonomia dos outros melhor do que eles mesmos. O perigo é ficar tão focado em analisar todas as rotas de fuga possíveis que você nunca escolhe uma, ficando paralisada na encruzilhada enquanto assiste os outros passarem.</p>
     `,
     "Heir:Breath": `
         <h3>HEIR OF BREATH (HERDEIRO/HERDEIRA DO SUSPIRO)</h3>
-        <p><strong>O que Herda o SUSPIRO / Protegido(a) pelo SUSPIRO.</strong></p>
+        <p><strong>O que Herda o Suspiro / Protegido(a) pelo Suspiro.</strong></p>
         <p>Você é, irritantemente, a pessoa que nunca se dá mal. Você vive com a cabeça nas nuvens e, de alguma forma, o chão sempre aparece para aparar sua queda. Você herda a liberdade; as obrigações tendem a escorregar de você.</p>
         <p>Sua resposta aos problemas é simplesmente flutuar para longe deles. Você pode parecer alheio ou desconectado da realidade, confiando que o "vento" vai te levar para onde você precisa ir. O risco é acordar um dia e perceber que você nunca tomou uma decisão consciente na vida e que o vento te levou para um abismo.</p>
     `,
     "Bard:Breath": `
         <h3>BARD OF BREATH (BARDO/BARDA DO SUSPIRO)</h3>
-        <p><strong>O que Convida a Destruição do SUSPIRO.</strong></p>
-        <p>Você é imprevisível. Às vezes, você é a pessoa mais rígida e estagnada do mundo, recusando-se a mudar (convidando a destruição *do* SUSPIRO/movimento). Você deixa as coisas pararem e apodrecerem por pura apatia.</p>
-        <p>Outras vezes, você é o furacão. Você convida a destruição *através* do SUSPIRO: você causa o caos simplesmente saindo de cena no momento crucial, ou sua atitude despreocupada desmantela estruturas importantes de forma passiva. Você não quebra o vaso; você deixa a janela aberta durante a tempestade e diz "ops" quando ele cai.</p>
+        <p><strong>O que Convida a Destruição do Suspiro.</strong></p>
+        <p>Você é imprevisível. Às vezes, você é a pessoa mais rígida e estagnada do mundo, recusando-se a mudar (convidando a destruição *do* Suspiro/movimento). Você deixa as coisas pararem e apodrecerem por pura apatia.</p>
+        <p>Outras vezes, você é o furacão. Você convida a destruição *através* do Suspiro: você causa o caos simplesmente saindo de cena no momento crucial, ou sua atitude despreocupada desmantela estruturas importantes de forma passiva. Você não quebra o vaso; você deixa a janela aberta durante a tempestade e diz "ops" quando ele cai.</p>
     `,
 
     // --- VOID (VAZIO) ---
@@ -1686,7 +1686,7 @@ const questionsByAspect = {
     { t: "Você encontra uma criatura pequena em seus últimos momentos de vida. O sofrimento é visível e não há chance de recuperação; a morte é certa.", opts: [
         { txt: "Mato-o rapidamente. É um ato de misericórdia impor um fim imediato quando o destino já está selado dolorosamente.", w: { Knight: 3, Prince: 2, Maid: 1, Bard: -1 } },
         { txt: "Viro o rosto e vou embora. A visão da morte crua me perturba profundamente e prefiro negar essa realidade.", w: { Page: 3, Heir: 2, Prince: 1, Mage: -2 } },
-        { txt: "Fico observando até o último suspiro. Sinto uma obrigação solene de testemunhar a passagem da vida para a morte.", w: { Mage: 3, Seer: 2, Rogue: 1, Knight: -2 } },
+        { txt: "Fico observando até o último Suspiro. Sinto uma obrigação solene de testemunhar a passagem da vida para a morte.", w: { Mage: 3, Seer: 2, Rogue: 1, Knight: -2 } },
         { txt: "Tento salvá-lo desesperadamente, mesmo sabendo que é fútil. Recuso-me a aceitar que a morte seja a única opção.", w: { Maid: 3, Witch: 2, Sylph: 1, Seer: -2 } },
         { txt: "Deixo a natureza seguir seu curso. Se tiver que morrer, vai morrer. Não intervenho nem para salvar, nem para matar.", w: { Bard: 3, Seer: 1, Mage: 1, Sylph: -2 } }
     ]},
@@ -2354,6 +2354,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
