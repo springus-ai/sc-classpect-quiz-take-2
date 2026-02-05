@@ -2019,6 +2019,10 @@ function handleInput(optIndex) {
 function finishAspectPhase() {
     let finalTotals = {};
     
+    const MIN_DESTRUCTION_REQUIRED = 24; 
+
+    const MIN_AVERSION_REQUIRED = -10;
+
     for (let asp in state.aspectScores) {
         let rawScore = state.aspectScores[asp] || 0;
         let destScore = state.destructionScores[asp] || 0;
@@ -2026,23 +2030,21 @@ function finishAspectPhase() {
         if (rawScore >= 0) {
             finalTotals[asp] = rawScore + destScore; 
         } else {
-            if (destScore < 8) {
-                finalTotals[asp] = rawScore; 
-            } else {
+            if (destScore >= MIN_DESTRUCTION_REQUIRED && rawScore <= MIN_AVERSION_REQUIRED) {
                 finalTotals[asp] = Math.abs(rawScore) + destScore;
+            } else {
+                finalTotals[asp] = rawScore; 
             }
         }
     }
-
+    
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
     
     if (sorted[0][1] <= -5) { 
         const aspects = Object.keys(state.aspectScores);
         const rngAspect = aspects[Math.floor(Math.random() * aspects.length)];
-        
         state.dominantAspect = rngAspect;
         state.aspectScores[rngAspect] = 1; 
-        
         renderNullAspectEasterEgg(rngAspect);
         return;
     }
@@ -2050,7 +2052,6 @@ function finishAspectPhase() {
     state.dominantAspect = sorted[0][0];
     showAspectResultScreen();
 }
-
 function showAspectResultScreen() {
     document.body.classList.remove('red-mode'); 
 
@@ -2354,6 +2355,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
