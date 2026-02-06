@@ -1,26 +1,3 @@
-let state = {
-    stage: "intro",
-    aspectScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
-    destructionScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
-    classScores: { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 },
-    dominantAspect: "",
-    highDestruction: false,
-    skipCount: 0,
-    questionCount: 0,
-    currentQueue: [],
-    history: []
-};
-
-let activeQuestion = null;
-let aspectQuestions;
-let questionsByAspect; 
-let aspectSynopses;
-let classSynopses;
-let classpectDescriptions; 
-
-let uiText = {}; 
-let currentLang = "pt"; 
-
 const DATABASE = {
     pt: {
         
@@ -3954,7 +3931,28 @@ en: {
   }
 };
 
-// --- VARIÁVEIS GLOBAIS ---
+// --- VARIÁVEIS GLOBAIS (Coladas aqui para não duplicar) ---
+let state = {
+    stage: "intro",
+    aspectScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
+    destructionScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
+    classScores: { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 },
+    dominantAspect: "",
+    highDestruction: false,
+    skipCount: 0,
+    questionCount: 0,
+    currentQueue: [],
+    history: []
+};
+
+let activeQuestion = null;
+let aspectQuestions;
+let questionsByAspect; 
+let aspectSynopses;
+let classSynopses;
+let classpectDescriptions; 
+let uiText = {}; 
+let currentLang = "pt";
 let viewerClass = "";
 let viewerAspect = "";
 
@@ -3971,7 +3969,6 @@ function handleInput(optIndex) {
     let currentQ = activeQuestion;
     if (!currentQ) return; 
 
-    // Salva histórico para o botão voltar
     state.history.push(JSON.parse(JSON.stringify({
         aspectScores: state.aspectScores,
         classScores: state.classScores,
@@ -3984,26 +3981,21 @@ function handleInput(optIndex) {
 
     let selectedOpt = currentQ.opts[optIndex];
     
-    // Lógica da Fase de Aspectos
     if (state.stage === "aspect_quiz") {
         for (let [key, val] of Object.entries(selectedOpt.w)) {
             state.aspectScores[key] = (state.aspectScores[key] || 0) + val;
         } 
 
-        // Lógica de Destruição
         if (selectedOpt.destroys) {
             const targets = Array.isArray(selectedOpt.destroys) ? selectedOpt.destroys : [selectedOpt.destroys];
-            
             targets.forEach(aspect => {
                 if (state.destructionScores.hasOwnProperty(aspect)) {
                     let baseDestruction = 8; 
                     let currentAversion = state.aspectScores[aspect] || 0;
                     let aversionBonus = 0;
-                    
                     if (currentAversion < 0) {
                         aversionBonus = Math.abs(currentAversion) * 0.5; 
                     }
-
                     state.destructionScores[aspect] += (baseDestruction + aversionBonus);
                 }
             });
@@ -4016,7 +4008,6 @@ function handleInput(optIndex) {
             finishAspectPhase();
         }
 
-    // Lógica da Fase de Classes
     } else if (state.stage === "class_quiz") {
         for (let [cls, val] of Object.entries(selectedOpt.w)) {
             state.classScores[cls] = (state.classScores[cls] || 0) + val;
@@ -4052,13 +4043,12 @@ function finishAspectPhase() {
 
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
     
-    // Easter Egg do Aspecto Nulo
     if (sorted[0][1] <= -5) { 
         const aspects = Object.keys(state.aspectScores);
         const rngAspect = aspects[Math.floor(Math.random() * aspects.length)];
         state.dominantAspect = rngAspect;
         state.aspectScores[rngAspect] = 1; 
-        renderNullAspectEasterEgg(rngAspect); // Agora essa função existe abaixo
+        renderNullAspectEasterEgg(rngAspect);
         return;
     }
 
@@ -4067,7 +4057,6 @@ function finishAspectPhase() {
 }
 
 function renderNullAspectEasterEgg(aspect) {
-    // Função básica para não quebrar o código
     render(`
         <div class="fade-in" style="text-align: center; color: #aaa;">
             <h1>NULL RESULT</h1>
@@ -4086,12 +4075,10 @@ function showAspectResultScreen() {
     
     if (dest >= 24) { 
         state.highDestruction = true;
-        console.log(`High Destruction ativado para ${state.dominantAspect}.`);
     } else {
         state.highDestruction = false;
     }
 
-    // Bônus para classes destrutivas se High Destruction
     if (state.highDestruction) {
         state.classScores.Prince = (state.classScores.Prince || 0) + 3;
         state.classScores.Bard = (state.classScores.Bard || 0) + 3;
@@ -4121,7 +4108,6 @@ function showAspectResultScreen() {
 function startClassPhase() {
     state.stage = "class_quiz";
     state.questionCount = 0;
-    // Garante que não quebre se questionsByAspect estiver vazio para o aspecto
     state.currentQueue = (questionsByAspect && questionsByAspect[state.dominantAspect]) ? questionsByAspect[state.dominantAspect] : [];
     
     if (state.currentQueue.length > 0) {
@@ -4130,8 +4116,6 @@ function startClassPhase() {
         render(`<div class="fade-in"><h1>Erro</h1><p>Não há perguntas para a classe de ${state.dominantAspect} ainda.</p><button onclick="location.reload()">Reiniciar</button></div>`);
     }
 }
-
-// --- RENDERIZAÇÃO E RESULTADOS FINAIS ---
 
 function renderDynamicView() {
     const key = `${viewerClass}:${viewerAspect}`;
@@ -4194,28 +4178,19 @@ function finishClassPhase() {
     render(`
         <div class="result-box fade-in">
             <h1 id="result-title" style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">...</h1>
-            
             <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">${uiText.finalSubtitle}</p>
-            
             <div id="combined-view-container" style="display: none; text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
                 <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 15px;">${uiText.finalTitle}</h3>
-                <div id="combined-content" class="combined-analysis">
-                </div>
-                <p id="combined-footer" style="margin-top: 25px; font-size: 0.9em; opacity: 0.8; border-top: 1px dashed #005500; padding-top: 15px;">
-                    ...
-                </p>
+                <div id="combined-content" class="combined-analysis"></div>
+                <p id="combined-footer" style="margin-top: 25px; font-size: 0.9em; opacity: 0.8; border-top: 1px dashed #005500; padding-top: 15px;">...</p>
             </div>
-
             <div id="split-view-container" style="display: none; text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
                 <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 5px;">${uiText.labelAspect}</h3>
-                <div id="aspect-display-area">
-                </div>
+                <div id="aspect-display-area"></div>
                 <hr style="border: 0; border-top: 1px solid #005500; margin: 20px 0;">
                 <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 5px;">${uiText.labelClass}</h3>
-                <div id="class-display-area">
-                </div>
+                <div id="class-display-area"></div>
             </div>
-
             <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 25px 0;">
                 <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
                     <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">${uiText.exploreClasses}</p>
@@ -4227,7 +4202,6 @@ function finishClassPhase() {
                         `).join('')}
                     </div>
                 </div>
-
                 <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
                     <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">${uiText.exploreAspects}</p>
                     <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
@@ -4239,22 +4213,15 @@ function finishClassPhase() {
                     </div>
                 </div>
             </div>
-            
             <p style="color: #88ff88; font-size: 14px;">${uiText.footerNote1}</p>
             <p style="color: #88ff88; font-size: 14px;">${uiText.footerNote2}</p>
-            
-            <p style="font-size: 11px; color: #aaffaa; opacity: 0.7; margin-top: 5px;">
-                ${uiText.footerNote3}
-            </p>
-
+            <p style="font-size: 11px; color: #aaffaa; opacity: 0.7; margin-top: 5px;">${uiText.footerNote3}</p>
             <button onclick="location.reload()" style="margin-top:20px;">${uiText.btnRestart}</button>
         </div>
     `);
-
     renderDynamicView();
 }
 
-// Funções globais para os botões do HTML
 window.updateClassView = function(className) {
     viewerClass = className;
     renderDynamicView();
@@ -4265,22 +4232,16 @@ window.updateAspectView = function(aspectName) {
     renderDynamicView();
 };
 
-// --- FUNÇÕES DE NAVEGAÇÃO E SISTEMA ---
-
 function renderNullEnding() {
     const html = `
         <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
-            
             <h1>${uiText.nullTitle}</h1>
             <p style="font-style: italic; opacity: 0.8;">${uiText.nullSubtitle}</p>
-            
             <img src="https://i.imgur.com/zcNK5Dk.png" alt="Void Glitch" style="max-width: 250px; width: 100%; height: auto; margin: 20px auto; display: block; border: 1px solid #ff0000; box-shadow: 0 0 10px rgba(255,0,0,0.5);">
-
             <div class="analysis-text" style="margin-top: 2rem;">
                 <p>${uiText.nullText1}</p>
                 <p><strong>${uiText.nullText2}</strong></p>
             </div>
-            
             <button class="retry-button" onclick="location.reload()">${uiText.btnRetry}</button>
         </div>
     `;
@@ -4291,22 +4252,17 @@ function renderQuestion(q) {
     if (!q) return;
     activeQuestion = q;
     let html = `<h2>${q.t}</h2>`;
-
     html += `<div class="options-container" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">`;
     q.opts.forEach((opt, index) => {
         html += `<button onclick="handleInput(${index})">${opt.txt}</button>`;
     });
     html += `</div>`;
-
     html += `<div class="navigation-controls" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">`;
-
     if (state.questionCount > 0 || state.stage === "class_quiz") {
         html += `<button class="back-button" onclick="handleBack()" style="background: #444;">${uiText.btnBack}</button>`;
     }
-    
     html += `<button class="skip-button" onclick="handleSkip()" style="background: #222;">${uiText.btnSkip}</button>`;
     html += `</div>`;
-    
     render(html);
 }
 
@@ -4348,25 +4304,18 @@ function handleSkip() {
 
 function handleBack() {
     if (state.history.length === 0) return;
-
     const lastState = state.history.pop();
-    
     state.aspectScores = { ...lastState.aspectScores };
     state.classScores = { ...lastState.classScores };
     state.destructionScores = { ...lastState.destructionScores };
-
     state.questionCount = lastState.questionCount;
     state.stage = lastState.stage;
-    
     state.currentQueue = [...lastState.currentQueue]; 
     state.dominantAspect = lastState.dominantAspect;
-    
     const currentList = state.stage === "aspect_quiz" ? aspectQuestions : state.currentQueue;
-    
     if (currentList && currentList[state.questionCount]) {
         renderQuestion(currentList[state.questionCount]);
     } else {
-        console.log("Reiniciando renderização segura.");
         renderQuestion(state.currentQueue[0]); 
     }
 }
@@ -4377,33 +4326,22 @@ function render(html) {
 
 function setLanguage(lang) {
     currentLang = lang;
-    
-    // Atualiza as referências para o idioma novo
     aspectQuestions = DATABASE[lang].aspectQuestions;
     questionsByAspect = DATABASE[lang].questionsByAspect;
     aspectSynopses = DATABASE[lang].aspectSynopses;
     classSynopses = DATABASE[lang].classSynopses;
     classpectDescriptions = DATABASE[lang].classpectDescriptions;
     uiText = DATABASE[lang].ui;
-
+    
     updateLanguageVisuals();
     
-    // Se estiver no intro, redesenha o intro
     if (state.stage === "intro") {
         renderIntro();
-    } 
-    // CORREÇÃO: Se estiver no meio de uma pergunta, recarrega a pergunta no novo idioma
-    else if (state.stage === "aspect_quiz" && aspectQuestions) {
+    } else if (state.stage === "aspect_quiz" && aspectQuestions) {
         renderQuestion(aspectQuestions[state.questionCount]);
-    }
-    else if (state.stage === "class_quiz" && state.currentQueue) {
-        // Tenta achar a pergunta equivalente no array novo
-        // Nota: Isso é complexo porque currentQueue é uma cópia. 
-        // Vamos tentar recarregar questionsByAspect do novo idioma:
-        if (questionsByAspect && questionsByAspect[state.dominantAspect]) {
-            state.currentQueue = questionsByAspect[state.dominantAspect];
-            renderQuestion(state.currentQueue[state.questionCount]);
-        }
+    } else if (state.stage === "class_quiz" && questionsByAspect && questionsByAspect[state.dominantAspect]) {
+        state.currentQueue = questionsByAspect[state.dominantAspect];
+        renderQuestion(state.currentQueue[state.questionCount]);
     }
 }
 
@@ -4422,29 +4360,20 @@ function renderIntro() {
 
 function createLanguageControls() {
     if (document.getElementById('lang-controls')) return;
-
     const div = document.createElement('div');
     div.id = 'lang-controls';
     div.style.cssText = "position: fixed; top: 15px; right: 15px; z-index: 9999; display: flex; gap: 10px;";
-
     div.innerHTML = `
-        <button onclick="setLanguage('pt')" id="btn-pt" style="font-size: 24px; cursor: pointer; background: none; border: none; filter: grayscale(100%); transition: all 0.3s;" title="Português">
-            🇧🇷
-        </button>
-        <button onclick="setLanguage('en')" id="btn-en" style="font-size: 24px; cursor: pointer; background: none; border: none; filter: grayscale(100%); transition: all 0.3s;" title="English">
-            🇺🇸
-        </button>
+        <button onclick="setLanguage('pt')" id="btn-pt" style="font-size: 24px; cursor: pointer; background: none; border: none; filter: grayscale(100%); transition: all 0.3s;" title="Português">🇧🇷</button>
+        <button onclick="setLanguage('en')" id="btn-en" style="font-size: 24px; cursor: pointer; background: none; border: none; filter: grayscale(100%); transition: all 0.3s;" title="English">🇺🇸</button>
     `;
-
     document.body.appendChild(div);
 }
 
 function updateLanguageVisuals() {
     const btnPt = document.getElementById('btn-pt');
     const btnEn = document.getElementById('btn-en');
-    
     if (!btnPt || !btnEn) return;
-
     if (currentLang === 'pt') {
         btnPt.style.filter = "grayscale(0%)";
         btnPt.style.transform = "scale(1.2)";
@@ -4458,7 +4387,6 @@ function updateLanguageVisuals() {
     }
 }
 
-// INICIALIZAÇÃO
 window.onload = () => {
     createLanguageControls(); 
     setLanguage('pt'); 
