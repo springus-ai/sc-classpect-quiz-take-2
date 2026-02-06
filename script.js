@@ -21,7 +21,7 @@ function start() {
     state.questionCount = 0;
     
     if (typeof aspectQuestions === 'undefined') {
-        alert("Erro Crítico: O arquivo questions.js não foi carregado. Verifique se ele está na mesma pasta e sem erros.");
+        alert("manutenção acontecendo! espera um pouco.");
         return;
     }
     
@@ -368,3 +368,4 @@ window.onload = () => {
 
     render(introText);
 };
+
