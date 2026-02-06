@@ -52,14 +52,13 @@ const DATABASE = {
             footerNote1: "Lembre-se: Esse teste não será suficiente para te definir...",
             footerNote2: "Se quiser dar qualquer feedback...",
             footerNote3: "Em breve, faremos um site...",
-            btnRestart: "REINICIAR SESSÃO"
+            btnRestart: "REINICIAR SESSÃO",
     
         nullTitle: "TEM ALGO DE ERRADO AQUI.",
             nullSubtitle: "NENHUM CLASSPECT ATRIBUÍDO.",
             nullText1: "Você me fez morder a fronha. Quer dizer que você abriu esse teste só para clicar em 'Nenhuma das anteriores' tipo, 30 vezes? Poxa.",
             nullText2: "Vem, vamos de novo. Eu sei que você quer saber o seu resultado de verdade.",
-            btnRetry: "Tente novamente."
-            
+            btnRetry: "Tente novamente."   
         },
 
 aspectSynopses = {
@@ -2022,7 +2021,7 @@ en: {
             exploreAspects: "EXPLORE ASPECTS:",
             footerNote1: "Remember: This test won't be enough to define you. You have a direction now; I recommend reading up and drawing your own conclusions.",
             footerNote2: "Coming soon, we'll make a really cool classpect analysis site. Keep an eye out, yours might be one of the first to be released!",
-            btnRestart: "RESTART SESSION."
+            btnRestart: "RESTART SESSION.",
 
             nullTitle: "SOMETHING IS WRONG HERE.",
             nullSubtitle: "NO CLASSPECT ASSIGNED.",
@@ -4430,6 +4429,7 @@ window.onload = () => {
     setLanguage('pt'); 
 };
 };
+
 
 
 
