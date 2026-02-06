@@ -300,11 +300,6 @@ function renderNullEnding() {
     render(nullHTML);
 }
 
-function renderNullAspectEasterEgg(aspect) {
-    console.log("Easter egg de aspecto negativo ativado para: " + aspect);
-    renderNullEnding(); 
-}
-
 function renderQuestion(q) {
     activeQuestion = q;
     let html = `<h2>${q.t}</h2>`;
@@ -396,6 +391,7 @@ window.onload = () => {
     const introHTML = classpectDescriptions["UI_Intro"] || "<h1>Erro: Intro não encontrada.</h1><button onclick='start()'>Iniciar</button>";
     render(introHTML);
 };
+
 
 
 
