@@ -69,7 +69,6 @@ function handleInput(optIndex) {
         }
 
     } else if (state.stage === "class_quiz") {
-        // Lógica de Classe
         for (let [cls, val] of Object.entries(selectedOpt.w)) {
             state.classScores[cls] = (state.classScores[cls] || 0) + val;
         }
@@ -85,20 +84,16 @@ function handleInput(optIndex) {
 function finishAspectPhase() {
     let finalTotals = {};
     const REQUIRED_TAG_SCORE = 24; 
-    const REQUIRED_NEGATIVE_CONSISTENCY = -12; 
 
     for (let asp in state.aspectScores) {
         let rawScore = state.aspectScores[asp] || 0;
         let destScore = state.destructionScores[asp] || 0;
 
-        if (rawScore >= 0) {
-            finalTotals[asp] = rawScore + destScore; 
+        if (destScore >= REQUIRED_TAG_SCORE) {
+
+            finalTotals[asp] = Math.abs(rawScore) + destScore; 
         } else {
-            if (destScore >= REQUIRED_TAG_SCORE && rawScore <= REQUIRED_NEGATIVE_CONSISTENCY) {
-                finalTotals[asp] = Math.abs(rawScore) + destScore; 
-            } else {
-                finalTotals[asp] = rawScore; 
-            }
+            finalTotals[asp] = rawScore; 
         }
     }
 
@@ -116,7 +111,6 @@ function finishAspectPhase() {
     state.dominantAspect = sorted[0][0];
     showAspectResultScreen();
 }
-
 function showAspectResultScreen() {
     document.body.classList.remove('red-mode'); 
 
@@ -368,6 +362,7 @@ window.onload = () => {
 
     render(introText);
 };
+
 
 
 
