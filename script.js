@@ -61,7 +61,7 @@ const DATABASE = {
             btnRetry: "Tente novamente."   
         },
 
-aspectSynopses = {
+aspectSynopses: {
     Time: "<strong>Tempo:</strong> Você é orientado a objetivos e brutalmente eficiente. O relógio não lhe assusta; ele toca a sua música. Você entende que fins são necessários e que o sacrifício faz parte do progresso. Você vive em um estado de ansiedade crônica. Você corre contra o relógio não porque gosta, mas porque teme que, se parar por um segundo, tudo desmorone. Sua impaciência é o medo da mortalidade disfarçado de produtividade.",
     Space: "<strong>Espaço:</strong> Você vê o quadro geral. Onde outros veem o fim, você vê o começo de algo novo. Criativo, artístico e fundamentalmente importante, você é o palco onde o universo acontece. Você se sente isolado e desconectado. Sua tendência a esperar passivamente pelo momento certo ou a focar demais na criação física é uma forma de evitar lidar com o fato de que, muitas vezes, você se sente sozinho numa sala cheia de gente.",
     Void: "<strong>Vazio:</strong> Você é o mistério, o potencial não realizado, o segredo. Você opera nas sombras, confortável com o desconhecido e capaz de ver o que os outros ignoram. Você é a tela em branco infinita. Você se esconde porque tem medo de ser julgado ou percebido. É mais seguro ser um nada do que arriscar ser algo e falhar. Sua passividade e apatia são formas de evitar a dor da exposição.",
@@ -76,7 +76,7 @@ aspectSynopses = {
     Breath: "<strong>Suspiro:</strong> Você é o vento que não pode ser contido. Desapegado, flexível e independente, você flutua acima dos problemas e traz movimento para onde há estagnação. Você é a própria definição de liberdade. Sua liberdade é, muitas vezes, apenas escapismo. Você tem pavor de amarras e responsabilidades, então se afasta (física ou emocionalmente) assim que as coisas ficam sérias ou difíceis. Você confunde indiferença com iluminação."
 },
 
-classSynopses = {
+classSynopses: {
     Prince: "<strong>Príncipe/Princesa:</strong> Você é a força imparável. Você não lida com nuances, você elimina o problema pela raiz. Ao destruir seu Aspecto (ou destruir com ele), você abre caminho para o novo, agindo com uma precisão quase cirúrgica. Você frequentemente age como o oposto do seu Aspecto porque está ocupado demais tentando aniquilá-lo dentro de si mesmo. Seu perfeccionismo é destrutivo, e você corre o risco de reinar sobre um monte de cinzas se não tiver cuidado.",
     Bard: "<strong>Bardo/Barda:</strong> Ninguém sabe o que esperar de você, e talvez nem você saiba. Você permite que a destruição aconteça passivamente, até o momento em que decide virar a mesa de repente. Você oscila entre a total apatia e a catástrofe explosiva. Sua natureza imprevisível é um mecanismo de defesa para evitar responsabilidades, mas sua recusa em escolher um lado acaba sendo uma escolha por si só.",
     Thief: "<strong>Ladrão/Ladra:</strong> O que você quer, você pega. Você tem a agência e a ousadia para roubar o Aspecto para seu próprio benefício. Você é proativo, engenhoso e não pede desculpas por sobreviver. Seu egoísmo aparente esconde um medo profundo de privação. Você rouba porque, no fundo, sente que não tem nada de valor próprio. Você preenche o vazio interno com o poder que tira dos outros.",
@@ -91,7 +91,7 @@ classSynopses = {
     Seer: "<strong>Vidente:</strong> Você vê o caminho dourado. Enquanto os outros tateiam no escuro, você tem o mapa, a bússola e o manual de instruções. Você não luta na linha de frente; você diz aos outros onde bater para vencer. O conhecimento é um fardo pesado. Você sofre com a responsabilidade de saber o resultado de cada má decisão que seus amigos tomam. Seu desafio é agir com as informações que tem, em vez de paralisar analisando-as."
 },
 
-classpectDescriptions = {
+classpectDescriptions: {
     // --- HOPE (ESPERANÇA) ---
     "Maid:Hope": `
         <h3>MAID OF HOPE (CRIADA/CRIADO DA ESPERANÇA)</h3>
@@ -981,7 +981,7 @@ classpectDescriptions = {
     `
 },
 // FASE 1: ASPECTO 
-aspectQuestions = [
+aspectQuestions: [
     { t: "1. Um grupo de amigos insiste em manter uma tradição anual que você acha cansativa. O que você faz?", opts: [
         { txt: "Acabo indo, mas só para cumprir o protocolo. Me incluíram, mas não significa que estou ali de corpo e alma.", w: { Doom: 3, Life: 1, Breath: 1 } },
         { txt: "Insisto para que todos compareçam. Se a gente começar a abrir exceções, o grupo acaba se perdendo com o tempo.", w: { Blood: 4, Breath: -2 }, destroys: "Breath" }, 
@@ -1125,7 +1125,7 @@ aspectQuestions = [
 ],
 
 // FASE 2: CLASSES
-questionsByAspect = {
+questionsByAspect: {
     "Time": [
     { t: "Você tem um projeto vital com um prazo impossível que está se esgotando hoje.",  opts: [
         { txt: "Sacrifico meu sono, minha saúde e uso cada segundo para garantir que a entrega seja impecável.", w: { Knight: 3, Maid: 2, Page: 2, Prince: -2 } },
@@ -3948,15 +3948,17 @@ en: {
         { txt: "I start building something new. Since there are no rules, I create my own from scratch.", w: { Maid: 3, Witch: 2, Thief: 1, Bard: -2 } },
         { txt: "I get bored. I'll probably cause some confusion just to have something to interact with.", w: { Bard: 3, Thief: 2, Prince: 1, Seer: -2 } },
         { txt: "I use the distance to observe and comprehend how the world works without my interference.", w: { Seer: 3, Mage: 2, Sylph: 1, Prince: -1 } }
-    ]}
-	]
-},
-        }
-    }
+   ]}
+	 ]
+   }
+  }
 };
 
+// --- VARIÁVEIS GLOBAIS ---
 let viewerClass = "";
 let viewerAspect = "";
+
+// --- FUNÇÕES DE CONTROLE ---
 
 function start() {
     document.body.classList.remove('red-mode');
@@ -3969,6 +3971,7 @@ function handleInput(optIndex) {
     let currentQ = activeQuestion;
     if (!currentQ) return; 
 
+    // Salva histórico para o botão voltar
     state.history.push(JSON.parse(JSON.stringify({
         aspectScores: state.aspectScores,
         classScores: state.classScores,
@@ -3981,18 +3984,19 @@ function handleInput(optIndex) {
 
     let selectedOpt = currentQ.opts[optIndex];
     
+    // Lógica da Fase de Aspectos
     if (state.stage === "aspect_quiz") {
         for (let [key, val] of Object.entries(selectedOpt.w)) {
             state.aspectScores[key] = (state.aspectScores[key] || 0) + val;
         } 
 
+        // Lógica de Destruição
         if (selectedOpt.destroys) {
             const targets = Array.isArray(selectedOpt.destroys) ? selectedOpt.destroys : [selectedOpt.destroys];
             
             targets.forEach(aspect => {
                 if (state.destructionScores.hasOwnProperty(aspect)) {
                     let baseDestruction = 8; 
-                    
                     let currentAversion = state.aspectScores[aspect] || 0;
                     let aversionBonus = 0;
                     
@@ -4001,8 +4005,6 @@ function handleInput(optIndex) {
                     }
 
                     state.destructionScores[aspect] += (baseDestruction + aversionBonus);
-                    
-                    console.log(`Destruição em ${aspect}: Base ${baseDestruction} + Bônus Aversão ${aversionBonus.toFixed(1)}`);
                 }
             });
         }
@@ -4014,6 +4016,7 @@ function handleInput(optIndex) {
             finishAspectPhase();
         }
 
+    // Lógica da Fase de Classes
     } else if (state.stage === "class_quiz") {
         for (let [cls, val] of Object.entries(selectedOpt.w)) {
             state.classScores[cls] = (state.classScores[cls] || 0) + val;
@@ -4029,9 +4032,7 @@ function handleInput(optIndex) {
 
 function finishAspectPhase() {
     let finalTotals = {};
-    
     const REQUIRED_TAG_SCORE = 24; 
-
     const REQUIRED_NEGATIVE_CONSISTENCY = -12; 
 
     for (let asp in state.aspectScores) {
@@ -4041,7 +4042,6 @@ function finishAspectPhase() {
         if (rawScore >= 0) {
             finalTotals[asp] = rawScore + destScore; 
         } else {
-
             if (destScore >= REQUIRED_TAG_SCORE && rawScore <= REQUIRED_NEGATIVE_CONSISTENCY) {
                 finalTotals[asp] = Math.abs(rawScore) + destScore; 
             } else {
@@ -4052,18 +4052,32 @@ function finishAspectPhase() {
 
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
     
+    // Easter Egg do Aspecto Nulo
     if (sorted[0][1] <= -5) { 
         const aspects = Object.keys(state.aspectScores);
         const rngAspect = aspects[Math.floor(Math.random() * aspects.length)];
         state.dominantAspect = rngAspect;
         state.aspectScores[rngAspect] = 1; 
-        renderNullAspectEasterEgg(rngAspect);
+        renderNullAspectEasterEgg(rngAspect); // Agora essa função existe abaixo
         return;
     }
 
     state.dominantAspect = sorted[0][0];
     showAspectResultScreen();
 }
+
+function renderNullAspectEasterEgg(aspect) {
+    // Função básica para não quebrar o código
+    render(`
+        <div class="fade-in" style="text-align: center; color: #aaa;">
+            <h1>NULL RESULT</h1>
+            <p>Seus resultados foram tão inconsistentes que o sistema colapsou.</p>
+            <p>Designando aspecto aleatório de emergência: <strong>${aspect.toUpperCase()}</strong></p>
+            <button onclick="showAspectResultScreen()">Aceitar Destino</button>
+        </div>
+    `);
+}
+
 function showAspectResultScreen() {
     document.body.classList.remove('red-mode'); 
 
@@ -4072,11 +4086,12 @@ function showAspectResultScreen() {
     
     if (dest >= 24) { 
         state.highDestruction = true;
-        console.log(`High Destruction ativado para ${state.dominantAspect}. Pontos de Destruição: ${dest} (Minímo necessário: 24)`);
+        console.log(`High Destruction ativado para ${state.dominantAspect}.`);
     } else {
         state.highDestruction = false;
     }
 
+    // Bônus para classes destrutivas se High Destruction
     if (state.highDestruction) {
         state.classScores.Prince = (state.classScores.Prince || 0) + 3;
         state.classScores.Bard = (state.classScores.Bard || 0) + 3;
@@ -4084,7 +4099,6 @@ function showAspectResultScreen() {
     }
 
     let description = aspectSynopses[state.dominantAspect];
-    
     let isForced = (score === 1 && Object.values(state.aspectScores).reduce((a,b)=>a+b,0) === 1);
     
     let transitionText;
@@ -4103,13 +4117,21 @@ function showAspectResultScreen() {
         </div>
     `);
 }
+
 function startClassPhase() {
     state.stage = "class_quiz";
     state.questionCount = 0;
-    state.currentQueue = questionsByAspect[state.dominantAspect] || [];
-    renderQuestion(state.currentQueue[0]);
+    // Garante que não quebre se questionsByAspect estiver vazio para o aspecto
+    state.currentQueue = (questionsByAspect && questionsByAspect[state.dominantAspect]) ? questionsByAspect[state.dominantAspect] : [];
+    
+    if (state.currentQueue.length > 0) {
+        renderQuestion(state.currentQueue[0]);
+    } else {
+        render(`<div class="fade-in"><h1>Erro</h1><p>Não há perguntas para a classe de ${state.dominantAspect} ainda.</p><button onclick="location.reload()">Reiniciar</button></div>`);
+    }
 }
 
+// --- RENDERIZAÇÃO E RESULTADOS FINAIS ---
 
 function renderDynamicView() {
     const key = `${viewerClass}:${viewerAspect}`;
@@ -4127,20 +4149,17 @@ function renderDynamicView() {
     if (title) title.innerHTML = `${viewerClass.toUpperCase()} OF ${viewerAspect.toUpperCase()}`;
 
     if (comboText) {
-
         if (combinedContainer) {
             combinedContainer.style.display = 'block';
             comboContent.innerHTML = comboText;
             comboFooter.innerHTML = `Explorando a combinação: (${viewerAspect}) + (${viewerClass})`;
         }
         if (splitContainer) splitContainer.style.display = 'none';
-        
     } else {
         if (combinedContainer) combinedContainer.style.display = 'none';
         
         if (splitContainer) {
             splitContainer.style.display = 'block';
-
             const cText = classSynopses[viewerClass] || "Classe desconhecida.";
             classDisplay.innerHTML = `<p>${cText}</p>`;
             
@@ -4235,6 +4254,7 @@ function finishClassPhase() {
     renderDynamicView();
 }
 
+// Funções globais para os botões do HTML
 window.updateClassView = function(className) {
     viewerClass = className;
     renderDynamicView();
@@ -4244,6 +4264,8 @@ window.updateAspectView = function(aspectName) {
     viewerAspect = aspectName;
     renderDynamicView();
 };
+
+// --- FUNÇÕES DE NAVEGAÇÃO E SISTEMA ---
 
 function renderNullEnding() {
     const html = `
@@ -4266,6 +4288,7 @@ function renderNullEnding() {
 }
 
 function renderQuestion(q) {
+    if (!q) return;
     activeQuestion = q;
     let html = `<h2>${q.t}</h2>`;
 
@@ -4286,6 +4309,7 @@ function renderQuestion(q) {
     
     render(html);
 }
+
 function handleSkip() {
     state.history.push(JSON.parse(JSON.stringify({
         aspectScores: state.aspectScores,
@@ -4301,7 +4325,7 @@ function handleSkip() {
     state.skipCount = (state.skipCount || 0) + 1;
 
     if (state.skipCount >= 10) {
-        renderNullEnding(); // Chama a tela da fronha
+        renderNullEnding();
         return; 
     }
 
@@ -4354,6 +4378,7 @@ function render(html) {
 function setLanguage(lang) {
     currentLang = lang;
     
+    // Atualiza as referências para o idioma novo
     aspectQuestions = DATABASE[lang].aspectQuestions;
     questionsByAspect = DATABASE[lang].questionsByAspect;
     aspectSynopses = DATABASE[lang].aspectSynopses;
@@ -4362,12 +4387,23 @@ function setLanguage(lang) {
     uiText = DATABASE[lang].ui;
 
     updateLanguageVisuals();
-	
+    
+    // Se estiver no intro, redesenha o intro
     if (state.stage === "intro") {
         renderIntro();
     } 
-    else if (activeQuestion) {
-        renderQuestion(activeQuestion);
+    // CORREÇÃO: Se estiver no meio de uma pergunta, recarrega a pergunta no novo idioma
+    else if (state.stage === "aspect_quiz" && aspectQuestions) {
+        renderQuestion(aspectQuestions[state.questionCount]);
+    }
+    else if (state.stage === "class_quiz" && state.currentQueue) {
+        // Tenta achar a pergunta equivalente no array novo
+        // Nota: Isso é complexo porque currentQueue é uma cópia. 
+        // Vamos tentar recarregar questionsByAspect do novo idioma:
+        if (questionsByAspect && questionsByAspect[state.dominantAspect]) {
+            state.currentQueue = questionsByAspect[state.dominantAspect];
+            renderQuestion(state.currentQueue[state.questionCount]);
+        }
     }
 }
 
@@ -4385,12 +4421,10 @@ function renderIntro() {
 }
 
 function createLanguageControls() {
-    // Evita criar duplicado se já existir
     if (document.getElementById('lang-controls')) return;
 
     const div = document.createElement('div');
     div.id = 'lang-controls';
-    // Estilo CSS direto aqui para garantir que fique no topo direito
     div.style.cssText = "position: fixed; top: 15px; right: 15px; z-index: 9999; display: flex; gap: 10px;";
 
     div.innerHTML = `
@@ -4424,10 +4458,10 @@ function updateLanguageVisuals() {
     }
 }
 
+// INICIALIZAÇÃO
 window.onload = () => {
     createLanguageControls(); 
     setLanguage('pt'); 
-};
 };
 
 
