@@ -1004,6 +1004,6 @@ const questionsByAspect = {
 		{ txt: "Começo a construir algo novo. Já que não há regras, crio as minhas próprias do zero.", w: { Maid: 3, Witch: 2, Thief: 1, Bard: -2 } },
 		{ txt: "Fico entediado. Provavelmente vou causar alguma confusão só para ter com o que interagir.", w: { Bard: 3, Thief: 2, Prince: 1, Seer: -2 } },
 		{ txt: "Uso a distância para observar e compreender como o mundo funciona sem a minha interferência.", w: { Seer: 3, Mage: 2, Sylph: 1, Prince: -1 } }
-	] 
+	]} 
   ] 
-}; 
+};
