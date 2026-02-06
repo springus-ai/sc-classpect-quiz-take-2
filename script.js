@@ -83,32 +83,43 @@ function handleInput(optIndex) {
 
 function finishAspectPhase() {
     let finalTotals = {};
-    const REQUIRED_TAG_SCORE = 24; 
+    const REQUIRED_TAG_SCORE = 24;
+    const DESTRUCTION_THRESHOLD = -12; 
 
     for (let asp in state.aspectScores) {
         let rawScore = state.aspectScores[asp] || 0;
         let destScore = state.destructionScores[asp] || 0;
 
-        if (destScore >= REQUIRED_TAG_SCORE) {
-
-            finalTotals[asp] = Math.abs(rawScore) + destScore; 
+        if (destScore >= REQUIRED_TAG_SCORE && rawScore <= DESTRUCTION_THRESHOLD) {
+            finalTotals[asp] = { 
+                value: rawScore, 
+                isDestroyed: true 
+            };
         } else {
-            finalTotals[asp] = rawScore; 
+            finalTotals[asp] = { 
+                value: rawScore, 
+                isDestroyed: false 
+            };
         }
     }
 
-    let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
-    
-    if (sorted[0][1] <= -5) { 
-        const aspects = Object.keys(state.aspectScores);
-        const rngAspect = aspects[Math.floor(Math.random() * aspects.length)];
-        state.dominantAspect = rngAspect;
-        state.aspectScores[rngAspect] = 1; 
-        renderNullAspectEasterEgg(rngAspect); 
-        return;
-    }
+    let sorted = Object.entries(finalTotals).sort((a, b) => {
+        const [nameA, dataA] = a;
+        const [nameB, dataB] = b;
+
+        if (dataA.isDestroyed && !dataB.isDestroyed) return -1;
+        if (!dataA.isDestroyed && dataB.isDestroyed) return 1;
+
+        if (dataA.isDestroyed && dataB.isDestroyed) return dataA.value - dataB.value;
+
+        return dataB.value - dataA.value;
+    });
 
     state.dominantAspect = sorted[0][0];
+    state.highDestruction = sorted[0][1].isDestroyed;
+
+    state.aspectScores[state.dominantAspect] = sorted[0][1].value;
+
     showAspectResultScreen();
 }
 function showAspectResultScreen() {
@@ -362,6 +373,7 @@ window.onload = () => {
 
     render(introText);
 };
+
 
 
 
