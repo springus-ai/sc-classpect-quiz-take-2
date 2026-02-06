@@ -2019,9 +2019,9 @@ function handleInput(optIndex) {
 function finishAspectPhase() {
     let finalTotals = {};
     
-    const MIN_DESTRUCTION_REQUIRED = 24; 
+    const REQUIRED_TAG_SCORE = 24; 
 
-    const MIN_AVERSION_REQUIRED = -10;
+    const REQUIRED_NEGATIVE_CONSISTENCY = -12; 
 
     for (let asp in state.aspectScores) {
         let rawScore = state.aspectScores[asp] || 0;
@@ -2030,14 +2030,15 @@ function finishAspectPhase() {
         if (rawScore >= 0) {
             finalTotals[asp] = rawScore + destScore; 
         } else {
-            if (destScore >= MIN_DESTRUCTION_REQUIRED && rawScore <= MIN_AVERSION_REQUIRED) {
-                finalTotals[asp] = Math.abs(rawScore) + destScore;
+
+            if (destScore >= REQUIRED_TAG_SCORE && rawScore <= REQUIRED_NEGATIVE_CONSISTENCY) {
+                finalTotals[asp] = Math.abs(rawScore) + destScore; 
             } else {
                 finalTotals[asp] = rawScore; 
             }
         }
     }
-    
+
     let sorted = Object.entries(finalTotals).sort((a, b) => b[1] - a[1]);
     
     if (sorted[0][1] <= -5) { 
@@ -2355,6 +2356,7 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
 
