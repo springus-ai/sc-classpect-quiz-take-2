@@ -911,8 +911,8 @@ const classpectDescriptions = {
         <h3>BARD OF DOOM (BARDO/BARDA DO DESTINO)</h3>
         <p><strong>O que Convida a Destruição do Destino.</strong></p>
         <p>Você zomba das regras. Passivamente, você ignora a segurança, os avisos e o bom senso, convidando o desastre a entrar pela porta da frente. Você age como se fosse invencível, e sua imprudência corrói a estrutura que protege o grupo.</p>
-        <p>Ou, você convida a destruição *através* do Destino: você traz a inevitabilidade para a mesa. Você é o portador das más notícias que destroem o moral de todos. Você acelera o colapso de um sistema podre, não para consertá-lo, mas para ver a poeira baixar. Você é o fatalismo transformado em arma.</p>,
-    `
+        <p>Ou, você convida a destruição *através* do Destino: você traz a inevitabilidade para a mesa. Você é o portador das más notícias que destroem o moral de todos. Você acelera o colapso de um sistema podre, não para consertá-lo, mas para ver a poeira baixar. Você é o fatalismo transformado em arma.</p>
+    `,
 
 // --- TEXTOS DO SISTEMA ---
     
@@ -943,6 +943,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
