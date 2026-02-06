@@ -364,8 +364,9 @@ function render(html) {
 window.onload = () => {
     const introText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_Intro"]) 
         ? classpectDescriptions["UI_Intro"] 
-        : "<div class='fade-in'><h1>Sistema Carregado</h1><p>Clique abaixo para iniciar.</p><button onclick='start()'>INICIAR</button></div>";
+        : "<div class='fade-in'><h1>ERRO</h1><p>O texto UI_Intro não foi encontrado no descriptions.js</p><button onclick='start()'>Iniciar Assim Mesmo</button></div>";
 
     render(introText);
 };
+
 
