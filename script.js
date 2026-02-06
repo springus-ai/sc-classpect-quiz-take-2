@@ -1152,6 +1152,8 @@ function showAspectResultScreen() {
         state.classScores.Bard = (state.classScores.Bard || 0) + 3;
         state.classScores.Witch = (state.classScores.Witch || 0) + 2;
     }
+
+    let description = classpectDescriptions[state.dominantAspect] || "A influência deste aspecto sobre você é inegável, embora indescritível no momento.";
     
     let isForced = (score === 1 && Object.values(state.aspectScores).reduce((a,b)=>a+b,0) === 1);
     
@@ -1167,10 +1169,8 @@ function showAspectResultScreen() {
     render(`
         <div class="fade-in">
             <h1>ASPECTO: ${state.dominantAspect.toUpperCase()}</h1>
-            
-            <h3 style="margin-top: 20px; font-weight: normal; opacity: 0.9;">${transitionText}</h3>
-            
-            <br>
+            <p>${description}</p>
+            <p style="color: #00aa00; margin-top: 20px;">${transitionText}</p>
             <button onclick="startClassPhase()">CONTINUAR PARA CLASSES.</button>
         </div>
     `);
@@ -1427,5 +1427,6 @@ window.onload = () => {
         </div>
     `);
 };
+
 
 
