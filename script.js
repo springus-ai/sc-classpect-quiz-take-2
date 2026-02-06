@@ -4355,7 +4355,6 @@ function render(html) {
 function setLanguage(lang) {
     currentLang = lang;
     
-    // Conecta as variáveis globais ao banco de dados escolhido
     aspectQuestions = DATABASE[lang].aspectQuestions;
     questionsByAspect = DATABASE[lang].questionsByAspect;
     aspectSynopses = DATABASE[lang].aspectSynopses;
@@ -4363,17 +4362,18 @@ function setLanguage(lang) {
     classpectDescriptions = DATABASE[lang].classpectDescriptions;
     uiText = DATABASE[lang].ui;
 
-    // Redesenha a tela inicial
-    renderIntro();
+    updateLanguageVisuals();
+	
+    if (state.stage === "intro") {
+        renderIntro();
+    } 
+    else if (activeQuestion) {
+        renderQuestion(activeQuestion);
+    }
 }
 
 function renderIntro() {
     render(`
-        <div style="position: absolute; top: 10px; right: 10px; z-index: 100;">
-            <button onclick="setLanguage('pt')" style="margin-right:5px; cursor: pointer; opacity: ${currentLang === 'pt' ? '1' : '0.5'}">🇧🇷 PT</button>
-            <button onclick="setLanguage('en')" style="cursor: pointer; opacity: ${currentLang === 'en' ? '1' : '0.5'}">🇺🇸 EN</button>
-        </div>
-
         <div class="fade-in">
             <h1>${uiText.title}</h1>
             <p>${uiText.intro1}</p>
@@ -4385,10 +4385,52 @@ function renderIntro() {
     `);
 }
 
-// Inicializa o jogo em Português
+function createLanguageControls() {
+    // Evita criar duplicado se já existir
+    if (document.getElementById('lang-controls')) return;
+
+    const div = document.createElement('div');
+    div.id = 'lang-controls';
+    // Estilo CSS direto aqui para garantir que fique no topo direito
+    div.style.cssText = "position: fixed; top: 15px; right: 15px; z-index: 9999; display: flex; gap: 10px;";
+
+    div.innerHTML = `
+        <button onclick="setLanguage('pt')" id="btn-pt" style="font-size: 24px; cursor: pointer; background: none; border: none; filter: grayscale(100%); transition: all 0.3s;" title="Português">
+            🇧🇷
+        </button>
+        <button onclick="setLanguage('en')" id="btn-en" style="font-size: 24px; cursor: pointer; background: none; border: none; filter: grayscale(100%); transition: all 0.3s;" title="English">
+            🇺🇸
+        </button>
+    `;
+
+    document.body.appendChild(div);
+}
+
+function updateLanguageVisuals() {
+    const btnPt = document.getElementById('btn-pt');
+    const btnEn = document.getElementById('btn-en');
+    
+    if (!btnPt || !btnEn) return;
+
+    if (currentLang === 'pt') {
+        btnPt.style.filter = "grayscale(0%)";
+        btnPt.style.transform = "scale(1.2)";
+        btnEn.style.filter = "grayscale(100%)";
+        btnEn.style.transform = "scale(1)";
+    } else {
+        btnEn.style.filter = "grayscale(0%)";
+        btnEn.style.transform = "scale(1.2)";
+        btnPt.style.filter = "grayscale(100%)";
+        btnPt.style.transform = "scale(1)";
+    }
+}
+
 window.onload = () => {
+    createLanguageControls(); 
     setLanguage('pt'); 
 };
+};
+
 
 
 
