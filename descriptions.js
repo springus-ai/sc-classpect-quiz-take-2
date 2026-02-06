@@ -941,7 +941,7 @@ const classpectDescriptions = {
             
             <button class="retry-button" onclick="location.reload()">Tente novamente.</button>
         </div>
-    `,
-	
+    `
 };
+
 
