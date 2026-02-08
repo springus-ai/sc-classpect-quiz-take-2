@@ -940,9 +940,9 @@ const classpectDescriptions = {
     
     "UI_Intro": `
         <div class="fade-in">
-            <h1>TESTE DE CLASSPECT DA SBURBIO V1.0</h1>
+            <h1>TESTE DE CLASSPECT DA SBURBIO V1.1</h1>
             <p>Oi! Que bom que encontrou esse teste. Eu sou o SC, popularmente conhecido como springus. Talvez você não me conheça, mas espero que bote fé no projeto Sburbio.</p>
-            <p>Antes de tudo, vamos falar sobre essa versão 1.0 do teste. Estarei atualizando constantemente as perguntas e pontuações com as observações da comunidade. Aviso que, como é a primeira versão do teste, esperem algumas imprecisões. Por isso, precisamos rodar alguns testes para encontrar e corrigir os resultados errados.</p>
+            <p>Antes de tudo, vamos falar sobre essa versão 1.1 do teste. Ainda enfrentamos algumas imprecisões em alguns resultados, mas estamos ouvindo e debatendo com todo mundo para melhorar o que pudermos! Estamos muito felizes com o acolhimento geral que recebemos e vamos nos esforçar para agradar todos.</p>
             <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas me baseio principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos, que me ajudaram na confecção desse quiz. São as outras pessoas que fazem parte do projeto.</p>
             <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
             <button onclick="start()">Bora ver.</button>
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
