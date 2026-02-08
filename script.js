@@ -260,30 +260,40 @@ function renderContent() {
     
     if (!titleEl || !descEl) return;
 
-    const fullTitle = `${viewerClass} of ${viewerAspect}`;
-    titleEl.innerText = fullTitle;
+    const displayTitle = `${viewerClass} of ${viewerAspect}`;
+    titleEl.innerText = displayTitle;
+
+    const dbKey = `${viewerClass}:${viewerAspect}`;
 
     let content = "";
     
-    if (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[fullTitle]) {
-        content = classpectDescriptions[fullTitle];
-    } 
-    else if (typeof classpectDescriptions !== 'undefined') {
-        const classText = classpectDescriptions[viewerClass] || `<p>Dados corrompidos para a classe ${viewerClass}.</p>`;
-        const aspectText = classpectDescriptions[viewerAspect] || `<p>Dados corrompidos para o aspecto ${viewerAspect}.</p>`;
-        
-        content = `
-            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #444;">
-                <h3 style="color: #00ff00; margin-top:0;">${viewerClass}</h3>
-                ${classText}
-            </div>
-            <div>
-                <h3 style="color: #00ff00; margin-top:0;">${viewerAspect}</h3>
-                ${aspectText}
-            </div>
-        `;
+    if (typeof classpectDescriptions !== 'undefined') {
+        if (classpectDescriptions[dbKey]) {
+            console.log("Combinação encontrada:", dbKey);
+            content = classpectDescriptions[dbKey];
+        }
+        else if (classpectDescriptions[displayTitle]) {
+             console.log("Combinação encontrada (formato texto):", displayTitle);
+             content = classpectDescriptions[displayTitle];
+        }
+        else {
+            console.warn("Combinação não encontrada para:", dbKey);
+            const classText = classpectDescriptions[viewerClass] || `<p>Texto da classe ${viewerClass} não encontrado.</p>`;
+            const aspectText = classpectDescriptions[viewerAspect] || `<p>Texto do aspecto ${viewerAspect} não encontrado.</p>`;
+            
+            content = `
+                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #444;">
+                    <h3 style="color: #00ff00; margin-top:0;">${viewerClass}</h3>
+                    ${classText}
+                </div>
+                <div>
+                    <h3 style="color: #00ff00; margin-top:0;">${viewerAspect}</h3>
+                    ${aspectText}
+                </div>
+            `;
+        }
     } else {
-        content = "<p>Banco de dados offline.</p>";
+        content = "<p>ERRO CRÍTICO: Arquivo de descrições (descriptions.js) não carregado.</p>";
     }
 
     descEl.innerHTML = content;
@@ -421,3 +431,4 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
