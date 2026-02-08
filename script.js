@@ -186,12 +186,17 @@ function finishClassPhase() {
     const sortedAspects = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
     const sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
 
+    // Define os valores iniciais do explorador
     if (!viewerClass) viewerClass = sortedClasses[0][0];
     if (!viewerAspect) viewerAspect = state.dominantAspect;
 
     const finalClass = sortedClasses[0][0];
     const finalAspect = state.dominantAspect;
 
+    // Pega o Top 3 Aspectos para a mecânica de "Explorar"
+    const top3Aspects = sortedAspects.slice(0, 3);
+
+    // Gera as listas HTML (Ranking Completo)
     let aspectListHTML = sortedAspects.map((item, index) => {
         let isWinner = item[0] === finalAspect;
         let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
@@ -212,6 +217,27 @@ function finishClassPhase() {
             </li>`;
     }).join('');
 
+    // Gera os botões de "Explorar Possibilidades"
+    let explorationButtons = top3Aspects.map(item => {
+        // Se for o aspecto atual, muda o texto para "Refazer"
+        let label = item[0] === state.dominantAspect ? `REFAZER ${item[0].toUpperCase()}` : `TESTAR ${item[0].toUpperCase()}`;
+        return `
+            <button onclick="retryClassTest('${item[0]}')" style="
+                background: transparent; 
+                border: 1px solid #00ff00; 
+                color: #00ff00; 
+                padding: 10px 15px; 
+                cursor: pointer; 
+                font-size: 0.9em;
+                transition: 0.2s;
+                flex: 1;
+                min-width: 120px;
+            " onmouseover="this.style.background='#002200'" onmouseout="this.style.background='transparent'">
+                ${label}
+            </button>
+        `;
+    }).join('');
+
     render(`
         <div class="fade-in result-box" style="max-width: 900px; margin: 0 auto; text-align: center;">
             <p style="font-size: 1.2em; margin-bottom: 0;">Seu título definitivo é:</p>
@@ -227,7 +253,7 @@ function finishClassPhase() {
             </div>
 
             <p style="margin-bottom: 30px; font-size: 0.9em; opacity: 0.8;">
-                Clique nos nomes abaixo para combinar diferentes Classes e Aspectos.
+                Clique nos nomes abaixo para ver as combinações de texto.
             </p>
 
             <div class="rankings-wrapper" style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; text-align: left;">
@@ -242,6 +268,14 @@ function finishClassPhase() {
                 </div>
             </div>
             
+            <div style="margin-top: 40px; background: rgba(0,50,0,0.2); padding: 20px; border: 1px dashed #00ff00;">
+                <h3 style="color: #00ff00; margin-top: 0;">EXPLORAR POSSIBILIDADES?</h3>
+                <p style="font-size: 0.9em; color: #ddd;">Nenhum teste é perfeito. Se você sente que sua Classe não encaixou, talvez ela se manifeste melhor através de outro dos seus Aspectos dominantes! Experimente:</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
+                    ${explorationButtons}
+                </div>
+            </div>
+
             <div style="margin-top: 40px; border-top: 1px dashed #444; padding-top: 20px;">
                 <p style="color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
                 <p style="color: #88ff88; font-size: 14px;">Se quiser dar qualquer feedback, venha comentar pelo Discord do Projeto Homestuck PT-BR! É só nos marcar no canal de Classpecting.</p>
@@ -253,10 +287,9 @@ function finishClassPhase() {
             <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">REINICIAR SESSÃO</button>
         </div>
     `);
-    
+
     renderResultContent();
 }
-
 function updateResultExplorer(type, name) {
     if (type === 'class') {
         viewerClass = name;
@@ -435,6 +468,18 @@ function renderNullEnding() {
     render(html);
 }
 
+function retryClassTest(aspectName) {
+    state.dominantAspect = aspectName;
+    
+    state.classScores = { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 };
+    
+    state.stage = "class_quiz";
+    state.questionCount = 0;
+    
+    console.log(`Iniciando teste de classe alternativo para: ${aspectName}`);
+    startClassPhase();
+}
+
 window.onload = () => {
     const introText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_Intro"]) 
         ? classpectDescriptions["UI_Intro"] 
@@ -452,4 +497,5 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
