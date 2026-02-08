@@ -12,8 +12,6 @@ let state = {
 };
 
 let activeQuestion = null;
-let viewerClass = "";
-let viewerAspect = "";
 
 function start() {
     document.body.classList.remove('red-mode');
@@ -122,6 +120,7 @@ function finishAspectPhase() {
 
     showAspectResultScreen();
 }
+
 function showAspectResultScreen() {
     document.body.classList.remove('red-mode'); 
 
@@ -178,29 +177,6 @@ function startClassPhase() {
         renderQuestion(state.currentQueue[0]);
     } else {
         finishClassPhase(); 
-    }
-}
-
-function renderDynamicView() {
-    const key = `${viewerClass}:${viewerAspect}`;
-    
-    const comboText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[key]) 
-                      ? classpectDescriptions[key] 
-                      : `<p>Descrição não encontrada para a chave: <strong>${key}</strong>.</p>`;
-
-    const title = document.getElementById('result-title');
-    const combinedContainer = document.getElementById('combined-view-container');
-    const comboContent = document.getElementById('combined-content');
-    const comboFooter = document.getElementById('combined-footer');
-    
-    if (title) title.innerHTML = `${viewerClass.toUpperCase()} OF ${viewerAspect.toUpperCase()}`;
-
-    if (combinedContainer) {
-        combinedContainer.style.display = 'block';
-        if (comboText) {
-            comboContent.innerHTML = comboText;
-            comboFooter.innerHTML = `Explorando a combinação: (${viewerAspect}) + (${viewerClass})`;
-        }
     }
 }
 
@@ -265,35 +241,17 @@ function finishClassPhase() {
                 <span style="position:absolute; top:10px; right:20px; cursor:pointer; color:#00ff00; font-size: 30px; font-weight: bold;" onclick="closeDescription()">&times;</span>
                 <h2 id="modalTitle" style="color:#00ff00; border-bottom:1px dashed #444; padding-bottom:15px; margin-top: 0;">TITULO</h2>
                 <div id="modalBody" style="text-align:justify; line-height:1.6; font-size: 1.1em; color: #ddd;">
-                    </div>
+                </div>
             </div>
         </div>
     `);
 }
-
-    renderDynamicView();
-}
-
-window.updateClassView = function(className) {
-    viewerClass = className;
-    renderDynamicView();
-};
-
-window.updateAspectView = function(aspectName) {
-    viewerAspect = aspectName;
-    renderDynamicView();
-};
 
 function renderNullEnding() {
     const nullText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_NullEnding"])
         ? classpectDescriptions["UI_NullEnding"]
         : "<h1>Erro Crítico.</h1><p>O universo colapsou.</p><button onclick='location.reload()'>Reiniciar</button>";
     render(nullText);
-}
-
-function renderNullAspectEasterEgg(aspect) {
-    console.log("Easter egg negativo ativado para: " + aspect);
-    renderNullEnding(); 
 }
 
 function renderQuestion(q) {
@@ -381,7 +339,13 @@ window.onload = () => {
         ? classpectDescriptions["UI_Intro"] 
         : "<div class='fade-in'><h1>ERRO</h1><p>Tem algo de errado nos bastidores, mas já estou mexendo nisso.</p><button onclick='start()'>Iniciar.</button></div>";
 
-    render(introText);
+    // Adiciona botão da biblioteca na intro
+    const introWithLibrary = introText.replace(
+        "</button>", 
+        "</button> <button onclick='openLibrary()' style='margin-left: 10px; background: #444;'>ACESSAR ARQUIVOS</button>"
+    );
+
+    render(introWithLibrary);
 };
 
 function openDescription(key) {
@@ -439,7 +403,3 @@ function openLibrary() {
         </div>
     `);
 }
-
-
-
-
