@@ -12,6 +12,8 @@ let state = {
 };
 
 let activeQuestion = null;
+let viewerClass = "";
+let viewerAspect = "";
 
 function start() {
     document.body.classList.remove('red-mode');
@@ -184,36 +186,17 @@ function finishClassPhase() {
     const sortedAspects = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
     const sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
 
-    const finalAspect = state.dominantAspect; 
-    const finalClass = sortedClasses[0][0];
-    const fullTitle = `${finalClass} of ${finalAspect}`;
+    if (!viewerClass) viewerClass = sortedClasses[0][0];
+    if (!viewerAspect) viewerAspect = state.dominantAspect;
 
-    let winnerDescription = "";
-    
-    if (typeof classpectDescriptions !== 'undefined') {
-        if (classpectDescriptions[fullTitle]) {
-            winnerDescription = classpectDescriptions[fullTitle];
-        } 
-        else {
-            const classDesc = classpectDescriptions[finalClass] || "";
-            const aspectDesc = classpectDescriptions[finalAspect] || "";
-            
-            if (classDesc && aspectDesc) {
-                winnerDescription = `
-                    <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #444;">${classDesc}</div>
-                    <div>${aspectDesc}</div>
-                `;
-            } else {
-                winnerDescription = "<p>Descrição não encontrada no banco de dados.</p>";
-            }
-        }
-    }
+    const finalClass = sortedClasses[0][0];
+    const finalAspect = state.dominantAspect;
 
     let aspectListHTML = sortedAspects.map((item, index) => {
         let isWinner = item[0] === finalAspect;
         let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
         return `
-            <li class="rank-item" onclick="openDescription('${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+            <li class="rank-item" onclick="updateView('aspect', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
                 <span>#${index + 1} <strong>${item[0]}</strong></span>
                 <span style="font-family: monospace;">${item[1]} pts</span>
             </li>`;
@@ -223,7 +206,7 @@ function finishClassPhase() {
         let isWinner = item[0] === finalClass;
         let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
         return `
-            <li class="rank-item" onclick="openDescription('${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+            <li class="rank-item" onclick="updateView('class', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
                 <span>#${index + 1} <strong>${item[0]}</strong></span>
                 <span style="font-family: monospace;">${item[1]} pts</span>
             </li>`;
@@ -232,16 +215,15 @@ function finishClassPhase() {
     render(`
         <div class="fade-in result-box" style="max-width: 900px; margin: 0 auto; text-align: center;">
             <p style="font-size: 1.2em; margin-bottom: 0;">Seu título definitivo é:</p>
-            <h1 style="color:#00ff00; text-transform:uppercase; font-size: 3em; margin-top: 5px; text-shadow: 0 0 15px #005500;">
-                ${fullTitle}
-            </h1>
             
-            <div style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6;">
-                ${winnerDescription}
-            </div>
+            <h1 id="dynamicTitle" style="color:#00ff00; text-transform:uppercase; font-size: 3em; margin-top: 5px; text-shadow: 0 0 15px #005500;">
+                </h1>
+            
+            <div id="dynamicDescription" style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6; min-height: 200px;">
+                </div>
 
             <p style="margin-bottom: 30px; font-size: 0.9em; opacity: 0.8;">
-                Abaixo, o ranking completo. Clique nos nomes para ler os outros arquivos.
+                Clique nos nomes abaixo para combinar diferentes Classes e Aspectos.
             </p>
 
             <div class="rankings-wrapper" style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; text-align: left;">
@@ -258,23 +240,53 @@ function finishClassPhase() {
             
             <button onclick="location.reload()" style="margin-top: 40px; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">REINICIAR SESSÃO</button>
         </div>
-
-        <div id="descModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;" onclick="closeDescription()">
-            <div class="modal-content" style="background:#111; border:2px solid #00ff00; padding:30px; width:90%; max-width:700px; max-height:85vh; overflow-y:auto; position:relative; box-shadow: 0 0 30px rgba(0,255,0,0.2); text-align: left;" onclick="event.stopPropagation()">
-                <span style="position:absolute; top:10px; right:20px; cursor:pointer; color:#00ff00; font-size: 30px; font-weight: bold;" onclick="closeDescription()">&times;</span>
-                <h2 id="modalTitle" style="color:#00ff00; border-bottom:1px dashed #444; padding-bottom:15px; margin-top: 0;">TITULO</h2>
-                <div id="modalBody" style="text-align:justify; line-height:1.6; font-size: 1.1em; color: #ddd;">
-                </div>
-            </div>
-        </div>
     `);
+
+    renderContent();
 }
 
-function renderNullEnding() {
-    const nullText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_NullEnding"])
-        ? classpectDescriptions["UI_NullEnding"]
-        : "<h1>Erro Crítico.</h1><p>O universo colapsou.</p><button onclick='location.reload()'>Reiniciar</button>";
-    render(nullText);
+function updateView(type, name) {
+    if (type === 'class') {
+        viewerClass = name;
+    } else if (type === 'aspect') {
+        viewerAspect = name;
+    }
+    renderContent();
+}
+
+function renderContent() {
+    const titleEl = document.getElementById('dynamicTitle');
+    const descEl = document.getElementById('dynamicDescription');
+    
+    if (!titleEl || !descEl) return;
+
+    const fullTitle = `${viewerClass} of ${viewerAspect}`;
+    titleEl.innerText = fullTitle;
+
+    let content = "";
+    
+    if (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[fullTitle]) {
+        content = classpectDescriptions[fullTitle];
+    } 
+    else if (typeof classpectDescriptions !== 'undefined') {
+        const classText = classpectDescriptions[viewerClass] || `<p>Dados corrompidos para a classe ${viewerClass}.</p>`;
+        const aspectText = classpectDescriptions[viewerAspect] || `<p>Dados corrompidos para o aspecto ${viewerAspect}.</p>`;
+        
+        content = `
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #444;">
+                <h3 style="color: #00ff00; margin-top:0;">${viewerClass}</h3>
+                ${classText}
+            </div>
+            <div>
+                <h3 style="color: #00ff00; margin-top:0;">${viewerAspect}</h3>
+                ${aspectText}
+            </div>
+        `;
+    } else {
+        content = "<p>Banco de dados offline.</p>";
+    }
+
+    descEl.innerHTML = content;
 }
 
 function renderQuestion(q) {
@@ -357,78 +369,55 @@ function render(html) {
     if(content) content.innerHTML = html;
 }
 
-window.onload = () => {
-    const introText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_Intro"]) 
-        ? classpectDescriptions["UI_Intro"] 
-        : "<div class='fade-in'><h1>ERRO</h1><p>Tem algo de errado nos bastidores, mas já estou mexendo nisso.</p><button onclick='start()'>Iniciar.</button></div>";
-
-    // Adiciona botão da biblioteca na intro
-    const introWithLibrary = introText.replace(
-        "</button>", 
-        "</button> <button onclick='openLibrary()' style='margin-left: 10px; background: #444;'>ACESSAR ARQUIVOS</button>"
-    );
-
-    render(introWithLibrary);
-};
-
-function openDescription(key) {
-    const modal = document.getElementById('descModal');
-    const title = document.getElementById('modalTitle');
-    const body = document.getElementById('modalBody');
-    let text = "<p>Dados corrompidos ou inexistentes.</p>";
-    
-    if (typeof classpectDescriptions !== 'undefined') {
-        if (classpectDescriptions[key]) {
-            text = classpectDescriptions[key];
-        } 
-        else {
-            for (let cat in classpectDescriptions) {
-                if (classpectDescriptions[cat] && classpectDescriptions[cat][key]) {
-                    text = classpectDescriptions[cat][key];
-                    break;
-                }
-            }
-        }
-    }
-
-    title.innerText = key.toUpperCase();
-    body.innerHTML = text; 
-    modal.style.display = "flex";
-}
-
-function closeDescription() {
-    const modal = document.getElementById('descModal');
-    if (modal) modal.style.display = "none";
+function renderNullEnding() {
+    const nullText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_NullEnding"])
+        ? classpectDescriptions["UI_NullEnding"]
+        : "<h1>Erro Crítico.</h1><p>O universo colapsou.</p><button onclick='location.reload()'>Reiniciar</button>";
+    render(nullText);
 }
 
 function openLibrary() {
+    viewerClass = "Prince"; 
+    viewerAspect = "Time";
+
     const aspects = ["Time", "Space", "Void", "Light", "Mind", "Heart", "Rage", "Hope", "Doom", "Life", "Blood", "Breath"];
     const classes = ["Prince", "Bard", "Thief", "Rogue", "Mage", "Seer", "Witch", "Heir", "Knight", "Page", "Maid", "Sylph"];
 
-    let aspectHTML = aspects.map(a => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="openDescription('${a}')">${a}</li>`).join('');
-    let classHTML = classes.map(c => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="openDescription('${c}')">${c}</li>`).join('');
+    let aspectHTML = aspects.map(a => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="updateView('aspect', '${a}')">${a}</li>`).join('');
+    let classHTML = classes.map(c => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="updateView('class', '${c}')">${c}</li>`).join('');
 
     render(`
-        <div class="fade-in" style="text-align: center;">
+        <div class="fade-in" style="text-align: center; max-width: 900px; margin: 0 auto;">
             <h1>ARQUIVOS DO SBURBIO</h1>
+            
+            <h2 id="dynamicTitle" style="color:#00ff00; text-transform:uppercase;">PRINCE OF TIME</h2>
+            <div id="dynamicDescription" style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 20px auto; text-align: justify; max-width: 800px;"></div>
+
             <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; text-align:left;">
                 <div style="flex:1;"><h3>Aspectos</h3><ul style="list-style:none; padding:0;">${aspectHTML}</ul></div>
                 <div style="flex:1;"><h3>Classes</h3><ul style="list-style:none; padding:0;">${classHTML}</ul></div>
             </div>
             <button onclick="location.reload()" style="margin-top:20px; padding: 10px 20px; font-size: 1em; cursor: pointer;">VOLTAR</button>
         </div>
-        
-        <div id="descModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;" onclick="closeDescription()">
-            <div class="modal-content" style="background:#111; border:2px solid #00ff00; padding:30px; width:90%; max-width:700px; max-height:85vh; overflow-y:auto; position:relative; box-shadow: 0 0 30px rgba(0,255,0,0.2); text-align: left;" onclick="event.stopPropagation()">
-                <span style="position:absolute; top:10px; right:20px; cursor:pointer; color:#00ff00; font-size: 30px;" onclick="closeDescription()">×</span>
-                <h2 id="modalTitle"></h2>
-                <div id="modalBody"></div>
-            </div>
-        </div>
     `);
+    
+    renderContent(); 
 }
 
+window.onload = () => {
+    const introText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_Intro"]) 
+        ? classpectDescriptions["UI_Intro"] 
+        : "<div class='fade-in'><h1>ERRO</h1><p>Tem algo de errado nos bastidores, mas já estou mexendo nisso.</p><button onclick='start()'>Iniciar.</button></div>";
 
+    const introWithLibrary = introText.replace(
+        '<button onclick="start()">Bora ver.</button>', 
+        `
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 20px;">
+            <button onclick="start()" style="width: 200px;">Bora ver.</button>
+            <button onclick="openLibrary()" style="width: 200px;">ACESSAR ARQUIVOS</button>
+        </div>
+        `
+    );
 
-
-
+    render(introWithLibrary);
+};
