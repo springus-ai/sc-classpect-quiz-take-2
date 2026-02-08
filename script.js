@@ -386,16 +386,17 @@ function openLibrary() {
     let classHTML = classes.map(c => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="openDescription('${c}')">${c}</li>`).join('');
 
     render(`
-        <div class="fade-in">
-            <h1>ARQUIVOS DO SBURBIO</h1>
+        <div class="fade-in" style="text-align: center;">
+            <h1>ARQUIVOS DO SBURL</h1>
             <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; text-align:left;">
                 <div style="flex:1;"><h3>Aspectos</h3><ul style="list-style:none; padding:0;">${aspectHTML}</ul></div>
                 <div style="flex:1;"><h3>Classes</h3><ul style="list-style:none; padding:0;">${classHTML}</ul></div>
             </div>
-            <button onclick="location.reload()" style="margin-top:20px;">VOLTAR</button>
+            <button onclick="location.reload()" style="margin-top:20px; padding: 10px 20px; font-size: 1em; cursor: pointer;">VOLTAR</button>
         </div>
+        
         <div id="descModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;" onclick="closeDescription()">
-            <div class="modal-content" style="background:#111; border:2px solid #00ff00; padding:30px; width:90%; max-width:700px; max-height:85vh; overflow-y:auto; position:relative;" onclick="event.stopPropagation()">
+            <div class="modal-content" style="background:#111; border:2px solid #00ff00; padding:30px; width:90%; max-width:700px; max-height:85vh; overflow-y:auto; position:relative; box-shadow: 0 0 30px rgba(0,255,0,0.2); text-align: left;" onclick="event.stopPropagation()">
                 <span style="position:absolute; top:10px; right:20px; cursor:pointer; color:#00ff00; font-size: 30px;" onclick="closeDescription()">×</span>
                 <h2 id="modalTitle"></h2>
                 <div id="modalBody"></div>
@@ -403,5 +404,6 @@ function openLibrary() {
         </div>
     `);
 }
+
 
 
