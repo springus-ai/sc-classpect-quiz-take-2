@@ -205,61 +205,71 @@ function renderDynamicView() {
 }
 
 function finishClassPhase() {
-    let sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
-    let sortedAspects = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
+    const sortedAspects = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
+    const sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
 
-    let winnerAspect = state.dominantAspect;
-    let otherAspects = sortedAspects.filter(entry => entry[0] !== winnerAspect);
-    let winnerEntry = sortedAspects.find(entry => entry[0] === winnerAspect);
-    let top3Aspects = [winnerEntry, ...otherAspects].slice(0, 3);
+    const finalAspect = state.dominantAspect; 
+    const finalClass = sortedClasses[0][0];
+    const fullTitle = `${finalClass} of ${finalAspect}`;
 
-    if (sortedClasses[0][1] <= 0) {
-        renderNullEnding();
-        return;
-    }
+    let aspectListHTML = sortedAspects.map((item, index) => {
+        let isWinner = item[0] === finalAspect;
+        let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
+        return `
+            <li class="rank-item" onclick="openDescription('${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+                <span>#${index + 1} <strong>${item[0]}</strong></span>
+                <span style="font-family: monospace;">${item[1]} pts</span>
+            </li>`;
+    }).join('');
 
-    let topClass = sortedClasses[0][0];
-    viewerClass = topClass;
-    viewerAspect = winnerAspect;
-    let top3Classes = sortedClasses.slice(0, 3);
+    let classListHTML = sortedClasses.map((item, index) => {
+        let isWinner = item[0] === finalClass;
+        let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
+        return `
+            <li class="rank-item" onclick="openDescription('${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+                <span>#${index + 1} <strong>${item[0]}</strong></span>
+                <span style="font-family: monospace;">${item[1]} pts</span>
+            </li>`;
+    }).join('');
 
     render(`
-        <div class="result-box fade-in">
-            <h1 id="result-title" style="font-size: 40px; text-shadow: 0 0 10px #00ff00;">...</h1>
-            <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
+        <div class="fade-in result-box" style="max-width: 900px; margin: 0 auto;">
+            <p style="font-size: 1.2em; margin-bottom: 0;">Seu título definitivo é:</p>
+            <h1 style="color:#00ff00; text-transform:uppercase; font-size: 3em; margin-top: 5px; text-shadow: 0 0 15px #005500;">
+                ${fullTitle}
+            </h1>
             
-            <div id="combined-view-container" style="display: none; text-align: left; margin: 20px 0; border: 1px solid #005500; padding: 20px; background: rgba(0,20,0,0.5);">
-                <h3 style="color: #00ff00; font-size: 14px; margin-bottom: 15px;">ANÁLISE DE CLASSPECT:</h3>
-                <div id="combined-content" class="combined-analysis"></div>
-                <p id="combined-footer" style="margin-top: 25px; font-size: 0.9em; opacity: 0.8; border-top: 1px dashed #005500; padding-top: 15px;">...</p>
-            </div>
+            <p style="margin-bottom: 30px; font-size: 0.9em; opacity: 0.8;">
+                Clique em qualquer nome abaixo para acessar o arquivo correspondente.
+            </p>
 
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 25px 0;">
-                <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
-                    <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR CLASSES:</p>
-                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-                        ${top3Classes.map(item => `
-                            <button class="top3-btn" onclick="updateClassView('${item[0]}')" style="padding: 6px 10px; font-size: 11px;">
-                                ${item[0]} (${item[1]})
-                            </button>
-                        `).join('')}
-                    </div>
+            <div class="rankings-wrapper" style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; text-align: left;">
+                
+                <div class="ranking-column" style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 20px; border: 1px solid #444;">
+                    <h3 style="border-bottom: 2px solid #00ff00; padding-bottom: 10px; margin-top: 0;">RANKING DE ASPECTOS</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">${aspectListHTML}</ul>
                 </div>
 
-                <div class="top3-explorer" style="flex: 1; min-width: 250px; padding: 15px; border: 1px dashed #00ff00; background: rgba(0,40,0,0.3);">
-                    <p style="color: #00ff00; font-weight: bold; margin-bottom: 10px; font-size: 14px;">EXPLORAR ASPECTOS:</p>
-                    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-                        ${top3Aspects.map(item => `
-                            <button class="top3-btn" onclick="updateAspectView('${item[0]}')" style="padding: 6px 10px; font-size: 11px;">
-                                ${item[0]} (${item[1]})
-                            </button>
-                        `).join('')}
-                    </div>
+                <div class="ranking-column" style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 20px; border: 1px solid #444;">
+                    <h3 style="border-bottom: 2px solid #00ff00; padding-bottom: 10px; margin-top: 0;">RANKING DE CLASSES</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">${classListHTML}</ul>
                 </div>
+
             </div>
-            <button onclick="location.reload()" style="margin-top:20px;">REINICIAR SESSÃO</button>
+            
+            <button onclick="location.reload()" style="margin-top: 40px; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">REINICIAR SESSÃO</button>
+        </div>
+
+        <div id="descModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;" onclick="closeDescription()">
+            <div class="modal-content" style="background:#111; border:2px solid #00ff00; padding:30px; width:90%; max-width:700px; max-height:85vh; overflow-y:auto; position:relative; box-shadow: 0 0 30px rgba(0,255,0,0.2);" onclick="event.stopPropagation()">
+                <span style="position:absolute; top:10px; right:20px; cursor:pointer; color:#00ff00; font-size: 30px; font-weight: bold;" onclick="closeDescription()">&times;</span>
+                <h2 id="modalTitle" style="color:#00ff00; border-bottom:1px dashed #444; padding-bottom:15px; margin-top: 0;">TITULO</h2>
+                <div id="modalBody" style="text-align:justify; line-height:1.6; font-size: 1.1em; color: #ddd;">
+                    </div>
+            </div>
         </div>
     `);
+}
 
     renderDynamicView();
 }
@@ -374,6 +384,61 @@ window.onload = () => {
     render(introText);
 };
 
+function openDescription(key) {
+    const modal = document.getElementById('descModal');
+    const title = document.getElementById('modalTitle');
+    const body = document.getElementById('modalBody');
+    let text = "<p>Dados corrompidos ou inexistentes.</p>";
+    
+    if (typeof classpectDescriptions !== 'undefined') {
+        if (classpectDescriptions[key]) {
+            text = classpectDescriptions[key];
+        } 
+        else {
+            for (let cat in classpectDescriptions) {
+                if (classpectDescriptions[cat] && classpectDescriptions[cat][key]) {
+                    text = classpectDescriptions[cat][key];
+                    break;
+                }
+            }
+        }
+    }
+
+    title.innerText = key.toUpperCase();
+    body.innerHTML = text; 
+    modal.style.display = "flex";
+}
+
+function closeDescription() {
+    const modal = document.getElementById('descModal');
+    if (modal) modal.style.display = "none";
+}
+
+function openLibrary() {
+    const aspects = ["Time", "Space", "Void", "Light", "Mind", "Heart", "Rage", "Hope", "Doom", "Life", "Blood", "Breath"];
+    const classes = ["Prince", "Bard", "Thief", "Rogue", "Mage", "Seer", "Witch", "Heir", "Knight", "Page", "Maid", "Sylph"];
+
+    let aspectHTML = aspects.map(a => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="openDescription('${a}')">${a}</li>`).join('');
+    let classHTML = classes.map(c => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="openDescription('${c}')">${c}</li>`).join('');
+
+    render(`
+        <div class="fade-in">
+            <h1>ARQUIVOS DO SBURL</h1>
+            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; text-align:left;">
+                <div style="flex:1;"><h3>Aspectos</h3><ul style="list-style:none; padding:0;">${aspectHTML}</ul></div>
+                <div style="flex:1;"><h3>Classes</h3><ul style="list-style:none; padding:0;">${classHTML}</ul></div>
+            </div>
+            <button onclick="location.reload()" style="margin-top:20px;">VOLTAR</button>
+        </div>
+        <div id="descModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;" onclick="closeDescription()">
+            <div class="modal-content" style="background:#111; border:2px solid #00ff00; padding:30px; width:90%; max-width:700px; max-height:85vh; overflow-y:auto; position:relative;" onclick="event.stopPropagation()">
+                <span style="position:absolute; top:10px; right:20px; cursor:pointer; color:#00ff00; font-size: 30px;" onclick="closeDescription()">×</span>
+                <h2 id="modalTitle"></h2>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    `);
+}
 
 
 
