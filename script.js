@@ -196,7 +196,7 @@ function finishClassPhase() {
         let isWinner = item[0] === finalAspect;
         let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
         return `
-            <li class="rank-item" onclick="updateView('aspect', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+            <li class="rank-item" onclick="updateResultExplorer('aspect', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
                 <span>#${index + 1} <strong>${item[0]}</strong></span>
                 <span style="font-family: monospace;">${item[1]} pts</span>
             </li>`;
@@ -206,7 +206,7 @@ function finishClassPhase() {
         let isWinner = item[0] === finalClass;
         let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
         return `
-            <li class="rank-item" onclick="updateView('class', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+            <li class="rank-item" onclick="updateResultExplorer('class', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
                 <span>#${index + 1} <strong>${item[0]}</strong></span>
                 <span style="font-family: monospace;">${item[1]} pts</span>
             </li>`;
@@ -217,10 +217,12 @@ function finishClassPhase() {
             <p style="font-size: 1.2em; margin-bottom: 0;">Seu título definitivo é:</p>
             
             <h1 id="dynamicTitle" style="color:#00ff00; text-transform:uppercase; font-size: 3em; margin-top: 5px; text-shadow: 0 0 15px #005500;">
-                </h1>
+                ...
+            </h1>
             
             <div id="dynamicDescription" style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6; min-height: 200px;">
-                </div>
+                ...
+            </div>
 
             <p style="margin-bottom: 30px; font-size: 0.9em; opacity: 0.8;">
                 Clique nos nomes abaixo para combinar diferentes Classes e Aspectos.
@@ -242,19 +244,19 @@ function finishClassPhase() {
         </div>
     `);
 
-    renderContent();
+    renderResultContent();
 }
 
-function updateView(type, name) {
+function updateResultExplorer(type, name) {
     if (type === 'class') {
         viewerClass = name;
     } else if (type === 'aspect') {
         viewerAspect = name;
     }
-    renderContent();
+    renderResultContent();
 }
 
-function renderContent() {
+function renderResultContent() {
     const titleEl = document.getElementById('dynamicTitle');
     const descEl = document.getElementById('dynamicDescription');
     
@@ -269,34 +271,57 @@ function renderContent() {
     
     if (typeof classpectDescriptions !== 'undefined') {
         if (classpectDescriptions[dbKey]) {
-            console.log("Combinação encontrada:", dbKey);
             content = classpectDescriptions[dbKey];
-        }
-        else if (classpectDescriptions[displayTitle]) {
-             console.log("Combinação encontrada (formato texto):", displayTitle);
-             content = classpectDescriptions[displayTitle];
-        }
+        } 
         else {
-            console.warn("Combinação não encontrada para:", dbKey);
-            const classText = classpectDescriptions[viewerClass] || `<p>Texto da classe ${viewerClass} não encontrado.</p>`;
-            const aspectText = classpectDescriptions[viewerAspect] || `<p>Texto do aspecto ${viewerAspect} não encontrado.</p>`;
-            
-            content = `
-                <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #444;">
-                    <h3 style="color: #00ff00; margin-top:0;">${viewerClass}</h3>
-                    ${classText}
-                </div>
-                <div>
-                    <h3 style="color: #00ff00; margin-top:0;">${viewerAspect}</h3>
-                    ${aspectText}
-                </div>
-            `;
+            content = `<p>Descrição combinada não encontrada para [${dbKey}]. Verifique o arquivo de descrições.</p>`;
         }
     } else {
-        content = "<p>ERRO CRÍTICO: Arquivo de descrições (descriptions.js) não carregado.</p>";
+        content = "<p>Banco de dados offline.</p>";
     }
 
     descEl.innerHTML = content;
+}
+
+
+function openLibrary() {
+    
+    const aspects = ["Time", "Space", "Void", "Light", "Mind", "Heart", "Rage", "Hope", "Doom", "Life", "Blood", "Breath"];
+    const classes = ["Prince", "Bard", "Thief", "Rogue", "Mage", "Seer", "Witch", "Heir", "Knight", "Page", "Maid", "Sylph"];
+
+    let aspectHTML = aspects.map(a => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="renderLibraryItem('${a}')">${a}</li>`).join('');
+    let classHTML = classes.map(c => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="renderLibraryItem('${c}')">${c}</li>`).join('');
+
+    render(`
+        <div class="fade-in" style="text-align: center; max-width: 900px; margin: 0 auto;">
+            <h1>ARQUIVOS DO SBURBIO</h1>
+            
+            <div id="libraryDisplay" style="background: rgba(0, 0, 0, 0.8); border: 1px solid #444; padding: 25px; margin: 20px auto; text-align: justify; max-width: 800px; display:none;">
+                <h2 id="libTitle" style="color:#00ff00; margin-top:0;"></h2>
+                <div id="libBody"></div>
+            </div>
+
+            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; text-align:left;">
+                <div style="flex:1;"><h3>Aspectos</h3><ul style="list-style:none; padding:0;">${aspectHTML}</ul></div>
+                <div style="flex:1;"><h3>Classes</h3><ul style="list-style:none; padding:0;">${classHTML}</ul></div>
+            </div>
+            <button onclick="location.reload()" style="margin-top:20px; padding: 10px 20px; font-size: 1em; cursor: pointer;">VOLTAR</button>
+        </div>
+    `);
+}
+
+function renderLibraryItem(key) {
+    const display = document.getElementById('libraryDisplay');
+    const title = document.getElementById('libTitle');
+    const body = document.getElementById('libBody');
+    
+    if (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[key]) {
+        title.innerText = key.toUpperCase();
+        body.innerHTML = classpectDescriptions[key];
+        display.style.display = 'block';
+    } else {
+        alert("Descrição não encontrada para: " + key);
+    }
 }
 
 function renderQuestion(q) {
@@ -386,34 +411,6 @@ function renderNullEnding() {
     render(nullText);
 }
 
-function openLibrary() {
-    viewerClass = "Prince"; 
-    viewerAspect = "Time";
-
-    const aspects = ["Time", "Space", "Void", "Light", "Mind", "Heart", "Rage", "Hope", "Doom", "Life", "Blood", "Breath"];
-    const classes = ["Prince", "Bard", "Thief", "Rogue", "Mage", "Seer", "Witch", "Heir", "Knight", "Page", "Maid", "Sylph"];
-
-    let aspectHTML = aspects.map(a => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="updateView('aspect', '${a}')">${a}</li>`).join('');
-    let classHTML = classes.map(c => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="updateView('class', '${c}')">${c}</li>`).join('');
-
-    render(`
-        <div class="fade-in" style="text-align: center; max-width: 900px; margin: 0 auto;">
-            <h1>ARQUIVOS DO SBURBIO</h1>
-            
-            <h2 id="dynamicTitle" style="color:#00ff00; text-transform:uppercase;">PRINCE OF TIME</h2>
-            <div id="dynamicDescription" style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 20px auto; text-align: justify; max-width: 800px;"></div>
-
-            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; text-align:left;">
-                <div style="flex:1;"><h3>Aspectos</h3><ul style="list-style:none; padding:0;">${aspectHTML}</ul></div>
-                <div style="flex:1;"><h3>Classes</h3><ul style="list-style:none; padding:0;">${classHTML}</ul></div>
-            </div>
-            <button onclick="location.reload()" style="margin-top:20px; padding: 10px 20px; font-size: 1em; cursor: pointer;">VOLTAR</button>
-        </div>
-    `);
-    
-    renderContent(); 
-}
-
 window.onload = () => {
     const introText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_Intro"]) 
         ? classpectDescriptions["UI_Intro"] 
@@ -431,4 +428,3 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
-
