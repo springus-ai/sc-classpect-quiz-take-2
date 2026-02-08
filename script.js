@@ -239,7 +239,7 @@ function finishClassPhase() {
         <div id="descModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; align-items:center; justify-content:center;" onclick="closeDescription()">
             <div class="modal-content" style="background:#111; border:2px solid #00ff00; padding:30px; width:90%; max-width:700px; max-height:85vh; overflow-y:auto; position:relative; box-shadow: 0 0 30px rgba(0,255,0,0.2);" onclick="event.stopPropagation()">
                 <span style="position:absolute; top:10px; right:20px; cursor:pointer; color:#00ff00; font-size: 30px; font-weight: bold;" onclick="closeDescription()">&times;</span>
-                <h2 id="modalTitle" style="color:#00ff00; border-bottom:1px dashed #444; padding-bottom:15px; margin-top: 0;">TITULO</h2>
+                <h2 id="modalTitle" style="color:#00ff00; border-bottom:1px dashed #444; padding-bottom:15px; margin-top: 0;">TÍTULO</h2>
                 <div id="modalBody" style="text-align:justify; line-height:1.6; font-size: 1.1em; color: #ddd;">
                 </div>
             </div>
@@ -403,4 +403,5 @@ function openLibrary() {
         </div>
     `);
 }
+
 
