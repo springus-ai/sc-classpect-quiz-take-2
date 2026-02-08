@@ -387,7 +387,7 @@ function openLibrary() {
 
     render(`
         <div class="fade-in" style="text-align: center;">
-            <h1>ARQUIVOS DO SBURL</h1>
+            <h1>ARQUIVOS DO SBURBIO</h1>
             <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; text-align:left;">
                 <div style="flex:1;"><h3>Aspectos</h3><ul style="list-style:none; padding:0;">${aspectHTML}</ul></div>
                 <div style="flex:1;"><h3>Classes</h3><ul style="list-style:none; padding:0;">${classHTML}</ul></div>
@@ -404,6 +404,7 @@ function openLibrary() {
         </div>
     `);
 }
+
 
 
 
