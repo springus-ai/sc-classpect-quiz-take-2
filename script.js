@@ -220,6 +220,8 @@ function finishClassPhase() {
                 ...
             </h1>
             
+            <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
+
             <div id="dynamicDescription" style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6; min-height: 200px;">
                 ...
             </div>
@@ -240,10 +242,18 @@ function finishClassPhase() {
                 </div>
             </div>
             
-            <button onclick="location.reload()" style="margin-top: 40px; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">REINICIAR SESSÃO</button>
+            <div style="margin-top: 40px; border-top: 1px dashed #444; padding-top: 20px;">
+                <p style="color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
+                <p style="color: #88ff88; font-size: 14px;">Se quiser dar qualquer feedback, venha comentar pelo Discord do Projeto Homestuck PT-BR! É só nos marcar no canal de Classpecting.</p>
+                <p style="font-size: 11px; color: #aaffaa; opacity: 0.7; margin-top: 5px;">
+                    Em breve, faremos um site de análises de classpect. Fiquem de olho, o seu pode ser um dos primeiros a sair!
+                </p>
+            </div>
+
+            <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">REINICIAR SESSÃO</button>
         </div>
     `);
-
+    
     renderResultContent();
 }
 
@@ -405,10 +415,24 @@ function render(html) {
 }
 
 function renderNullEnding() {
-    const nullText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_NullEnding"])
-        ? classpectDescriptions["UI_NullEnding"]
-        : "<h1>Erro Crítico.</h1><p>O universo colapsou.</p><button onclick='location.reload()'>Reiniciar</button>";
-    render(nullText);
+    const html = `
+        <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
+            
+            <h1>TEM ALGO DE ERRADO AQUI.</h1>
+            <p style="font-style: italic; opacity: 0.8;">NENHUM CLASSPECT ATRIBUÍDO.</p>
+            
+            <img src="https://i.imgur.com/zcNK5Dk.png" alt="Void Glitch" style="max-width: 250px; width: 100%; height: auto; margin: 20px auto; display: block; border: 1px solid #ff0000; box-shadow: 0 0 10px rgba(255,0,0,0.5);">
+
+            <div class="analysis-text" style="margin-top: 2rem;">
+                <p>Você me fez morder a fronha. Quer dizer que você abriu esse teste só para clicar em "Nenhuma das anteriores" tipo, 30 vezes? Poxa.</p>
+                
+                <p><strong>Vem, vamos de novo. Eu sei que você quer saber o seu resultado de verdade.</strong></p>
+            </div>
+            
+            <button class="retry-button" onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px;">Tente novamente.</button>
+        </div>
+    `;
+    render(html);
 }
 
 window.onload = () => {
@@ -428,3 +452,4 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
