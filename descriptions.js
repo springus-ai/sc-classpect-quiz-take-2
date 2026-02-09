@@ -10,7 +10,7 @@ const classpectDescriptions = {
     
     "Knight": `<strong>Cavaleiro/Cavaleira:</strong> Você é o escudo da equipe e a arma mais eficiente do grupo. Você explora seu Aspecto com uma habilidade técnica invejável, usando-o para proteger seus aliados a qualquer custo. Toda essa competência e bravata é uma máscara — literalmente ou metaforicamente. Você morre de medo de não ser bom o suficiente, e por isso se esforça em dobro. Você luta para esconder suas próprias inseguranças.`,
     
-    "Page": `<strong>Escudeiro/Escudeira:</strong> Sua jornada começa difícil. Você parece ter menos do seu Aspecto do que qualquer outra pessoa. Mas, se você sobreviver aos tropeços e à humilhação inicial, seu teto de crescimento é infinito. Você é um investimento de longo prazo. Seu desafio é superar a própria falta e o complexo de inferioridade para se tornar a potência que está destinada a ser. A paciência não é uma virtude, é sua necessidade vital.`,
+    "Page": `<strong>Escudeiro/Escudeira:</strong> Sua jornada começa difícil. Você parece ter menos do seu Aspecto do que qualquer outra pessoa. Mas, se você sobreviver aos tropeços e à humilhação inicial, seu teto de crescimento é infinito. Você começa com um déficit técnico e psicológico no seu aspecto, mas seu "porquê" reside no crescimento exponencial, permitindo que você explore o aspecto em benefício do grupo no estágio final.`,
     
     "Maid": `<strong>Criado/Criada:</strong> No início você serve, mas no fim, você é feita de pura ação. Você arruma o Aspecto e cria soluções onde não havia nada. Você é quem garante que o trabalho seja feito, custe o que custar. Você tende a começar a história dependente da vontade alheia. Sua jornada é parar de ser uma ferramenta nas mãos dos outros e começar a servir aos seus próprios interesses, tornando-se a mestre do seu destino.`,
     
@@ -93,9 +93,9 @@ const classpectDescriptions = {
     `,
     "Page:Hope": `
         <h3>PAGE OF HOPE (ESCUDEIRO/ESCUDEIRA DA ESPERANÇA)</h3>
-        <p><strong>O que Serve a Esperança / É servido(a) pela Esperança.</strong></p>
-        <p>Sua jornada é a mais longa. Inicialmente, você parece ter um déficit de convicção. Você é influenciável, ingênuo, talvez até um pouco "bobo", buscando desesperadamente alguém ou algo em que acreditar porque não confia no seu próprio taco.</p>
-        <p>Sua "Resposta" é a busca por validação externa. Mas o potencial do Page é o transbordamento: se você sobreviver à fase de ser capacho, você desenvolve uma fé tão absurda e inabalável que se torna o pilar moral do grupo. O desafio é parar de esperar que o herói apareça e perceber que a narrativa é sua.</p>
+        <p><strong>Aquele que explora a Esperança / Explora através da Esperança.</strong></p>
+        <p>Você é alguém que começa sem crenças reais ou sem força de vontade. Você explora o "imaginário" porque a realidade parece decepcionante. Influenciável, ingênuo, talvez até um pouco "bobo", você está buscando desesperadamente alguém ou algo em que acreditar porque não confia no seu próprio taco.</p>
+        <p>Ao explorar o potencial do que poderia ser, você acaba por tornar o impossível em algo tangível. Você não serve à esperança; você a explora como uma fonte de energia nuclear que pode obliterar qualquer obstáculo apenas pelo ato de acreditar.</p>
     `,
     "Rogue:Hope": `
         <h3>ROGUE OF HOPE (LADINO/LADINA DA ESPERANÇA)</h3>
@@ -167,9 +167,9 @@ const classpectDescriptions = {
     `,
     "Page:Blood": `
         <h3>PAGE OF BLOOD (ESCUDEIRO/ESCUDEIRA DO SANGUE)</h3>
-        <p><strong>O que Serve o Sangue / É servido(a) pelo Sangue.</strong></p>
-        <p>Sua jornada começa com a dificuldade de conexão. Você provavelmente se sentiu deslocado, esquisito ou solitário por muito tempo, tentando desesperadamente agradar para ser aceito. Você serve às relações, deixando que pisem em você só para não ficar sozinho.</p>
-        <p>O potencial do Page, porém, é explosivo. Se você superar essa fase de capacho, você tem a capacidade de inspirar uma lealdade inabalável. Você pode unir os desajustados e criar uma "família encontrada" incrivelmente forte, não pela força, mas porque você entende o valor de ser aceito.</p>
+        <p><strong>Aquele que explora o Sangue / Explora através do Sangue.</strong></p>
+        <p>A sua carência é o pertencimento. Você se sente deslocado, sem raízes ou sem amigos verdadeiros. Você explora as conexões humanas e as obrigações porque teme a solidão profunda.</p>
+        <p>O seu trabalho é entender o que mantém as pessoas unidas quando tudo o mais desmorona. Ao explorar esses vínculos, você se torna o alicerce de um grupo, alguém que explora o potencial da união para transformar desconhecidos em uma família indestrutível.</p>
     `,
     "Rogue:Blood": `
         <h3>ROGUE OF BLOOD (LADINO/LADINA DO SANGUE)</h3>
@@ -241,9 +241,9 @@ const classpectDescriptions = {
     `,
     "Page:Breath": `
         <h3>PAGE OF BREATH (ESCUDEIRO/ESCUDEIRA DO SUSPIRO)</h3>
-        <p><strong>O que Serve o Suspiro / É servido(a) pelo Suspiro.</strong></p>
-        <p>Inicialmente, você parece incapaz de se defender ou de tomar decisões próprias. Você se sente preso, sufocado pelas expectativas dos outros, sonhando acordado com uma liberdade que parece impossível. Você serve a narrativa dos outros.</p>
-        <p>Mas a jornada do Page é a acumulação. Se você não desistir, esse desejo reprimido explode. Você pode se tornar a personificação da liberdade ilimitada, alguém que inspira multidões a se levantarem. O segredo é parar de pedir permissão para viver a sua própria vida.</p>
+        <p><strong>Aquele que explora o Suspiro / Explora através do Suspiro.</strong></p>
+        <p>Você começa sentindo-se preso, seja por obrigações, limitações físicas ou pela vontade dos outros. O seu "porquê" é a asfixia social. Você explora a liberdade não como um rebelde barulhento, mas como alguém que aprende, centímetro por centímetro, o que significa ter uma direção própria.</p>
+        <p>Ao explorar o potencial da autonomia, você acaba por se tornar a brisa que inspira os outros a se libertarem, transformando a sua antiga passividade em uma liderança leve, mas imparável. Você pode se tornar a personificação da liberdade ilimitada, alguém que inspira multidões a se levantarem. O segredo é parar de pedir permissão para viver a sua própria vida.</p>
     `,
     "Rogue:Breath": `
         <h3>ROGUE OF BREATH (LADINO/LADINA DO SUSPIRO)</h3>
@@ -315,9 +315,9 @@ const classpectDescriptions = {
     `,
     "Page:Void": `
         <h3>PAGE OF VOID (ESCUDEIRO/ESCUDEIRA DO VAZIO)</h3>
-        <p><strong>O que Serve o Vazio / É servido(a) pelo Vazio.</strong></p>
-        <p>Sua história começa com a invisibilidade total. Você é o figurante na própria vida, aquele que ninguém lembra o nome, o que é sempre interrompido quando fala. Você "serve" à irrelevância, acreditando que não tem nada a oferecer.</p>
-        <p>Mas o Vazio é potencial infinito. Se você persistir, essa obscuridade se torna sua maior vantagem. Ninguém te vê chegando. Quando você finalmente age, é com a força do desconhecido, tirando soluções e poderes "do nada". Você deixa de ser o "joão-ninguém" para ser o mistério que ninguém consegue decifrar ou conter.</p>
+        <p><strongAquele que explora o Vazio / Explora através do Vazio.</strong></p>
+        <p>Você começa sentindo que não tem segredos, ou pior, que não tem substância. Tudo em você parece óbvio ou sem mistério. Você explora o "nada" e o silêncio para construir uma identidade que não dependa do olhar alheio.</p>
+        <p>Você explora o potencial do que está escondido, tornando-se mestre em agir pelas sombras e em criar recursos do absoluto vazio, explorando a própria irrelevância para se tornar a peça mais perigosa do tabuleiro.</p>
     `,
     "Rogue:Void": `
         <h3>ROGUE OF VOID (LADINO/LADINA DO VAZIO)</h3>
@@ -389,8 +389,8 @@ const classpectDescriptions = {
     `,
     "Page:Light": `
         <h3>PAGE OF LIGHT (ESCUDEIRO/ESCUDEIRA DA LUZ)</h3>
-        <p><strong>O que Serve a Luz / É servido(a) pela Luz.</strong></p>
-        <p>No início, você luta para entender o que está acontecendo. Você se sente "fora do loop", confuso ou intelectualmente inferior aos seus pares. Você busca desesperadamente mentores ou informações que te deem um senso de direção.</p>
+        <p><strong>Aquele que explora a Luz / Explora através da Luz.</strong></p>
+        <p>Você sente que é invisível, que não tem sorte ou que a verdade está sempre fora do seu alcance. O seu "porquê" é a obscuridade. Você explora a informação e a relevância com a fome de quem quer ser notado.</p>
         <p>Você serve à narrativa dos outros, sendo o ajudante. Mas o potencial do Page é o acúmulo: se você não desistir, você absorve tanto conhecimento que se torna a autoridade máxima. De "bobo", você passa a ser a fonte da verdade. O segredo é ter paciência com sua própria curva de aprendizado.</p>
     `,
     "Rogue:Light": `
@@ -463,9 +463,9 @@ const classpectDescriptions = {
     `,
     "Page:Space": `
         <h3>PAGE OF SPACE (ESCUDEIRO/ESCUDEIRA DO ESPAÇO)</h3>
-        <p><strong>O que Serve o Espaço / É servido(a) pelo Espaço.</strong></p>
-        <p>Você começa se sentindo pequeno, apertado, incapaz de criar ou de mudar seu ambiente. Você parece estar sempre esperando o momento certo, paralisado pela enormidade das possibilidades ("analysis paralysis"). Você serve ao status quo físico.</p>
-        <p>Mas Space é o aspecto da paciência. Se você persistir, sua capacidade de crescimento é literal e metafórica. O Page de Espaço que desperta é aquele que traz algo totalmente novo à existência, expandindo horizontes que ninguém sabia que existiam. De "ninguém", você se torna o universo inteiro.</p>
+        <p><strong>Aquele que explora o Espaço / Explora através do Espaço.</strong></p>
+        <p>A sua realidade inicial é a de alguém sem lugar, sem criatividade ou sem "tamanho". Você se sente pequeno e irrelevante no vasto cosmos. Por que você explora o Espaço? Porque você precisa criar o seu próprio território para existir.</p>
+        <p>Você explora a solidão e a distância para entender a arte da criação do zero. No final, o seu potencial explorado permite que você manipule a própria física da realidade, provando que mesmo o menor dos pontos pode expandir-se para conter um universo inteiro.</p>
     `,
     "Rogue:Space": `
         <h3>ROGUE OF SPACE (LADINO/LADINA DO ESPAÇO)</h3>
@@ -537,9 +537,9 @@ const classpectDescriptions = {
     `,
     "Page:Time": `
         <h3>PAGE OF TIME (ESCUDEIRO/ESCUDEIRA DO TEMPO)</h3>
-        <p><strong>O que Serve o Tempo / É servido(a) pelo Tempo.</strong></p>
-        <p>Sua relação inicial com o Tempo é desastrosa. Você está sempre atrasado, sempre correndo atrás do prejuízo, sempre perdendo prazos. Você se sente atropelado pela vida, servindo ao relógio em vez de controlá-lo.</p>
-        <p>Mas o Pagem é a classe do acúmulo. Se você sobreviver a essa fase de desorganização, você desenvolve um ritmo interno poderoso. Você aprende a usar o tempo a seu favor, tornando-se um mestre da paciência e do "timing" perfeito (seja na música, na luta ou na estratégia). Do caos nasce a precisão absoluta.</p>
+        <p><strong>Aquele que explora o Tempo / Explora através do Tempo.</strong></p>
+        <p>Você começa a vida sentindo que está sempre atrasado, fora de ritmo ou que o seu tempo está se esgotando sem que você faça nada. O seu "porquê" é a ansiedade da finitude.</p>
+        <p>Por sentir que não domina o fluxo das coisas, você se torna um estudioso obsessivo da paciência e da repetição. Quando você finalmente aprende a explorar as engrenagens do tempo, você não apenas o "usa", você se torna o mestre da persistência que ninguém consegue parar, explorando cada segundo para transformar um fracasso inevitável em uma vitória tardia, mas absoluta.</p>
     `,
     "Rogue:Time": `
         <h3>ROGUE OF TIME (LADINO/LADINA DO TEMPO)</h3>
@@ -611,9 +611,9 @@ const classpectDescriptions = {
     `,
     "Page:Heart": `
         <h3>PAGE OF HEART (ESCUDEIRO/ESCUDEIRA DO CORAÇÃO)</h3>
-        <p><strong>O que Serve o Coração / É servido(a) pelo Coração.</strong></p>
-        <p>Você começa como uma folha em branco. Você tem dificuldade em saber quem é, o que gosta ou o que quer. Você tende a mimetizar a personalidade de quem está perto (ídolos, amigos, parceiros) porque se sente oco por dentro.</p>
-        <p>Sua jornada é a construção lenta da autoestima. Se você persistir, o Page de Heart se torna uma fonte inesgotável de paixão e autenticidade. Você passa de alguém que pede permissão para existir para alguém que inspira todos com sua alma vibrante e inabalável. Mas o caminho até lá é cheio de crises de identidade.</p>
+        <p><strong>Aquele que explora o Coração / Explora através do Coração.</strong></p>
+        <p>Você se sente sem alma, ou talvez a sua identidade pareça fragmentada e frágil. O seu "porquê" é a crise de identidade. Você explora os sentimentos e o seu próprio "eu" com uma intensidade perigosa.</p>
+        <p>Ao explorar quem você realmente é, você acaba por manifestar versões de si mesmo que ninguém poderia prever, explorando a própria essência da alma para se tornar uma força de convicção que ninguém consegue fragmentar novamente.</p>
     `,
     "Rogue:Heart": `
         <h3>ROGUE OF HEART (LADINO/LADINA DO CORAÇÃO)</h3>
@@ -685,9 +685,9 @@ const classpectDescriptions = {
     `,
     "Page:Mind": `
         <h3>PAGE OF MIND (ESCUDEIRO/ESCUDEIRA DA MENTE)</h3>
-        <p><strong>O que Serve a Mente / É servido(a) pela Mente.</strong></p>
-        <p>Você começa duvidando da sua própria inteligência. Você tem dificuldade em tomar decisões simples, sempre perguntando "o que você acha?" para os outros. Você é facilmente influenciável e pode ser usado como peão nos jogos mentais de pessoas mais espertas.</p>
-        <p>Mas o Pagem cresce. Se você aprender a confiar no seu raciocínio, você se torna um estrategista brilhante. Você deixa de servir às escolhas dos outros para ser servido pela lógica: você começa a ver o tabuleiro de xadrez da vida com uma clareza que ninguém mais tem. De indeciso, você vira o mestre do jogo.</p>
+        <p><strong>Aquele que explora a Mente / Explora através da Mente.</strong></p>
+        <p>A sua realidade é a dúvida excruciante. Você não sabe quem é ou quais escolhas tomar, sentindo-se intelectualmente inferior ou indeciso. Você explora a lógica, os pensamentos e as máscaras sociais para tentar entender como o mundo funciona.</p>
+        <p>Ao explorar o potencial da causalidade, você aprende a antecipar cada movimento alheio, transformando a sua antiga confusão em uma arquitetura mental que permite explorar cada decisão como um caminho para a vitória.</p>
     `,
     "Rogue:Mind": `
         <h3>ROGUE OF MIND (LADINO/LADINA DA MENTE)</h3>
@@ -759,9 +759,9 @@ const classpectDescriptions = {
     `,
     "Page:Rage": `
         <h3>PAGE OF RAGE (ESCUDEIRO/ESCUDEIRA DA IRA)</h3>
-        <p><strong>O que Serve a Ira / É servido(a) pela Ira.</strong></p>
-        <p>Você começa como o capacho. Você engole sapos, aceita desrespeito e tem medo de impor seus limites. Você serve à frustração, acumulando-a silenciosamente enquanto tenta manter um sorriso no rosto.</p>
-        <p>Mas Rage é uma panela de pressão. O potencial do Pagem é a explosão inevitável. Quando você finalmente aprende a usar sua Ira, ela é avassaladora. Você se torna uma força da natureza imparável, movida por anos de "sim" que deveriam ter sido "não". De passivo, você vira a encarnação da revolta.</p>
+        <p><strong>Aquele que explora a Ira / Explora através da Ira.</strong></p>
+        <p>Você começa como alguém que não consegue se impor, que aceita mentiras ou que tem medo do conflito. A sua carência é o "nervoso".</p>
+        <p>Você explora a descrença e a indignação para encontrar a verdade por trás das fachadas. Ao explorar o potencial da sua própria raiva contida, você se torna capaz de destruir falsas certezas, explorando o medo alheio para revelar a realidade nua e crua.</p>
     `,
     "Rogue:Rage": `
         <h3>ROGUE OF RAGE (LADINO/LADINA DA IRA)</h3>
@@ -833,9 +833,9 @@ const classpectDescriptions = {
     `,
     "Page:Life": `
         <h3>PAGE OF LIFE (ESCUDEIRO/ESCUDEIRA DA VIDA)</h3>
-        <p><strong>O que Serve a Vida / É servido(a) pela Vida.</strong></p>
-        <p>Você começa sentindo-se impotente. Talvez fisicamente frágil, socialmente desajeitado ou financeiramente dependente. Você olha para as pessoas cheias de vida e sucesso e se sente inferior. Você serve ao sucesso dos outros, buscando migalhas.</p>
-        <p>Mas o Pagem é o crescimento explosivo. Se você persistir, você descobre uma fonte inesgotável de resiliência. Você pode se tornar a pessoa mais poderosa e influente do grupo, alguém que superou todas as probabilidades. Sua jornada é provar que você merece ocupar espaço.</p>
+        <p><strong>Aquele que explora a Vida / Explora através da Vida.</strong></p>
+        <p>A sua realidade inicial é a estagnação ou a fragilidade. Você se sente fraco ou incapaz de nutrir o que está ao seu redor. Você explora o crescimento, a cura e o excesso porque teme a morte e a inércia.</p>
+        <p>Você explora o crescimento, a cura e o excesso porque teme a morte e a inércia. Ao explorar o potencial vital, você se torna um catalisador de evolução, capaz de explorar a biologia e a energia para garantir que nada sob seu comando pare de crescer.</p>
     `,
     "Rogue:Life": `
         <h3>ROGUE OF LIFE (LADINO/LADINA DA VIDA)</h3>
@@ -907,9 +907,9 @@ const classpectDescriptions = {
     `,
     "Page:Doom": `
         <h3>PAGE OF DOOM (ESCUDEIRO/ESCUDEIRA DO DESTINO)</h3>
-        <p><strong>O que Serve o Destino / É servido(a) pelo Destino.</strong></p>
-        <p>Você começa se sentindo amaldiçoado. Tudo dá errado para você. Você se sente preso por regras que não entende, oprimido por autoridades ou simplesmente azarado. Você serve ao sofrimento, aceitando-o como sua realidade imutável.</p>
-        <p>Mas se você aguentar, a dinâmica inverte. Você aprende as regras do jogo melhor que ninguém. Você usa as restrições a seu favor, construindo estruturas impenetráveis. O Page de Doom realizado é aquele que transforma suas cicatrizes em armadura e seu conhecimento do sistema em poder absoluto.</p>
+        <p><strongAquele que explora o Destino / Explora através do Destino.</strong></p>
+        <p>Você sente que as regras não se aplicam a você ou, inversamente, que você está esmagado por leis que não entende. O seu "porquê" é o caos desestruturado.</p>
+        <p>Você explora o sacrifício, o limite e a inevitabilidade para encontrar ordem no sofrimento. Ao explorar o potencial da Perdição, você aprende a utilizar as restrições do sistema a seu favor, explorando as falhas da realidade para garantir que o fim seja exatamente como você planejou..</p>
     `,
     "Rogue:Doom": `
         <h3>ROGUE OF DOOM (LADINO/LADINA DO DESTINO)</h3>
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
