@@ -292,8 +292,7 @@ function finishClassPhase() {
             <div style="margin-top: 40px; background: rgba(0,50,0,0.2); padding: 20px; border: 1px dashed #00ff00;">
                 <h3 style="color: #00ff00; margin-top: 0;">EXPLORAR POSSIBILIDADES?</h3>
                 <p style="font-size: 0.9em; color: #ddd;">
-                    Estes são os aspectos que mais impactaram seu teste (positiva ou negativamente).
-                    <br>Botões em <span style="color:#ff4444">vermelho</span> indicam uma rejeição ativa (Score <= -10), sugerindo classes destrutivas.
+                    Nenhum teste é perfeito. Se você sente que sua classe não encaixou, talvez a verdadeira resposta esteja em outro dos seus aspectos dominantes! Experimente:
                 </p>
                 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
                     ${explorationButtons}
@@ -534,6 +533,7 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
 
 
