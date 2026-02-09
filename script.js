@@ -183,23 +183,26 @@ function startClassPhase() {
 }
 
 function finishClassPhase() {
-    const sortedAspects = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
+    const sortedAspects = Object.entries(state.aspectScores).sort((a, b) => {
+        return Math.abs(b[1]) - Math.abs(a[1]);
+    });
+    
+    const visualRankingAspects = [...sortedAspects].sort((a, b) => b[1] - a[1]);
     const sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
 
-    // Define os valores iniciais do explorador
     if (!viewerClass) viewerClass = sortedClasses[0][0];
     if (!viewerAspect) viewerAspect = state.dominantAspect;
 
     const finalClass = sortedClasses[0][0];
     const finalAspect = state.dominantAspect;
 
-    // Pega o Top 3 Aspectos para a mecânica de "Explorar"
-    const top3Aspects = sortedAspects.slice(0, 3);
+    const top3IntenseAspects = sortedAspects.slice(0, 3);
 
-    // Gera as listas HTML (Ranking Completo)
-    let aspectListHTML = sortedAspects.map((item, index) => {
+    let aspectListHTML = visualRankingAspects.map((item, index) => {
         let isWinner = item[0] === finalAspect;
         let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
+        if (item[1] < 0) colorStyle = "color: #ff8888;"; 
+        
         return `
             <li class="rank-item" onclick="updateResultExplorer('aspect', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
                 <span>#${index + 1} <strong>${item[0]}</strong></span>
@@ -217,20 +220,40 @@ function finishClassPhase() {
             </li>`;
     }).join('');
 
-    let explorationButtons = top3Aspects.map(item => {
-        let label = item[0] === state.dominantAspect ? `REFAZER ${item[0].toUpperCase()}` : `TESTAR ${item[0].toUpperCase()}`;
+    let explorationButtons = top3IntenseAspects.map(item => {
+        let aspectName = item[0];
+        let score = item[1];
+
+        const HATE_THRESHOLD = -10; 
+
+        let actionText = "TESTAR";
+        let color = "#00ff00"; 
+        
+        if (aspectName === state.dominantAspect) {
+            actionText = "REFAZER";
+        } 
+        else if (score <= HATE_THRESHOLD) {
+            actionText = "CONFRONTAR"; 
+            color = "#ff4444"; 
+        }
+        else if (score < 0) {
+            actionText = "EXPLORAR"; 
+        }
+
+        let label = `${actionText} ${aspectName.toUpperCase()}`;
+        
         return `
-            <button onclick="retryClassTest('${item[0]}')" style="
+            <button onclick="retryClassTest('${aspectName}')" style="
                 background: transparent; 
-                border: 1px solid #00ff00; 
-                color: #00ff00; 
+                border: 1px solid ${color}; 
+                color: ${color}; 
                 padding: 10px 15px; 
                 cursor: pointer; 
                 font-size: 0.9em;
                 transition: 0.2s;
                 flex: 1;
                 min-width: 120px;
-            " onmouseover="this.style.background='#002200'" onmouseout="this.style.background='transparent'">
+            " onmouseover="this.style.background='rgba(${color === '#ff4444' ? '255,0,0' : '0,255,0'}, 0.2)'" onmouseout="this.style.background='transparent'">
                 ${label}
             </button>
         `;
@@ -268,7 +291,10 @@ function finishClassPhase() {
             
             <div style="margin-top: 40px; background: rgba(0,50,0,0.2); padding: 20px; border: 1px dashed #00ff00;">
                 <h3 style="color: #00ff00; margin-top: 0;">EXPLORAR POSSIBILIDADES?</h3>
-                <p style="font-size: 0.9em; color: #ddd;">Nenhum teste é perfeito. Se você sente que sua Classe não encaixou, talvez ela se manifeste melhor através de outro dos seus Aspectos dominantes! Experimente:</p>
+                <p style="font-size: 0.9em; color: #ddd;">
+                    Estes são os aspectos que mais impactaram seu teste (positiva ou negativamente).
+                    <br>Botões em <span style="color:#ff4444">vermelho</span> indicam uma rejeição ativa (Score <= -10), sugerindo classes destrutivas.
+                </p>
                 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
                     ${explorationButtons}
                 </div>
@@ -288,6 +314,7 @@ function finishClassPhase() {
 
     renderResultContent();
 }
+
 function updateResultExplorer(type, name) {
     if (type === 'class') {
         viewerClass = name;
@@ -507,6 +534,7 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
 
 
