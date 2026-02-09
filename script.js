@@ -217,9 +217,7 @@ function finishClassPhase() {
             </li>`;
     }).join('');
 
-    // Gera os botões de "Explorar Possibilidades"
     let explorationButtons = top3Aspects.map(item => {
-        // Se for o aspecto atual, muda o texto para "Refazer"
         let label = item[0] === state.dominantAspect ? `REFAZER ${item[0].toUpperCase()}` : `TESTAR ${item[0].toUpperCase()}`;
         return `
             <button onclick="retryClassTest('${item[0]}')" style="
@@ -387,8 +385,15 @@ function renderQuestion(q) {
     
     render(html);
 }
+let lastSkipTime = 0;
 
 function handleSkip() {
+    const now = Date.now();
+    // Se passaram menos de 300ms desde o último clique, ignora.
+    // Isso anula o efeito do "clique duplo" causado por listeners duplicados.
+    if (now - lastSkipTime < 300) return;
+    lastSkipTime = now;
+
     state.history.push(JSON.parse(JSON.stringify({
         aspectScores: state.aspectScores,
         classScores: state.classScores,
@@ -402,7 +407,7 @@ function handleSkip() {
 
     state.skipCount = (state.skipCount || 0) + 1;
 
-    if (state.skipCount >= 10) {
+    if (state.skipCount >= 10) { 
         renderNullEnding();
         return; 
     }
@@ -425,15 +430,20 @@ function handleSkip() {
 
 function handleBack() {
     if (state.history.length === 0) return;
+    
     const lastState = state.history.pop();
+    
     state.aspectScores = { ...lastState.aspectScores };
     state.classScores = { ...lastState.classScores };
     state.destructionScores = { ...lastState.destructionScores };
+
     state.questionCount = lastState.questionCount;
     state.stage = lastState.stage;
     state.currentQueue = [...lastState.currentQueue]; 
     state.dominantAspect = lastState.dominantAspect;
     
+    state.skipCount = lastState.skipCount || 0; 
+
     const currentList = state.stage === "aspect_quiz" ? aspectQuestions : state.currentQueue;
     if (currentList && currentList[state.questionCount]) {
         renderQuestion(currentList[state.questionCount]);
@@ -497,5 +507,6 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
 
