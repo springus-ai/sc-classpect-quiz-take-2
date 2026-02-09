@@ -82,43 +82,45 @@ function handleInput(optIndex) {
 }
 
 function finishAspectPhase() {
-    let finalTotals = {};
-    const REQUIRED_TAG_SCORE = 24;
-    const DESTRUCTION_THRESHOLD = -12; 
+    const REQUIRED_TAG_SCORE = 16;
+    
+    let naturalAspect = "";
+    let maxRawScore = -999;
 
     for (let asp in state.aspectScores) {
-        let rawScore = state.aspectScores[asp] || 0;
-        let destScore = state.destructionScores[asp] || 0;
-
-        if (destScore >= REQUIRED_TAG_SCORE && rawScore <= DESTRUCTION_THRESHOLD) {
-            finalTotals[asp] = { 
-                value: rawScore, 
-                isDestroyed: true 
-            };
-        } else {
-            finalTotals[asp] = { 
-                value: rawScore, 
-                isDestroyed: false 
-            };
+        if (state.aspectScores[asp] > maxRawScore) {
+            maxRawScore = state.aspectScores[asp];
+            naturalAspect = asp;
         }
     }
 
-    let sorted = Object.entries(finalTotals).sort((a, b) => {
-        const [nameA, dataA] = a;
-        const [nameB, dataB] = b;
+    let destructionAspect = "";
+    let maxDestScore = 0;
 
-        if (dataA.isDestroyed && !dataB.isDestroyed) return -1;
-        if (!dataA.isDestroyed && dataB.isDestroyed) return 1;
+    for (let asp in state.destructionScores) {
+        if (state.destructionScores[asp] > maxDestScore) {
+            maxDestScore = state.destructionScores[asp];
+            destructionAspect = asp;
+        }
+    }
 
-        if (dataA.isDestroyed && dataB.isDestroyed) return dataA.value - dataB.value;
+    let rawScoreOfDestroyed = state.aspectScores[destructionAspect] || 0;
 
-        return dataB.value - dataA.value;
-    });
+    if (maxDestScore >= REQUIRED_TAG_SCORE && (maxDestScore > maxRawScore || rawScoreOfDestroyed <= 0)) {
+        state.dominantAspect = destructionAspect;
+        state.highDestruction = true;
 
-    state.dominantAspect = sorted[0][0];
-    state.highDestruction = sorted[0][1].isDestroyed;
+        state.classScores.Prince = 10;
+        state.classScores.Bard = 10;
 
-    state.aspectScores[state.dominantAspect] = sorted[0][1].value;
+        console.log(`[DOMINANCE] Destruição de ${destructionAspect} (${maxDestScore}) superou a afinidade com ${naturalAspect} (${maxRawScore}).`);
+    } else {
+
+        state.dominantAspect = naturalAspect;
+        state.highDestruction = false;
+
+        console.log(`[DOMINANCE] Afinidade com ${naturalAspect} (${maxRawScore}) prevaleceu.`);
+    }
 
     showAspectResultScreen();
 }
@@ -126,25 +128,11 @@ function finishAspectPhase() {
 function showAspectResultScreen() {
     document.body.classList.remove('red-mode'); 
 
-    let score = state.aspectScores[state.dominantAspect] || 0;
-    let dest = state.destructionScores[state.dominantAspect] || 0;
-    
-    if (dest >= 24) { 
-        state.highDestruction = true;
-    } else {
-        state.highDestruction = false;
-    }
-
-    if (state.highDestruction) {
-        state.classScores.Prince = (state.classScores.Prince || 0) + 3;
-        state.classScores.Bard = (state.classScores.Bard || 0) + 3;
-        state.classScores.Witch = (state.classScores.Witch || 0) + 2;
-    }
     let description = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[state.dominantAspect]) 
         ? classpectDescriptions[state.dominantAspect] 
         : "A influência deste aspecto sobre você é inegável.";
     
-    let isForced = (score === 1 && Object.values(state.aspectScores).reduce((a,b)=>a+b,0) === 1);
+    let isForced = (state.aspectScores[state.dominantAspect] === 1 && Object.values(state.aspectScores).reduce((a,b)=>a+b,0) === 1);
     
     let transitionText;
     if (isForced) {
@@ -183,47 +171,48 @@ function startClassPhase() {
 }
 
 function finishClassPhase() {
-    const sortedAspects = Object.entries(state.aspectScores).sort((a, b) => {
-        return Math.abs(b[1]) - Math.abs(a[1]);
-    });
-    
-    const visualRankingAspects = [...sortedAspects].sort((a, b) => b[1] - a[1]);
+    const sortedAspects = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
     const sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
-
-    if (!viewerClass) viewerClass = sortedClasses[0][0];
-    if (!viewerAspect) viewerAspect = state.dominantAspect;
 
     const finalClass = sortedClasses[0][0];
     const finalAspect = state.dominantAspect;
 
-    const top3IntenseAspects = sortedAspects.slice(0, 3);
+    if (!viewerClass) viewerClass = finalClass;
+    if (!viewerAspect) viewerAspect = finalAspect;
 
-    let aspectListHTML = visualRankingAspects.map((item, index) => {
+    const otherAspects = Object.entries(state.aspectScores)
+        .filter(([name]) => name !== finalAspect)
+        .sort((a, b) => b[1] - a[1]);
+
+    const top3ForButtons = [
+        [finalAspect, state.aspectScores[finalAspect]],
+        otherAspects[0], 
+        otherAspects[1]
+    ];
+
+
+    let aspectListHTML = sortedAspects.map((item, index) => {
         let isWinner = item[0] === finalAspect;
         let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
         if (item[1] < 0) colorStyle = "color: #ff8888;"; 
-        
-        return `
-            <li class="rank-item" onclick="updateResultExplorer('aspect', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
-                <span>#${index + 1} <strong>${item[0]}</strong></span>
-                <span style="font-family: monospace;">${item[1]} pts</span>
-            </li>`;
+        return `<li class="rank-item" onclick="updateResultExplorer('aspect', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+                    <span>#${index + 1} <strong>${item[0]}</strong></span>
+                    <span style="font-family: monospace;">${item[1]} pts</span>
+                </li>`;
     }).join('');
 
     let classListHTML = sortedClasses.map((item, index) => {
         let isWinner = item[0] === finalClass;
         let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
-        return `
-            <li class="rank-item" onclick="updateResultExplorer('class', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
-                <span>#${index + 1} <strong>${item[0]}</strong></span>
-                <span style="font-family: monospace;">${item[1]} pts</span>
-            </li>`;
+        return `<li class="rank-item" onclick="updateResultExplorer('class', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+                    <span>#${index + 1} <strong>${item[0]}</strong></span>
+                    <span style="font-family: monospace;">${item[1]} pts</span>
+                </li>`;
     }).join('');
 
-    let explorationButtons = top3IntenseAspects.map(item => {
+    let explorationButtons = top3ForButtons.map(item => {
         let aspectName = item[0];
         let score = item[1];
-
         const HATE_THRESHOLD = -10; 
 
         let actionText = "TESTAR";
@@ -240,73 +229,33 @@ function finishClassPhase() {
             actionText = "EXPLORAR"; 
         }
 
-        let label = `${actionText} ${aspectName.toUpperCase()}`;
-        
-        return `
-            <button onclick="retryClassTest('${aspectName}')" style="
-                background: transparent; 
-                border: 1px solid ${color}; 
-                color: ${color}; 
-                padding: 10px 15px; 
-                cursor: pointer; 
-                font-size: 0.9em;
-                transition: 0.2s;
-                flex: 1;
-                min-width: 120px;
-            " onmouseover="this.style.background='rgba(${color === '#ff4444' ? '255,0,0' : '0,255,0'}, 0.2)'" onmouseout="this.style.background='transparent'">
-                ${label}
-            </button>
-        `;
+        return `<button onclick="retryClassTest('${aspectName}')" style="background: transparent; border: 1px solid ${color}; color: ${color}; padding: 10px 15px; cursor: pointer; font-size: 0.9em; transition: 0.2s; flex: 1; min-width: 120px;" onmouseover="this.style.background='rgba(${color === '#ff4444' ? '255,0,0' : '0,255,0'}, 0.2)'" onmouseout="this.style.background='transparent'">
+                ${actionText} ${aspectName.toUpperCase()}
+                </button>`;
     }).join('');
 
     render(`
         <div class="fade-in result-box" style="max-width: 900px; margin: 0 auto; text-align: center;">
             <p style="font-size: 1.2em; margin-bottom: 0;">Seu título definitivo é:</p>
-            
-            <h1 id="dynamicTitle" style="color:#00ff00; text-transform:uppercase; font-size: 3em; margin-top: 5px; text-shadow: 0 0 15px #005500;">
-                ...
-            </h1>
-            
+            <h1 id="dynamicTitle" style="color:#00ff00; text-transform:uppercase; font-size: 3em; margin-top: 5px; text-shadow: 0 0 15px #005500;">...</h1>
             <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
-
-            <div id="dynamicDescription" style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6; min-height: 200px;">
-                ...
-            </div>
-
-            <p style="margin-bottom: 30px; font-size: 0.9em; opacity: 0.8;">
-                Clique nos nomes abaixo para ver as combinações de texto.
-            </p>
-
+            <div id="dynamicDescription" style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6; min-height: 200px;">...</div>
             <div class="rankings-wrapper" style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; text-align: left;">
                 <div class="ranking-column" style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 20px; border: 1px solid #444;">
                     <h3 style="border-bottom: 2px solid #00ff00; padding-bottom: 10px; margin-top: 0;">RANKING DE ASPECTOS</h3>
                     <ul style="list-style: none; padding: 0; margin: 0;">${aspectListHTML}</ul>
                 </div>
-
                 <div class="ranking-column" style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 20px; border: 1px solid #444;">
                     <h3 style="border-bottom: 2px solid #00ff00; padding-bottom: 10px; margin-top: 0;">RANKING DE CLASSES</h3>
                     <ul style="list-style: none; padding: 0; margin: 0;">${classListHTML}</ul>
                 </div>
             </div>
-            
             <div style="margin-top: 40px; background: rgba(0,50,0,0.2); padding: 20px; border: 1px dashed #00ff00;">
                 <h3 style="color: #00ff00; margin-top: 0;">EXPLORAR POSSIBILIDADES?</h3>
-                <p style="font-size: 0.9em; color: #ddd;">
-                    Nenhum teste é perfeito. Se você sente que sua classe não encaixou, talvez a verdadeira resposta esteja em outro dos seus aspectos dominantes! Experimente:
-                </p>
                 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
                     ${explorationButtons}
                 </div>
             </div>
-
-            <div style="margin-top: 40px; border-top: 1px dashed #444; padding-top: 20px;">
-                <p style="color: #88ff88; font-size: 14px;">Lembre-se: Esse teste não será suficiente para te definir. Você já tem um norte, recomendo ler e tirar suas conclusões.</p>
-                <p style="color: #88ff88; font-size: 14px;">Se quiser dar qualquer feedback, venha comentar pelo Discord do Projeto Homestuck PT-BR! É só nos marcar no canal de Classpecting.</p>
-                <p style="font-size: 11px; color: #aaffaa; opacity: 0.7; margin-top: 5px;">
-                    Em breve, faremos um site de análises de classpect. Fiquem de olho, o seu pode ser um dos primeiros a sair!
-                </p>
-            </div>
-
             <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">REINICIAR SESSÃO</button>
         </div>
     `);
@@ -533,6 +482,7 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
 
 
