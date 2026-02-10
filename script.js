@@ -117,8 +117,8 @@ function finishAspectPhase() {
         state.dominantAspect = inverseAspect;
         state.highDestruction = true;
         
-        state.classScores.Prince = (state.classScores.Prince || 0) + 10; 
-        state.classScores.Bard = (state.classScores.Bard || 0) + 10;
+        state.classScores.Prince = (state.classScores.Prince || 0) + 3; 
+        state.classScores.Bard = (state.classScores.Bard || 0) + 3;
 
     } else {
         console.log(`[SYSTEM] Rota Padrão.`);
@@ -487,6 +487,7 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
 
 
