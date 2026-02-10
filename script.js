@@ -1,7 +1,6 @@
 let state = {
     stage: "intro",
     aspectScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
-    destructionScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
     classScores: { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 },
     dominantAspect: "",
     highDestruction: false,
@@ -35,7 +34,6 @@ function handleInput(optIndex) {
     state.history.push(JSON.parse(JSON.stringify({
         aspectScores: state.aspectScores,
         classScores: state.classScores,
-        destructionScores: state.destructionScores, 
         questionCount: state.questionCount,
         stage: state.stage,
         currentQueue: state.currentQueue,
@@ -45,21 +43,10 @@ function handleInput(optIndex) {
     let selectedOpt = currentQ.opts[optIndex];
     
     if (state.stage === "aspect_quiz") {
+        // 1. Processar os Pesos (ISSO FICA)
         for (let [key, val] of Object.entries(selectedOpt.w)) {
             state.aspectScores[key] = (state.aspectScores[key] || 0) + val;
         } 
-
-        if (selectedOpt.destroys) {
-            const targets = Array.isArray(selectedOpt.destroys) ? selectedOpt.destroys : [selectedOpt.destroys];
-            targets.forEach(aspect => {
-                if (state.destructionScores.hasOwnProperty(aspect)) {
-                    let baseDestruction = 8; 
-                    let currentAversion = state.aspectScores[aspect] || 0;
-                    let aversionBonus = currentAversion < 0 ? Math.abs(currentAversion) * 0.5 : 0;
-                    state.destructionScores[aspect] += (baseDestruction + aversionBonus);
-                }
-            });
-        }
 
         state.questionCount++;
         if (state.questionCount < aspectQuestions.length) {
@@ -82,8 +69,16 @@ function handleInput(optIndex) {
 }
 
 function finishAspectPhase() {
-    const REQUIRED_TAG_SCORE = 16;
     
+    const opposingAspects = {
+        "Time": "Space", "Space": "Time",
+        "Heart": "Mind", "Mind": "Heart",
+        "Hope": "Rage", "Rage": "Hope",
+        "Light": "Void", "Void": "Light",
+        "Life": "Doom", "Doom": "Life",
+        "Breath": "Blood", "Blood": "Breath"
+    };
+
     let naturalAspect = "";
     let maxRawScore = -999;
 
@@ -94,32 +89,41 @@ function finishAspectPhase() {
         }
     }
 
-    let destructionAspect = "";
-    let maxDestScore = 0;
+    let inverseAspect = "";
+    let minRawScore = 999;
 
-    for (let asp in state.destructionScores) {
-        if (state.destructionScores[asp] > maxDestScore) {
-            maxDestScore = state.destructionScores[asp];
-            destructionAspect = asp;
+    for (let asp in state.aspectScores) {
+        if (state.aspectScores[asp] < minRawScore) {
+            minRawScore = state.aspectScores[asp];
+            inverseAspect = asp;
         }
     }
 
-    let rawScoreOfDestroyed = state.aspectScores[destructionAspect] || 0;
+    let aversionMagnitude = Math.abs(minRawScore);
 
-    if (maxDestScore >= REQUIRED_TAG_SCORE && (maxDestScore > maxRawScore || rawScoreOfDestroyed <= 0)) {
-        state.dominantAspect = destructionAspect;
+    let isOppositePair = (opposingAspects[naturalAspect] === inverseAspect);
+    
+    let thresholdMultiplier = isOppositePair ? 0.85 : 1.2;
+
+    const MINIMUM_AVERSION_LEVEL = 10; 
+
+    let isDestructive = (aversionMagnitude >= MINIMUM_AVERSION_LEVEL) && 
+                        (aversionMagnitude >= (maxRawScore * thresholdMultiplier));
+
+    if (isDestructive) {
+        console.log(`[SYSTEM] Rota de Destruição Detectada.`);
+        console.log(`> Máscara: ${naturalAspect} (+${maxRawScore}) | Rejeição: ${inverseAspect} (${minRawScore})`);
+        console.log(`> É par oposto? ${isOppositePair ? "SIM (Ghosting)" : "NÃO (Aversão Pura)"}`);
+        state.dominantAspect = inverseAspect;
         state.highDestruction = true;
+        
+        state.classScores.Prince = (state.classScores.Prince || 0) + 10; 
+        state.classScores.Bard = (state.classScores.Bard || 0) + 10;
 
-        state.classScores.Prince = 10;
-        state.classScores.Bard = 10;
-
-        console.log(`[DOMINANCE] Destruição de ${destructionAspect} (${maxDestScore}) superou a afinidade com ${naturalAspect} (${maxRawScore}).`);
     } else {
-
+        console.log(`[SYSTEM] Rota Padrão.`);
         state.dominantAspect = naturalAspect;
         state.highDestruction = false;
-
-        console.log(`[DOMINANCE] Afinidade com ${naturalAspect} (${maxRawScore}) prevaleceu.`);
     }
 
     showAspectResultScreen();
@@ -364,15 +368,12 @@ let lastSkipTime = 0;
 
 function handleSkip() {
     const now = Date.now();
-    // Se passaram menos de 300ms desde o último clique, ignora.
-    // Isso anula o efeito do "clique duplo" causado por listeners duplicados.
     if (now - lastSkipTime < 300) return;
     lastSkipTime = now;
 
     state.history.push(JSON.parse(JSON.stringify({
         aspectScores: state.aspectScores,
         classScores: state.classScores,
-        destructionScores: state.destructionScores,
         questionCount: state.questionCount,
         stage: state.stage,
         currentQueue: state.currentQueue,
@@ -410,7 +411,6 @@ function handleBack() {
     
     state.aspectScores = { ...lastState.aspectScores };
     state.classScores = { ...lastState.classScores };
-    state.destructionScores = { ...lastState.destructionScores };
 
     state.questionCount = lastState.questionCount;
     state.stage = lastState.stage;
@@ -420,9 +420,11 @@ function handleBack() {
     state.skipCount = lastState.skipCount || 0; 
 
     const currentList = state.stage === "aspect_quiz" ? aspectQuestions : state.currentQueue;
+    
     if (currentList && currentList[state.questionCount]) {
         renderQuestion(currentList[state.questionCount]);
     } else {
+    
         renderQuestion(state.currentQueue[0]); 
     }
 }
@@ -485,6 +487,7 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
 
 
