@@ -52,55 +52,55 @@ const classpectDescriptions = {
     "Maid:Hope": `
         <h3>MAID OF HOPE (CRIADA/CRIADO DA ESPERANÇA)</h3>
         <p><strong>Que Cria a Esperança / Feita(o) de Esperança.</strong></p>
-        <p>Você é a personificação da expressão "se eu não fizer, ninguém faz". Sua relação com a Esperança é de manutenção braçal. Você provavelmente sente que, se parar de sorrir ou de motivar as pessoas ao seu redor por um segundo sequer, todo o grupo vai colapsar em depressão.</p>
-        <p>Isso não é altruísmo puro; é uma necessidade de ser necessária(o). Você "cria" otimismo e oportunidades onde não existem porque tem pavor de ficar ociosa e encarar o vazio. O perigo é você se tornar uma mártir da própria positividade, carregando o peso emocional de todos até quebrar, ou recusando-se a aceitar ajuda porque "ninguém mais sabe fazer direito".</p>
+        <p>Você é a personificação da expressão "se eu não fizer, ninguém faz". Sua relação com a Esperança é de manutenção braçal. Você provavelmente sente que, se parar de sorrir ou de motivar as pessoas ao seu redor por um segundo sequer, todo o grupo vai colapsar em depressão. Você se tornou a bateria do grupo, mas ninguém pergunta se você está carregada.</p>
+        <p>Sua vida é uma faxina emocional constante: você varre o cinismo para baixo do tapete e lustra as expectativas dos outros até brilharem, porque você tem pavor do que acontece quando o silêncio se instala. O lado feio é que você frequentemente infantiliza as pessoas, recusando-se a deixá-las sentir o desespero necessário para crescer, porque você não quer lidar com a bagunça que a tristeza delas causaria na sua rotina perfeitamente otimista.</p>
     `,
     "Knight:Hope": `
         <h3>KNIGHT OF HOPE (CAVALEIRO/CAVALEIRA DA ESPERANÇA)</h3>
         <p><strong>O que Explora a Esperança / Protege a Esperança.</strong></p>
-        <p>O Cavaleiro usa uma máscara, e a sua máscara é a invencibilidade. Você projeta uma aura de confiança inabalável, um carisma magnético que convence qualquer um de que "vai dar tudo certo". Você usa a fé e a convicção como uma arma contundente para resolver problemas.</p>
-        <p>Mas, psicologicamente, isso é uma compensação. Você provavelmente morre de medo de ser insuficiente ou de que as coisas *não* deem certo. Então, você performa a Esperança. Você age com tanta certeza que a realidade é obrigada a dobrar, não por magia, mas porque você se recusa a admitir a derrota na frente dos outros.</p>
+        <p>Sua confiança não é natural; é uma performance. O Cavaleiro de Esperança é o ator que entra no palco tremendo, mas atua com tanta convicção que a plateia (e a realidade) acredita. Você usa a fé como um escudo contra sua própria insegurança paralisante. Você provavelmente sente que, no fundo, não é bom o suficiente, então compensa projetando uma imagem de certeza inabalável.</p>
+        <p>Você provavelmente morre de medo de ser insuficiente ou de que as coisas *não* deem certo. Então, você performa a Esperança. Você força resultados positivos na base da teimosia, não porque acredita no destino, mas porque a alternativa — admitir a derrota — destruiria a persona invencível que você construiu para se proteger do julgamento alheio.</p>
     `,
     "Thief:Hope": `
         <h3>THIEF OF HOPE (LADRÃO/LADRA DA ESPERANÇA)</h3>
         <p><strong>O que Rouba a Esperança (para si).</strong></p>
-        <p>O mundo é um lugar escasso e você decidiu que, se alguém vai se dar bem, será você. Você tem a tendência de monopolizar a validação e o otimismo. Quando alguém tem uma ideia ou um sonho, você instintivamente aponta as falhas ou toma a autoria para si, drenando a motivação alheia para inflar a sua.</p>
-        <p>Isso soa cruel, mas é um mecanismo de sobrevivência. Você rouba a convicção dos outros porque não consegue gerá-la internamente. Você precisa que os outros estejam por baixo para que você se sinta no controle do destino. Seu desafio é aprender que a luz dos outros não apaga a sua.</p>
+        <p>Você tem uma necessidade quase patológica de ser o "favorito", o "escolhido", a pessoa em quem todos depositam suas fichas. Se você vê alguém admirando, confiando ou adorando outra pessoa (seja um amigo, um líder ou até uma ideia), você sente isso como uma ofensa pessoal, como se aquela fé estivesse sendo roubada de você.</p>
+        <p>Isso nasce de uma insegurança profunda: você não consegue gerar autoestima ou fé interna sozinho. Você precisa ver o brilho nos olhos dos outros direcionado a você para sentir que existe. Você canibaliza a confiança do grupo, centralizando-a em si mesmo, criando uma dinâmica onde todos dependem emocionalmente da sua aprovação e da sua "divindade" fabricada, enquanto você morre de medo de que descubram que você é apenas humano.</p>
     `,
     "Mage:Hope": `
         <h3>MAGE OF HOPE (MAGO/MAGA DA ESPERANÇA)</h3>
         <p><strong>O que Entende a Esperança / Entende com a Esperança.</strong></p>
-        <p>Você não é um otimista; você é um especialista em decepção. Mages compreendem seu aspecto através da vivência dolorosa dele. Você provavelmente já acreditou em algo ou alguém com todas as suas forças e foi traído ou desapontado brutalmente.</p>
-        <p>Agora, você conhece as mecânicas da fé melhor que ninguém. Você sabe diferenciar uma causa perdida de uma chance real. Você é o cínico que, no fundo, sabe exatamente onde o milagre está escondido, mas reclama o caminho todo até lá. Sua "magia" é a experiência prática de quem já quebrou a cara e sobreviveu.</p>
+        <p>Você conhece a fé, não porque leu sobre ela, mas porque já acreditou em algo com tanta força que, quando falhou, quase te destruiu. Agora, você entende os limites da esperança. Você provavelmente já acreditou em algo ou alguém com todas as suas forças e foi traído ou desapontado brutalmente.</p>
+        <p>Você é a pessoa que se joga em ideologias, relacionamentos ou causas impossíveis, não por ingenuidade, mas para ver como a engrenagem funciona. Você sabe diferenciar uma causa perdida de uma chance real. Você é o cínico que, no fundo, sabe exatamente onde o milagre está escondido, mas reclama o caminho todo até lá.</p>
     `,
     "Witch:Hope": `
         <h3>WITCH OF HOPE (BRUXA/BRUXO DA ESPERANÇA)</h3>
         <p><strong>Que Manipula a Esperança.</strong></p>
-        <p>Sua convicção é uma força da natureza, mas ela é totalmente volátil. Você tem a capacidade de alterar o "clima" moral de uma sala instantaneamente. Se você está feliz, todos acreditam que podem voar; se está triste, o mundo acabou.</p>
-        <p>Você manipula a verdade e a crença — às vezes de forma gaslighting, às vezes de forma inspiradora — para quebrar as regras que te prendem. Você rejeita a realidade factual se ela não te agrada e impõe a sua própria narrativa com tanta intensidade que os outros acabam concordando só para não serem atropelados pela sua energia.</p>
+        <p>Você não impõe sua vontade pela força; você a impõe pelo entusiasmo contagiante e, às vezes, perigoso. Você trata a fé — a sua e a dos outros — como uma ferramenta ajustável, não como um dogma sagrado.</p>
+        <p>Sua habilidade "mágica" é a de alterar o clima emocional e a moral de um grupo instantaneamente. Você é aquela pessoa que consegue transformar um funeral em uma festa, ou uma vitória em pânico, apenas mudando a perspectiva do que é "possível". Você vê potencial onde não existe e manipula seus amigos para que eles sigam os sonhos que você acha que eles deveriam ter. Você não faz isso por maldade, mas porque o tédio de um mundo sem "milagres" é insuportável para você.</p>
     `,
     "Prince:Hope": `
         <h3>PRINCE OF HOPE (PRÍNCIPE/PRINCESA DA ESPERANÇA)</h3>
         <p><strong>O que Destrói a Esperança / Destrói com a Esperança.</strong></p>
-        <p>Você é o cético militante. Para você, a "esperança" é sinônimo de ilusão, mentira e fraqueza. Você se orgulha de ser lógico, realista e de destruir as fantasias bobas dos seus amigos "pelo bem deles". Você corta o mal pela raiz antes que a decepção aconteça.</p>
-        <p>No entanto, a ironia do Príncipe é que ele age como o fantasma do aspecto oposto (Rage). Ao destruir a fé alheia, você exibe uma teimosia e uma crença na sua própria "verdade" que é tão irracional quanto a fé que você critica. Você destrói possibilidades, fechando caminhos porque tem medo de percorrê-los.</p>
+        <p>Você é o destruidor de ilusões. Você se orgulha de ser "brutalmente honesto", o realista que estoura os balões de fantasia dos outros. Você vê a esperança cega como uma fraqueza ou uma mentira que precisa ser erradicada.</p>
+        <p>No entanto, a ironia do Príncipe é que ele age como o fantasma do aspecto oposto. Você acredita na sua própria lógica (ou no seu pessimismo) com a mesma fé cega que critica nos outros, destruindo sistematicamente qualquer chance de felicidade ou conexão genuína porque tem medo de parecer bobo ou vulnerável se acreditar.</p>
     `,
     "Sylph:Hope": `
         <h3>SYLPH OF HOPE (SÍLFIDE/SILFO DA ESPERANÇA)</h3>
         <p><strong>Que Cura a Esperança / Conserta a Esperança.</strong></p>
         <p>Você é a "intrometida" benevolente. Você não suporta ver as pessoas tristes, sem rumo ou céticas. Você sente uma compulsão quase maternal de "consertar" as crenças dos outros, oferecendo conselhos não solicitados, perspectivas positivas e soluções espirituais.</p>
-        <p>O lado sombrio disso é a recusa em deixar as pessoas sentirem a dor necessária. Você tenta curar o que não está quebrado ou força uma positividade tóxica porque a desesperança alheia te incomoda pessoalmente. Você quer que todos acreditem, desde que acreditem do *seu* jeito.</p>
+        <p>Sua intenção é nobre, mas sua execução pode ser invasiva. Você tenta consertar o que não está quebrado, forçando positividade em momentos onde o luto ou a raiva seriam saudáveis. Você teme a desesperança alheia porque ela reflete suas próprias dúvidas, então você "medica" todos ao seu redor com otimismo forçado para manter seu próprio ambiente estável.</p>
     `,
     "Page:Hope": `
         <h3>PAGE OF HOPE (ESCUDEIRO/ESCUDEIRA DA ESPERANÇA)</h3>
         <p><strong>Aquele que explora a Esperança / Explora através da Esperança.</strong></p>
         <p>Você é alguém que começa sem crenças reais ou sem força de vontade. Você explora o "imaginário" porque a realidade parece decepcionante. Influenciável, ingênuo, talvez até um pouco "bobo", você está buscando desesperadamente alguém ou algo em que acreditar porque não confia no seu próprio taco.</p>
-        <p>Ao explorar o potencial do que poderia ser, você acaba por tornar o impossível em algo tangível. Você não serve à esperança; você a explora como uma fonte de energia nuclear que pode obliterar qualquer obstáculo apenas pelo ato de acreditar.</p>
+        <p>Ao explorar o potencial do que poderia ser, você acaba por tornar o impossível em algo tangível. Você tende a acreditar na narrativa de qualquer um que pareça mais confiante que você, deixando-se levar. O crescimento vem quando você para de esperar pelo "arco de personagem" e decide impor sua própria vontade no mundo, transformando sua fantasia em realidade tangível.</p>
     `,
     "Rogue:Hope": `
         <h3>ROGUE OF HOPE (LADINO/LADINA DA ESPERANÇA)</h3>
         <p><strong>O que Rouba a Esperança (para redistribuir).</strong></p>
-        <p>Você é o amigo que abre mão da própria felicidade para ver os outros sorrirem. Diferente do Ladrão, você pega a Esperança (o otimismo, a chance, a oportunidade) e a repassa. Você se convence de que não precisa dela, ou de que não a merece.</p>
+        <p>Você é o amigo que abre mão da própria felicidade para ver os outros sorrirem. Você se convence de que não precisa dela, ou de que não a merece.</p>
         <p>Você "rouba" a chance de sucesso de si mesmo para dar a um aliado. É um comportamento nobre, mas autodestrutivo. Você lida com a pressão da realidade fugindo dela e focando nos problemas dos outros. No fim do dia, você é o terapeuta do grupo que chora sozinho no banho.</p>
     `,
     "Seer:Hope": `
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
