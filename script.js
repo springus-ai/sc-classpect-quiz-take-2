@@ -458,6 +458,9 @@ function retryClassTest(aspectName) {
     
     state.classScores = { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 };
     
+    viewerClass = ""; 
+    viewerAspect = ""; 
+    
     state.stage = "class_quiz";
     state.questionCount = 0;
     
@@ -482,6 +485,7 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
 
 
