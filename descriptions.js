@@ -69,7 +69,7 @@ const classpectDescriptions = {
     `,
     "Mage:Hope": `
         <h3>MAGE OF HOPE (MAGO/MAGA DA ESPERANÇA)</h3>
-        <p><strong>O que Conhece a Esperança (pelo sofrimento) / Guiado(a) pela Esperança.</strong></p>
+        <p><strong>O que Entende a Esperança / Entende com a Esperança.</strong></p>
         <p>Você não é um otimista; você é um especialista em decepção. Mages compreendem seu aspecto através da vivência dolorosa dele. Você provavelmente já acreditou em algo ou alguém com todas as suas forças e foi traído ou desapontado brutalmente.</p>
         <p>Agora, você conhece as mecânicas da fé melhor que ninguém. Você sabe diferenciar uma causa perdida de uma chance real. Você é o cínico que, no fundo, sabe exatamente onde o milagre está escondido, mas reclama o caminho todo até lá. Sua "magia" é a experiência prática de quem já quebrou a cara e sobreviveu.</p>
     `,
@@ -143,7 +143,7 @@ const classpectDescriptions = {
     `,
     "Mage:Blood": `
         <h3>MAGE OF BLOOD (MAGO/MAGA DO SANGUE)</h3>
-        <p><strong>O que Conhece o Sangue (pelo sofrimento) / Guiado(a) pelo Sangue.</strong></p>
+        <p><strong>O que Entende o Sangue / Entende com o Sangue.</strong></p>
         <p>Você entende de relacionamentos porque já sofreu muito por causa deles. Você é aquele que vê as linhas invisíveis que conectam as pessoas: quem gosta de quem, quem está traindo quem, onde estão as tensões ocultas. Sua intuição social é afiada pela dor.</p>
         <p>Sua "Realidade" foi, provavelmente, a traição ou o peso de uma responsabilidade que você não pediu. Agora, você navega o mundo social com um cinismo informado. Você sabe que toda promessa tem um custo e que lealdade cega é perigosa. Você guia o grupo não pelo carisma, mas pelo aviso: "eu sei onde isso vai dar errado".</p>
     `,
@@ -217,7 +217,7 @@ const classpectDescriptions = {
     `,
     "Mage:Breath": `
         <h3>MAGE OF BREATH (MAGO/MAGA DO SUSPIRO)</h3>
-        <p><strong>O que Conhece o Suspiro (pelo sofrimento) / Guiado(a) pelo Suspiro.</strong></p>
+        <p><strong>O que Entende o Suspiro / Entende com o Suspiro.</strong></p>
         <p>Você conhece a solidão intimamente. Você provavelmente já foi deixado à deriva ou teve que aprender a se virar sozinho muito cedo. Sua compreensão da liberdade não é romântica; você sabe que ser livre muitas vezes significa ser esquecido.</p>
         <p>Agora, você usa essa vivência para navegar a vida. Você sabe quando uma situação é uma armadilha e sabe exatamente como escapar. Você é o guia que diz "não se apegue a isso, vai te afundar". Seu desafio é parar de ver toda conexão humana como uma corrente em potencial.</p>
     `,
@@ -291,7 +291,7 @@ const classpectDescriptions = {
     `,
     "Mage:Void": `
         <h3>MAGE OF VOID (MAGO/MAGA DO VAZIO)</h3>
-        <p><strong>O que Conhece o Vazio (pelo sofrimento) / Guiado(a) pelo Vazio.</strong></p>
+        <p><strong>O que Entende o Vazio / Entende com o Vazio.</strong></p>
         <p>Você conhece a dor da irrelevância. Você provavelmente já foi excluído, esquecido ou tratado como "nada" por pessoas importantes para você. Você entende o Vazio porque viveu na sombra dele.</p>
         <p>Agora, essa é sua força. Você sabe olhar para onde ninguém está olhando. Você percebe o que *não* foi dito, o que está faltando, os segredos que as pessoas tentam esconder. Enquanto todos olham para a luz, você analisa a escuridão. Você é o cético que sabe que a verdade real é aquela que ninguém quer admitir.</p>
     `,
@@ -365,7 +365,7 @@ const classpectDescriptions = {
     `,
     "Mage:Light": `
         <h3>MAGE OF LIGHT (MAGO/MAGA DA LUZ)</h3>
-        <p><strong>O que Conhece a Luz (pelo sofrimento) / Guiado(a) pela Luz.</strong></p>
+        <p><strong>O que Entende a Luz / Entende com a Luz.</strong></p>
         <p>Você viu a verdade, e ela não era bonita. Mages de Luz sofrem pelo excesso de clareza. Você é aquela pessoa que entende a realidade nua e crua, sem os filtros de otimismo que os outros usam. Você vê as falhas nos planos e as mentiras nas pessoas.</p>
         <p>Isso te torna um cínico ou um profeta do apocalipse. Você é guiado por um conhecimento que te isola, pois ninguém gosta da pessoa que aponta os problemas óbvios que todos estão tentando ignorar. Sua lição é aprender a comunicar sua visão sem parecer apenas um pessimista arrogante.</p>
     `,
@@ -439,7 +439,7 @@ const classpectDescriptions = {
     `,
     "Mage:Space": `
         <h3>MAGE OF SPACE (MAGO/MAGA DO ESPAÇO)</h3>
-        <p><strong>O que Conhece o Espaço (pelo sofrimento) / Guiado(a) pelo Espaço.</strong></p>
+        <p><strong>O que Entende o Espaço (pelo sofrimento) / Entende com o Espaço.</strong></p>
         <p>Você conhece a solidão do quarto fechado. Você entende o Espaço porque já se sentiu isolado, fisicamente desconfortável ou separado do mundo por uma barreira invisível. Você sabe o que é esperar tempo demais por algo que nunca chega.</p>
         <p>Agora, você usa essa compreensão para navegar. Você entende onde as coisas se encaixam e onde elas quebram. Você tem uma intuição espacial e sistêmica aguçada. Seu desafio é sair da teoria e da observação passiva (o isolamento do Mago) e participar fisicamente da vida que você analisa tão bem.</p>
     `,
@@ -513,7 +513,7 @@ const classpectDescriptions = {
     `,
     "Mage:Time": `
         <h3>MAGE OF TIME (MAGO/MAGA DO TEMPO)</h3>
-        <p><strong>O que Conhece o Tempo (pelo sofrimento) / Guiado(a) pelo Tempo.</strong></p>
+        <p><strong>O que Entende o Tempo / Entende com o Tempo.</strong></p>
         <p>Você carrega o peso do fim. Você entende, melhor que ninguém, que tudo é finito. Você provavelmente já perdeu tempo investindo em coisas que deram errado ou sofreu perdas pessoais significativas que te ensinaram a brutalidade do relógio.</p>
         <p>Agora, você é o cínico pragmático. Você sabe o que vale a pena o esforço e o que é perda de tempo. Você guia o grupo com uma urgência mórbida: "temos que fazer isso agora, antes que seja tarde". Seu desafio é não deixar que o conhecimento da inevitabilidade da morte te impeça de viver a vida.</p>
     `,
@@ -587,7 +587,7 @@ const classpectDescriptions = {
     `,
     "Mage:Heart": `
         <h3>MAGE OF HEART (MAGO/MAGA DO CORAÇÃO)</h3>
-        <p><strong>O que Conhece o Coração (pelo sofrimento) / Guiado(a) pelo Coração.</strong></p>
+        <p><strong>O que Entende o Coração / Entende com o Coração.</strong></p>
         <p>Você entende de gente porque gente já te machucou muito. Você é um especialista em motivações ocultas, desejos reprimidos e na "alma" humana, mas adquiriu isso através de experiências dolorosas de rejeição ou autodescoberta traumática.</p>
         <p>Você é guiado pelo instinto e pela paixão, mesmo quando a lógica diz o contrário. Você sabe quem as pessoas realmente são, o que te torna um detector de mentiras humano. O problema é o cinismo: você viu tanta feiura no coração humano que pode ter dificuldade em se conectar genuinamente de novo.</p>
     `,
@@ -661,7 +661,7 @@ const classpectDescriptions = {
     `,
     "Mage:Mind": `
         <h3>MAGE OF MIND (MAGO/MAGA DA MENTE)</h3>
-        <p><strong>O que Conhece a Mente (pelo sofrimento) / Guiado(a) pela Mente.</strong></p>
+        <p><strong>O que Entende a Mente / Entende com a Mente.</strong></p>
         <p>Você sofre de "paralisia por análise". Você vê todas as consequências possíveis de cada ação, e isso é aterrorizante. Você entende como as escolhas moldam a realidade porque provavelmente já fez escolhas ruins que te assombram, ou foi vítima das maquinações de outros.</p>
         <p>Agora, você é o conselheiro cauteloso. Você sabe exatamente o que vai dar errado. Você é guiado por uma lógica quase pessimista. Seu fardo é ser a pessoa que vê o precipício claramente enquanto todos os outros estão correndo felizes em direção a ele, e ter que lidar com a frustração de não ser ouvido.</p>
     `,
@@ -735,7 +735,7 @@ const classpectDescriptions = {
     `,
     "Mage:Rage": `
         <h3>MAGE OF RAGE (MAGO/MAGA DA IRA)</h3>
-        <p><strong>O que Conhece a Ira (pelo sofrimento) / Guiado(a) pela Ira.</strong></p>
+        <p><strong>O que Entende a Ira / Entende com a Ira.</strong></p>
         <p>Você viu como a salsicha é feita, e perdeu o apetite para sempre. Você conhece a manipulação, a mentira e a feiura humana porque foi vítima delas. Sua sabedoria vem da desilusão. Você é aquele que diz "eu avisei" quando a promessa boa demais para ser verdade falha.</p>
         <p>Você é guiado por uma desconfiança crônica. Você entende os mecanismos de controle e as limitações da realidade. O perigo do Mago de Rage é o isolamento paranoico: você sabe tanto sobre as armadilhas do mundo que tem medo de dar um passo, vendo conspirações ou falsidade onde talvez exista apenas bondade genuína.</p>
     `,
@@ -809,7 +809,7 @@ const classpectDescriptions = {
     `,
     "Mage:Life": `
         <h3>MAGE OF LIFE (MAGO/MAGA DA VIDA)</h3>
-        <p><strong>O que Conhece a Vida (pelo sofrimento) / Guiado(a) pela Vida.</strong></p>
+        <p><strong>O que Entende a Vida / Entende com a Vida.</strong></p>
         <p>Você conhece o preço da vida. Talvez você tenha lidado com doenças, pobreza ou com a injustiça inerente de que a vida não é justa. Você entende os sistemas de privilégio e poder porque já se sentiu do lado errado deles.</p>
         <p>Agora, você é o pragmático que sabe exatamente onde aplicar energia para obter resultados. Você não desperdiça esforço. Você guia os outros a não gastarem tempo com causas mortas. O risco é o cinismo: ver a vida apenas como uma transação biológica ou social, sem magia.</p>
     `,
@@ -883,7 +883,7 @@ const classpectDescriptions = {
     `,
     "Mage:Doom": `
         <h3>MAGE OF DOOM (MAGO/MAGA DO DESTINO)</h3>
-        <p><strong>O que Conhece o Destino (pelo sofrimento) / Guiado(a) pelo Destino.</strong></p>
+        <p><strong>O que Entende o Destino / Entende com o Destino.</strong></p>
         <p>Você é a alma velha e cansada. Você entende o sofrimento porque vive nele. Você conhece as limitações da vida, as regras injustas e a inevitabilidade da dor. Você não tem ilusões de que "tudo vai ficar bem".</p>
         <p>Sua sabedoria é a empatia profunda. Você sabe consolar quem está sofrendo porque fala a língua da dor. Você guia os outros através dos momentos mais sombrios. O risco é a depressão crônica e a passividade: saber tanto sobre como o sistema é quebrado que você desiste de tentar consertá-lo.</p>
     `,
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
