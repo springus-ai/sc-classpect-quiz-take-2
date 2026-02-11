@@ -816,8 +816,8 @@ const classpectDescriptions = {
     "Witch:Life": `
         <h3>WITCH OF LIFE (BRUXA/BRUXO DA VIDA)</h3>
         <p><strong>Que Manipula a Vida.</strong></p>
-        <p>Você não aceita as regras da biologia ou da sociedade. Você quebra barreiras. Você manipula a energia do grupo: consegue animar um velório ou deprimir uma festa num estalar de dedos. Você trata as regras sociais como sugestões.</p>
-        <p>Sua personalidade é dominante e um pouco controladora. Você decide quem "vive" (quem recebe atenção/ajuda) e quem não. Você molda o crescimento das pessoas ao seu redor como bonsais, o que pode ser lindo ou terrivelmente restritivo.</p>
+        <p>Você enxerga a vitalidade, o status e a energia das pessoas ao seu redor como argila moldável. Sua abordagem para problemas é invasiva e energética: você assume o controle da rotina, da saúde ou das finanças de seus amigos porque confia apenas na sua própria capacidade de gerir o bem-estar alheio.</p>
+        <p>Você arrasta introvertidos para festas, obriga sedentários a correrem e impõe "melhorias" na vida dos outros com um entusiasmo que beira a tirania. Você cultiva as pessoas como se fossem bonsais, podando o que considera ruim e adubando o que considera bom, ignorando frequentemente se elas querem crescer nessa direção.</p>
     `,
     "Prince:Life": `
         <h3>PRINCE OF LIFE (PRÍNCIPE/PRINCESA DA VIDA)</h3>
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
