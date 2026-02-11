@@ -118,7 +118,7 @@ const classpectDescriptions = {
     "Bard:Hope": `
         <h3>BARD OF HOPE (BARDO/BARDA DA ESPERANÇA)</h3>
         <p><strong>O que Convida a Destruição da Esperança.</strong></p>
-        <p>Você é o agente do caos na moral do grupo. Alguém que oscila entre tentar desesperadamente ser algo que não é e agindo de forma patética que faz todos ao redor perderem a fé em você e na situação.</p>
+        <p>Você é o agente do caos na moral do grupo. Ou você suga a fé de todos, ou sua própria fé quebrada explode e leva tudo junto. Alguém que oscila entre tentar desesperadamente ser algo que não é e agindo de forma patética que faz todos ao redor perderem a fé em você e na situação.</p>
         <p>Você pode ser aquele que, com uma piada errada ou uma atitude cínica no momento crucial, desmonta a motivação de todos. Ou, inversamente, sua própria falta de esperança é tão contagiante e destrutiva que obriga o universo a reagir.</p>
     `,
 
@@ -266,8 +266,8 @@ const classpectDescriptions = {
     "Bard:Breath": `
         <h3>BARD OF BREATH (BARDO/BARDA DO SUSPIRO)</h3>
         <p><strong>O que Convida a Destruição do Suspiro.</strong></p>
-        <p>Você é imprevisível. Às vezes, você é a pessoa mais rígida e estagnada do mundo, recusando-se a mudar (convidando a destruição *do* Suspiro/movimento). Você deixa as coisas pararem e apodrecerem por pura apatia.</p>
-        <p>Outras vezes, você é o furacão. Você convida a destruição *através* do Suspiro: você causa o caos simplesmente saindo de cena no momento crucial, ou sua atitude despreocupada desmantela estruturas importantes de forma passiva. Você não quebra o vaso; você deixa a janela aberta durante a tempestade e diz "ops" quando ele cai.</p>
+        <p>Você é imprevisível. Às vezes, você é a pessoa mais rígida e estagnada do mundo, recusando-se a mudar. Quando o grupo precisa de movimento e decisão, você traz uma apatia tão profunda que drena todos.</p>
+        <p>Você não impede os outros de agirem de forma direta; você simplesmente faz com que a ação pareça inútil, pesada e sem sentido, permitindo que o grupo fique estagnado e à mercê do destino porque você se recusou a soprar a vela do barco. Você não quebra o vaso; você deixa a janela aberta durante a tempestade e diz "ops" quando ele cai.</p>
     `,
 
     // --- VOID (VAZIO) ---
@@ -340,8 +340,8 @@ const classpectDescriptions = {
     "Bard:Void": `
         <h3>BARD OF VOID (BARDO/BARDA DO VAZIO)</h3>
         <p><strong>O que Convida a Destruição do Vazio.</strong></p>
-        <p>Você é o vazamento de informações ambulante. Passivamente, sua presença faz com que segredos venham à tona, planos ocultos falhem e a privacidade de todos seja violada. Você não sabe guardar segredo, ou sua negligência faz a verdade explodir.</p>
-        <p>Ou, no modo oposto, você convida a destruição *através* do Vazio: você deixa a apatia, a ignorância e o "deixa pra lá" tomarem conta até que tudo desmorone. Você assiste o mundo queimar não porque quer vê-lo queimar, mas porque simplesmente não se importou o suficiente para fazer algo a respeito. O niilismo passivo é sua arma.</p>
+        <p>Sua relação com o que deve ser mantido em segredo, privado ou oculto é de um descaso absoluto. Passivamente, sua presença faz com que segredos venham à tona, planos ocultos falhem e a privacidade de todos seja violada. Você não sabe guardar segredo, ou sua negligência faz a verdade explodir.</p>
+        <p>Você é a pessoa que apaga informações vitais, ignora evidências cruciais ou simplesmente "some" com ferramentas e soluções, tratando o que é importante como se fosse nada. Você faz planos sólidos e certezas absolutas se dissolverem em dúvida e irrelevância, deixando o grupo perdido em um vácuo de informação que você mesmo criou por se recusar a dar peso à realidade.</p>
     `,
 
     // --- LIGHT (LUZ) ---
@@ -372,8 +372,8 @@ const classpectDescriptions = {
     "Witch:Light": `
         <h3>WITCH OF LIGHT (BRUXA/BRUXO DA LUZ)</h3>
         <p><strong>Que Manipula a Luz.</strong></p>
-        <p>Para você, a verdade é flexível. Você tem um talento assustador para o *framing* (enquadramento). Você consegue pegar um fato e apresentá-lo de uma forma que muda totalmente o significado. Você manipula o que é "importante" e o que é "irrelevante".</p>
-        <p>Você edita a realidade social ao seu redor. Você pode fazer um fracasso parecer um sucesso estratégico, ou convencer um grupo de que uma ideia estúpida é genial. É um poder de persuasão imenso, mas perigoso: você corre o risco de acreditar na sua própria propaganda e perder o contato com os fatos reais.</p>
+        <p>Para você, a verdade é flexível. Você trata a verdade e os dados como propriedades privadas. Sua forma de controle é o monopólio do conhecimento: você se posiciona como a única pessoa que realmente "sabe o que está acontecendo", filtrando quais informações chegam aos outros.</p>
+        <p>Para você, informação é poder, e você a usa para manter o grupo sob sua direção. Você pode fazer um fracasso parecer um sucesso estratégico, ou convencer um grupo de que uma ideia estúpida é genial. O seu lado mais difícil é a arrogância intelectual; você acredita que, por deter a informação, você tem o direito natural de ditar os passos de todos, tratando a autonomia dos outros como um erro de cálculo que você precisa corrigir através de mais "esclarecimentos".</p>
     `,
     "Prince:Light": `
         <h3>PRINCE OF LIGHT (PRÍNCIPE/PRINCESA DA LUZ)</h3>
@@ -414,34 +414,34 @@ const classpectDescriptions = {
     "Bard:Light": `
         <h3>BARD OF LIGHT (BARDO/BARDA DA LUZ)</h3>
         <p><strong>O que Convida a Destruição da Luz.</strong></p>
-        <p>Você é o agente do caos cognitivo. Passivamente, você permite que a desinformação se espalhe. Você vê alguém tirando uma conclusão errada e não corrige, talvez por achar engraçado ou por preguiça. Você deixa a ignorância ("destruição da Luz") fermentar.</p>
-        <p>Ativamente, porém, você pode destruir *através* da Luz: você revela a verdade no pior momento possível. Aquela fofoca que destrói um casamento, aquele fato brutal que desmoraliza o time. Você ilumina as coisas não para ajudar, mas para ver o circo pegar fogo. Você joga com a sorte de forma imprudente.</p>
+        <p>Você é o agente do caos cognitivo. Passivamente, você permite que a desinformação se espalhe. Você vê alguém tirando uma conclusão errada e não corrige, talvez por achar engraçado ou por preguiça. Você deixa a ignorância fermentar.</p>
+        <p>Ativamente, porém, você revela a verdade no pior momento possível. Aquela fofoca que destrói um casamento, aquele fato brutal que desmoraliza o time. Você ilumina as coisas não para ajudar, mas para ver o circo pegar fogo. Você joga com a sorte de forma imprudente.</p>
     `,
 
     // --- SPACE (ESPAÇO) ---
     "Maid:Space": `
         <h3>MAID OF SPACE (CRIADA/CRIADO DO ESPAÇO)</h3>
         <p><strong>Que Cria o Espaço / Feita(o) de Espaço.</strong></p>
-        <p>Você é a personificação da produtividade ansiosa. Você não consegue ficar parada. Sua "Resposta" ao vazio existencial é preenchê-lo com *coisas*. Você está sempre começando um novo projeto, reorganizando a casa ou criando algo, não necessariamente por inspiração, mas por medo do tédio.</p>
-        <p>Você "cria espaço" para os outros, sendo aquela que arruma, conserta e prepara o terreno. O perigo é você se tornar uma acumuladora de tarefas ou de objetos, tentando tapar buracos emocionais com materialidade, recusando-se a encarar o fato de que, às vezes, é preciso apenas *estar*, e não *fazer*.</p>
+        <p>Você lida com o vazio existencial preenchendo-o com "fazer". Sua vida é uma rotina incessante de manutenção, organização e criação física. Você é quem arruma a bagunça que os outros deixam, quem garante que o ambiente esteja funcional e quem assume a carga horária pesada de projetos que ninguém mais quer tocar.</p>
+        <p>Você é quem arruma a bagunça que os outros deixam, quem garante que o ambiente esteja funcional e quem assume a carga horária pesada de projetos que ninguém mais quer tocar. O perigo é você se tornar uma acumuladora de tarefas ou de objetos, tentando tapar buracos emocionais com materialidade, ignorando suas necessidades emocionais em prol de continuar sendo "útil" e "produtiva".</p>
     `,
     "Knight:Space": `
         <h3>KNIGHT OF SPACE (CAVALEIRO/CAVALEIRA DO ESPAÇO)</h3>
         <p><strong>O que Explora o Espaço / Protege o Espaço.</strong></p>
-        <p>Você usa a distância como escudo. Você projeta uma imagem de alguém "cool", artístico ou misterioso, mas isso é uma fachada para esconder o quanto você se sente deslocado. Você é mestre em manipular o ambiente social para parecer que pertence a ele, mas raramente deixa alguém entrar no seu espaço pessoal real.</p>
-        <p>Você protege sua criatividade e seu mundo interno com ferocidade. Sua habilidade técnica e prática é alta — você sabe como as coisas funcionam —, mas você usa essa competência para manter as pessoas a um braço de distância. Você ajuda a todos a encontrarem seu lugar, enquanto secretamente sente que não tem um.</p>
+        <p>Você compensa uma insegurança profunda sobre seu "lugar no mundo" com uma hipercompetência técnica ou estética. Você sente que falta algo em você (talento natural, profundidade, substância), então você se torna o mestre das ferramentas, da moda, da arte ou da logística.</p>
+        <p>Você projeta uma imagem de "cool" e intocável, ocupando o ambiente com uma presença calculada para que ninguém perceba o quão deslocado você realmente se sente. Você protege seus amigos garantindo que eles tenham os recursos e o espaço que precisam, enquanto você mesmo se mantém numa distância segura, blindado pela sua utilidade e pela sua performance de competência. Você ajuda a todos a encontrarem seu lugar, enquanto secretamente sente que não tem um.</p>
     `,
     "Thief:Space": `
         <h3>THIEF OF SPACE (LADRÃO/LADRA DO ESPAÇO)</h3>
         <p><strong>Que Rouba o Espaço (para si).</strong></p>
-        <p>Você tem uma presença que exige ser notada. Territorial e expansiva, você tende a dominar o ambiente físico e criativo. Se há um projeto em grupo, você toma as rédeas estéticas; se há uma sala, você escolhe o melhor lugar.</p>
-        <p>Isso vem de uma insegurança profunda sobre ser insignificante. Você "rouba" espaço porque teme desaparecer se não estiver ocupando todo o oxigênio da sala. Você pode tomar crédito por criações alheias ou impôr seu gosto sobre os outros, validando sua existência através da sua marca no mundo físico.</p>
+        <p>A criação exige tempo e paciência, coisas que você detesta gastar, então você toma atalhos: você se apropria do trabalho, das ideias ou dos recursos físicos dos outros para acelerar o seu próprio sucesso. Você tem uma presença que exige ser notada. Territorial e expansiva, você tende a dominar o ambiente físico e criativo. Se há um projeto em grupo, você toma as rédeas estéticas; se há uma sala, você escolhe o melhor lugar.</p>
+        <p>Você tem uma necessidade voraz de demarcar território. Se há um projeto, você o domina; se há uma sala, você a preenche. Você rouba o "potencial" de quem está ao seu redor — ocupando o tempo e o espaço que eles usariam para crescer — para garantir que você seja a coisa mais grandiosa e visível no ambiente. É uma conquista napoleônica do cotidiano: você diminui o mundo dos outros para que o seu pareça maior.</p>
     `,
     "Mage:Space": `
         <h3>MAGE OF SPACE (MAGO/MAGA DO ESPAÇO)</h3>
         <p><strong>O que Entende o Espaço (pelo sofrimento) / Entende com o Espaço.</strong></p>
-        <p>Você conhece a solidão do quarto fechado. Você entende o Espaço porque já se sentiu isolado, fisicamente desconfortável ou separado do mundo por uma barreira invisível. Você sabe o que é esperar tempo demais por algo que nunca chega.</p>
-        <p>Agora, você usa essa compreensão para navegar. Você entende onde as coisas se encaixam e onde elas quebram. Você tem uma intuição espacial e sistêmica aguçada. Seu desafio é sair da teoria e da observação passiva (o isolamento do Mago) e participar fisicamente da vida que você analisa tão bem.</p>
+        <p>Você entende o Espaço porque já se sentiu isolado, fisicamente desconfortável ou separado do mundo por uma barreira invisível. Você é o artista genial que vive em um artblock perpétuo, encarando a tela em branco com uma mistura de desejo e exaustão física.</p>
+        <p>Enquanto outros criam sem pensar, você é paralisado pelo conhecimento do esforço que aquilo vai exigir. Esse sofrimento, no entanto, te dá uma compreensão técnica incomparável. Você sabe exatamente onde a estrutura falha, onde o material cede e qual é o custo real de se fazer qualquer coisa existir. Você não subestima a dificuldade da criação porque vive esmagado por ela.</p>
     `,
     "Witch:Space": `
         <h3>WITCH OF SPACE (BRUXA/BRUXO DO ESPAÇO)</h3>
@@ -452,14 +452,14 @@ const classpectDescriptions = {
     "Prince:Space": `
         <h3>PRINCE OF SPACE (PRÍNCIPE/PRINCESA DO ESPAÇO)</h3>
         <p><strong>O que Destrói o Espaço / Destrói com o Espaço.</strong></p>
-        <p>Você é o crítico impiedoso ou o minimalista radical. Você olha para o potencial e para a criação desordenada e sente nojo; você quer cortar, limpar, simplificar. Você destrói o "lixo" criativo, muitas vezes podando árvores que ainda poderiam dar frutos.</p>
-        <p>Ou você destrói *com* o Espaço: você usa a distância física ou o isolamento para acabar com problemas. Você se afasta, vai embora, coloca oceanos entre você e seus desafetos. Você resolve conflitos removendo a existência do outro da sua vista. O risco é acabar numa caixa branca vazia, perfeita e estéril.</p>
+        <p>Você é o crítico impiedoso ou o minimalista radical. Você olha para o potencial e para a criação desordenada e sente nojo; você quer cortar, limpar, simplificar. Sua busca é por uma perfeição minimalista, e para alcançá-la, você corta, descarta e destrói tudo o que considera "lixo" ou "ruído", muitas vezes sacrificando coisas valiosas no processo.</p>
+        <p>Sua hipocrisia reside em querer um resultado perfeito sem respeitar o processo de criação. Você destrói com o Espaço ao usar a distância fria e a remoção física como armas. Você resolve problemas deletando-os da sua vista ou deletando a si mesmo da situação. Você cria vácuos onde antes havia vida, deixando para trás ambientes estéreis e clinicamente limpos, mas mortos.</p>
     `,
     "Sylph:Space": `
         <h3>SYLPH OF SPACE (SÍLFIDE/SILFO DO ESPAÇO)</h3>
         <p><strong>Que Cura o Espaço / Conserta o Espaço.</strong></p>
-        <p>Você é a jardineira da vida alheia. Você quer que tudo cresça e floresça. Você se intromete na organização, na casa e na criatividade dos outros porque acredita genuinamente que sabe como "arrumar" a vida deles melhor que eles mesmos.</p>
-        <p>Sua intenção é dar espaço para os outros serem eles mesmos, mas sua "cura" pode ser sufocante. Você tenta preencher os vazios dos outros com sua própria presença e cuidado, às vezes impedindo que eles aprendam a lidar com a própria solidão ou bagunça. Você precisa aprender a respeitar as cercas dos vizinhos.</p>
+        <p>Você não consegue estar num ambiente caótico, mal planejado ou fisicamente desconfortável sem sentir uma coceira incontrolável para arrumá-lo. Sua forma de amar é invadir o espaço físico dos outros: você é a amiga que vai na casa de alguém e começa a lavar a louça, reorganizar os móveis ou dobrar as roupas sem ser convidada.</p>
+        <p>Sua relação com a criatividade alheia é de uma "parteira intrometida". Se um amigo está travado num projeto, você não dá apenas apoio moral; você pega as ferramentas da mão dele e faz a parte difícil, ou desenha o esquema exato de como ele deve proceder. Ao fazer tudo por elas — porque "elas não sabem fazer direito" ou "são muito lentas" —, você as torna dependentes da sua mão de obra.</p>
     `,
     "Page:Space": `
         <h3>PAGE OF SPACE (ESCUDEIRO/ESCUDEIRA DO ESPAÇO)</h3>
@@ -488,8 +488,8 @@ const classpectDescriptions = {
     "Bard:Space": `
         <h3>BARD OF SPACE (BARDO/BARDA DO ESPAÇO)</h3>
         <p><strong>O que Convida a Destruição do Espaço.</strong></p>
-        <p>Você é o agente da entropia doméstica. Passivamente, você deixa a bagunça acumular, os projetos apodrecerem pela metade e o ambiente se degradar. Você não destrói por malícia, mas por negligência ou por uma filosofia de "deixa rolar".</p>
-        <p>Mas quando a crise bate, você convida a destruição *através* do Espaço: você cria algo tão massivo, tão imprudente ou tão fora de controle que destrói a estrutura existente. É a física nuclear aplicada à vida social: você divide um átomo só para ver o que acontece, e leva o quarteirão inteiro junto.</p>
+        <p>Você possui um talento criativo imenso que definha por negligência deliberada. Diante da responsabilidade de criar, manter ou organizar algo — seja um projeto, um relacionamento ou sua própria vida —, você opta pelo abandono, deixando que o potencial apodreça ou que o caos natural tome conta do ambiente.</p>
+        <p>Sua passividade convida o desastre material: o teto cai porque você ignorou a goteira, ou o prazo estoura porque você se recusou a calcular o tempo. Você vive descolado do "aqui e agora", flutuando em distrações enquanto o mundo real se degrada ao seu redor Você ocupa o ambiente de forma invasiva e desajeitada, ou cria soluções "gambiarras" que acabam piorando o problema original.</p>
     `,
 
     // --- TIME (TEMPO) ---
@@ -502,14 +502,14 @@ const classpectDescriptions = {
     "Knight:Time": `
         <h3>KNIGHT OF TIME (CAVALEIRO/CAVALEIRA DO TEMPO)</h3>
         <p><strong>O que Explora o Tempo / Protege o Tempo.</strong></p>
-        <p>Você é o mestre da "hustle culture". Você usa a velocidade e a eficiência como armas para mascarar suas inseguranças. Você está sempre correndo, sempre buscando o atalho mais rápido, sempre tentando estar um passo à frente do desastre.</p>
-        <p>Sua "Resposta" é a aceleração. Você sente que o mundo está desmoronando (ou que você não é bom o suficiente), então você tenta ser mais rápido que os seus problemas. Você protege o fluxo das coisas agindo impulsivamente e decisivamente, mas essa pressa constante impede que você aprecie o momento. Você vive no futuro imediato, nunca no presente.</p>
+        <p>Você usa a velocidade como armadura. Para os outros, você é a pessoa que resolve, que nunca se atrasa (ou que faz o atraso parecer estilo), que lida com múltiplas crises simultaneamente sem suar. Você corre não porque gosta da velocidade, mas porque tem pavor de ser insuficiente.</p>
+        <p>Sua hiperatividade e sua "mania de mostrar serviço" são mecanismos de defesa para mascarar a ansiedade de que, se você parar, a entropia vai te alcançar e provar que você não é o herói que finge ser. Você protege o fluxo dos eventos agindo impulsivamente para "consertar" o momento presente, mas essa urgência constante te rouba a capacidade de planejar a longo prazo ou de simplesmente estar em paz.</p>
     `,
     "Thief:Time": `
         <h3>THIEF OF TIME (LADRÃO/LADRA DO TEMPO)</h3>
         <p><strong>Que Rouba o Tempo (para si).</strong></p>
-        <p>Você é impaciente e, francamente, um pouco egoísta com a agenda dos outros. Você odeia esperar. Você toma atalhos que custam o tempo alheio para ganhar o seu. Você é aquela pessoa que chega atrasada e espera que todos a aguardem, ou que domina a reunião fazendo todos perderem tempo ouvindo você.</p>
-        <p>Isso vem de um instinto de sobrevivência: você sente que seu tempo é escasso e precioso demais para ser desperdiçado com a mediocridade alheia. Você "rouba" momentos de vida para si, priorizando sua própria longevidade e seus objetivos acima do ritmo natural do grupo.</p>
+        <p>Você tem uma relação predatória com a paciência alheia. O seu tempo é ouro; o dos outros, é recurso descartável. Você tende a interromper falas, chegar atrasado (obrigando os outros a esperarem por você) ou monopolizar a atenção do grupo, drenando os minutos de todos para satisfazer suas próprias prioridades.</p>
+        <p>Isso nasce de um medo agudo de ficar para trás. Você sente que a vida é curta demais para a mediocridade ou para a burocracia social, então você "rouba" atalhos. Você prioriza a sua própria cronologia e conquistas, muitas vezes atropelando o ritmo natural das pessoas ao seu redor para garantir que *você* chegue ao final antes de todo mundo.</p>
     `,
     "Mage:Time": `
         <h3>MAGE OF TIME (MAGO/MAGA DO TEMPO)</h3>
@@ -520,14 +520,14 @@ const classpectDescriptions = {
     "Witch:Time": `
         <h3>WITCH OF TIME (BRUXA/BRUXO DO TEMPO)</h3>
         <p><strong>Que Manipula o Tempo.</strong></p>
-        <p>Você se recusa a seguir o ritmo imposto pela sociedade. Prazos? Horários comerciais? Isso não se aplica a você. Você manipula o tempo ao seu redor, procrastinando até o último segundo e depois resolvendo tudo numa explosão de energia maníaca, ou acelerando processos que deveriam levar anos.</p>
-        <p>Sua personalidade é rebelde contra a ordem natural das coisas. Se o destino diz que algo deve acabar, você luta para estendê-lo. Se algo deve demorar, você o força a acontecer agora. Você quebra as regras da cronologia para satisfazer seus próprios desejos, criando um ritmo caótico que só você consegue dançar.</p>
+        <p>Você tem problemas com autoridade, e a maior autoridade de todas é o relógio. Você se recusa a aceitar que as coisas levam o tempo que levam. Sua vida é marcada por períodos de procrastinação rebelde seguidos por surtos de atividade maníaca onde você tenta comprimir semanas em horas.</p>
+        <p>Sua personalidade é rebelde contra a ordem natural das coisas. Se o destino diz que algo deve acabar, você luta para estendê-lo. Se o momento é ruim, você se dissocia ou corre; se é bom, você tenta esticá-lo obsessivamente. Sua vontade tenta dobrar a realidade temporal, o que te faz incrivelmente eficiente em crises, mas desastrosa(o) em manter uma rotina saudável e estável.</p>
     `,
     "Prince:Time": `
         <h3>PRINCE OF TIME (PRÍNCIPE/PRINCESA DO TEMPO)</h3>
         <p><strong>O que Destrói o Tempo / Destrói com o Tempo.</strong></p>
         <p>Você é o inimigo da paciência. Como destruidor do Tempo, você pode ser alguém que procrastina destrutivamente, desperdiçando dias inteiros (matando o tempo) sem produzir nada, num ato de rebeldia niilista contra a pressão de ser produtivo.</p>
-        <p>Ou, você destrói *com* o Tempo: você usa a inevitabilidade como uma arma. "Isso vai acabar mal mesmo, pra que tentar?". Você acelera o fim das coisas, cortando processos e forçando conclusões prematuras. Você não tem paciência para a jornada; você quer pular direto para os créditos finais, muitas vezes arruinando a experiência no processo.</p>
+        <p>á um fatalismo na sua atitude. Você usa a inevitabilidade do fim como justificativa para queimar pontes ou encerrar ciclos abruptamente. "Isso vai acabar mal mesmo, pra que tentar?". Você acelera o fim das coisas, cortando processos e forçando conclusões prematuras. Você não tem paciência para a jornada; você quer pular direto para os créditos finais, esvaziando o significado do processo de amadurecimento.</p>
     `,
     "Sylph:Time": `
         <h3>SYLPH OF TIME (SÍLFIDE/SILFO DO TEMPO)</h3>
@@ -563,20 +563,20 @@ const classpectDescriptions = {
         <h3>BARD OF TIME (BARDO/BARDA DO TEMPO)</h3>
         <p><strong>O que Convida a Destruição do Tempo.</strong></p>
         <p>Sua abordagem ao tempo é errática. Passivamente, você deixa os prazos morrerem. Você vê a urgência de uma situação e não faz nada, deixando a entropia agir ("o tempo cura tudo", ou "o tempo destrói tudo"). Sua inação convida o fim.</p>
-        <p>Mas no modo ativo/crise, você é o acelerador do apocalipse. Você convida a destruição *através* do Tempo: sua impaciência ou sua má gestão temporal causa catástrofes. Você faz as coisas acontecerem rápido demais, ou no momento errado, criando uma dissonância rítmica que quebra a harmonia do grupo. É a pressa que causa o acidente fatal.</p>
+        <p>Mas no modo ativo/crise, você é o acelerador do apocalipse. Sua impaciência ou sua má gestão temporal causa catástrofes. Você faz as coisas acontecerem rápido demais, ou no momento errado, criando uma dissonância rítmica que quebra a harmonia do grupo. É a pressa que causa o acidente fatal.</p>
     `,
 
     // --- HEART (CORAÇÃO) ---
     "Maid:Heart": `
         <h3>MAID OF HEART (CRIADA/CRIADO DO CORAÇÃO)</h3>
         <p><strong>Que Cria o Coração / Feita(o) de Coração.</strong></p>
-        <p>Você trata sua identidade como um projeto de artesanato. Você não "descobre" quem é; você constrói quem é, tijolo por tijolo. Você é obcecada por autenticidade, mas ironicamente, sua autenticidade é fabricada com muito esforço.</p>
+        <p>Você trata sua identidade como um projeto de artesanato. Você provavelmente sente um vazio aterrorizante quando não está performando a si mesma, então você trabalha duro para manter uma personalidade vibrante, única e esteticamente coerente. Você é obcecada por autenticidade, mas ironicamente, sua autenticidade é fabricada com muito esforço.</p>
         <p>Você provavelmente depende muito da validação externa para sentir que existe. Se ninguém está te amando ou te odiando, você se sente um fantasma. Você "cria" emoção e drama onde não há, porque o silêncio emocional é aterrorizante. O perigo é você se tornar uma caricatura de si mesma, presa numa performance eterna.</p>
     `,
     "Knight:Heart": `
         <h3>KNIGHT OF HEART (CAVALEIRO/CAVALEIRA DO CORAÇÃO)</h3>
         <p><strong>O que Explora o Coração / Protege o Coração.</strong></p>
-        <p>Você usa sua personalidade como uma armadura. Você é muito carismático, intenso ou dramático, mas isso é uma barreira. Você projeta uma versão exagerada de si mesmo (uma "persona") para que ninguém consiga machucar o seu "eu" verdadeiro e vulnerável que está escondido lá no fundo.</p>
+        <p>Você usa sua personalidade como uma armadura. Você é muito carismático, intenso ou dramático, mas isso é uma barreira. Você projeta uma versão exagerada de si mesmo para que ninguém consiga machucar o seu "eu" verdadeiro e vulnerável que está escondido lá no fundo.</p>
         <p>Você luta com a sensação de não ser amável. Então, você se torna útil, desejável ou o "amigo engraçado", explorando suas próprias emoções para manipular como os outros te veem. Você protege seu coração expondo uma cópia dele.</p>
     `,
     "Thief:Heart": `
@@ -600,8 +600,8 @@ const classpectDescriptions = {
     "Prince:Heart": `
         <h3>PRINCE OF HEART (PRÍNCIPE/PRINCESA DO CORAÇÃO)</h3>
         <p><strong>O que Destrói o Coração / Destrói com o Coração.</strong></p>
-        <p>Você é o arquétipo do autossabotador. Você tem uma relação conflituosa com seu próprio ser. Muitas vezes, você tenta destruir seu "Heart" (emoções, impulsos) através da lógica fria (Mind), reprimindo quem você é para ser "eficiente" ou "racional".</p>
-        <p>Ou, você destrói *com* o Coração: seu ego é tão massivo que esmaga todos ao redor. Você impõe sua identidade com tanta força que não sobra espaço para ninguém mais ser quem é. Você destrói a autoestima alheia ou destrói a si mesmo por não conseguir aceitar suas próprias falhas humanas.</p>
+        <p>Você é o arquétipo do autossabotador. Você tem uma relação conflituosa com seu próprio ser. Muitas vezes, você tenta destruir suas emoções e impulsos através da lógica fria, reprimindo quem você é para ser "eficiente" ou "racional".</p>
+        <p>Ao mesmo tempo, você impõe sua identidade com tanta força que não sobra espaço para ninguém mais ser quem é. Você trata amigos e parceiros como espelhos ou extensões do seu próprio ego, ignorando a autonomia emocional deles. Você usa a ironia e o cinismo como ácidos para dissolver qualquer traço de sinceridade ou vulnerabilidade genuína que ameace surgir em você.</p>
     `,
     "Sylph:Heart": `
         <h3>SYLPH OF HEART (SÍLFIDE/SILFO DO CORAÇÃO)</h3>
@@ -612,8 +612,8 @@ const classpectDescriptions = {
     "Page:Heart": `
         <h3>PAGE OF HEART (ESCUDEIRO/ESCUDEIRA DO CORAÇÃO)</h3>
         <p><strong>Aquele que explora o Coração / Explora através do Coração.</strong></p>
-        <p>Você se sente sem alma, ou talvez a sua identidade pareça fragmentada e frágil. O seu "porquê" é a crise de identidade. Você explora os sentimentos e o seu próprio "eu" com uma intensidade perigosa.</p>
-        <p>Ao explorar quem você realmente é, você acaba por manifestar versões de si mesmo que ninguém poderia prever, explorando a própria essência da alma para se tornar uma força de convicção que ninguém consegue fragmentar novamente.</p>
+        <p>Você vive assombrado pela sensação de que é uma "casca vazia" ou uma fraude. Enquanto todo mundo parece ter uma personalidade natural e autêntica, você sente que precisa construir a sua manualmente, peça por peça. Você quer tanto ser amado e ter um papel no "enredo", que permite que os outros ditem quem você é.</p>
+        <p>ocê é o tipo de pessoa que fica obcecada por testes de personalidade, signos, kins ou personagens de ficção, tentando colar esses rótulos na testa para ter uma noção de quem é. Você mimetiza a personalidade de pessoas que admira, adotando os gostos, a gíria e até a postura delas, na esperança de que, se você agir como alguém que tem "alma", eventualmente você terá uma também.</p>
     `,
     "Rogue:Heart": `
         <h3>ROGUE OF HEART (LADINO/LADINA DO CORAÇÃO)</h3>
@@ -636,8 +636,8 @@ const classpectDescriptions = {
     "Bard:Heart": `
         <h3>BARD OF HEART (BARDO/BARDA DO CORAÇÃO)</h3>
         <p><strong>O que Convida a Destruição do Coração.</strong></p>
-        <p>Você é imprevisível emocionalmente. Passivamente, você pode ser frio, distante ou apático, deixando relacionamentos morrerem de inanição. Você convida a dissolução da identidade, talvez não sabendo quem é e não se importando.</p>
-        <p>Mas no modo ativo, você é o destruidor de almas. Você seduz e descarta, ou seus surtos emocionais destroem a coesão do grupo. Você convida a irracionalidade destrutiva a entrar. Você é aquele ex que bagunçou a cabeça de alguém para sempre, ou a pessoa que ri num funeral. Você quebra a santidade do "eu".</p>
+        <p>Você é imprevisível emocionalmente. Passivamente, você pode ser frio, distante ou apático, deixando relacionamentos morrerem de inanição. Você tem uma dificuldade crônica em manter uma identidade sólida; você mimetiza quem está ao seu redor, absorvendo os trejeitos e crenças dos outros até não saber mais onde você termina e o outro começa.</p>
+        <p>Você seduz e descarta, ou seus surtos emocionais destroem a coesão do grupo. Você valida os piores impulsos dos seus amigos ("se você está com raiva, quebre tudo mesmo!"), agindo como um catalisador que transforma sentimentos passageiros em desastres permanentes. Você é aquele ex que bagunçou a cabeça de alguém para sempre.</p>
     `,
 
     // --- MIND (MENTE) ---
@@ -668,8 +668,8 @@ const classpectDescriptions = {
     "Witch:Mind": `
         <h3>WITCH OF MIND (BRUXA/BRUXO DA MENTE)</h3>
         <p><strong>Que Manipula a Mente.</strong></p>
-        <p>Para você, a lógica é massinha de modelar. Você é mestre em convencer as pessoas, não necessariamente com fatos, mas mudando a forma como elas pensam. Você racionaliza o irracional. Você consegue justificar qualquer ação, por mais absurda que seja, se isso servir aos seus propósitos.</p>
-        <p>Sua personalidade é adaptável e perigosa. Você muda de ideia e de "máscara" conforme a situação exige. Você manipula as decisões dos outros, plantando ideias ou alterando percepções. O perigo é você se perder nas suas próprias justificativas e começar a acreditar nas suas próprias mentiras lógicas.</p>
+        <p>Você encara a verdade, os fatos e a própria identidade como rascunhos editáveis. Diante de uma culpa, um erro ou uma realidade inconveniente, sua resposta imediata é reescrever a lógica por trás do evento. Você consegue justificar qualquer ação, por mais absurda que seja, se isso servir aos seus propósitos.</p>
+        <p>Você vê seus amigos como personagens mal escritos que precisam de ajustes. Você interfere nas decisões, nos gostos e nas opiniões deles, não por maldade, mas porque acredita genuinamente que sabe pensar melhor que eles. Você planta sementes de dúvida ou certeza para guiá-los ao "melhor final" (segundo o seu critério).</p>
     `,
     "Prince:Mind": `
         <h3>PRINCE OF MIND (PRÍNCIPE/PRINCESA DA MENTE)</h3>
@@ -711,7 +711,7 @@ const classpectDescriptions = {
         <h3>BARD OF MIND (BARDO/BARDA DA MENTE)</h3>
         <p><strong>O que Convida a Destruição da Mente.</strong></p>
         <p>Você é o agente da dúvida. Passivamente, você corrói as certezas do grupo. Você faz perguntas que desmontam planos sólidos, ou sua própria indecisão caótica faz com que o grupo perca o rumo. Você convida a confusão.</p>
-        <p>No modo ativo, você destrói *através* da Mente: você usa a lógica para criar o caos. Você cria labirintos burocráticos, regras impossíveis ou jogos mentais sádicos que paralisam todos. Ou você toma uma decisão tão logicamente absurda e imprevisível que quebra o tabuleiro inteiramente. Você é o Coringa: tudo é um jogo, e as regras são piadas.</p>
+        <p>Enquanto outros agonizam sobre qual caminho tomar, você simplesmente se recusa a escolher ou age de forma aleatória porque, no fundo, você não acredita que suas ações tenham peso real. Ao se recusar a planejar ou a levar os problemas a sério, você obriga os outros a pensarem por você, sobrecarregando o sistema.</p>
     `,
 
     // --- RAGE (IRA) ---
@@ -730,7 +730,7 @@ const classpectDescriptions = {
     "Thief:Rage": `
         <h3>THIEF OF RAGE (LADRÃO/LADRA DA IRA)</h3>
         <p><strong>Que Rouba a Ira (para si).</strong></p>
-        <p>Você precisa ser a pessoa mais revoltada da sala. Se alguém está reclamando de algo, você interrompe para dizer que o seu problema é pior. Você invalida a raiva e a frustração dos outros ("rouba" a Ira deles) para centralizar a narrativa no seu próprio sofrimento ou ódio.</p>
+        <p>Você precisa ser a pessoa mais revoltada da sala. Se alguém está reclamando de algo, você interrompe para dizer que o seu problema é pior. Você invalida a raiva e a frustração dos outros para centralizar a narrativa no seu próprio sofrimento ou ódio.</p>
         <p>É uma forma de controle narcisista. Você drena a capacidade dos outros de se defenderem ou de se expressarem negativamente, tornando-se o único portador autorizado da "verdade" desagradável. Você se alimenta do conflito e murcha na harmonia.</p>
     `,
     "Mage:Rage": `
@@ -753,7 +753,7 @@ const classpectDescriptions = {
     `,
     "Sylph:Rage": `
         <h3>SYLPH OF RAGE (SÍLFIDE/SILFO DA IRA)</h3>
-        <p><strong>Que Cura a Ira / Conserta a Ira.</strong></p>
+        <p><strong>Que Cura a Ira / Cura através da Ira.</strong></p>
         <p>Você valida os demônios dos outros. Enquanto a sociedade diz "não fique bravo", você diz "você tem todo o direito de estar puto". Você ajuda as pessoas a focarem sua raiva, a entenderem suas limitações e a aceitarem as verdades difíceis que estão tentando ignorar.</p>
         <p>Sua "cura" é através da catarse ou do choque de realidade. Mas cuidado: você pode acabar "consertando" a capacidade de alguém de perdoar, transformando mágoas passageiras em rancores eternos, ou incentivando uma paranoia que você julga ser "saudável".</p>
     `,
@@ -784,8 +784,8 @@ const classpectDescriptions = {
     "Bard:Rage": `
         <h3>BARD OF RAGE (BARDO/BARDA DA IRA)</h3>
         <p><strong>O que Convida a Destruição da Ira.</strong></p>
-        <p>Você é o "troll" da vida real. Passivamente, você desmoraliza qualquer tentativa de seriedade ou de raiva justa com piadas niilistas ou comportamento errático. Você faz com que as preocupações dos outros pareçam ridículas, destruindo a convicção deles.</p>
-        <p>Ou, você convida a destruição *através* da Ira: você provoca, cutuca e instiga até que alguém exploda e destrua tudo, enquanto você assiste comendo pipoca. Você é o agente catalisador que transforma uma discordância pequena numa guerra total, usando a imprevisibilidade emocional como arma de destruição em massa.</p>
+        <p>Sua relação com a realidade é marcada por uma dissonância proposital. Você frequentemente opera em um estado de "dormência" ou negação entorpecida, recusando-se a encarar conflitos, verdades duras ou a feiura do mundo. Você faz com que as preocupações dos outros pareçam ridículas, destruindo a convicção deles.</p>
+        <p>Você provoca, cutuca e instiga até que alguém exploda e destrua tudo, enquanto você assiste comendo pipoca. Você desmonta as narrativas, os sonhos e as esperanças do grupo com uma honestidade brutal e cruel. Você aponta o absurdo e a futilidade das coisas com tanta precisão que paralisa a motivação de todos, forçando-os a engolir uma dose de realidade tão amarga e concentrada que envenena o espírito coletivo.</p>
     `,
 
     // --- LIFE (VIDA) ---
@@ -840,7 +840,7 @@ const classpectDescriptions = {
     "Rogue:Life": `
         <h3>ROGUE OF LIFE (LADINO/LADINA DA VIDA)</h3>
         <p><strong>O que Rouba a Vida (para redistribuir).</strong></p>
-        <p>Você é o Robin Hood. Você tira de quem tem muito (inclusive de você mesma) para dar a quem tem pouco. Você sacrifica seu conforto, seu dinheiro e sua saúde para ajudar os necessitados. Você não consegue desfrutar de um luxo se souber que alguém está sofrendo.</p>
+        <p>Você tira de quem tem muito (inclusive de você mesma) para dar a quem tem pouco. Você sacrifica seu conforto, seu dinheiro e sua saúde para ajudar os necessitados. Você não consegue desfrutar de um luxo se souber que alguém está sofrendo.</p>
         <p>É nobre, mas autodestrutivo. Você "rouba" sua própria vitalidade para manter os outros vivos. Você evita brilhar ou ter sucesso para não fazer os outros se sentirem mal. Você precisa aprender que não precisa se apagar para que os outros existam.</p>
     `,
     "Seer:Life": `
@@ -858,8 +858,8 @@ const classpectDescriptions = {
     "Bard:Life": `
         <h3>BARD OF LIFE (BARDO/BARDA DA VIDA)</h3>
         <p><strong>O que Convida a Destruição da Vida.</strong></p>
-        <p>Sua relação com o autocuidado e o status é caótica. Passivamente, você deixa sua vida, saúde ou finanças desmoronarem por pura negligência. Você assiste oportunidades morrerem e não faz nada. Você convida a estagnação.</p>
-        <p>Ativamente, você convida a destruição *através* da Vida: o excesso hedonista. Você festeja até destruir tudo, gasta o que não tem, ou usa sua influência e carisma para levar o grupo a comportamentos de risco. Você é a personificação da frase "viva rápido, morra jovem", arrastando todos consigo.</p>
+        <p>Sua relação com a própria existência é marcada por um desperdício casual que enfurece quem está ao seu redor. Passivamente, você deixa sua vida, saúde ou finanças desmoronarem por pura negligência. Você assiste oportunidades morrerem e não faz nada, fazendo com que o abandono de si mesmo pareça uma escolha de estilo de vida aceitável</p>
+        <p>Você valida os piores instintos e excessos dos seus amigos, encorajando-os a ignorar limites, gastar o que não têm ou negligenciar a própria segurança, tudo sob a justificativa de "aproveitar o momento". Você não cria o vício, mas cria o ambiente perfeito para que ele cresça descontroladamente. Você é a personificação da frase "viva rápido, morra jovem", arrastando todos consigo.</p>
     `,
 
     // --- DOOM (DESTINO) ---
@@ -932,8 +932,8 @@ const classpectDescriptions = {
     "Bard:Doom": `
         <h3>BARD OF DOOM (BARDO/BARDA DO DESTINO)</h3>
         <p><strong>O que Convida a Destruição do Destino.</strong></p>
-        <p>Você zomba das regras. Passivamente, você ignora a segurança, os avisos e o bom senso, convidando o desastre a entrar pela porta da frente. Você age como se fosse invencível, e sua imprudência corrói a estrutura que protege o grupo.</p>
-        <p>Ou, você convida a destruição *através* do Destino: você traz a inevitabilidade para a mesa. Você é o portador das más notícias que destroem o moral de todos. Você acelera o colapso de um sistema podre, não para consertá-lo, mas para ver a poeira baixar. Você é o fatalismo transformado em arma.</p>
+        <p>Você zomba das regras. Passivamente, você ignora a segurança, os avisos e o bom senso, convidando o desastre a entrar pela porta da frente. Você permite que o sistema apodreça e que as defesas do grupo caiam por simples negligência, agindo como se as leis da causa e efeito não se aplicassem a você ou aos seus.</p>
+        <p>Você não traz a "má notícia" para alertar; você a traz para enterrar qualquer tentativa de resistência. Você destrói a estrutura do grupo forçando-os a aceitar um fim que você mesmo facilitou através da sua indiferença anterior, transformando o sacrifício em um desperdício trágico e cínico.</p>
     `,
 
 // --- TEXTOS DO SISTEMA ---
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
