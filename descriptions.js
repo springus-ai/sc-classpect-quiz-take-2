@@ -138,7 +138,7 @@ const classpectDescriptions = {
     "Thief:Blood": `
         <h3>THIEF OF BLOOD (LADRÃO/LADRA DO SANGUE)</h3>
         <p><strong>Que Rouba o Sangue (para si).</strong></p>
-        <p>Para você, a atenção e a lealdade são recursos finitos, e você quer a maior fatia. Você tende a monopolizar amigos, criar intrigas sutis para garantir que fulano goste mais de você do que de sicrano, ou exigir provas constantes de lealdade.</p>
+        <p>Você constantemente se sente sozinho, e é a sensação que mais te consome. Você tende a monopolizar amigos, criar intrigas sutis para garantir que fulano goste mais de você do que de sicrano, ou exigir provas constantes de lealdade.</p>
         <p>É um mecanismo de defesa de quem se sente vazio por dentro. Você rouba a validação alheia para preencher esse buraco. Você pode ser carismático, atraindo seguidores, mas suas relações tendem a ser parasíticas: você se alimenta da devoção dos outros sem necessariamente retribuir na mesma moeda.</p>
     `,
     "Mage:Blood": `
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
