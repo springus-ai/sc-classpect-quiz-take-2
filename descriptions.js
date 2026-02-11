@@ -100,13 +100,13 @@ const classpectDescriptions = {
     "Rogue:Hope": `
         <h3>ROGUE OF HOPE (LADINO/LADINA DA ESPERANÇA)</h3>
         <p><strong>O que Rouba a Esperança (para redistribuir).</strong></p>
-        <p>Você é o amigo que abre mão da própria felicidade para ver os outros sorrirem. Você se convence de que não precisa dela, ou de que não a merece.</p>
-        <p>Você "rouba" a chance de sucesso de si mesmo para dar a um aliado. É um comportamento nobre, mas autodestrutivo. Você lida com a pressão da realidade fugindo dela e focando nos problemas dos outros. No fim do dia, você é o terapeuta do grupo que chora sozinho no banho.</p>
+        <p>Você tem uma aversão a ser o centro da fé alheia. Se alguém te coloca num pedestal, sua reação instintiva é chutar o pedestal e apontar para outra pessoa, dizendo: "Não olhem para mim, olhem para ela! Ela é quem realmente salvou o dia."</p>
+        <p>Você morre de medo de falhar com as expectativas das pessoas, então você nunca deixa que elas esperem nada de você. Você vive nos bastidores, inflando o ego dos outros enquanto se sente secretamente uma fraude, incapaz de aceitar que talvez, só talvez, você fosse a pessoa certa para o trabalho desde o início.</p>
     `,
     "Seer:Hope": `
         <h3>SEER OF HOPE (VIDENTE DA ESPERANÇA)</h3>
         <p><strong>Que Vê a Esperança / Guia pela Esperança.</strong></p>
-        <p>Você não segue cegamente; você entende a mecânica da fé. Você olha para um mar de possibilidades e sabe dizer qual é a fantasia e qual é o caminho viável. Você é o estrategista do otimismo.</p>
+        <p>Você não precisa ter fé; você entende como a fé funciona. Você olha para uma situação caótica e consegue discernir quais caminhos são pura fantasia e quais têm uma chance real de sucesso. Você olha para um mar de possibilidades e sabe dizer qual é a fantasia e qual é o caminho viável. Você é o estrategista do otimismo.</p>
         <p>Enquanto os outros oscilam entre euforia e desespero, você mantém a cabeça fria, analisando o que é moralmente certo e o que vale a pena perseguir. Sua falha pode ser a paralisia: ver tantas possibilidades e consequências éticas que você demora a agir, ou se frustra com a cegueira daqueles que não veem o caminho óbvio que você traçou.</p>
     `,
     "Heir:Hope": `
@@ -118,8 +118,8 @@ const classpectDescriptions = {
     "Bard:Hope": `
         <h3>BARD OF HOPE (BARDO/BARDA DA ESPERANÇA)</h3>
         <p><strong>O que Convida a Destruição da Esperança.</strong></p>
-        <p>Você vive num cabo de guerra entre o niilismo zombeteiro e o fanatismo repentino. Geralmente, você é o "estraga-prazeres" passivo, aquele que faz piada na hora séria e desmonta a moral do grupo com cinismo, evitando a responsabilidade de acreditar em algo.</p>
-        <p>Mas quando encurralado, sua polaridade inverte. Você abandona a lógica e aposta tudo num milagre impossível, numa fé destrutiva que ignora fatos e consequências. Você é a prova de que a esperança cega é perigosa: ou você não tem nenhuma, ou tem tanta que ela explode na cara de todo mundo.</p>
+        <p>Você é o agente do caos na moral do grupo. Alguém que oscila entre tentar desesperadamente ser algo que não é e agindo de forma patética que faz todos ao redor perderem a fé em você e na situação.</p>
+        <p>Você pode ser aquele que, com uma piada errada ou uma atitude cínica no momento crucial, desmonta a motivação de todos. Ou, inversamente, sua própria falta de esperança é tão contagiante e destrutiva que obriga o universo a reagir.</p>
     `,
 
     // --- BLOOD (SANGUE) ---
@@ -148,16 +148,16 @@ const classpectDescriptions = {
         <p>Sua "Realidade" foi, provavelmente, a traição ou o peso de uma responsabilidade que você não pediu. Agora, você navega o mundo social com um cinismo informado. Você sabe que toda promessa tem um custo e que lealdade cega é perigosa. Você guia o grupo não pelo carisma, mas pelo aviso: "eu sei onde isso vai dar errado".</p>
     `,
     "Witch:Blood": `
-        <h3>WITCH OF BLOOD (BRUXA/BRUXO DO SANGUE)</h3>
-        <p><strong>Que Manipula o Sangue.</strong></p>
-        <p>Você não aceita as regras sociais impostas; você as reescreve. Você tem o dom (e a audácia) de misturar grupos que não deveriam se misturar, quebrar tabus de relacionamento ou isolar alguém se achar necessário. Para você, lealdade é massinha de modelar.</p>
-        <p>Sua resposta ao peso das obrigações é assumir o controle delas. Você pode ser a pessoa que une inimigos mortais ou que faz uma família inteira cortar relações, dependendo do seu humor e objetivo. O perigo é tratar pessoas como bonecos em sua casinha de bonecas, esquecendo que elas têm vontades próprias.</p>
-    `,
+         <h3>WITCH OF BLOOD (BRUXA DO SANGUE)</h3>
+         <p><strong>A que Manipula o Sangue / Manipula através do Sangue.</strong></p>
+         <p>Você rejeita a ideia de que "sangue é mais espesso que água" — a menos que seja o *seu* sangue. Você não aceita as conexões que o destino ou a sociedade te impuseram (família biológica, colegas de classe, tradições); você escolhe a sua própria família e exige que ela funcione sob as suas regras.</p>
+         <p>Sua manipulação é emocional e envolvente. Você tem um magnetismo que faz as pessoas quererem se comprometer com você, e você usa isso para reconfigurar a dinâmica do grupo. Você é capaz de pegar pessoas quebradas e solitárias e forçá-las a uma união que as salva, ou convencer amigos de longa data a se separarem porque "não faziam bem um ao outro".</p>
+`,
     "Prince:Blood": `
         <h3>PRINCE OF BLOOD (PRÍNCIPE/PRINCESA DO SANGUE)</h3>
         <p><strong>O que Destrói o Sangue / Destrói com o Sangue.</strong></p>
-        <p>Você é o quebrador de correntes. Você olha para tradições, obrigações familiares e lealdades cegas e vê apenas prisões. Sua tendência é se afastar, cortar laços e incentivar os outros a serem independentes (muitas vezes de forma brusca). O "fantasma" do aspecto oposto (Breath) é forte em você: você anseia por liberdade.</p>
-        <p>Porém, você também pode "destruir usando o Sangue": usar a pressão dos pares, o ostracismo ou a culpa coletiva para esmagar alguém. Você é mestre em queimar pontes. O desafio é não acabar sozinho numa ilha deserta que você mesmo construiu.</p>
+        <p>Você performa o papel de alguém desapegado e livre (como um jogador de Breath), alegando que odeia drama, panelinhas e obrigações sociais. Você se orgulha de cortar pessoas da sua vida com a frieza de um carrasco, destruindo amizades e queimando pontes sob o pretexto de "se libertar de pessoas tóxicas".</p>
+        <p>A sua hipocrisia, no entanto, é gritante: você destrói relacionamentos porque tem uma visão absolutista e rígida do que um relacionamento deve ser. Você não é livre; você é um tirano emocional. Você exige uma lealdade e uma perfeição moral tão inalcançáveis que ninguém consegue satisfazer, e então usa essa "falha" dos outros como justificativa para destruí-los.</p>
     `,
     "Sylph:Blood": `
         <h3>SYLPH OF BLOOD (SÍLFIDE/SILFO DO SANGUE)</h3>
@@ -174,8 +174,8 @@ const classpectDescriptions = {
     "Rogue:Blood": `
         <h3>ROGUE OF BLOOD (LADINO/LADINA DO SANGUE)</h3>
         <p><strong>O que Rouba o Sangue (para redistribuir).</strong></p>
-        <p>Você é o mártir social. Você abre mão do seu lugar no círculo para que outra pessoa possa entrar. Você pega a conexão e o afeto que seriam direcionados a você e os desvia para outros, agindo como um cupido de amizades enquanto se mantém à margem.</p>
-        <p>Sua dificuldade é aceitar que você também merece pertencer. Você lida com a complexidade das relações fugindo delas, focando nos problemas dos outros para não ter que lidar com sua própria solidão. Você conecta o mundo, mas vive desconectado.</p>
+        <p>Você é o "para-raios" do grupo. Sua função autodesignada é absorver o impacto das crises interpessoais para que ninguém mais se machuque. Se há um clima tenso na sala, você "rouba" esse desconforto — muitas vezes fazendo algo embaraçoso, assumindo a culpa por um erro que não foi seu ou se colocando como alvo de piadas — apenas para dissipar a tensão e permitir que o grupo volte a respirar.</p>
+        <p>Você se torna uma lixeira emocional para os problemas dos seus amigos. Você permite que drenem sua energia e abusem da sua boa vontade porque acredita que seu único valor reside em ser o "amortecedor" que impede a família de desmoronar.</p>
     `,
     "Seer:Blood": `
         <h3>SEER OF BLOOD (VIDENTE DO SANGUE)</h3>
@@ -193,7 +193,7 @@ const classpectDescriptions = {
         <h3>BARD OF BLOOD (BARDO/BARDA DO SANGUE)</h3>
         <p><strong>O que Convida a Destruição do Sangue.</strong></p>
         <p>Sua relação com compromissos é... complicada. Você é o amigo que some. O que fura o rolê. O que não responde mensagens. Passivamente, sua negligência ou sua natureza "livre" faz com que os laços ao seu redor apodreçam e se desfaçam. Você convida o isolamento.</p>
-        <p>Mas, no modo destrutivo ativo, um Bardo de Sangue é aterrorizante. Você pode atrair um elemento tóxico para o grupo que o destrói por dentro, ou pode gerar uma mentalidade de seita/horda tão intensa e irracional que destrói a individualidade de todos. Você oscila entre o eremita total e o líder de um motim caótico.</p>
+        <p>Sua própria instabilidade emocional se torna um peso tão grande que o grupo se destrói tentando te carregar. Você se torna um buraco negro de drama, exigindo uma lealdade cega e destrutiva dos outros, obrigando-os a sacrificar a própria saúde mental para manter você estável, até que o vínculo se torne insustentável e colapse sob o peso da sua necessidade.</p>
     `,
 
     // --- BREATH (Suspiro) ---
@@ -224,14 +224,14 @@ const classpectDescriptions = {
     "Witch:Breath": `
         <h3>WITCH OF BREATH (BRUXA/BRUXO DO SUSPIRO)</h3>
         <p><strong>Que Manipula o Suspiro.</strong></p>
-        <p>Você é a rebelião encarnada. Você não apenas quebra regras; você torce a direção do vento. Se alguém diz "vá para a esquerda", você vai para a direita por puro despeito. Você manipula a liberdade, tanto a sua quanto a dos outros, frequentemente isolando pessoas ou libertando-as contra a vontade delas.</p>
-        <p>Sua personalidade é volátil e impossível de prender. Você muda de ideia, de grupo e de paixão num piscar de olhos. É divertido, mas perigoso: você corre o risco de viver uma vida sem consistência, onde nada é construído porque você derruba tudo assim que se sente entediada.</p>
+        <p>Você é a rebelião encarnada. Você é a pessoa que sequestra a narrativa do grupo. Se todos decidem ir para a esquerda, você não apenas vai para a direita; você convence (ou obriga) o grupo a mudar de rota, usando seu carisma e sua energia caótica para fazer com que a sua direção pareça a única divertida ou viável.</p>
+        <p>Sua personalidade é volátil e impossível de prender. Você usa o silêncio e a ausência (ghosting) de forma tática: você se retira ou ameaça ir embora para fazer as pessoas correrem atrás de você. Você "liberta" pessoas de compromissos que você acha chatos, muitas vezes destruindo relacionamentos estáveis alheios porque a estabilidade deles faz você se sentir sufocada por tabela. Você quer que todos sejam livres, desde que a liberdade deles consista em seguir você.</p>
     `,
     "Prince:Breath": `
         <h3>PRINCE OF BREATH (PRÍNCIPE/PRINCESA DO SUSPIRO)</h3>
         <p><strong>O que Destrói o Suspiro / Destrói com o Suspiro.</strong></p>
-        <p>Você é um paradoxo ambulante. Como Príncipe, você destrói seu aspecto. Isso pode se manifestar como um autoritarismo rígido: você odeia a falta de rumo, odeia a indecisão e impõe regras estritas para sufocar a "bagunça" da liberdade alheia.</p>
-        <p>Ou, você destrói *com* o Suspiro: você corta laços com uma brutalidade chocante. Quando você decide que acabou, acabou. Você queima pontes e desaparece (ghosting), destruindo relacionamentos através do distanciamento absoluto. Você elimina nuances e caminhos alternativos até sobrar apenas a sua verdade inflexível.</p>
+        <p>Você olha para a natureza despreocupada, flexível e "leve" do Sopro e sente nojo. Para você, "ir com o fluxo" é sinônimo de fraqueza, preguiça e falta de caráter. Você age como um fantasma rígido de Sangue: impõe regras, exige foco, cobra postura e tenta concretar os pés de todo mundo no chão.</p>
+        <p>Você usa o distanciamento como punição. Quando as coisas não saem do seu jeito rígido, você não negocia; você simplesmente remove a sua presença. Você pratica o ghosting tático ou corta laços de anos em um segundo, deixando um rastro de destruição emocional, apenas para provar que você não precisa de ninguém. Você é um ditador solitário que matou todos os seus súditos porque eles não marcharam no ritmo exato que você exigiu.</p>
     `,
     "Sylph:Breath": `
         <h3>SYLPH OF BREATH (SÍLFIDE/SILFO DO SUSPIRO)</h3>
@@ -304,7 +304,7 @@ const classpectDescriptions = {
     "Prince:Void": `
         <h3>PRINCE OF VOID (PRÍNCIPE/PRINCESA DO VAZIO)</h3>
         <p><strong>O que Destrói o Vazio / Destrói com o Vazio.</strong></p>
-        <p>Você odeia segredos. Você é o destruidor da ambiguidade. Se algo está oculto, você arranca a tampa. Você não suporta a ideia de "não saber", então você destrói o mistério com lógica brutal ou revelações forçadas.</p>
+        <p>Você odeia não saber de algo. Você é o destruidor da ambiguidade. Se algo está oculto, você arranca a tampa. Você não suporta a ideia de "não saber", então você destrói o mistério com lógica brutal ou revelações forçadas.</p>
         <p>Por outro lado, você pode agir como um niilista agressivo ("destruir com o Vazio"). Você usa a insignificância das coisas como arma para desmotivar os outros. "Por que tentar se nada importa? Por que se importar se somos poeira estelar?". Você apaga a importância das coisas, destruindo a importância dessas coisas.</p>
     `,
     "Sylph:Void": `
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
