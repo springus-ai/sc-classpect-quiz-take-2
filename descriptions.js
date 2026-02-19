@@ -1,28 +1,28 @@
 const classpectDescriptions = {
 
-	"Prince": `<strong>Príncipe/Princesa:</strong> Você é a força imparável da hipocrisia. Você não lida com nuances, você elimina o problema pela raiz. Ao destruir seu Aspecto (ou destruir com ele), você abre caminho para o novo, agindo com uma precisão quase cirúrgica. Você frequentemente age como o oposto do seu Aspecto porque está ocupado demais tentando aniquilá-lo dentro de si mesmo. Seu perfeccionismo é destrutivo, e você corre o risco de reinar sobre um monte de cinzas se não tiver cuidado.`,
+	"Prince": `<strong>Príncipe/Princesa:</strong> Sua tendência natural é impor sua vontade e destruir tudo o que te incomoda ou desafia sua visão de mundo, muitas vezes agindo como um hipócrita que julga nos outros o que faz escondido. Você cria regras draconianas e padrões impossíveis para os outros, mas age como se possuísse imunidade diplomática contra as próprias leis. Mas, se você aprender a direcionar esse instinto crítico, você se torna a pessoa capaz de encerrar ciclos que ninguém mais tem coragem de fechar.`,
     
-    "Bard": `<strong>Bardo/Barda:</strong> Ninguém sabe o que esperar de você, e talvez nem você saiba. Você permite que a destruição aconteça passivamente, até o momento em que decide virar a mesa de repente. Você oscila entre a total apatia e a catástrofe explosiva. Sua natureza imprevisível é um mecanismo de defesa para evitar responsabilidades, mas sua recusa em escolher um lado acaba sendo uma escolha por si só.`,
+    "Bard": `<strong>Bardo/Barda:</strong> Sua postura é definida por uma negligência calculada e arrogante. Você não suja as mãos para destruir algo, basta retirar o suporte vital e deixar que a gravidade faça o resto. Você cria as condições para aquilo quebrar enquanto se isenta da culpa. Mas sua isenção é uma mentira, enquanto você foge da situação, você destrói a si mesmo e culpa o mundo pela sua situação. Se você assumir a responsabilidade, sua passividade deixa de ser covardia e vira estratégia. Você se torna a única pessoa com o sangue frio necessário para parar de sustentar causas perdidas, permitindo que o insustentável finalmente acabe para que a vida possa seguir em frente.`,
     
-    "Thief": `<strong>Ladrão/Ladra:</strong> O que você quer, você pega. Você tem a agência e a ousadia para roubar o Aspecto para seu próprio benefício. Você é proativo, engenhoso e não pede desculpas por sobreviver. Seu egoísmo aparente esconde um medo profundo de privação. Você rouba porque, no fundo, sente que não tem nada de valor próprio. Você preenche o vazio interno com o poder que tira dos outros.`,
+    "Thief": `<strong>Ladrão/Ladra:</strong> Na vida prática, você é aquela pessoa que assume o controle do projeto porque acredita que os outros são lentos ou incompetentes demais para fazê-lo. Você toma a palavra, toma o crédito e toma o espaço, não necessariamente por maldade, mas por convicção de que esses recursos serão mais úteis nas suas mãos do que nas de qualquer outro. O seu defeito óbvio é o egoísmo predatório que drena quem está ao seu redor, deixando os outros sem voz, sem vez e sem energia. Sua evolução só acontece quando você percebe que o microgerenciamento te isolou em um trono vazio, passando a centralizar o poder não mais para inflar seu ego, mas para garantir que a vitória não custe a sua companhia.`,
     
-    "Rogue": `<strong>Ladino/Ladina:</strong> Você rouba, mas não para si. Você redistribui o Aspecto, tirando de onde sobra e colocando onde falta. Você é o equalizador do grupo, agindo nas sombras para ajudar os amigos. Você tem dificuldade em aceitar o crédito ou o poder para si mesmo. Você doa o Aspecto porque não se sente digno de mantê-lo ou capaz de lidar com ele. Seu altruísmo é, ironicamente, uma forma de evitar o conflito direto.`,
+    "Rogue": `<strong>Ladino/Ladina:</strong> Sua generosidade é, muitas vezes, um esconderijo. Você é a pessoa que resolve a crise emocional dos amigos, cede sua vez na fila e recusa créditos por um trabalho bem feito, repassando o elogio para a equipe. Você se sente mais seguro gerenciando o sucesso, os problemas e os sentimentos dos outros do que lidando com o peso de ter os seus. É mais fácil consertar o namoro do amigo do que arrumar o seu; é mais fácil fazer o trabalho duro para o colega brilhar do que assumir o risco de apresentar o projeto e falhar. Você doa porque, no fundo, acredita que não é qualificado para manter aquilo com você.`,
     
-    "Knight": `<strong>Cavaleiro/Cavaleira:</strong> Você é o escudo da equipe e a arma mais eficiente do grupo. Você explora seu Aspecto com uma habilidade técnica invejável, usando-o para proteger seus aliados a qualquer custo. Toda essa competência e bravata é uma máscara — literalmente ou metaforicamente. Você morre de medo de não ser bom o suficiente, e por isso se esforça em dobro. Você luta para esconder suas próprias inseguranças.`,
+    "Knight": `<strong>Cavaleiro/Cavaleira:</strong> Você é a pessoa que se esforça o dobro de todo mundo porque, lá no fundo, tem certeza de que é uma fraude e que, a qualquer momento, todos vão descobrir. Você serve aos outros e resolve problemas obsessivamente não por caridade, mas porque acredita que precisa comprar o seu lugar no grupo através da utilidade. Você usa o trabalho excessivo ou a ironia constante como uma armadura: se você estiver ocupado salvando o dia, ninguém vai ter tempo de ver o quanto você se sente vazio ou inadequado.`,
     
-    "Page": `<strong>Escudeiro/Escudeira:</strong> Sua jornada começa difícil. Você parece ter menos do seu Aspecto do que qualquer outra pessoa. Mas, se você sobreviver aos tropeços e à humilhação inicial, seu teto de crescimento é infinito. Você começa com um déficit técnico e psicológico no seu aspecto, mas seu "porquê" reside no crescimento exponencial, permitindo que você explore o aspecto em benefício do grupo no estágio final.`,
+    "Page": `<strong>Escudeiro/Escudeira:</strong> A princípio, você parece ser a pessoa com a maior deficiência no seu Aspecto — seja falta de habilidade social, falta de vontade ou falta de sorte. Você frequentemente se sente atrás de todos, dependendo da paciência e da ajuda alheia para o básico. Mas essa 'carência'é o que torna sua jornada tão promissora. Enquanto os prodígios estagnam porque acham que já sabem tudo, você continua escalando. Você explora o Aspecto ao permitir que ele te preencha lentamente, transformando cada humilhação e cada erro em dados brutos para o seu crescimento. Você é o investimento de longo prazo que parece arriscado, mas que paga os maiores dividendos.`,
     
-    "Maid": `<strong>Criado/Criada:</strong> No início você serve, mas no fim, você é feita de pura ação. Você arruma o Aspecto e cria soluções onde não havia nada. Você é quem garante que o trabalho seja feito, custe o que custar. Você tende a começar a história dependente da vontade alheia. Sua jornada é parar de ser uma ferramenta nas mãos dos outros e começar a servir aos seus próprios interesses, tornando-se a mestre do seu destino.`,
+    "Maid": `<strong>Criado/Criada:</strong> Você é a pessoa no grupo, na família ou no ambiente de trabalho que sempre assume a carga mais pesada, simplesmente porque todos sabem que você é o único capaz de resolver o problema. Você começa sua trajetória preso às demandas dos outros, funcionando como a fundação silenciosa que sustenta a incompetência alheia. Você aceita o peso, muitas vezes ressentido, porque o seu medo de ver tudo desmoronar é maior do que o seu desejo de liberdade. Você se torna um mártir da sua própria utilidade, sendo tratado como um recurso inesgotável por pessoas que exigem a sua ajuda, mas raramente a valorizam.`,
     
     "Sylph": `<strong>Sílfide/Sílfido:</strong> Você restaura o que está quebrado e cura o que está ferido. Você tem uma noção inata de como as coisas (e as pessoas) deveriam ser e trabalha incansavelmente para consertá-las. Sua vontade de ajudar pode beirar a interferência. Você acha que sabe o que é melhor para todos, muitas vezes ignorando se eles querem ser curados ou não. Seu desafio é entender que nem tudo precisa do seu toque mágico.`,
     
-    "Witch": `<strong>Bruxa/Bruxo:</strong> Energética, confiante e muitas vezes perigosa. Você não apenas usa o Aspecto; você o dobra, torce e manipula para servir aos seus caprichos. As leis da física e da magia são meras sugestões para você. Você exibe um controle absoluto sobre seus poderes para compensar a sensação de que não tem controle nenhum sobre sua própria vida ou destino. Sua rebeldia é um grito por autonomia.`,
+    "Witch": `<strong>Bruxa/Bruxo:</strong> Diante de um limite, de um acordo desfavorável ou de uma situação de desvantagem, sua reação instintiva é alterar os termos em jogo. Na vida prática, você é a pessoa que reinterpreta combinados antigos, muda os planos na última hora para acomodar seu conforto e ajusta a narrativa de uma discussão até ter certeza de que saiu no controle da situação. O motor desse comportamento é um medo paralisante de ficar encurralado. Você manipula as circunstâncias, as expectativas e as pessoas ao seu redor para garantir que nunca mais seja a vítima das decisões de terceiros.`,
     
     "Heir": `<strong>Herdeiro/Herdeira:</strong> Você é aquele que o universo parece favorecer naturalmente. Onde outros lutam para controlar o Aspecto, você simplesmente se torna ele. As soluções tendem a cair no seu colo, e o vento sopra a seu favor. Sua grande força é também sua armadilha: você costuma ser levado pela correnteza. Seu desafio é parar de ser um passageiro da própria lenda e assumir o volante, antes que sua passividade o torne irrelevante.`,
     
-    "Mage": `<strong>Mago/Maga:</strong> Você entende o seu Aspecto porque viveu o pior lado dele. Ninguém precisa lhe explicar como o mundo funciona; você tem as cicatrizes para provar que já sabe. Você é o especialista solitário que viu a verdade nua e crua. Seu conhecimento vem da experiência direta, geralmente dolorosa. Você tende a se isolar porque acha que ninguém mais conseguiria compreender o peso do que você sabe. E, muitas vezes, você está certo.`,
+    "Mage": `<strong>Mago/Maga:</strong> A sua relação com o Aspecto é pautada no estudo ativo, solitário e sistemático. Você acumula informações, mapeia padrões e formula regras rígidas puramente para traçar a sua própria rota. Quando o Aspecto inunda a realidade de forma descontrolada e quebra os seus modelos mentais matemáticos, o seu sistema entra em colapso. O seu foco absoluto é a autossuficiência intelectual; você aprende as regras do jogo para garantir a sua própria sobrevivência.`,
     
-    "Seer": `<strong>Vidente:</strong> Você vê o caminho dourado. Enquanto os outros tateiam no escuro, você tem o mapa, a bússola e o manual de instruções. Você não luta na linha de frente; você diz aos outros onde bater para vencer. O conhecimento é um fardo pesado. Você sofre com a responsabilidade de saber o resultado de cada má decisão que seus amigos tomam. Seu desafio é agir com as informações que tem, em vez de paralisar analisando-as.`,
+    "Seer": `<strong>Vidente:</strong> Você é a pessoa que deixa os outros testarem o terreno primeiro, prestando atenção aos sucessos e catalogando os fracassos alheios para construir o seu próprio manual de sobrevivência. O seu distanciamento é metodológico: você exige ver as engrenagens girando antes de decidir como interagir com a máquina. Você opera estritamente na base do empirismo. Você estuda o mundo minuciosamente para dominar o seu funcionamento, usando a posição de observador para se manter a uma distância clínica das consequências.`,
 
     "Time": `<strong>Tempo:</strong> Você é orientado a objetivos e brutalmente eficiente. O relógio não lhe assusta; ele toca a sua música. Você entende que fins são necessários e que o sacrifício faz parte do progresso. Você vive em um estado de ansiedade crônica. Você corre contra o relógio não porque gosta, mas porque teme que, se parar por um segundo, tudo desmorone. Sua impaciência é o medo da mortalidade disfarçado de produtividade.`,
     
@@ -50,11 +50,11 @@ const classpectDescriptions = {
 	
 	 // --- HOPE (ESPERANÇA) ---
     "Maid:Hope": `
-        <h3>MAID OF HOPE (CRIADA/CRIADO DA ESPERANÇA)</h3>
-        <p><strong>Que Cria a Esperança / Feita(o) de Esperança.</strong></p>
-        <p>Você é a personificação da expressão "se eu não fizer, ninguém faz". Sua relação com a Esperança é de manutenção braçal. Você provavelmente sente que, se parar de sorrir ou de motivar as pessoas ao seu redor por um segundo sequer, todo o grupo vai colapsar em depressão. Você se tornou a bateria do grupo, mas ninguém pergunta se você está carregada.</p>
-        <p>Sua vida é uma faxina emocional constante: você varre o cinismo para baixo do tapete e lustra as expectativas dos outros até brilharem, porque você tem pavor do que acontece quando o silêncio se instala. O lado feio é que você frequentemente infantiliza as pessoas, recusando-se a deixá-las sentir o desespero necessário para crescer, porque você não quer lidar com a bagunça que a tristeza delas causaria na sua rotina perfeitamente otimista.</p>
-    `,
+        <h3>MAID OF HOPE (CRIADA/CRIADO DA ESPERANÇA)</h3>
+        <p><strong>Que Serve a Esperança / Feita(o) de Esperança.</strong></p>
+        <p>Você é a pessoa que acaba gerenciando o moral e a fé daqueles ao seu redor. Sua atuação ocorre de forma puramente prática: alguém precisa manter a convicção e o otimismo de pé para que o grupo não estagne. Você "serve a Esperança" tornando-se o repositório inesgotável de motivação em um ambiente que, de outra forma, cederia facilmente ao cinismo e à descrença.</p>
+        <p>Diante da falta de perspectiva ao seu redor, você simplesmente assume o fardo de ser a bateria emocional de todos. Você absorve a necessidade de acreditar em dias melhores e varre o desespero para longe, aceitando a posição de pilar de apoio por pura necessidade de manter as pessoas funcionais. O perigo real dessa dinâmica é se acostumar tanto a sustentar a fé dos outros que você acaba impondo uma positividade sufocante, invalidando as frustrações naturais do grupo e esgotando suas próprias convicções no processo.</p>
+    `,
     "Knight:Hope": `
         <h3>KNIGHT OF HOPE (CAVALEIRO/CAVALEIRA DA ESPERANÇA)</h3>
         <p><strong>O que Explora a Esperança / Protege a Esperança.</strong></p>
@@ -124,11 +124,11 @@ const classpectDescriptions = {
 
     // --- BLOOD (SANGUE) ---
     "Maid:Blood": `
-        <h3>MAID OF BLOOD (CRIADA/CRIADO DO SANGUE)</h3>
-        <p><strong>Que Cria o Sangue / Feita(o) de Sangue.</strong></p>
-        <p>Você é o "cimento" social, mas num nível quase patológico. Sua resposta à solidão é tornar-se indispensável. Você trabalha incansavelmente para manter o grupo unido, organizando encontros, resolvendo brigas e garantindo que ninguém seja excluído.</p>
-        <p>No entanto, isso nasce de um medo profundo de abandono. Você sente que, se parar de se esforçar por um minuto, todos vão embora. Você "cria" vínculos onde eles talvez não devessem existir, forçando conexões e carregando o peso emocional de relações unilaterais, tornando-se uma mártir da própria lealdade.</p>
-    `,
+        <h3>MAID OF BLOOD (CRIADA/CRIADO DO SANGUE)</h3>
+        <p><strong>Que Serve o Sangue / Feita(o) de Sangue.</strong></p>
+        <p>Você é a pessoa que acaba gerenciando as relações e as obrigações daqueles ao seu redor. Sua atuação ocorre de forma puramente prática: alguém precisa manter o grupo unido e resolver as fricções constantes para que a convivência não colapse. Você "serve o Sangue" tornando-se o repositório central dos laços e deveres mútuos em um ambiente formado por indivíduos que, de outra forma, se separariam na primeira dificuldade.</p>
+        <p>Diante da constante ameaça de ruptura social ao seu redor, você simplesmente assume o fardo de ser a âncora de todos. Você absorve o estresse das intrigas alheias e carrega o peso emocional das alianças, aceitando a posição de mediador permanente por pura necessidade estrutural. O perigo real dessa dinâmica é se acostumar tanto a ser o cimento das relações dos outros que você acaba preso a correntes que você mesma forjou, sacrificando sua própria autonomia para manter uma união que só existe às suas custas.</p>
+    `,
     "Knight:Blood": `
         <h3>KNIGHT OF BLOOD (CAVALEIRO/CAVALEIRA DO SANGUE)</h3>
         <p><strong>O que Explora o Sangue / Protege o Sangue.</strong></p>
@@ -198,11 +198,11 @@ const classpectDescriptions = {
 
     // --- BREATH (Suspiro) ---
     "Maid:Breath": `
-        <h3>MAID OF BREATH (CRIADA/CRIADO DO SUSPIRO)</h3>
-        <p><strong>Que Cria o Suspiro / Feita(o) de Suspiro.</strong></p>
-        <p>Você trabalha duro para parecer despreocupada. Sua liberdade não é natural; é uma construção trabalhosa. Você provavelmente aprendeu cedo que depender dos outros é perigoso, então você "cria" sua própria independência, resolvendo tudo sozinha e recusando ajuda.</p>
-        <p>Sua falha é confundir autossuficiência com isolamento. Você se torna "feita(o) de vento": inalcançável, intocável, sempre ocupada(o) demais ou distante demais para criar raízes. Você corre para não ter que parar e perceber que não tem ninguém te esperando na linha de chegada.</p>
-    `,
+        <h3>MAID OF BREATH (CRIADA/CRIADO DO SUSPIRO)</h3>
+        <p><strong>Que Serve o Suspiro / Feita(o) de Suspiro.</strong></p>
+        <p>Você é a força motriz não celebrada do seu círculo. Quando o ambiente ao seu redor paralisa em rotinas sufocantes ou dependências exaustivas, é você quem intervém para desatar os nós. A sua relação com o Suspiro se dá na base do esforço contínuo: a liberdade e o avanço não acontecem naturalmente ao seu redor, eles exigem que alguém empurre as coisas para frente.</p>
+        <p>Como ninguém mais parece capaz de romper a inércia, o trabalho de manter a vida fluindo acaba recaindo sobre os seus ombros. Você executa as rupturas necessárias e garante a autonomia do grupo de forma estritamente utilitária. O custo silencioso de ser o vento que move as velas alheias, no entanto, é o esgotamento da sua própria capacidade de criar raízes. Você acaba vivendo em um estado de transição perpétua, onde a sua independência deixou de ser uma escolha livre para se tornar apenas mais uma exigência exaustiva do seu papel.</p>
+    `,
     "Knight:Breath": `
         <h3>KNIGHT OF BREATH (CAVALEIRO/CAVALEIRA DO SUSPIRO)</h3>
         <p><strong>O que Explora o Suspiro / Protege o Suspiro.</strong></p>
@@ -271,12 +271,12 @@ const classpectDescriptions = {
     `,
 
     // --- VOID (VAZIO) ---
-    "Maid:Void": `
-        <h3>MAID OF VOID (CRIADA/CRIADO DO VAZIO)</h3>
-        <p><strong>Que Cria o Vazio / Feita(o) de Vazio.</strong></p>
-        <p>Você é a pessoa que resolve tudo nos bastidores e morre de medo de receber crédito. Sua eficiência depende da sua invisibilidade. Você "cria" o Vazio ao limpar os rastros, esconder os erros e manter a máquina funcionando sem que ninguém perceba as engrenagens.</p>
-        <p>Sua "Resposta" à pressão é desaparecer no trabalho. Você se sente segura sendo uma ferramenta sem rosto, porque se ninguém te vê, ninguém pode te julgar. O perigo é você se tornar tão eficiente em ser invisível que acaba apagando sua própria identidade, tornando-se um fantasma na própria vida.</p>
-    `,
+   "Maid:Void": `
+        <h3>MAID OF VOID (CRIADA/CRIADO DO VAZIO)</h3>
+        <p><strong>Que Serve o Vazio / Feita(o) de Vazio.</strong></p>
+        <p>Você é a pessoa que acaba gerenciando tudo aquilo que os outros se recusam a olhar. Sua atuação ocorre nos bastidores de forma puramente prática: alguém precisa lidar com as falhas estruturais, os segredos e os problemas invisíveis para que a engrenagem continue girando. Você "serve o Vazio" tornando-se o repositório silencioso do caos que o seu ambiente prefere ignorar.</p>
+        <p>A sua resposta à inércia ao seu redor é assumir o fardo do que não é dito. Você absorve a obscuridade do grupo e apaga os incêndios que os outros fingem não existir, aceitando a posição de uma utilidade silenciosa por pura necessidade de manter as coisas funcionando. O perigo real dessa dinâmica é se acostumar tanto a ser o pilar invisível de todos que você acaba permitindo que tratem a sua própria existência como se fosse, literalmente, nada.</p>
+    `,
     "Knight:Void": `
         <h3>KNIGHT OF VOID (CAVALEIRO/CAVALEIRA DO VAZIO)</h3>
         <p><strong>O que Explora o Vazio / Protege o Vazio.</strong></p>
@@ -346,11 +346,11 @@ const classpectDescriptions = {
 
     // --- LIGHT (LUZ) ---
     "Maid:Light": `
-        <h3>MAID OF LIGHT (CRIADA/CRIADO DA LUZ)</h3>
-        <p><strong>Que Cria a Luz / Feita(o) de Luz.</strong></p>
-        <p>Você não espera ter sorte; você fabrica a sua própria sorte. Você é a pessoa que estuda o triplo do que todo mundo só para se sentir segura. Sua relação com a Luz é de esforço braçal: você busca informações, cursos e validações incessantemente.</p>
-        <p>Psicologicamente, isso vem do medo de ser considerada uma fraude ou de ser irrelevante. Você "cria" sua importância tornando-se a pessoa que tem todas as respostas. O perigo é o burnout por tentar manter uma imagem de competência absoluta, recusando-se a admitir quando não sabe algo.</p>
-    `,
+        <h3>MAID OF LIGHT (CRIADA/CRIADO DA LUZ)</h3>
+        <p><strong>Que Serve a Luz / Feita(o) de Luz.</strong></p>
+        <p>A ignorância é um luxo que você nunca pôde bancar. Em um ambiente onde as pessoas parecem perfeitamente confortáveis em tomar decisões às cegas e tatear na obscuridade, o trabalho de buscar a verdade sempre acaba caindo no seu colo. Você não acumula conhecimento ou busca clareza por uma curiosidade acadêmica vaidosa; você o faz porque alguém precisa acender a luz antes que todos tropecem no próprio desespero. A informação, para você, é puramente uma ferramenta de sobrevivência coletiva.</p>
+        <p>Por perceber a constante falta de direção e sentido ao seu redor, você se submete ao esforço braçal de pesquisar, entender as regras e expor os fatos. O grupo depende da sua visão para funcionar e encontrar relevância. Contudo, transformar-se na enciclopédia e bússola dos outros carrega um peso silencioso: a proibição do erro. Ao assumir a responsabilidade vital de ser a pessoa que detém as respostas, você perde o direito de simplesmente não saber de algo.</p>
+    `,
     "Knight:Light": `
         <h3>KNIGHT OF LIGHT (CAVALEIRO/CAVALEIRA DA LUZ)</h3>
         <p><strong>O que Explora a Luz / Protege a Luz.</strong></p>
@@ -420,11 +420,11 @@ const classpectDescriptions = {
 
     // --- SPACE (ESPAÇO) ---
     "Maid:Space": `
-        <h3>MAID OF SPACE (CRIADA/CRIADO DO ESPAÇO)</h3>
-        <p><strong>Que Cria o Espaço / Feita(o) de Espaço.</strong></p>
-        <p>Você lida com o vazio existencial preenchendo-o com "fazer". Sua vida é uma rotina incessante de manutenção, organização e criação física. Você é quem arruma a bagunça que os outros deixam, quem garante que o ambiente esteja funcional e quem assume a carga horária pesada de projetos que ninguém mais quer tocar.</p>
-        <p>Você é quem arruma a bagunça que os outros deixam, quem garante que o ambiente esteja funcional e quem assume a carga horária pesada de projetos que ninguém mais quer tocar. O perigo é você se tornar uma acumuladora de tarefas ou de objetos, tentando tapar buracos emocionais com materialidade, ignorando suas necessidades emocionais em prol de continuar sendo "útil" e "produtiva".</p>
-    `,
+        <h3>MAID OF SPACE (CRIADA/CRIADO DO ESPAÇO)</h3>
+        <p><strong>Que Serve o Espaço / Feita(o) de Espaço.</strong></p>
+        <p>Enquanto os outros elaboram teorias e se movem freneticamente, alguém precisa providenciar o chão onde eles pisam. Você é a infraestrutura do seu círculo. Sua utilidade não nasce de uma vontade de ser produtiva, mas da dura constatação de que, se você não ceder o ambiente, o carro ou o esforço para materializar os planos físicos do grupo, nada acontece. Você atua como a fundação estática que acomoda a vida alheia.</p>
+        <p>O preço de assumir o fardo de ser o "inventário" de todos é um isolamento profundo. Ao prover o espaço para que os outros existam, você acaba se sentindo sufocada e desconectada do próprio ambiente que mantém de pé. A verdadeira armadilha não é acumular coisas, mas aceitar que a única forma de manter o grupo funcional é permitindo que a tratem como se você fosse apenas parte da decoração, presa por obrigação a um lugar de onde preferiria ir embora.</p>
+    `,
     "Knight:Space": `
         <h3>KNIGHT OF SPACE (CAVALEIRO/CAVALEIRA DO ESPAÇO)</h3>
         <p><strong>O que Explora o Espaço / Protege o Espaço.</strong></p>
@@ -494,11 +494,11 @@ const classpectDescriptions = {
 
     // --- TIME (TEMPO) ---
     "Maid:Time": `
-        <h3>MAID OF TIME (CRIADA/CRIADO DO TEMPO)</h3>
-        <p><strong>Que Cria o Tempo / Feita(o) de Tempo.</strong></p>
-        <p>Você é a pessoa que nunca para. Se o dia tem 24 horas, você faz ele render 30. Você trata o tempo como algo manufaturável: se você trabalhar duro o suficiente, se sacrificar sono e saúde, você pode "criar" tempo para fazer tudo o que precisa ser feito.</p>
-        <p>Sua psicologia é baseada na manutenção da existência através da ação. Você tem pavor de ficar ociosa, pois o silêncio te lembra da mortalidade. Você se torna uma escrava da própria agenda, consertando cronogramas e assumindo tarefas até se tornar uma máquina de produtividade à beira do colapso.</p>
-    `,
+        <h3>MAID OF TIME (CRIADA/CRIADO DO TEMPO)</h3>
+        <p><strong>Que Serve o Tempo / Feita(o) de Tempo.</strong></p>
+        <p>O tique-taque do relógio dita um ritmo que o seu círculo costuma ignorar, forçando você a assumir a gerência das urgências, dos prazos e dos finais inevitáveis. A sua necessidade constante de agir nasce da dura constatação de que, se você não tomar o controle do cronograma, as pessoas ao seu redor vão simplesmente deixar a entropia tomar conta e os limites explodirem.</p>
+        <p>A manutenção da existência funcional do grupo exige que você limpe a bagunça cronológica deles, apressando o que precisa acabar e garantindo que tudo ocorra no momento exato. O efeito colateral de atuar como o metrônomo das crises alheias é perder o direito ao próprio descanso. Ao passar a vida inteira garantindo que o mundo flua na hora certa, os seus momentos deixam de ser vividos organicamente para se tornarem apenas mais um item em uma exaustiva lista de obrigações.</p>
+    `,
     "Knight:Time": `
         <h3>KNIGHT OF TIME (CAVALEIRO/CAVALEIRA DO TEMPO)</h3>
         <p><strong>O que Explora o Tempo / Protege o Tempo.</strong></p>
@@ -568,11 +568,11 @@ const classpectDescriptions = {
 
     // --- HEART (CORAÇÃO) ---
     "Maid:Heart": `
-        <h3>MAID OF HEART (CRIADA/CRIADO DO CORAÇÃO)</h3>
-        <p><strong>Que Cria o Coração / Feita(o) de Coração.</strong></p>
-        <p>Você trata sua identidade como um projeto de artesanato. Você provavelmente sente um vazio aterrorizante quando não está performando a si mesma, então você trabalha duro para manter uma personalidade vibrante, única e esteticamente coerente. Você é obcecada por autenticidade, mas ironicamente, sua autenticidade é fabricada com muito esforço.</p>
-        <p>Você provavelmente depende muito da validação externa para sentir que existe. Se ninguém está te amando ou te odiando, você se sente um fantasma. Você "cria" emoção e drama onde não há, porque o silêncio emocional é aterrorizante. O perigo é você se tornar uma caricatura de si mesma, presa numa performance eterna.</p>
-    `,
+        <h3>MAID OF HEART (CRIADA/CRIADO DO CORAÇÃO)</h3>
+        <p><strong>Que Serve o Coração / Feita(o) de Coração.</strong></p>
+        <p>Em um ambiente dominado pela apatia ou pela superficialidade, a tarefa de manter a alma das coisas vivas invariavelmente cai no seu colo. A paixão, a identidade e a emoção genuína não florescem naturalmente ao seu redor. Para impedir que o seu círculo afunde na total desconexão, você assume a função de ser o núcleo pulsante da situação, providenciando a empatia e a força de caráter que os outros são incapazes de acessar por conta própria.</p>
+        <p>A necessidade de atuar como o suporte emocional e moral de todos transforma a sua essência em uma ferramenta de utilidade pública. Ao absorver a obrigação de manter o grupo sentindo e existindo de forma autêntica, a sua própria identidade deixa de ser uma experiência puramente pessoal. Ela se torna um trabalho braçal diário, prendendo-a à exaustiva rotina de ter que gerenciar e expressar uma carga emocional que os outros simplesmente terceirizaram para você.</p>
+    `,
     "Knight:Heart": `
         <h3>KNIGHT OF HEART (CAVALEIRO/CAVALEIRA DO CORAÇÃO)</h3>
         <p><strong>O que Explora o Coração / Protege o Coração.</strong></p>
@@ -642,11 +642,11 @@ const classpectDescriptions = {
 
     // --- MIND (MENTE) ---
     "Maid:Mind": `
-        <h3>MAID OF MIND (CRIADA/CRIADO DA MENTE)</h3>
-        <p><strong>Que Cria a Mente / Feita(o) de Mente.</strong></p>
-        <p>Você não deixa as coisas ao acaso. Você "cria" decisões. Se o grupo está estagnado, você força uma direção. Você estrutura sua vida com regras, planos e lógica rígida porque morre de medo do caos e da ambiguidade.</p>
-        <p>Sua psicologia é a da hiper-racionalização. Você tenta resolver problemas emocionais com planilhas. Você se torna a pessoa que tem um plano para tudo, mas muitas vezes esquece que pessoas não são peças de xadrez. Você corre o risco de se tornar um robô de eficiência, recusando-se a sentir qualquer coisa que não faça sentido lógico.</p>
-    `,
+        <h3>MAID OF MIND (CRIADA/CRIADO DA MENTE)</h3>
+        <p><strong>Que Serve a Mente / Feita(o) de Mente.</strong></p>
+        <p>A paralisia da indecisão é um luxo que o seu ambiente consome em excesso, deixando a conta para você pagar. Quando as pessoas ao seu redor se recusam a pesar consequências ou se perdem em dilemas intermináveis, a responsabilidade de traçar um curso de ação racional recai inevitavelmente sobre os seus ombros. A sua capacidade de planejamento opera como uma ferramenta de resgate contínuo: alguém precisa assumir o leme das escolhas para que o grupo não afunde na própria irracionalidade.</p>
+        <p>O peso de atuar como a bússola estratégica de todos transforma o seu intelecto em uma utilidade pública. Ao absorver a obrigação de prever resultados e estruturar os passos alheios, a sua capacidade de agir com espontaneidade é progressivamente apagada. O seu esgotamento diário é o resultado direto da exigência de ter que ser a única pessoa razoável na sala. Passando o tempo todo calculando o impacto das ações do grupo, você perde o direito de simplesmente cometer um erro impulsivo sem que a estrutura ao seu redor desabe.</p>
+    `,
     "Knight:Mind": `
         <h3>KNIGHT OF MIND (CAVALEIRO/CAVALEIRA DA MENTE)</h3>
         <p><strong>O que Explora a Mente / Protege a Mente.</strong></p>
@@ -716,11 +716,11 @@ const classpectDescriptions = {
 
     // --- RAGE (IRA) ---
     "Maid:Rage": `
-        <h3>MAID OF RAGE (CRIADA/CRIADO DA IRA)</h3>
-        <p><strong>Que Cria a Ira / Feita(o) de Ira.</strong></p>
-        <p>Você não consegue deixar as coisas em paz. Se está tudo calmo demais, você desconfia. Você "cria" conflito ou ceticismo porque o silêncio parece falso para você. Você é a pessoa que cutuca a ferida, que aponta o problema no plano perfeito, que faz o papel de advogada do diabo compulsivamente.</p>
-        <p>Sua psicologia é a da manutenção da vigilância. Você sente que se relaxar e aceitar as coisas como elas são, será enganada. Você trabalha duro para manter sua indignação ou sua desconfiança afiada, pois acredita que essa é a única maneira de se manter segura contra as mentiras do mundo.</p>
-    `,
+        <h3>MAID OF RAGE (CRIADA/CRIADO DA IRA)</h3>
+        <p><strong>Que Serve a Ira / Feita(o) de Ira.</strong></p>
+        <p>A ingenuidade é um escudo que o seu ambiente usa para evitar o trabalho sujo. Quando as pessoas ao seu redor preferem tapar os olhos para as verdades feias e varrer os atritos para debaixo do tapete, a função de lidar com a realidade nua e crua acaba caindo no seu colo. A sua relação com a Ira se dá na base da obrigação utilitária: alguém precisa assumir o papel de "vilão" ou de carrasco para que a engrenagem continue girando. Você é quem executa os cortes necessários e verbaliza a hostilidade que todos sentem, mas se recusam a admitir.</p>
+        <p>A falta de coragem e realismo do grupo força você a se tornar o receptáculo passivo para a negatividade do ambiente. Ao absorver todo o conflito para manter a situação, de certa forma, unida e funcional, você perde completamente o direito à paz de espírito. O custo de ser a pessoa que encara o lado feio das coisas é uma alienação severa. Você acaba isolada nesse papel ingrato, sacrificando a própria leveza para proteger um círculo de pessoas que frequentemente condena a sua atitude enquanto se beneficia da sua eficiência.</p>
+    `,
     "Knight:Rage": `
         <h3>KNIGHT OF RAGE (CAVALEIRO/CAVALEIRA DA IRA)</h3>
         <p><strong>O que Explora a Ira / Protege a Ira.</strong></p>
@@ -790,11 +790,11 @@ const classpectDescriptions = {
 
     // --- LIFE (VIDA) ---
     "Maid:Life": `
-        <h3>MAID OF LIFE (CRIADA/CRIADO DA VIDA)</h3>
-        <p><strong>Que Cria a Vida / Feita(o) de Vida.</strong></p>
-        <p>Você é a "consertadora" incansável. Você não aceita que as coisas quebrem, morram ou acabem. Você está sempre ocupada cuidando de alguém, financiando projetos ou injetando energia em causas perdidas.</p>
-        <p>Sua "Resposta" é a hiperatividade. Você tem pavor de ser inútil ou de parecer fraca. Você "cria" vida e luxo ao seu redor, mimando os outros, mas muitas vezes esquece de cuidar de si mesma, tratando-se como uma bateria inesgotável até o momento em que você pifa.</p>
-    `,
+        <h3>MAID OF LIFE (CRIADA/CRIADO DA VIDA)</h3>
+        <p><strong>Que Serve a Vida / Feita(o) de Vida.</strong></p>
+        <p>Em um ambiente onde a negligência e a fragilidade parecem ditar o ritmo, a tarefa de manter tudo respirando recai inteiramente sobre você. O seu papel é atuar como o motor de crescimento do grupo, injetando energia em situações estagnadas e tratando de feridas que os outros ignoram. A sua dedicação implacável é o puro resultado de uma percepção prática: se você não for a força que impulsiona a recuperação e o sustento de todos, as coisas ao seu redor vão simplesmente desmoronar.</p>
+        <p>O custo de operar como a fonte inesgotável de vitalidade transforma a sua própria essência em um recurso a ser consumido pelos outros. Ao assumir a obrigação de consertar o que quebra e nutrir quem desiste, o seu bem-estar pessoal é completamente apagado da equação. Você perde o direito ao descanso e à fraqueza, sendo engolida por uma rotina exaustiva onde garantir a sobrevivência e o conforto alheio esgota a sua energia até o inevitável colapso.</p>
+    `,
     "Knight:Life": `
         <h3>KNIGHT OF LIFE (CAVALEIRO/CAVALEIRA DA VIDA)</h3>
         <p><strong>O que Explora a Vida / Protege a Vida.</strong></p>
@@ -864,11 +864,11 @@ const classpectDescriptions = {
 
     // --- DOOM (DESTINO) ---
     "Maid:Doom": `
-        <h3>MAID OF DOOM (CRIADA/CRIADO DO DESTINO)</h3>
-        <p><strong>Que Cria o Destino / Feita(o) de Destino.</strong></p>
-        <p>Você é a pessoa que carrega o mundo nas costas. Você "cria" regras e limitações para si mesma, enchendo-se de obrigações e deveres. Você sente que deve se sacrificar ou sofrer para ter valor. Se algo dá errado, você assume a culpa e tenta consertar sozinha.</p>
-        <p>Sua psicologia é a do mártir proativo. Você se antecipa ao desastre tentando controlar tudo, criando sistemas rígidos para evitar o caos. O perigo é você se tornar a arquiteta da sua própria prisão, recusando ajuda e afundando sob o peso de responsabilidades que ninguém te pediu para carregar.</p>
-    `,
+        <h3>MAID OF DOOM (CRIADA/CRIADO DO DESTINO)</h3>
+        <p><strong>Que Serve o Destino / Feita(o) de Destino.</strong></p>
+        <p>A imprudência é o estado natural do seu círculo. Em um ambiente onde as pessoas insistem em ignorar limites e fugir das consequências de seus próprios erros, o trabalho de gerenciar o inevitável acaba caindo no seu colo. A sua relação com o Destino opera estritamente na base da contenção de danos: alguém precisa impor as regras e lidar com o sofrimento que o grupo tenta evitar a todo custo. Você atua como o limite físico e moral de uma estrutura que está sempre prestes a descarrilar.</p>
+        <p>A recusa coletiva em aceitar a dor e o fracasso força você a absorver a carga total das restrições do ambiente. Ao assumir a responsabilidade de ditar os sacrifícios necessários para manter a ordem, a sua própria vida se torna uma sequência exaustiva de deveres incontornáveis. O custo de atuar como o escudo humano da situação é afundar sob o peso de consequências que muitas vezes nem foram geradas por você, perdendo qualquer perspectiva de leveza ao garantir que os outros sobrevivam à própria negligência.</p>
+    `,
     "Knight:Doom": `
         <h3>KNIGHT OF DOOM (CAVALEIRO/CAVALEIRA DO DESTINO)</h3>
         <p><strong>O que Explora o Destino / Protege o Destino.</strong></p>
@@ -940,9 +940,9 @@ const classpectDescriptions = {
     
     "UI_Intro": `
         <div class="fade-in">
-            <h1>TESTE DE CLASSPECT DA SBURBIO V1.1</h1>
+            <h1>TESTE DE CLASSPECT DA SBURBIO V1.3</h1>
             <p>Oi! Que bom que encontrou esse teste. Eu sou o SC, popularmente conhecido como springus. Talvez você não me conheça, mas espero que bote fé no projeto Sburbio.</p>
-            <p>Antes de tudo, vamos falar sobre essa versão 1.1 do teste. Ainda enfrentamos algumas imprecisões em alguns resultados, mas estamos ouvindo e debatendo com todo mundo para melhorar o que pudermos! Estamos muito felizes com o acolhimento geral que recebemos e vamos nos esforçar para agradar todos.</p>
+            <p>Nova atualização, novo texto. Dessa vez, alterei algumas das descrições que precisavam de revisão e mexi na matemática para Prince e Bard. Acredito que vamos ver menos resultados errados agora. Lembrando que estamos sempre felizes com comentários na nossa página do Twitter, @sburbio!</p>
             <p>As perguntas e pontuações são baseadas no que aprendi com os textos de Dewdrop e Ouroborista, mas me baseio principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos, que me ajudaram na confecção desse quiz. São as outras pessoas que fazem parte do projeto.</p>
             <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
             <button onclick="start()">Bora ver.</button>
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
