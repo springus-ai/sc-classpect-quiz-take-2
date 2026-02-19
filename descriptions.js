@@ -10,7 +10,7 @@ const classpectDescriptions = {
     
     "Knight": `<strong>Cavaleiro/Cavaleira:</strong> Você é a pessoa que se esforça o dobro de todo mundo porque, lá no fundo, tem certeza de que é uma fraude e que, a qualquer momento, todos vão descobrir. Você serve aos outros e resolve problemas obsessivamente não por caridade, mas porque acredita que precisa comprar o seu lugar no grupo através da utilidade. Você usa o trabalho excessivo ou a ironia constante como uma armadura: se você estiver ocupado salvando o dia, ninguém vai ter tempo de ver o quanto você se sente vazio ou inadequado.`,
     
-    "Page": `<strong>Escudeiro/Escudeira:</strong> A princípio, você parece ser a pessoa com a maior deficiência no seu Aspecto — seja falta de habilidade social, falta de vontade ou falta de sorte. Você frequentemente se sente atrás de todos, dependendo da paciência e da ajuda alheia para o básico. Mas essa 'carência'é o que torna sua jornada tão promissora. Enquanto os prodígios estagnam porque acham que já sabem tudo, você continua escalando. Você explora o Aspecto ao permitir que ele te preencha lentamente, transformando cada humilhação e cada erro em dados brutos para o seu crescimento. Você é o investimento de longo prazo que parece arriscado, mas que paga os maiores dividendos.`,
+    "Page": `<strong>Escudeiro/Escudeira:</strong> A princípio, você parece ser a pessoa com a maior deficiência no seu Aspecto — seja falta de habilidade social, falta de vontade ou falta de sorte. Você frequentemente se sente atrás de todos, dependendo da paciência e da ajuda alheia para o básico. Mas essa 'carência' é o que torna sua jornada tão promissora. Enquanto os prodígios estagnam porque acham que já sabem tudo, você continua escalando. Você explora o Aspecto ao permitir que ele te preencha lentamente, transformando cada humilhação e cada erro em dados brutos para o seu crescimento. Você é o investimento de longo prazo que parece arriscado, mas que paga os maiores dividendos.`,
     
     "Maid": `<strong>Criado/Criada:</strong> Você é a pessoa no grupo, na família ou no ambiente de trabalho que sempre assume a carga mais pesada, simplesmente porque todos sabem que você é o único capaz de resolver o problema. Você começa sua trajetória preso às demandas dos outros, funcionando como a fundação silenciosa que sustenta a incompetência alheia. Você aceita o peso, muitas vezes ressentido, porque o seu medo de ver tudo desmoronar é maior do que o seu desejo de liberdade. Você se torna um mártir da sua própria utilidade, sendo tratado como um recurso inesgotável por pessoas que exigem a sua ajuda, mas raramente a valorizam.`,
     
@@ -965,6 +965,7 @@ const classpectDescriptions = {
         </div>
     `
 };
+
 
 
 
