@@ -439,7 +439,7 @@ function renderNullEnding() {
         <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
             
             <h1>TEM ALGO DE ERRADO AQUI.</h1>
-            <p style="font-style: italic; opacity: 0.8;">NENHUM CLASSPECT ATRIBUÍDO.</p>
+            <p style="font-style: italic; opacity: 0.8;">PORRA OF NENHUMA.</p>
             
             <img src="https://i.imgur.com/zcNK5Dk.png" alt="Void Glitch" style="max-width: 250px; width: 100%; height: auto; margin: 20px auto; display: block; border: 1px solid #ff0000; box-shadow: 0 0 10px rgba(255,0,0,0.5);">
 
@@ -487,6 +487,7 @@ window.onload = () => {
 
     render(introWithLibrary);
 };
+
 
 
 
