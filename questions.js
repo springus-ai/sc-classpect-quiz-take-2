@@ -15,7 +15,7 @@ const aspectQuestions = [
     ]},
     { t: "3. Ao iniciar um novo projeto pessoal, qual é a sua maior preocupação?", opts: [
         { txt: "Se eu vou conseguir dar forma a tudo o que imaginei e fazer aquilo realmente ocupar o espaço que merece no mundo.", w: { Space: 3, Hope: 2, Time: -2 } },
-        { txt: "Se terei tempo para terminar antes que o tédio destrua o plano.", w: { Time: 3, Breath: 1, Space: -2, Life: 1 }, destroys: "Space" },
+        { txt: "Se  terei a disciplina necessária para não desistir do projeto antes de finalizar.", w: { Time: 3, Breath: 2, Space: -2, Life: 1 }, destroys: "Space" },
         { txt: "Se esse projeto realmente diz algo verdadeiro sobre mim ou se estou apenas seguindo um impulso que não me representa.", w: { Heart: 3, Rage: 3, Mind: -3 } },
         { txt: "Se eu tomei as decisões certas no planejamento ou se estou ignorando alguma falha que vai arruinar o resultado depois.", w: { Mind: 3, Light: 1, Heart: -3 } },
         { txt: "Se isso que estou criando tem potencial para me levar a lugares novos e realmente mudar minha situação atual.", w: { Life: 3, Light: 2, Doom: -3 } } 
@@ -23,7 +23,7 @@ const aspectQuestions = [
     { t: "4. Como você lida com uma crítica dura sobre sua competência?", opts: [
         { txt: "Avalio se os pontos levantados fazem sentido ou se a pessoa apenas tomou uma decisão errada ao me julgar daquela forma.", w: { Heart: 3, Time: 1 } },
         { txt: "Me irrito profundamente. Minha competência não deve ser questionada pois exerço meu trabalho sempre com maestria.", w: { Heart: 3, Light: 2 } },
-        { txt: "Fico questionando a real intenção por trás da fala. As pessoas podem criticar por muitos motivos diferentes.", w: { Light: 3, Rage: 2 } },
+        { txt: "Fico questionando a real intenção por trás da crítica. As pessoas podem julgar por muitos motivos diferentes.", w: { Light: 3, Rage: 2 } },
         { txt: "Aceito o que foi dito. Se eu falhei em ser eficiente, é natural que eu tenha que lidar com as cobranças e os resultados disso.", w: { Doom: 3, Void: 1, Time: 2, Life: -2 } },
         { txt: "Tento enxergar o que a pessoa viu. Às vezes ela percebeu algum detalhe ou uma informação importante que passou batido por mim.", w: { Blood: 3, Light: 2, Void: -2 } }
     ]},
@@ -1007,4 +1007,5 @@ const questionsByAspect = {
 	]} 
   ] 
 };
+
 
