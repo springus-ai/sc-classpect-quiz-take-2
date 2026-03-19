@@ -613,7 +613,7 @@ const classpectDescriptions = {
         <h3>PAGE OF HEART (ESCUDEIRO/ESCUDEIRA DO CORAÇÃO)</h3>
         <p><strong>Aquele que explora o Coração / Explora através do Coração.</strong></p>
         <p>Você vive assombrado pela sensação de que é uma "casca vazia" ou uma fraude. Enquanto todo mundo parece ter uma personalidade natural e autêntica, você sente que precisa construir a sua manualmente, peça por peça. Você quer tanto ser amado e ter um papel no "enredo", que permite que os outros ditem quem você é.</p>
-        <p>ocê é o tipo de pessoa que fica obcecada por testes de personalidade, signos, kins ou personagens de ficção, tentando colar esses rótulos na testa para ter uma noção de quem é. Você mimetiza a personalidade de pessoas que admira, adotando os gostos, a gíria e até a postura delas, na esperança de que, se você agir como alguém que tem "alma", eventualmente você terá uma também.</p>
+        <p>Você é o tipo de pessoa que fica obcecada por testes de personalidade, signos, kins ou personagens de ficção, tentando colar esses rótulos na testa para ter uma noção de quem é. Você mimetiza a personalidade de pessoas que admira, adotando os gostos, a gíria e até a postura delas, na esperança de que, se você agir como alguém que tem "alma", eventualmente você terá uma também.</p>
     `,
     "Rogue:Heart": `
         <h3>ROGUE OF HEART (LADINO/LADINA DO CORAÇÃO)</h3>
