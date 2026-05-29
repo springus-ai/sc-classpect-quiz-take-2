@@ -503,19 +503,19 @@ const questionsByAspect = {
     ]}
     ],
     "Mind": [
-    { t: "Em um projeto de grupo, a decisão coletiva é logicamente impecável, mas prejudicará injustamente um indivíduo isolado.", opts: [
-        { txt: "Sigo o plano. A integridade do sistema é prioridade; sentimentos individuais não devem corromper a lógica.", w: { Maid: 3, Knight: 2, Prince: -3 } },
-        { txt: "Ignoro a decisão ou apresento um contra-argumento emocional. Não tolero que uma lógica fria esmague o que sinto ser correto.", w: { Prince: 3, Witch: -2, Sylph: -1 } },
-        { txt: "Finjo que não vi as consequências ruins. Deixo o grupo decidir e, se der errado pra alguém, a culpa é da maioria.", w: { Bard: 3, Heir: 1, Rogue: 1, Prince: -2 } },
-        { txt: "Analiso os desdobramentos e tento encontrar uma brecha técnica que proteja o indivíduo sem invalidar o plano.", w: { Seer: 3, Mage: 2, Sylph: 3, Thief: -1 } },
+    { t: "Você recebe uma mensagem enorme de alguém claramente irritado com você. Antes de responder, passa vários minutos relendo cada frase e tentando prever qual resposta evitaria o pior desfecho possível.", opts: [
+        { txt: "Reescrevo a mensagem várias vezes e acabo demorando tanto tentando prever todas as reações possíveis que quase não respondo.", w: { Page: 3, Mage: 2, Heir: 1, Prince: -1 } },
+        { txt: "Puxo da memória conversas parecidas que já deram certo e adapto o padrão pra encaixar na situação atual.", w: { Thief: 3, Mage: 1, Seer: 1, Bard: -1 } },
+        { txt: "Assumo o controle do ritmo da conversa imediatamente, pressionando os argumentos mais frágeis da outra pessoa.", w: { Knight: 3, Thief: 1, Maid: -1, Page: -2 } },
+        { txt: "Perco a paciência com o teatro social e respondo exatamente o que penso, mesmo sabendo que isso provavelmente vai piorar tudo.", w: { Prince: 3, Bard: 2, Witch: -1, Sylph: -2 } },
         { txt: "Exponho a falha moral do plano para que o grupo lide com o peso da escolha, retirando minha responsabilidade direta.", w: { Rogue: 3, Heir: 3, Page: -2, Maid: -1 } }
     ]},
-    { t: "Você está em um jantar formal onde todos fingem se gostar. Você percebe claramente as máscaras sociais e as intenções ocultas.", opts: [
-        { txt: "Sinto um cansaço profundo. Ver a mecânica por trás das interações tira a cor da vida; sinto-me prisioneiro desse teatro.", w: { Mage: 3, Page: 3, Seer: 1, Prince: -2 } },
-        { txt: "Mantenho minha própria máscara perfeitamente polida. Uso o protocolo social como armadura.", w: { Knight: 3, Maid: 2, Rogue: -2 } },
-        { txt: "Eu esqueço o protocolo e falo o que penso. Se ficar um clima estranho, pelo menos quebrou a falsidade.", w: { Bard: 3, Thief: 1, Witch: 1, Knight: -2 } },
-        { txt: "Intervenho nas conversas, mudando o rumo dos assuntos para testar até onde as pessoas sustentam seus personagens.", w: { Witch: 3, Thief: 2, Heir: -2, Sylph: -1 } },
-        { txt: "Observo em silêncio, quase invisível, absorvendo as dinâmicas para entender quem realmente detém o poder.", w: { Seer: 3, Heir: 2, Thief: -3, Knight: -1 } }
+    { t: "Você percebe que duas pessoas próximas brigaram porque interpretaram completamente errado as intenções uma da outra. Nenhuma delas parece disposta a ceder.", opts: [
+        { txt: "Tento reorganizar a conversa de um jeito mais racional, traduzindo o que cada lado provavelmente quis dizer antes que a situação piore ainda mais.", w: { Sylph: 3, Seer: 2, Maid: 1, Prince: -2 } },
+        { txt: "Mesmo em situações tensas, consigo me distanciar emocionalmente o bastante pra analisar os diferentes lados antes de agir.", w: { Heir: 3, Sylph: 1, Knight: 1, Bard: -2 } },
+        { txt: "Conforme a discussão escala, começo a interromper os dois lados constantemente porque fica claro pra mim que ninguém ali está percebendo onde essa situação vai acabar.", w: { Prince: 3, Knight: 1, Bard: -2, Heir: -1 } },
+        { txt: "Evito me envolver diretamente. Discussões assim normalmente se resolvem sozinhas quando as pessoas cansam de reagir no impulso.", w: { Bard: 3, Thief: 1, Page: -1, Sylph: -2 } },
+        { txt: "Mudo minha abordagem dependendo de com quem estou falando, tentando fazer cada pessoa baixar a guarda separadamente.", w: { Witch: 3, Thief: 2, Maid: 1, Rogue: -1 } }
     ]},
     { t: "Um erro grave foi cometido por um colega e a culpa está recaindo sobre o grupo todo. Como você se posiciona?", opts: [
         { txt: "Utilizo a falha dele para demonstrar minha própria competência, garantindo que minha posição saia fortalecida.", w: { Thief: 3, Prince: 2, Knight: -2, Rogue: -2 } },
@@ -531,19 +531,19 @@ const questionsByAspect = {
         { txt: "Busco o conselho de várias pessoas, tentando sintetizar a visão delas em uma estratégia justa.", w: { Sylph: 3, Page: 2, Thief: -2, Witch: -1 } },
         { txt: "Procuro atalhos ou formas de influenciar o sistema a meu favor, focando no melhor resultado com menor esforço.", w: { Thief: 3, Witch: 3, Rogue: -2, Knight: -1 } }
     ]},
-    { t: "Duas pessoas que você estima estão em um conflito intelectual acirrado e pedem sua mediação. Como você age?", opts: [
-        { txt: "Desmonto os argumentos de ambos, apontando onde as emoções estão cegando o raciocínio.", w: { Witch: 3, Knight: 2, Prince: 2, Sylph: -2 } },
-        { txt: "Escuto ambos, tentando fazer com que cada um entenda a lógica do outro para curar a divisão.", w: { Sylph: 3, Rogue: 2, Seer: 1, Thief: -2 } },
-        { txt: "Fico em silêncio. Vejo tanta validade lógica em ambos os lados que não consigo escolher.", w: { Page: 3, Mage: 1, Maid: -2 } },
-        { txt: "Faço piada da briga ou dou uma resposta sem sentido para desarmar a tensão lógica com confusão.", w: { Bard: 3, Heir: 1, Rogue: 1, Seer: -2 } },
-        { txt: "Uso a tensão para introduzir novas variáveis, mudando o foco da briga para algo mais produtivo.", w: { Heir: 3, Thief: 2, Page: -2, Seer: -1 } }
+    { t: "Você percebe que duas escolhas disponíveis vão gerar problemas inevitáveis, mas uma delas mantém a situação mais estável a longo prazo.", opts: [
+        { txt: "Escolho a opção mais estável, mesmo sabendo que algumas pessoas vão ficar insatisfeitas com isso.", w: { Sylph: 3, Heir: 2, Prince: 1, Bard: -2 } },
+        { txt: "Continuo revisando mentalmente cada possibilidade porque tenho medo de deixar passar algum detalhe óbvio que mudaria completamente a decisão correta.", w: { Page: 3, Seer: 2, Heir: 1, Prince: -1 } },
+        { txt: "Tento reorganizar a situação pra criar uma terceira alternativa que evite os piores efeitos dos dois lados.", w: { Witch: 3, Maid: 2, Rogue: 1, Bard: -1 } },
+        { txt: "Acabo assumindo a responsabilidade pela decisão porque confiar que os outros vão escolher direito parece arriscado demais.", w: { Prince: 3, Thief: 2, Heir: -1, Bard: -2 } },
+        { txt: "Aceito que toda escolha importante acaba favorecendo alguém e prejudicando outra pessoa, então prefiro garantir que eu não seja quem sai perdendo.", w: { Thief: 3, Mage: 1, Heir: -1, Sylph: -2 } }
     ]},
-    { t: "Você descobre uma informação confidencial que poderia mudar a percepção de todos sobre um líder. O que faz?", opts: [
-        { txt: "Guardo a informação. O conhecimento é ferramenta de ordem; revelá-la sem plano causaria caos desnecessário.", w: { Maid: 3, Knight: 2, Seer: 1 } },
-        { txt: "Compartilho a verdade com os afetados. Acredito que a transparência é necessária para decisões livres.", w: { Rogue: 3, Sylph: 3, Heir: 1, Prince: -2 } },
-        { txt: "Uso o segredo como moeda de troca para garantir que minhas próprias ideias sejam implementadas.", w: { Thief: 3, Prince: 3, Page: -3, Rogue: -2 } },
-        { txt: "Deixo escapar sem querer ou esqueço de guardar segredo. Se a liderança cair por isso, caiu.", w: { Bard: 3, Heir: 1, Mage: 1, Knight: -2 } },
-        { txt: "Sinto o peso dessa informação como um fardo. O simples fato de saber me faz sentir responsável.", w: { Mage: 3, Seer: 2, Witch: 2, Knight: -1 } }
+    { t: "Você percebe que uma pessoa próxima está tomando uma decisão ruim, mas ela parece convencida de que está sendo totalmente racional.", opts: [
+        { txt: "Em vez de discutir a escolha diretamente, tento mudar o jeito como ela está enxergando o problema para abrir outras possibilidades.", w: { Witch: 3, Sylph: 1, Prince: -1, Knight: -1 } },
+        { txt: "Aponto que ela não está sendo tão imparcial quanto pensa. A decisão já parece tomada, ela só está inventando uma justificativa bonita.", w: { Prince: 3, Mage: 1, Bard: -1, Heir: -2 } },
+        { txt: "Evito dizer o que ela deve fazer. Tenho medo de interferir demais e depois descobrir que minha leitura estava errada.", w: { Rogue: 3, Page: 1, Prince: -2, Thief: -1 } },
+        { txt: "Uso o raciocínio dela para entender o que ela valoriza e aproveito essa informação quando eu precisar tomar decisões parecidas.", w: { Thief: 3, Mage: 1, Rogue: -1, Sylph: -1 } },
+        { txt: "Tento mostrar que eu também consigo analisar a situação friamente, mas acabo deixando claro demais que estou pessoalmente incomodado.", w: { Page: 3, Bard: 1, Knight: -1, Heir: -1 } }
     ]},
     { t: "Você está diante de uma escolha onde todos os caminhos levam a algum tipo de perda. Como sua mente processa a paralisia?", opts: [
         { txt: "Escolho o caminho que preserva a lógica do sistema maior, mesmo que eu sofra. Sacrifício racional.", w: { Maid: 3, Knight: 2, Seer: 1, Prince: -3 } },
@@ -552,26 +552,26 @@ const questionsByAspect = {
         { txt: "Analiso qual perda é mais útil a longo prazo. Se algo deve ser destruído, que seja o menos eficiente.", w: { Prince: 3, Mage: 3, Rogue: 1, Sylph: -2 } },
         { txt: "Paraliso e não faço nada. Se eu não escolher, tecnicamente a culpa do resultado não é minha.", w: { Bard: 3, Page: 2, Heir: 1, Knight: -2 } }
     ]},
-    { t: "Alguém questiona quem você é de verdade por trás de todas as suas opiniões sensatas e comportamentos calculados. O que responde?", opts: [
-        { txt: "Eu sou o conjunto das minhas escolhas. Não existe 'eu' místico; sou a soma lógica das minhas ações.", w: { Mage: 3, Maid: 2, Seer: 2 } },
-        { txt: "Sinto um vazio. Temo que, se tirar as camadas de lógica, não sobre nada no centro.", w: { Page: 3, Knight: 3, Rogue: 2, Prince: -1 } },
-        { txt: "Eu mudo conforme a necessidade. Minha 'verdade' é ser quem preciso ser para funcionar.", w: { Thief: 3, Witch: 2, Heir: 2, Sylph: -2 } },
-        { txt: "Respondo qualquer coisa. Não levo minha identidade a sério o suficiente para ter uma crise existencial com isso.", w: { Bard: 3, Heir: 2, Rogue: 1, Mage: -1 } },
-        { txt: "A identidade é uma ilusão que limita. Prefiro não me definir, permitindo que vejam a lógica que lhes convém.", w: { Rogue: 3, Sylph: 3, Knight: -2, Bard: 1 } }
+    { t: "Você entra em um ambiente novo onde todo mundo parece seguir regras sociais que ninguém explicou claramente.", opts: [
+        { txt: "Observo como as pessoas agem, copio o básico para não chamar atenção e vou ajustando meu comportamento conforme entendo melhor o clima.", w: { Heir: 3, Maid: 1, Page: -1, Prince: -1 } },
+        { txt: "Tento identificar rapidamente quais atitudes ali são recompensadas ou punidas, porque entender essas regras evita problemas depois.", w: { Mage: 3, Seer: 2, Bard: -1, Witch: -1 } },
+        { txt: "Adoto uma postura educada e neutra até entender qual papel faz sentido naquele espaço. Melhor criar uma base segura antes de agir demais.", w: { Maid: 3, Knight: 1, Bard: -2, Prince: -1 } },
+        { txt: "Mesmo tentando me encaixar, fico consciente demais de cada gesto e palavra, como se qualquer detalhe pudesse denunciar que não sei o que estou fazendo.", w: { Knight: 3, Page: 2, Heir: -1, Bard: -1 } },
+        { txt: "Ajo do meu jeito até me darem um motivo real para mudar. Não gosto de fingir que entendi regras que ninguém teve coragem de explicar.", w: { Bard: 3, Prince: 1, Maid: -2, Heir: -1 } }
     ]},
-    { t: "Você sente que sua vida atual é uma farsa e que está apenas desempenhando um papel. Qual sua reação?", opts: [
-        { txt: "Dobro a aposta no papel. Vou polir essa máscara até que ela seja indistinguível da realidade.", w: { Knight: 3, Page: 3, Maid: 1, Prince: -2 } },
-        { txt: "Abandono tudo. Rompo laços e mudo de cenário; prefiro o vazio ao peso de uma lógica falsa.", w: { Prince: 3, Heir: -2, Seer: -2 } },
-        { txt: "Analiso as escolhas que me trouxeram até aqui para recalcular a rota racionalmente.", w: { Mage: 3, Seer: 3, Witch: 2, Knight: -2 } },
-        { txt: "Continuo atuando, mas de forma irônica. Se é tudo uma farsa, vou me divertir com o absurdo do roteiro.", w: { Bard: 3, Thief: 2, Mage: 1, Page: -1 } },
-        { txt: "Deixo que o tempo decida. Sigo o fluxo, esperando que uma nova circunstância defina quem devo ser.", w: { Heir: 3, Rogue: 2, Witch: -3, Maid: -1 } }
+    { t: "Você percebe que está adiando uma resposta importante porque qualquer escolha de palavras pode mudar completamente o rumo da situação.", opts: [
+        { txt: "Organizo o que preciso dizer em partes claras: o fato, a consequência e a decisão que vem depois disso.", w: { Maid: 3, Seer: 1, Bard: -1, Page: -1 } },
+        { txt: "Releio várias vezes procurando onde a mensagem pode ser mal interpretada antes de finalmente enviar.", w: { Knight: 3, Seer: 2, Bard: -1, Heir: -1 } },
+        { txt: "Percebo qual é o ponto sensível da conversa, mas tenho dificuldade de transformar isso numa resposta que faça sentido para outra pessoa.", w: { Seer: 3, Rogue: 1, Knight: -1, Prince: -1 } },
+        { txt: "Tento tirar o peso emocional da situação e responder só ao que realmente precisa ser resolvido.", w: { Sylph: 3, Maid: 1, Bard: -2, Prince: -1 } },
+        { txt: "Respondo do jeito que parece mais verdadeiro pra mim no momento. Ficar calculando cada consequência só deixaria tudo artificial.", w: { Bard: 3, Witch: 1, Knight: -2, Sylph: -1 } }
     ]},
-    { t: "Em um jogo de estratégia complexo contra um oponente inteligente, qual é a sua principal força?", opts: [
-        { txt: "Minha capacidade de antecipar movimentos. Jogo contra a mente dele, prevendo decisões.", w: { Seer: 3, Mage: 1, Witch: 2, Page: -1 } },
-        { txt: "Minha disciplina. Sigo as regras à risca, cansando o oponente pela ausência de erros.", w: { Maid: 3, Knight: 2, Page: 2, Bard: -3 } },
-        { txt: "Minha audácia em subverter a lógica. Faço jogadas propositalmente caóticas para quebrar o padrão dele.", w: { Prince: 2, Thief: -2, Seer: -2 } },
-        { txt: "Eu jogo sem prestar muita atenção. Minha imprevisibilidade vem do fato de que nem eu sei o que estou fazendo.", w: { Bard: 3, Heir: 2, Rogue: 1, Mage: -2 } },
-        { txt: "Minha habilidade em usar a própria estratégia do oponente contra ele, tomando a vantagem quando ele confia nela.", w: { Thief: 3, Rogue: 2, Heir: 2, Knight: -1 } }
+    { t: "Você percebe que a explicação de alguém parece lógica na superfície, mas alguma coisa nela não encaixa com o que a pessoa está fazendo na prática.", opts: [
+        { txt: "Questiono as premissas da explicação. Talvez o problema não esteja na conclusão, mas nas regras que a pessoa usou para chegar até ela.", w: { Witch: 3, Seer: 1, Maid: -1, Page: -1 } },
+        { txt: "Comparo o discurso com o comportamento. Se a lógica não aparece nas ações, então ela provavelmente é só uma justificativa conveniente.", w: { Prince: 3, Mage: 1, Heir: -1, Bard: -1 } },
+        { txt: "Tento identificar o padrão por trás da contradição, porque esse tipo de raciocínio costuma aparecer de novo em outras situações.", w: { Mage: 3, Seer: 1, Witch: -1, Page: -1 } },
+        { txt: "Evito bater de frente e observo como outras pessoas reagem à explicação antes de decidir se minha leitura faz sentido.", w: { Rogue: 3, Heir: 1, Prince: -2, Knight: -1 } },
+        { txt: "Tento provar que consigo acompanhar o raciocínio, mas acabo defendendo ou atacando a ideia antes de realmente entender todas as partes.", w: { Page: 3, Bard: 1, Seer: -1, Mage: -1 } }
     ]}
     ],
    "Heart": [
@@ -647,147 +647,147 @@ const questionsByAspect = {
     ]}
     ],
     "Hope": [
-    { t: "Você descobre que uma figura de autoridade ou ídolo em quem confiava cometeu um erro moral grave. Qual sua reação imediata?", opts: [
-        { txt: "Corto os laços imediatamente. Se a imagem perfeita foi manchada, a pessoa inteira é uma mentira.", w: { Prince: 3, Bard: 2, Witch: -2, Sylph: -3 } },
-        { txt: "Tento justificar as ações dele para mim mesmo. Deve haver uma razão maior por trás disso.", w: { Witch: 3, Sylph: 2, Heir: 1, Prince: -3 } },
-        { txt: "Sinto-me traído, mas guardo para mim. Continuo agindo como se confiasse, pois preciso dessa estrutura.", w: { Page: 3, Knight: 2, Thief: -1, Prince: -2 } },
-        { txt: "Nem me abalo. Ídolos são falhos mesmo. Continuo seguindo a pessoa só para ver onde isso vai dar.", w: { Bard: 3, Mage: 1, Rogue: 1, Knight: -2 } },
-        { txt: "Analiso o contexto histórico e as falhas humanas dele. Eu já esperava que isso pudesse acontecer.", w: { Seer: 3, Mage: 2, Heir: -1, Bard: -1 } }
+    { t: "Alguém te chama para uma ideia meio absurda, mas claramente feita com entusiasmo genuíno.", opts: [
+        { txt: "Digo sim antes de pensar demais. Se a pessoa acredita tanto nisso, talvez valha pelo menos tentar.", w: { Page: 3, Heir: 2, Seer: -1, Prince: -2 } },
+        { txt: "Tento entender se aquilo é uma empolgação verdadeira ou só uma fantasia que vai desabar no primeiro obstáculo.", w: { Mage: 3, Seer: 2, Page: -1, Bard: -1 } },
+        { txt: "Incentivo a pessoa e tento fazer os outros darem uma chance também. Às vezes alguém só precisa de permissão para começar.", w: { Sylph: 3, Maid: 1, Prince: -2, Bard: -1 } },
+        { txt: "Apoio se fizer sentido para mim, mas não vou fingir fé em algo só para manter o clima bonito.", w: { Prince: 3, Knight: 1, Heir: -1, Sylph: -2 } },
+        { txt: "Tento transformar a ideia em algo que pareça possível para mais gente, mesmo que precise mudar um pouco o sonho original.", w: { Witch: 3, Knight: 1, Mage: -1, Prince: -1 } }
     ]},
-    { t: "Seu grupo de amigos está desanimado com um projeto que parece destinado ao fracasso. O que você faz?", opts: [
-        { txt: "Assumo a liderança e exalo uma confiança exagerada, garantindo a todos que vai dar certo.", w: { Knight: 3, Page: 2, Rogue: -1, Bard: -2 } },
-        { txt: "Aponto friamente todas as falhas. É melhor destruir a falsa esperança agora do que vê-los sofrer depois.", w: { Prince: 3, Thief: 1, Sylph: -3, Maid: -2 } },
-        { txt: "Eu não faço nada. Se eles querem desistir, que desistam. Não sou eu quem vai carregar o moral do grupo.", w: { Bard: 3, Rogue: 1, Mage: 1, Sylph: -2 } },
-        { txt: "Continuo trabalhando na minha parte alegremente. Minha fé inabalável acaba contagiando alguns.", w: { Heir: 3, Maid: 2, Seer: -2, Prince: -3 } },
-        { txt: "Deixo que eles desistam se quiserem. Às vezes, o colapso é necessário para surgirem ideias novas.", w: { Mage: 2, Seer: 1, Knight: -2, Sylph: -2 } }
+	{ t: "Você percebe que está esperando uma confirmação externa para começar algo que realmente quer fazer.", opts: [
+        { txt: "Fico preso até alguém me dar o sinal verde. Se ninguém confirmar que posso, parece errado seguir sozinho.", w: { Maid: 3, Rogue: 1, Prince: -2, Thief: -1 } },
+        { txt: "Tento me convencer de que mereço tentar, mas uma parte minha ainda acha que essa chance é boa demais para ser real.", w: { Rogue: 3, Page: 1, Heir: -1, Thief: -2 } },
+        { txt: "Crio meu próprio motivo para seguir. Se eu preciso de uma luz verde, talvez ela tenha que vir de mim.", w: { Maid: 3, Witch: 1, Rogue: -1, Bard: -1 } },
+        { txt: "Uso a expectativa dos outros como combustível. Se eles acreditam em mim, eu consigo me empurrar mais longe.", w: { Knight: 3, Thief: 1, Prince: -1, Bard: -1 } },
+        { txt: "Finjo que não preciso de aprovação nenhuma, mas acabo tentando provar que aquilo era real e possível o tempo todo.", w: { Page: 3, Knight: 1, Mage: -1, Seer: -1 } }
     ]},
-    { t: "Você se depara com uma teoria ou crença que contradiz fatos lógicos, mas que faz você se sentir incrivelmente bem e seguro.", opts: [
-        { txt: "Abraço a crença. Prefiro viver em uma narrativa que me dê propósito e felicidade do que na frieza dos fatos.", w: { Maid: 3, Witch: 2, Heir: 1, Prince: -3 } },
-        { txt: "Rejeito a crença com desprezo. O conforto gerado pela ignorância é uma fraqueza que recuso.", w: { Prince: 3, Mage: 1, Heir: -3, Page: -2 } },
-        { txt: "Acredito nela 'ironicamente'. É divertido agir como se fosse verdade, mesmo sabendo que não faz sentido.", w: { Bard: 3, Rogue: 1, Thief: 1, Seer: -2 } },
-        { txt: "Estudo a estrutura dessa crença para entender por que ela é tão atraente para a mente humana.", w: { Mage: 3, Seer: 2, Bard: -1, Knight: -1 } },
-        { txt: "Uso essa crença para motivar outras pessoas. É uma ferramenta útil para elevar o moral.", w: { Thief: 3, Rogue: 2, Bard: 1, Seer: -2 } }
+	{ t: "Uma pessoa em quem você confiava muito decepciona você de um jeito difícil de ignorar.", opts: [
+        { txt: "Tento descobrir se minha confiança estava no lugar errado ou se ainda existe algo verdadeiro ali que vale salvar.", w: { Mage: 3, Seer: 1, Bard: -1, Page: -1 } },
+        { txt: "Tenho dificuldade de abandonar a fé nela. Uma parte minha continua achando que tudo vai se acertar de algum jeito.", w: { Heir: 3, Maid: 1, Prince: -2, Mage: -1 } },
+        { txt: "Corto a idealização na hora. Se a confiança quebrou, não vou continuar sustentando uma mentira confortável.", w: { Prince: 3, Bard: 1, Sylph: -2, Heir: -1 } },
+        { txt: "Tento ajudar a pessoa a recuperar minha confiança, mas fico insistindo demais para que ela prove que ainda pode ser boa.", w: { Sylph: 3, Maid: 1, Prince: -1, Thief: -1 } },
+        { txt: "Dou um jeito de parecer bem com isso, mas no fundo começo a duvidar de tudo que eu acreditava sobre a pessoa.", w: { Bard: 3, Rogue: 1, Heir: -1, Knight: -1 } }
     ]},
-    { t: "Em um debate acalorado sobre ética, todos estão contra a sua opinião. Como você se posiciona?", opts: [
-        { txt: "Mantenho minha posição com teimosia. O fato de serem muitos contra mim só prova que estou certo.", w: { Thief: 3, Prince: 3, Knight: 2, Maid: 1, Rogue: -3 } },
-        { txt: "Cedo e concordo com o grupo para manter a harmonia, mas guardo minha convicção em segredo.", w: { Page: 3, Rogue: 2, Sylph: 1, Thief: -3 } },
-        { txt: "Tento reformular a visão deles, mostrando que, no fundo, queremos a mesma coisa.", w: { Sylph: 3, Witch: 2, Seer: 1, Prince: -2 } },
-        { txt: "Mudo de assunto ou faço uma piada. Não tenho energia para defender ideais se ninguém quer ouvir.", w: { Bard: 3, Heir: 2, Mage: 1, Knight: -2 } },
-        { txt: "Desmonto os argumentos deles um por um, focando em provar que a lógica deles é falha.", w: { Prince: 2, Mage: 2, Seer: 1, Heir: -2 } }
+	{ t: "Os fatos apontam que algo importante para você provavelmente não vai acontecer, mas abrir mão disso parece destruir o sentido de tudo.", opts: [
+        { txt: "Seguro a fé mesmo assim. Enquanto existir qualquer possibilidade, eu não aceito tratar aquilo como morto.", w: { Heir: 3, Page: 2, Seer: -1, Mage: -1 } },
+        { txt: "Tento descobrir se ainda existe um sinal real de esperança ou se estou só me protegendo de uma verdade dolorosa.", w: { Mage: 3, Seer: 2, Bard: -1, Heir: -1 } },
+        { txt: "Crio outro motivo para continuar. Se uma esperança falha, eu preciso acender outra antes que tudo pare.", w: { Maid: 3, Witch: 1, Rogue: -1, Prince: -1 } },
+        { txt: "Recuso a conclusão dos outros. O mundo não tem direito de decidir sozinho o que ainda pode ou não existir.", w: { Prince: 3, Witch: 1, Sylph: -1, Mage: -1 } },
+        { txt: "Finjo que já aceitei, mas continuo voltando para a fantasia porque ela ainda parece mais habitável que a realidade.", w: { Bard: 3, Rogue: 1, Knight: -1, Seer: -1 } }
     ]},
-    { t: "Um amigo próximo está iludido com um relacionamento tóxico, acreditando que 'o amor vai mudar tudo'.", opts: [
-        { txt: "Intervenho drasticamente, listando as provas de toxicidade para quebrar essa fantasia.", w: { Prince: 3, Seer: 2, Sylph: -2, Heir: -3 } },
-        { txt: "Ouço os desabafos e valido os sentimentos, esperando que ele perceba a realidade no tempo dele.", w: { Sylph: 3, Rogue: 2, Prince: -3, Thief: -2 } },
-        { txt: "Não me meto. Se ele quer se iludir, é escolha dele. Eu só assisto de longe.", w: { Bard: 3, Mage: 1, Knight: -2, Maid: -2 } },
-        { txt: "Sinto raiva pela ingenuidade, mas acabo comprando briga com quem o está machucando.", w: { Knight: 3, Thief: 2, Mage: -1, Bard: -1 } },
-        { txt: "Afasto-me. Não tenho paciência para quem escolhe viver na mentira.", w: { Mage: 2, Seer: 1, Knight: -2, Maid: -1 } }
+	{ t: "Você vê alguém desistindo de algo porque está convencido de que nunca vai conseguir.", opts: [
+        { txt: "Tento mostrar uma possibilidade real que a pessoa ainda não percebeu. Talvez ela só precise enxergar o caminho certo.", w: { Seer: 3, Sylph: 1, Prince: -1, Bard: -1 } },
+        { txt: "Empurro a pessoa para tentar de novo, mesmo que ela esteja resistente. Às vezes o primeiro passo precisa ser arrancado na marra.", w: { Sylph: 3, Witch: 1, Rogue: -1, Prince: -1 } },
+        { txt: "Ofereço minha confiança como apoio. Se ela ainda não acredita em si, pode se apoiar um pouco na minha fé.", w: { Heir: 3, Maid: 1, Thief: -1, Prince: -1 } },
+        { txt: "Desconfio desse discurso de desistência. Às vezes a pessoa chama de impossível algo que só está com medo de encarar.", w: { Prince: 3, Knight: 1, Sylph: -1, Heir: -1 } },
+        { txt: "Quero ajudar, mas fico com medo de prometer esperança demais e acabar alimentando uma ilusão.", w: { Rogue: 3, Mage: 1, Page: -1, Thief: -1 } }
     ]},
-    { t: "Você cometeu um erro que prejudicou alguém, mas foi sem intenção. A culpa o consome.", opts: [
-        { txt: "Convenço a mim mesmo de que não foi minha culpa, reescrevendo a narrativa dos eventos.", w: { Witch: 3, Thief: 2, Prince: 1, Seer: -3 } },
-        { txt: "Aceito a culpa publicamente e tento compensar exageradamente o erro com atos grandiosos.", w: { Page: 3, Maid: 2, Knight: 1, Thief: -2 } },
-        { txt: "Fico paralisado, esperando que o tempo apague a gravidade do erro sem eu precisar agir.", w: { Heir: 3, Bard: 2, Knight: -2, Maid: -2 } },
-        { txt: "Dou espaço para a pessoa, sacrificando minha necessidade de perdão imediato.", w: { Rogue: 3, Seer: 2, Sylph: 1, Witch: -2 } },
-        { txt: "Eu esqueço. O que passou, passou. Ficar se sentindo culpado não resolve nada mesmo.", w: { Bard: 3, Prince: 1, Page: -1, Sylph: -2 } }
+	{ t: "Uma oportunidade parece perfeita demais, do tipo que dá vontade de acreditar sem fazer muitas perguntas.", opts: [
+        { txt: "Minha primeira reação é aceitar. Se parece bom e não tem nada obviamente errado, por que não dizer sim?", w: { Page: 3, Heir: 1, Mage: -2, Prince: -1 } },
+        { txt: "Investigo se aquilo é autêntico ou só uma promessa bonita. Já vi coisa boa demais virar armadilha.", w: { Mage: 3, Seer: 2, Page: -2, Bard: -1 } },
+        { txt: "Fico dividido: quero acreditar, mas tenho medo de estar aceitando uma fantasia porque preciso muito que ela seja real.", w: { Rogue: 3, Bard: 1, Thief: -1, Knight: -1 } },
+        { txt: "Agarro a chance e uso a empolgação ao meu favor. Se todo mundo está animado, melhor transformar isso em impulso antes que passe.", w: { Thief: 3, Knight: 1, Rogue: -1, Seer: -1 } },
+        { txt: "Tento descobrir qual é o caminho verdadeiro dentro da promessa, separando o que é possível do que é só brilho.", w: { Seer: 3, Mage: 1, Page: -1, Heir: -1 } }
     ]},
-    { t: "Qual é a sua relação com 'finais felizes' em filmes e livros?", opts: [
-        { txt: "Acho irritantes e irreais. A vida não funciona assim.", w: { Prince: 3, Mage: 2, Heir: -2, Sylph: -2 } },
-        { txt: "São essenciais. O mundo já é difícil demais; a ficção deve servir como um farol de esperança.", w: { Maid: 3, Sylph: 2, Page: 1, Prince: -3 } },
-        { txt: "Gosto, mas apenas se os personagens sofreram o suficiente para merecê-lo.", w: { Knight: 3, Thief: 2, Seer: 1, Heir: -1 } },
-        { txt: "Não me importo com o final. Se for feliz, ok. Se todos morrerem, ok também.", w: { Bard: 3, Rogue: 1, Mage: 1, Knight: -2 } },
-        { txt: "Foco na jornada e nas possibilidades abertas que a história sugere.", w: { Heir: 3, Rogue: 2, Seer: 1, Knight: -2 } }
+	{ t: "Você percebe que as pessoas estão colocando fé demais em você, como se você fosse a solução para tudo.", opts: [
+        { txt: "Uso essa confiança para motivar todo mundo, mas fico com medo de falhar e provar que nunca fui digno dela.", w: { Knight: 3, Rogue: 1, Thief: -1, Bard: -1 } },
+        { txt: "Aceito o pedestal com facilidade. Se precisam acreditar em alguém, eu prefiro ser essa pessoa.", w: { Thief: 3, Prince: 1, Rogue: -2, Maid: -1 } },
+        { txt: "Tento corresponder ao que esperam de mim, mesmo que parte dessa fé tenha sido criada pelos outros antes de ser minha.", w: { Maid: 3, Heir: 1, Prince: -1, Thief: -1 } },
+        { txt: "Fico desconfortável e tento devolver essa confiança para o grupo. Não quero ser o único carregando a esperança de todo mundo.", w: { Rogue: 3, Sylph: 1, Thief: -2, Prince: -1 } },
+        { txt: "Rejeito a imagem perfeita que criaram de mim. Acreditar em mim não significa inventar uma versão falsa do que eu sou.", w: { Prince: 3, Mage: 1, Maid: -1, Heir: -1 } }
     ]},
-    { t: "Você precisa convencer um grupo de pessoas a seguir um caminho arriscado.", opts: [
-        { txt: "Uso meu carisma e promessas grandiosas. Importa se eles acreditam, não se é verdade.", w: { Thief: 3, Knight: 2, Page: 1, Seer: -2 } },
-        { txt: "Apresento o cenário de forma honesta, confiando que a verdade inspirará as pessoas certas.", w: { Seer: 3, Mage: 2, Witch: -2, Thief: -3 } },
-        { txt: "Digo 'vamos nessa' sem ter plano nenhum. Minha despreocupação faz parecer que sei o que estou fazendo.", w: { Bard: 3, Heir: 2, Rogue: 1, Prince: -2 } },
-        { txt: "Manipulo sutilmente as circunstâncias para que pareça a única opção segura.", w: { Witch: 3, Prince: 1, Sylph: 1, Knight: -1 } },
-        { txt: "Vou na frente sozinho. Se der certo, eles me seguirão pelo exemplo.", w: { Rogue: 3, Maid: 2, Heir: 1, Bard: -1 } }
+	{ t: "Você descobre que uma crença antiga sua talvez não seja tão verdadeira quanto parecia.", opts: [
+        { txt: "Sofro com isso, mas tento entender o que naquela crença era autêntico e o que era só conforto.", w: { Mage: 3, Seer: 1, Bard: -1, Page: -1 } },
+        { txt: "Procuro um novo ponto de fé para substituir o antigo. Se uma luz apagou, preciso criar outra para continuar andando.", w: { Maid: 3, Heir: 1, Rogue: -1, Prince: -1 } },
+        { txt: "Destruo a crença de vez se ela se provar falsa. Não quero ficar agarrado numa esperança só porque ela me fazia bem.", w: { Prince: 3, Knight: 1, Heir: -1, Sylph: -1 } },
+        { txt: "Fico tentando defender a crença por mais tempo do que deveria, porque abrir mão dela parece perder uma parte de mim.", w: { Bard: 3, Page: 1, Mage: -1, Prince: -1 } },
+        { txt: "Tento mudar a forma como entendo essa crença em vez de jogar tudo fora; talvez ela só precise significar outra coisa agora.", w: { Witch: 3, Sylph: 1, Prince: -1, Mage: -1 } }
     ]},
-    { t: "Os dados e a lógica garantem que seu objetivo atual é impossível. Qual sua reação imediata?", opts: [
-        { txt: "Recuso essa 'verdade'. Se a realidade diz não, eu quebro as regras ou forço um caminho.", w: { Prince: 3, Witch: 2, Knight: 1 } },
-        { txt: "Entro em pânico. Busco validação em outras pessoas para sustentar minha crença.", w: { Thief: 2, Rogue: 1, Page: 1 } },
-        { txt: "Continuo tentando, mas sem esforço real. Se der errado, pelo menos eu fingi que tentei.", w: { Bard: 3, Heir: 1, Rogue: 1, Knight: -2 } },
-        { txt: "Analiso friamente. Tento entender a lógica da falha e, se for real, aceito e sigo o fluxo.", w: { Mage: 2, Seer: 2, Heir: 1 } },
-        { txt: "Mantenho as aparências. Continuo agindo como se fosse dar certo para preservar a moral.", w: { Sylph: 2, Maid: 1, Knight: 1 } }
+	{ t: "Você acredita profundamente em uma ideia, causa ou sonho que as pessoas ao seu redor consideram ingênuo, impossível ou delirante.", opts: [
+        { txt: "Continuo acreditando. O fato de ninguém conseguir provar agora não significa que aquilo não seja verdadeiro.", w: { Heir: 3, Page: 2, Mage: -1, Prince: -1 } },
+        { txt: "Tento transformar essa crença em algo que outras pessoas também consigam sentir como real.", w: { Witch: 3, Sylph: 2, Bard: -1, Prince: -1 } },
+        { txt: "Procuro sinais de autenticidade. Eu quero acreditar, mas preciso saber se aquilo é fé verdadeira ou só uma fantasia confortável.", w: { Mage: 3, Seer: 2, Page: -1, Heir: -1 } },
+        { txt: "Rejeito a opinião de quem tenta reduzir tudo a fatos frios. Se eles não conseguem imaginar algo melhor, isso é limitação deles.", w: { Prince: 3, Knight: 1, Bard: 1, Rogue: -2 } },
+        { txt: "Tenho medo de acreditar demais e acabar parecendo ridículo, então deixo outras pessoas carregarem essa fé por mim.", w: { Rogue: 3, Maid: 1, Thief: -1, Prince: -1 } }
     ]},
-    { t: "Você está sozinho em um quarto em silêncio absoluto. Como essa ausência de estímulo te afeta?", opts: [
-        { txt: "A inércia me desespera. Começo a organizar coisas freneticamente.", w: { Prince: 1, Knight: 2, Maid: 1 } },
-        { txt: "Sinto um vazio existencial. Preciso consumir conteúdo alheio para me distrair.", w: { Thief: 2, Rogue: 2, Page: 1 } },
-        { txt: "Sinto-me livre. Minha mente cria cenários e histórias sozinha para preencher o silêncio.", w: { Heir: 2, Mage: 2, Seer: 1 } },
-        { txt: "Fico viajando na maionese. Entro num estado de devaneio tão profundo que esqueço onde estou.", w: { Bard: 3, Heir: 1, Rogue: 1 } },
-        { txt: "Uso o isolamento como ferramenta de treino e autopoliciamento.", w: { Page: 2, Knight: 1 } }
+	{ t: "Você vê alguém defendendo algo que, para você, cruza uma linha moral impossível de relativizar.", opts: [
+        { txt: "Não consigo tratar como 'opinião diferente'. Algumas coisas são erradas, e aceitar isso como debate já seria ceder demais.", w: { Prince: 3, Knight: 2, Heir: -1, Witch: -1 } },
+        { txt: "Tento entender qual crença sustenta aquela visão antes de decidir se ainda existe algo ali que possa ser alcançado.", w: { Seer: 3, Mage: 1, Bard: -1, Page: -1 } },
+        { txt: "Tento mudar o jeito como a pessoa enxerga a questão, criando uma ponte para ela acreditar em algo melhor.", w: { Witch: 3, Sylph: 2, Prince: -1, Thief: -1 } },
+        { txt: "Fico tentando manter harmonia e acreditar que a pessoa pode melhorar, mesmo que isso me faça tolerar demais.", w: { Heir: 3, Maid: 1, Prince: -2, Bard: -1 } },
+        { txt: "Evito me colocar como juiz da situação. Tenho medo de confiar demais na minha própria noção do que é certo.", w: { Rogue: 3, Page: 1, Prince: -2, Knight: -1 } }
     ]}
     ],
     "Doom": [
-   { t: "Você recebe o diagnóstico de uma condição vitalícia. Não é fatal, mas é uma sentença que exigirá restrições severas e uma rotina médica rígida para sempre.", opts: [
-        { txt: "Dane-se o diagnóstico. Continuo vivendo como se nada tivesse mudado, recusando-me a deixar um papel ditar os limites do meu corpo.", w: { Prince: 3, Witch: 1, Heir: -1 } },
-        { txt: "Eu esqueço de tomar os remédios ou sigo o tratamento pela metade. Se meu corpo aguentar, aguentou; não vou me estressar com o inevitável.", w: { Bard: 3, Rogue: 1, Heir: 1, Sylph: -2 } },
-        { txt: "Mergulho na pesquisa técnica. Preciso dissecar cada mecanismo da doença para mapear exatamente onde piso neste novo campo minado.", w: { Mage: 3, Seer: 2, Knight: 1, Prince: -2 } },
-        { txt: "Submeto-me à nova realidade imediatamente, criando um sistema impecável de hábitos para 'domar' a doença através da obediência.", w: { Sylph: 3, Maid: 2, Heir: 1, Bard: -2 } },
-        { txt: "Uso minha condição como um escudo social, livrando-me de responsabilidades indesejadas sob a justificativa da minha saúde frágil.", w: { Thief: 3, Witch: 2, Page: 1, Knight: -1 } }
+   { t: "Você percebe que assumiu tarefas demais na semana e, se continuar tentando dar conta de tudo, alguma coisa vai sair mal feita.", opts: [
+        { txt: "Corto imediatamente o que for menos necessário. Melhor perder uma parte do plano do que deixar tudo desmoronar.", w: { Seer: 3, Knight: 2, Prince: -1, Bard: -2 } },
+        { txt: "Faço uma lista do que é obrigação e tento cumprir tudo na ordem certa, mas só corto alguma tarefa se alguém confirmar que tudo bem deixar aquilo de lado.", w: { Maid: 3, Rogue: 1, Knight: 1, Prince: -2 } },
+        { txt: "Tento empurrar tudo mesmo assim. Não gosto de admitir que uma limitação prática tem poder sobre mim.", w: { Prince: 3, Witch: 2, Heir: -1, Sylph: -2 } },
+        { txt: "Finjo que ainda dá tempo e vou evitando pensar nisso até a situação me obrigar a encarar as consequências.", w: { Bard: 3, Page: 2, Knight: -2, Seer: -1 } },
+        { txt: "Pego para mim as partes mais pesadas porque acho mais seguro eu carregar o prejuízo do que confiar que outra pessoa vai aguentar.", w: { Thief: 3, Heir: 2, Rogue: 1, Bard: -2 } }
     ]},
-    { t: "Você sente o momento exato em que o controle é perdido. O veículo em que você está sofre uma falha catastrófica e o impacto violento é uma certeza matemática nos próximos segundos.", opts: [
-        { txt: "Aceito o fim. Relaxo cada músculo do corpo para não quebrar com a tensão, confiando que fluir com o desastre é a única chance de sobreviver.", w: { Heir: 3, Seer: 1, Sylph: 1, Prince: -3 } },
-        { txt: "Começo a rir de nervoso ou simplesmente travo, olhando o cenário passar. Não tento me salvar nem salvar ninguém, só espero a batida.", w: { Bard: 3, Page: 2, Mage: -1, Knight: -2 } },
-        { txt: "Tento proteger os outros passageiros com meu próprio corpo, agindo instintivamente como um escudo humano para absorver o dano.", w: { Rogue: 3, Knight: 2, Maid: 1, Thief: -3 } },
-        { txt: "Grito ordens precisas em meio ao pânico. Assumo o comando do caos, ditando posições de impacto para minimizar as perdas.", w: { Seer: 2, Mage: 2, Sylph: 1, Page: -1 } },
-        { txt: "Pulo fora antes do impacto final. Minha prioridade absoluta é garantir que eu não afunde junto com os destroços.", w: { Thief: 3, Prince: 2, Witch: 1, Rogue: -3 } }
+    { t: "Uma regra nova no trabalho ou na escola atrapalha sua rotina, mas claramente foi criada para evitar um problema real.", opts: [
+        { txt: "Procuro um jeito de contornar a regra sem quebrá-la diretamente. Se o limite existe, talvez dê para dobrar o formato dele.", w: { Witch: 3, Mage: 1, Knight: 1, Sylph: -2 } },
+        { txt: "Sigo a regra sem fazer muito caso. Se ela existe para evitar um problema, é melhor respeitar até surgir necessidade real de agir diferente.", w: { Heir: 3, Maid: 1, Bard: -2, Prince: -2 } },
+        { txt: "Tento entender exatamente onde a regra se aplica e onde ela não se aplica, porque toda restrição tem uma brecha prática.", w: { Mage: 3, Knight: 2, Page: -1, Bard: -1 } },
+        { txt: "Começo a lembrar as pessoas do motivo da regra existir, especialmente quando vejo alguém tratando aquilo como frescura.", w: { Sylph: 3, Seer: 1, Prince: -1, Bard: -2 } },
+        { txt: "Tento seguir a regra para mostrar que sou responsável, mas acabo exagerando ou interpretando tudo de um jeito mais rígido do que precisava.", w: { Page: 3, Maid: 1, Knight: -1, Witch: -2 } }
     ]},
-    { t: "Você descobre uma falha sistêmica nas regras de um serviço ou contrato que permite obter vantagens ilimitadas, mas que claramente viola o espírito da lei.", opts: [
-        { txt: "Exploro a falha até a última gota. Se o sistema deixou uma porta aberta, a incompetência é deles e o lucro é meu.", w: { Thief: 3, Witch: 2, Prince: 1, Seer: -2 } },
-        { txt: "Reporto o erro imediatamente. Regras existem para manter a estrutura funcional e um sistema quebrado prejudica o coletivo a longo prazo.", w: { Sylph: 3, Seer: 2, Heir: 1, Thief: -3 } },
-        { txt: "Uso o erro de forma desleixada e excessiva até quebrar o sistema ou ser banido. Foi divertido enquanto durou a anarquia.", w: { Bard: 3, Rogue: 1, Heir: 1, Mage: -2 } },
-        { txt: "Compartilho o segredo apenas com meu círculo íntimo, garantindo que 'nós' tenhamos vantagem antes que a correção chegue.", w: { Rogue: 3, Maid: 2, Page: 1, Prince: -1 } },
-        { txt: "Fico paranoico de que usar isso trará uma punição cármica ou legal severa, então prefiro não tocar no erro.", w: { Mage: 3, Knight: 2, Bard: -1, Witch: -2 } }
+	{ t: "Você percebe que um projeto pessoal que queria muito fazer simplesmente não cabe na sua rotina atual.", opts: [
+        { txt: "Recuso a ideia de que isso é impossível e tento empurrar o projeto mesmo assim, nem que precise arrebentar minha agenda inteira.", w: { Prince: 3, Witch: 1, Sylph: -2, Heir: -1 } },
+        { txt: "Aceito que alguma coisa precisa ser cortada e tento escolher a perda menos destrutiva antes que tudo comece a apodrecer junto.", w: { Seer: 3, Knight: 1, Bard: -2, Page: -1 } },
+        { txt: "Vou deixando para depois sem admitir que talvez não dê. Enquanto eu não encarar isso como limite real, ainda parece possível.", w: { Bard: 3, Page: 2, Seer: -1, Knight: -2 } },
+        { txt: "Organizo as obrigações em ordem de importância, mas só me sinto confortável desistindo de algo se alguém confirmar que eu não estou falhando.", w: { Maid: 3, Rogue: 1, Heir: 1, Prince: -2 } },
+        { txt: "Reduzo o projeto ao mínimo necessário para continuar avançando, mesmo que isso signifique sacrificar partes que eu queria manter.", w: { Knight: 3, Seer: 1, Bard: -1, Witch: -1 } }
     ]},
-    { t: "Sua comunidade se reúne para um ritual ou tradição antiga que você considera opressiva e sem sentido, mas que é vista como o pilar da ordem social.", opts: [
-        { txt: "Participo da tradição fingindo respeito, mas nos bastidores faço comentários ácidos que minam a autoridade do ritual.", w: { Thief: 2, Witch: 2, Mage: 1 } },
-        { txt: "Eu simplesmente não apareço. Ignoro a existência dessa regra social e vou fazer algo que me interesse, indiferente às consequências.", w: { Bard: 3, Rogue: 1, Page: 1, Knight: -2 } },
-        { txt: "Confronto a tradição abertamente e tento destruí-la. Não aceito que o sofrimento seja justificado apenas porque 'sempre foi assim'.", w: { Prince: 3, Knight: 2, Witch: 1, Heir: -2 } },
-        { txt: "Mantenho a tradição com solenidade. Entendo que o ritual é a cola que impede a sociedade de se dissolver no caos absoluto.", w: { Heir: 3, Seer: 2, Mage: 1, Prince: -3 } },
-        { txt: "Tento reformar a tradição por dentro, sugerindo pequenas alterações nas regras para torná-la mais suportável para todos.", w: { Sylph: 3, Witch: 2, Maid: 1, Bard: -2 } }
+	{ t: "Alguém joga uma responsabilidade chata no seu colo de última hora, dizendo que você parece ser a pessoa mais capaz de lidar com aquilo.", opts: [
+        { txt: "Assumo porque provavelmente faço melhor mesmo. Se alguém vai carregar esse peso direito, prefiro que seja eu.", w: { Thief: 3, Knight: 1, Rogue: -2, Bard: -1 } },
+        { txt: "Tento passar a tarefa para alguém mais adequado. Não gosto de aceitar um peso que talvez eu não saiba cumprir.", w: { Rogue: 3, Page: 1, Thief: -2, Prince: -1 } },
+        { txt: "Aceito em silêncio se parecer realmente necessário. Não gosto da tarefa, mas obrigação é obrigação.", w: { Heir: 3, Maid: 1, Bard: -2, Witch: -1 } },
+        { txt: "Aceito rápido demais para provar que sou responsável, mesmo sem entender direito o tamanho do compromisso.", w: { Page: 3, Maid: 1, Seer: -1, Knight: -1 } },
+        { txt: "Tento renegociar os termos da tarefa. Posso até ajudar, mas não do jeito exato que tentaram impor.", w: { Witch: 3, Prince: 1, Heir: -1, Sylph: -1 } }
     ]},
-    { t: "Você encontra uma criatura pequena em seus últimos momentos de vida. O sofrimento é visível e não há chance de recuperação; a morte é certa.", opts: [
-        { txt: "Mato-o rapidamente. É um ato de misericórdia impor um fim imediato quando o destino já está selado dolorosamente.", w: { Knight: 3, Prince: 2, Maid: 1, Bard: -1 } },
-        { txt: "Viro o rosto e vou embora. A visão da morte crua me perturba profundamente e prefiro negar essa realidade.", w: { Page: 3, Heir: 2, Prince: 1, Mage: -2 } },
-        { txt: "Fico observando até o último Suspiro. Sinto uma obrigação solene de testemunhar a passagem da vida para a morte.", w: { Mage: 3, Seer: 2, Rogue: 1, Knight: -2 } },
-        { txt: "Tento salvá-lo desesperadamente, mesmo sabendo que é fútil. Recuso-me a aceitar que a morte seja a única opção.", w: { Maid: 3, Witch: 2, Sylph: 1, Seer: -2 } },
-        { txt: "Deixo a natureza seguir seu curso. Se tiver que morrer, vai morrer. Não intervenho nem para salvar, nem para matar.", w: { Bard: 3, Seer: 1, Mage: 1, Sylph: -2 } }
+	{ t: "Um objeto importante começa a dar pequenos sinais de desgaste, mas ainda funciona se você fingir que nada está acontecendo.", opts: [
+        { txt: "Reconheço o padrão de problema antes dele piorar. Já vi coisa pequena virar prejuízo grande por ser ignorada tempo demais.", w: { Mage: 3, Seer: 1, Bard: -1, Page: -1 } },
+        { txt: "Paro para investigar os sinais e descobrir o que provavelmente vai quebrar primeiro antes de decidir o que fazer.", w: { Seer: 3, Knight: 1, Bard: -1, Prince: -1 } },
+        { txt: "Aviso as pessoas para pararem de usar aquilo sem cuidado. Se continuar assim, a quebra é só questão de tempo.", w: { Sylph: 3, Maid: 1, Prince: -1, Bard: -2 } },
+        { txt: "Continuo usando até realmente parar de funcionar. Não vejo por que tratar como desastre algo que ainda dá conta.", w: { Bard: 3, Page: 1, Seer: -2, Sylph: -2 } },
+        { txt: "Uso as limitações atuais a meu favor e adapto o jeito de lidar com o objeto até conseguir resolver o problema de verdade.", w: { Knight: 3, Mage: 1, Witch: 1, Page: -1 } }
     ]},
-    { t: "Você está preso em um sistema de trabalho onde as regras mudam aleatoriamente e ninguém sabe o que está fazendo, gerando um ambiente de pura entropia.", opts: [
-        { txt: "Paraliso. A falta de diretrizes claras drena minha energia vital e me sinto incapaz de produzir sem um trilho seguro.", w: { Page: 3, Heir: 2, Sylph: 1, Prince: -2 } },
-        { txt: "Crio minhas próprias leis e as imponho aos outros. Se o universo não me dá estrutura, eu me torno a estrutura.", w: { Witch: 3, Knight: 2, Maid: 1, Page: -2 } },
-        { txt: "Eu paro de tentar entender. Faço qualquer coisa de qualquer jeito. Se o resultado for ruim, a culpa é da regra que mudou.", w: { Bard: 3, Rogue: 1, Heir: 1, Seer: -2 } },
-        { txt: "Navego no caos. Sem regras fixas, ninguém pode provar que estou errado, então faço o mínimo possível.", w: { Thief: 3, Rogue: 2, Bard: 1, Seer: -3 } },
-        { txt: "Tento decifrar o padrão oculto por trás das mudanças. Acredito que existe uma lógica subjacente nesse caos todo.", w: { Mage: 3, Seer: 2, Heir: 1, Bard: -1 } }
+	{ t: "Você recebe um convite muito divertido, mas sabe que tem uma obrigação cedo no dia seguinte.", opts: [
+        { txt: "Vou mesmo assim e deixo para lidar com as consequências depois. Uma noite boa não devia ser destruída por uma obrigação chata.", w: { Bard: 3, Prince: 1, Sylph: -2, Knight: -1 } },
+        { txt: "Recuso o convite se a obrigação for séria. Não gosto, mas tem coisa que simplesmente precisa vir primeiro.", w: { Heir: 3, Maid: 1, Bard: -2, Witch: -1 } },
+        { txt: "Vou só se conseguir impor limites claros: hora de chegar, hora de sair e o mínimo de dano possível no dia seguinte.", w: { Knight: 3, Seer: 1, Page: -1, Bard: -1 } },
+        { txt: "Tento quebrar a limitação pela força de vontade, como se dormir pouco ou acordar destruído fosse só um detalhe superável.", w: { Prince: 3, Witch: 1, Sylph: -2, Heir: -1 } },
+        { txt: "Faço um plano certinho para cumprir a obrigação e ainda aproveitar um pouco, mas dependo de alguém me puxar de volta se eu passar do limite.", w: { Maid: 3, Page: 1, Rogue: 1, Prince: -1 } }
     ]},
-    { t: "Um aliado cometeu um erro imperdoável que pode custar a carreira dele. Ele implora para que você minta e cubra o rastro dele.", opts: [
-        { txt: "Minto. As regras institucionais não valem mais do que a minha lealdade pessoal a quem está comigo.", w: { Thief: 3, Witch: 2, Rogue: 1, Seer: -2 } },
-        { txt: "Recuso-me a mentir. Explico que as consequências são uma força da natureza e tentar fugir só piora a catástrofe.", w: { Seer: 3, Mage: 2, Sylph: 1, Thief: -2 } },
-        { txt: "Assumo a culpa no lugar dele. Uso meu próprio capital para pagar a dívida do erro dele, sacrificando-me.", w: { Rogue: 3, Page: 2, Knight: 1, Prince: -3 } },
-        { txt: "Fico furioso com ele. A irresponsabilidade dele agora se tornou uma âncora no meu pescoço.", w: { Prince: 3, Knight: 2, Bard: 1, Heir: -1 } },
-        { txt: "Tento mentir, mas faço de forma tão desleixada ou contraditória que a verdade acaba vazando por incompetência minha.", w: { Bard: 3, Page: 2, Heir: 1, Prince: -1 } }
+	{ t: "Você precisa dizer não a um pedido de ajuda porque sabe que já está no seu limite.", opts: [
+        { txt: "Tento organizar uma forma de ajudar sem me destruir, mas ainda sinto que preciso de permissão para não carregar tudo.", w: { Maid: 3, Rogue: 1, Sylph: 1, Prince: -2 } },
+        { txt: "Digo que a pessoa precisa procurar outra solução antes que os dois afundem. Ajudar não pode significar ignorar todos os limites.", w: { Sylph: 3, Seer: 1, Bard: -1, Thief: -1 } },
+        { txt: "Procuro outra pessoa para assumir ou dividir o peso, porque não confio que eu consiga lidar com isso sozinho agora.", w: { Rogue: 3, Heir: 1, Knight: -1, Thief: -1 } },
+        { txt: "Recuso carregar a parte que não é minha. Se alguém tentou jogar esse peso em mim, eu devolvo antes que vire obrigação.", w: { Thief: 3, Prince: 1, Maid: -1, Rogue: -1 } },
+        { txt: "Tento mudar as condições do pedido: ajudo de outro jeito, em outro prazo ou com outro limite, mas não aceito o pacote fechado.", w: { Witch: 3, Mage: 1, Heir: -1, Sylph: -1 } }
     ]},
-    { t: "Você enfrenta o Leviatã da burocracia: uma montanha de documentos, filas infinitas e carimbos para conseguir algo simples.", opts: [
-        { txt: "Transformo isso em um desafio de eficiência. Organizo cada papel milimetricamente para vencer o sistema pelo cansaço.", w: { Knight: 3, Maid: 2, Sylph: 1, Bard: -2 } },
-        { txt: "Sinto minha vitalidade sendo sugada. A ineficiência sistêmica me dá vontade de atear fogo no prédio.", w: { Prince: 3, Witch: 1, Heir: -2 } },
-        { txt: "Desisto no meio do caminho. Se é difícil demais, não vale o esforço. Deixo o prazo vencer e vejo o que acontece.", w: { Bard: 3, Rogue: 1, Page: 1, Knight: -2 } },
-        { txt: "Aceito com resignação estóica. É chato, mas é a lei do mundo. Entro em modo de espera e aguardo minha vez.", w: { Heir: 3, Page: 2, Rogue: 1, Prince: -3 } },
-        { txt: "Tento usar contatos, charme ou suborno para pular as etapas. As regras se aplicam aos outros, não a mim.", w: { Thief: 3, Witch: 2, Rogue: 1, Seer: -2 } }
+	{ t: "Uma solução rápida resolveria seu problema agora, mas envolve ignorar uma regra de segurança que existe por um bom motivo.", opts: [
+        { txt: "Penso nas vezes em que esse tipo de atalho deu errado antes. Se a regra existe, provavelmente alguém já se ferrou para ela existir.", w: { Mage: 3, Seer: 1, Bard: -1, Page: -1 } },
+        { txt: "Analiso o que pode acontecer se a regra for ignorada. Talvez dê certo agora, mas o risco não some só porque é inconveniente.", w: { Seer: 3, Sylph: 1, Prince: -1, Bard: -1 } },
+        { txt: "Ignoro a regra se ela estiver me impedindo de resolver algo urgente. Limite nenhum devia ser absoluto quando atrapalha demais.", w: { Prince: 3, Witch: 2, Heir: -1, Sylph: -2 } },
+        { txt: "Tento fazer mesmo assim achando que entendi o risco, até perceber no meio do caminho que subestimei as consequências.", w: { Page: 3, Bard: 1, Knight: -1, Mage: -1 } },
+        { txt: "Sigo a regra, mesmo frustrado. Se não é absolutamente necessário quebrar esse limite, prefiro não mexer nele.", w: { Heir: 3, Maid: 1, Prince: -1, Witch: -1 } }
     ]},
-    { t: "A matemática é fria e o veredito é final: o dinheiro acabou. O colapso financeiro é iminente e não há como pagar todas as dívidas.", opts: [
-        { txt: "Saio cortando tudo que não é vital. Viro um asceta, vivendo com o mínimo absoluto para sobreviver ao inverno financeiro.", w: { Prince: 3, Knight: 1, Sylph: -2 } },
-        { txt: "Gasto o pouco que sobrou em algo fútil para me sentir bem. Se o barco vai afundar, que eu afunde sorrindo.", w: { Bard: 3, Heir: 1, Rogue: 1, Seer: -2 } },
-        { txt: "Deixo de comer para garantir que os outros dependentes (família, equipe) não sintam o impacto da crise.", w: { Rogue: 3, Maid: 2, Page: 1, Thief: -3 } },
-        { txt: "Faço malabarismo financeiro. Pego empréstimo para pagar outro e empurro a condenação com a barriga.", w: { Thief: 3, Witch: 2, Mage: 1, Seer: -1 } },
-        { txt: "Sento e calculo a data exata da falência. Crio um plano detalhado de sobrevivência para o cenário pós-apocalíptico.", w: { Seer: 3, Mage: 2, Heir: 1, Bard: -2 } }
+	{ t: "Você percebe que está insistindo em algo que já não funciona há muito tempo.", opts: [
+        { txt: "Tento aceitar que continuar gastando energia nisso só vai aumentar a perda. Às vezes parar é a única decisão útil.", w: { Seer: 3, Mage: 1, Prince: -1, Bard: -1 } },
+        { txt: "Crio um limite final: mais uma tentativa, mais um prazo, mais uma condição. Depois disso, acabou.", w: { Sylph: 3, Knight: 1, Bard: -1, Page: -1 } },
+        { txt: "Continuo empurrando porque desistir parece pior do que admitir que aquilo já morreu faz tempo.", w: { Bard: 3, Prince: 1, Seer: -2, Sylph: -1 } },
+        { txt: "Forço a situação até ela ceder ou quebrar de vez. Se existe uma parede no caminho, eu prefiro derrubar.", w: { Prince: 3, Witch: 1, Heir: -1, Maid: -1 } },
+        { txt: "Tento fazer outra pessoa decidir se ainda vale insistir. Não quero ser quem declara o fim de algo importante.", w: { Rogue: 3, Page: 1, Prince: -1, Knight: -1 } }
     ]},
-    { t: "Você é o portador do apocalipse pessoal de alguém. Cabe a você entregar uma notícia (término, demissão, morte) que destruirá o mundo dessa pessoa.", opts: [
-        { txt: "Falo a verdade na lata, sem anestesia. Acredito que a clareza brutal é a única forma respeitosa de lidar com o fim.", w: { Seer: 3, Mage: 2, Knight: 1, Sylph: -2 } },
-        { txt: "Tento maquiar a catástrofe, omitindo os detalhes mais cruéis na esperança de proteger a pessoa da dor total.", w: { Sylph: 3, Page: 2, Heir: 1, Prince: -1 } },
-        { txt: "Enrolo tanto que a pessoa acaba descobrindo sozinha ou percebendo pelo meu comportamento esquivo.", w: { Bard: 3, Rogue: 1, Page: 1, Knight: -2 } },
-        { txt: "Travo e sumo. Invento desculpas para não ter que olhar nos olhos da pessoa enquanto o mundo dela cai.", w: { Page: 3, Rogue: 2, Knight: -2 } },
-        { txt: "Uso a situação para me mostrar indispensável. Dou a má notícia já me oferecendo como o salvador que vai recolher os cacos.", w: { Witch: 3, Thief: 2, Maid: 1, Prince: -2 } }
+	{ t: "Você precisa lidar com uma situação desgastante por mais tempo do que gostaria, sem garantia de recompensa clara no final.", opts: [
+        { txt: "Transformo a situação em uma série de regras e metas pequenas. Se eu seguir o necessário, consigo atravessar isso sem desmoronar.", w: { Knight: 3, Maid: 1, Heir: 1, Bard: -2 } },
+        { txt: "Pego para mim as partes mais duras porque prefiro controlar o peso do que depender da resistência dos outros.", w: { Thief: 3, Knight: 1, Rogue: -1, Bard: -1 } },
+        { txt: "Aceito limites impostos de fora para provar que dou conta, mesmo reclamando do quanto isso está sendo pesado.", w: { Page: 3, Maid: 1, Prince: -1, Mage: -1 } },
+        { txt: "Procuro uma forma de alterar as condições da situação para que o desgaste não precise seguir exatamente as regras dadas.", w: { Witch: 3, Mage: 1, Heir: -1, Sylph: -1 } },
+        { txt: "Tento manter tudo funcionando para os outros, mas tenho dificuldade em reconhecer quando eu mesmo preciso parar.", w: { Maid: 3, Sylph: 1, Thief: -1, Prince: -1 } }
     ]}    
     ],
     "Life": [
