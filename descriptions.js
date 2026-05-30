@@ -346,7 +346,7 @@ const classpectDescriptions = {
 	    <h3>PRINCE OF VOID (PRÍNCIPE/PRINCESA DO VAZIO)</h3>
 	    <p><strong>O que Destrói o Vazio / Destrói com o Vazio.</strong></p>
 	    <p>Você tem uma relação tensa com mistério, ambiguidade e falta de resposta. Quando algo está oculto, indefinido ou protegido pelo silêncio, sua tendência é querer arrancar a cobertura e tornar tudo claro, mesmo que a revelação seja desconfortável. Você pode assumir o papel de quem destrói segredos, desfaz ilusões de privacidade e se recusa a deixar perguntas importantes enterradas.</p>
-	    <p>Você também pode destruir com o Vazio: apagando importância, retirando sentido ou usando a insignificância das coisas como ferramenta de corte. O perigo é revelar demais ou esvaziar demais, como se tudo precisasse ser exposto ou reduzido a nada para deixar de te ameaçar. No seu melhor, você acaba com zonas de silêncio nocivas e impede que o desconhecido seja usado como prisão. Seu desafio é entender que nem todo mistério é mentira, e nem toda ausência precisa ser preenchida à força.</p>
+	    <p>Você também pode destruir com o Vazio: apagando importância, retirando sentido ou usando a insignificância das coisas como ferramenta de corte. O perigo é revelar demais ou esvaziar demais, como se tudo precisasse ser exposto ou reduzido a nada para deixar de te ameaçar. No seu melhor, você acaba com zonas de silêncio nocivas e impede que o desconhecido seja usado como prisão. Seu desafio é entender que nem todo mistério é mentira, e nem toda ausência precisa ser preenchida à força. E lembre-se: você não é o protagonista.</p>
 	`,
 	
 	"Sylph:Void": `
