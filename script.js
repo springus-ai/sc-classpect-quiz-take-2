@@ -14,6 +14,31 @@ let activeQuestion = null;
 let viewerClass = "";
 let viewerAspect = "";
 
+const ASPECT_COLORS = {
+    Breath: { main: '#0086eb', accent: '#10e0ff' },
+    Blood:  { main: '#ba1915', accent: '#3d1909' },
+    Space:  { main: '#000000', accent: '#ffffff' },
+    Time:   { main: '#b70d0e', accent: '#ff2106' },
+    Light:  { main: '#f98100', accent: '#fff547' },
+    Void:   { main: '#033476', accent: '#00164f' },
+    Mind:   { main: '#50b250', accent: '#46fbc4' },
+    Heart:  { main: '#bd1864', accent: '#6e0e2e' },
+    Rage:   { main: '#391e71', accent: '#9c4dad' },
+    Hope:   { main: '#d99a00', accent: '#ffe094' },
+    Doom:   { main: '#20401f', accent: '#000000' },
+    Life:   { main: '#5d9f3f', accent: '#77c350' }
+};
+
+function getAspectColors(aspectName) {
+    return ASPECT_COLORS[aspectName] || { main: '#49a6c8', accent: '#2f7f9f' };
+}
+
+function aspectStyleVars(aspectName) {
+    const colors = getAspectColors(aspectName);
+    return `--aspect-main:${colors.main}; --aspect-accent:${colors.accent};`;
+}
+
+
 function start() {
     document.body.classList.remove('red-mode');
     state.stage = "aspect_quiz";
@@ -197,9 +222,9 @@ function finishClassPhase() {
 
     let aspectListHTML = sortedAspects.map((item, index) => {
         let isWinner = item[0] === finalAspect;
-        let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
-        if (item[1] < 0) colorStyle = "color: #ff8888;"; 
-        return `<li class="rank-item" onclick="updateResultExplorer('aspect', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
+        let colorStyle = `color: #000; font-weight:${isWinner ? 'bold' : 'normal'};`;
+
+        return `<li class="rank-item" onclick="updateResultExplorer('aspect', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #ccc; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
                     <span>#${index + 1} <strong>${item[0]}</strong></span>
                     <span style="font-family: monospace;">${item[1]} pts</span>
                 </li>`;
@@ -207,7 +232,7 @@ function finishClassPhase() {
 
     let classListHTML = sortedClasses.map((item, index) => {
         let isWinner = item[0] === finalClass;
-        let colorStyle = isWinner ? "color: #00ff00; font-weight:bold;" : "color: #aaa;";
+        let colorStyle = isWinner ? "color: #000; font-weight:bold;" : "color: #000;";
         return `<li class="rank-item" onclick="updateResultExplorer('class', '${item[0]}')" style="cursor: pointer; border-bottom: 1px solid #333; padding: 8px; display: flex; justify-content: space-between; ${colorStyle}">
                     <span>#${index + 1} <strong>${item[0]}</strong></span>
                     <span style="font-family: monospace;">${item[1]} pts</span>
@@ -239,23 +264,23 @@ function finishClassPhase() {
     }).join('');
 
     render(`
-        <div class="fade-in result-box" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <div class="fade-in result-box" style="max-width: 900px; margin: 0 auto; text-align: center; ${aspectStyleVars(finalAspect)}">
             <p style="font-size: 1.2em; margin-bottom: 0;">Seu título definitivo é:</p>
-            <h1 id="dynamicTitle" style="color:#00ff00; text-transform:uppercase; font-size: 3em; margin-top: 5px; text-shadow: 0 0 15px #005500;">...</h1>
-            <p style="font-size: 18px; color: #fff; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
-            <div id="dynamicDescription" style="background: rgba(0, 20, 0, 0.6); border: 1px solid #00ff00; padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6; min-height: 200px;">...</div>
+            <h1 id="dynamicTitle" style="text-transform:uppercase; font-size: 3em; margin-top: 5px;">...</h1>
+            <p class="result-subtitle" style="font-size: 18px; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
+            <div id="dynamicDescription" style="padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6; min-height: 200px;">...</div>
             <div class="rankings-wrapper" style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; text-align: left;">
                 <div class="ranking-column" style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 20px; border: 1px solid #444;">
-                    <h3 style="border-bottom: 2px solid #00ff00; padding-bottom: 10px; margin-top: 0;">RANKING DE ASPECTOS</h3>
+                    <h3 style="border-bottom: 2px solid var(--aspect-main); padding-bottom: 10px; margin-top: 0;">RANKING DE ASPECTOS</h3>
                     <ul style="list-style: none; padding: 0; margin: 0;">${aspectListHTML}</ul>
                 </div>
                 <div class="ranking-column" style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 20px; border: 1px solid #444;">
-                    <h3 style="border-bottom: 2px solid #00ff00; padding-bottom: 10px; margin-top: 0;">RANKING DE CLASSES</h3>
+                    <h3 style="border-bottom: 2px solid var(--aspect-main); padding-bottom: 10px; margin-top: 0;">RANKING DE CLASSES</h3>
                     <ul style="list-style: none; padding: 0; margin: 0;">${classListHTML}</ul>
                 </div>
             </div>
-            <div style="margin-top: 40px; background: rgba(0,50,0,0.2); padding: 20px; border: 1px dashed #00ff00;">
-                <h3 style="color: #00ff00; margin-top: 0;">EXPLORAR POSSIBILIDADES?</h3>
+            <div class="possibilities-box" style="margin-top: 40px; padding: 20px;">
+                <h3 style="margin-top: 0;">EXPLORAR POSSIBILIDADES?</h3>
                 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
                     ${explorationButtons}
                 </div>
@@ -284,6 +309,16 @@ function renderResultContent() {
 
     const displayTitle = `${viewerClass} of ${viewerAspect}`;
     titleEl.innerText = displayTitle;
+    const colors = getAspectColors(viewerAspect);
+    titleEl.style.color = colors.main;
+    titleEl.style.textShadow = `1px 1px 0 #fff, 1px 0 0 ${colors.accent}`;
+    descEl.style.setProperty('--aspect-main', colors.main);
+    descEl.style.setProperty('--aspect-accent', colors.accent);
+    const resultBox = document.querySelector('.result-box');
+    if (resultBox) {
+        resultBox.style.setProperty('--aspect-main', colors.main);
+        resultBox.style.setProperty('--aspect-accent', colors.accent);
+    }
 
     const dbKey = `${viewerClass}:${viewerAspect}`;
 
@@ -309,15 +344,15 @@ function openLibrary() {
     const aspects = ["Time", "Space", "Void", "Light", "Mind", "Heart", "Rage", "Hope", "Doom", "Life", "Blood", "Breath"];
     const classes = ["Prince", "Bard", "Thief", "Rogue", "Mage", "Seer", "Witch", "Heir", "Knight", "Page", "Maid", "Sylph"];
 
-    let aspectHTML = aspects.map(a => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="renderLibraryItem('${a}')">${a}</li>`).join('');
+    let aspectHTML = aspects.map(a => { const c = getAspectColors(a); return `<li style="padding:10px; border-bottom:1px solid #ccc; cursor:pointer; color:${c.main}; font-weight:bold;" onclick="renderLibraryItem('${a}')">${a}</li>`; }).join('');
     let classHTML = classes.map(c => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="renderLibraryItem('${c}')">${c}</li>`).join('');
 
     render(`
         <div class="fade-in" style="text-align: center; max-width: 900px; margin: 0 auto;">
             <h1>ARQUIVOS DO SBURBIO</h1>
             
-            <div id="libraryDisplay" style="background: rgba(0, 0, 0, 0.8); border: 1px solid #444; padding: 25px; margin: 20px auto; text-align: justify; max-width: 800px; display:none;">
-                <h2 id="libTitle" style="color:#00ff00; margin-top:0;"></h2>
+            <div id="libraryDisplay" style="padding: 25px; margin: 20px auto; text-align: justify; max-width: 800px; display:none;">
+                <h2 id="libTitle" style="margin-top:0;"></h2>
                 <div id="libBody"></div>
             </div>
 
@@ -339,6 +374,18 @@ function renderLibraryItem(key) {
         title.innerText = key.toUpperCase();
         body.innerHTML = classpectDescriptions[key];
         display.style.display = 'block';
+        if (ASPECT_COLORS[key]) {
+            const colors = getAspectColors(key);
+            display.style.setProperty('--aspect-main', colors.main);
+            display.style.setProperty('--aspect-accent', colors.accent);
+            title.style.color = colors.main;
+            title.style.textShadow = `1px 1px 0 #fff, 1px 0 0 ${colors.accent}`;
+        } else {
+            display.style.removeProperty('--aspect-main');
+            display.style.removeProperty('--aspect-accent');
+            title.style.color = '';
+            title.style.textShadow = '';
+        }
     } else {
         alert("Descrição não encontrada para: " + key);
     }
@@ -356,10 +403,10 @@ function renderQuestion(q) {
     html += `<div class="navigation-controls" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">`;
 
     if (state.questionCount > 0 || state.stage === "class_quiz") {
-        html += `<button class="back-button" onclick="handleBack()" style="background: #444;">Voltar</button>`;
+        html += `<button class="back-button" onclick="handleBack()">Voltar</button>`;
     }
     
-    html += `<button class="skip-button" onclick="handleSkip()" style="background: #222;">Nenhuma das anteriores.</button>`;
+    html += `<button class="skip-button" onclick="handleSkip()">Nenhuma das anteriores.</button>`;
     html += `</div>`;
     
     render(html);
@@ -475,25 +522,5 @@ window.onload = () => {
         ? classpectDescriptions["UI_Intro"] 
         : "<div class='fade-in'><h1>ERRO</h1><p>Tem algo de errado nos bastidores, mas já estou mexendo nisso.</p><button onclick='start()'>Iniciar.</button></div>";
 
-    const introWithLibrary = introText.replace(
-        '<button onclick="start()">Bora ver.</button>', 
-        `
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 20px;">
-            <button onclick="start()" style="width: 200px;">Bora ver.</button>
-            <button onclick="openLibrary()" style="width: 200px;">ACESSAR ARQUIVOS</button>
-        </div>
-        `
-    );
-
-    render(introWithLibrary);
+    render(introText);
 };
-
-
-
-
-
-
-
-
-
-
