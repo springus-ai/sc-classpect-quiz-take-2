@@ -240,28 +240,26 @@ function finishClassPhase() {
     }).join('');
 
     let explorationButtons = top3ForButtons.map(item => {
-        let aspectName = item[0];
-        let score = item[1];
-        const HATE_THRESHOLD = -10; 
+    let aspectName = item[0];
+    let score = item[1];
+    const HATE_THRESHOLD = -10;
 
-        let actionText = "TESTAR";
-        let color = "#00ff00"; 
-        
-        if (aspectName === state.dominantAspect) {
-            actionText = "REFAZER";
-        } 
-        else if (score <= HATE_THRESHOLD) {
-            actionText = "CONFRONTAR"; 
-            color = "#ff4444"; 
-        }
-        else if (score < 0) {
-            actionText = "EXPLORAR"; 
-        }
+    let actionText = "TESTAR";
 
-        return `<button onclick="retryClassTest('${aspectName}')" style="background: transparent; border: 1px solid ${color}; color: ${color}; padding: 10px 15px; cursor: pointer; font-size: 0.9em; transition: 0.2s; flex: 1; min-width: 120px;" onmouseover="this.style.background='rgba(${color === '#ff4444' ? '255,0,0' : '0,255,0'}, 0.2)'" onmouseout="this.style.background='transparent'">
-                ${actionText} ${aspectName.toUpperCase()}
-                </button>`;
-    }).join('');
+    if (aspectName === state.dominantAspect) {
+        actionText = "REFAZER";
+    } 
+    else if (score <= HATE_THRESHOLD) {
+        actionText = "CONFRONTAR";
+    }
+    else if (score < 0) {
+        actionText = "EXPLORAR";
+    }
+
+    return `<button class="possibility-button" onclick="retryClassTest('${aspectName}')">
+            ${actionText} ${aspectName.toUpperCase()}
+            </button>`;
+}).join('')
 
     render(`
         <div class="fade-in result-box" style="max-width: 900px; margin: 0 auto; text-align: center; ${aspectStyleVars(finalAspect)}">
@@ -524,3 +522,13 @@ window.onload = () => {
 
     render(introText);
 };
+
+
+
+
+
+
+
+
+
+
