@@ -357,9 +357,24 @@ div[style*="background: rgba(0,50,0"] {
     border-top: 1px solid #aaa !important;
 }
 
-.possibilities-box {
-    background: #fff !important;
-    border: 1px dashed var(--aspect-main, var(--blue)) !important;
+.possibility-button {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+    color: #111 !important;
+    background: #eeeeee !important;
+    border: 1px solid #777 !important;
+    box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #cfcfcf !important;
+}
+
+.possibility-button:hover,
+.possibility-button:focus-visible {
+    color: #000 !important;
+    background: #e8f5ff !important;
+    border-color: var(--blue-dark) !important;
 }
 
 .possibilities-box h3 {
