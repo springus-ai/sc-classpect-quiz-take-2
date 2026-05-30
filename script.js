@@ -14,6 +14,16 @@ let activeQuestion = null;
 let viewerClass = "";
 let viewerAspect = "";
 
+const LIBRARY_ASPECTS = ["Time", "Space", "Void", "Light", "Mind", "Heart", "Rage", "Hope", "Doom", "Life", "Blood", "Breath"];
+const LIBRARY_CLASSES = ["Prince", "Bard", "Thief", "Rogue", "Mage", "Seer", "Witch", "Heir", "Knight", "Page", "Maid", "Sylph"];
+
+let libraryState = {
+    section: 'aspects',
+    search: '',
+    selectedClass: 'Knight',
+    selectedAspect: 'Time'
+};
+
 const ASPECT_COLORS = {
     Breath: { main: '#0086eb', accent: '#10e0ff' },
     Blood:  { main: '#ba1915', accent: '#3d1909' },
@@ -337,52 +347,226 @@ function renderResultContent() {
 }
 
 
-function openLibrary() {
-    
-    const aspects = ["Time", "Space", "Void", "Light", "Mind", "Heart", "Rage", "Hope", "Doom", "Life", "Blood", "Breath"];
-    const classes = ["Prince", "Bard", "Thief", "Rogue", "Mage", "Seer", "Witch", "Heir", "Knight", "Page", "Maid", "Sylph"];
+function getLibraryTitle(key) {
+    if (key.includes(':')) {
+        const [cls, asp] = key.split(':');
+        return `${cls} of ${asp}`;
+    }
+    return key.toUpperCase();
+}
 
-    let aspectHTML = aspects.map(a => { const c = getAspectColors(a); return `<li style="padding:10px; border-bottom:1px solid #ccc; cursor:pointer; color:${c.main}; font-weight:bold;" onclick="renderLibraryItem('${a}')">${a}</li>`; }).join('');
-    let classHTML = classes.map(c => `<li style="padding:10px; border-bottom:1px solid #333; cursor:pointer;" onclick="renderLibraryItem('${c}')">${c}</li>`).join('');
+function getLibrarySectionItems(section) {
+    if (section === 'aspects') {
+        return LIBRARY_ASPECTS.slice();
+    }
+    if (section === 'classes') {
+        return LIBRARY_CLASSES.slice();
+    }
+    return LIBRARY_CLASSES.flatMap(cls => LIBRARY_ASPECTS.map(asp => `${cls}:${asp}`));
+}
+
+function getLibraryFilteredItems() {
+    const term = (libraryState.search || '').trim().toLowerCase();
+    const items = getLibrarySectionItems(libraryState.section);
+    if (!term) return items;
+
+    return items.filter(item => {
+        if (item.toLowerCase().includes(term)) return true;
+        if (item.includes(':')) {
+            const [cls, asp] = item.split(':');
+            const pretty = `${cls} of ${asp}`.toLowerCase();
+            return pretty.includes(term);
+        }
+        return false;
+    });
+}
+
+function openLibrary(section = 'aspects') {
+    libraryState.section = section;
+    libraryState.search = '';
 
     render(`
-        <div class="fade-in" style="text-align: center; max-width: 900px; margin: 0 auto;">
+        <div class="fade-in library-shell" style="max-width: 980px; margin: 0 auto;">
             <h1>ARQUIVOS DO SBURBIO</h1>
-            
-            <div id="libraryDisplay" style="padding: 25px; margin: 20px auto; text-align: justify; max-width: 800px; display:none;">
-                <h2 id="libTitle" style="margin-top:0;"></h2>
-                <div id="libBody"></div>
+            <p class="library-intro">Aqui você pode consultar descrições de Aspectos, Classes e combinações de Classpects sem precisar refazer o quiz.</p>
+
+            <div class="library-tabs">
+                <button type="button" class="library-tab ${section === 'aspects' ? 'is-active' : ''}" onclick="switchLibrarySection('aspects')">Aspectos</button>
+                <button type="button" class="library-tab ${section === 'classes' ? 'is-active' : ''}" onclick="switchLibrarySection('classes')">Classes</button>
+                <button type="button" class="library-tab ${section === 'classpects' ? 'is-active' : ''}" onclick="switchLibrarySection('classpects')">Classpects</button>
             </div>
 
-            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; text-align:left;">
-                <div style="flex:1;"><h3>Aspectos</h3><ul style="list-style:none; padding:0;">${aspectHTML}</ul></div>
-                <div style="flex:1;"><h3>Classes</h3><ul style="list-style:none; padding:0;">${classHTML}</ul></div>
+            <div class="library-toolbar">
+                <input
+                    id="librarySearch"
+                    class="library-search"
+                    type="text"
+                    placeholder="Buscar por nome..."
+                    value=""
+                    oninput="setLibrarySearch(this.value)"
+                >
             </div>
-            <button onclick="location.reload()" style="margin-top:20px; padding: 10px 20px; font-size: 1em; cursor: pointer;">VOLTAR</button>
+
+            <div id="classpectControls" class="classpect-controls" style="display:${section === 'classpects' ? 'flex' : 'none'};">
+                <label>
+                    Classe
+                    <select id="libraryClassSelect" onchange="updateLibrarySelector('class', this.value)">
+                        ${LIBRARY_CLASSES.map(cls => `<option value="${cls}" ${cls === libraryState.selectedClass ? 'selected' : ''}>${cls}</option>`).join('')}
+                    </select>
+                </label>
+                <label>
+                    Aspecto
+                    <select id="libraryAspectSelect" onchange="updateLibrarySelector('aspect', this.value)">
+                        ${LIBRARY_ASPECTS.map(asp => `<option value="${asp}" ${asp === libraryState.selectedAspect ? 'selected' : ''}>${asp}</option>`).join('')}
+                    </select>
+                </label>
+                <button type="button" class="library-open-button" onclick="openSelectedClasspect()">Ler combinação</button>
+            </div>
+
+            <div class="library-layout">
+                <aside class="library-sidebar">
+                    <h3 id="libraryListTitle">${section === 'aspects' ? 'Lista de Aspectos' : section === 'classes' ? 'Lista de Classes' : 'Lista de Classpects'}</h3>
+                    <div id="libraryListMeta" class="library-list-meta"></div>
+                    <ul id="libraryList" class="library-list"></ul>
+                </aside>
+
+                <section class="library-main">
+                    <div id="libraryEmptyState" class="library-empty-state">
+                        <p>Escolha um item na lista para abrir a descrição.</p>
+                    </div>
+                    <div id="libraryDisplay" style="padding: 25px; margin: 0 auto; text-align: justify; max-width: 800px; display:none;">
+                        <h2 id="libTitle" style="margin-top:0;"></h2>
+                        <div id="libBody"></div>
+                    </div>
+                </section>
+            </div>
+
+            <button onclick="location.reload()" style="margin-top:20px; padding: 10px 20px; font-size: 1em; cursor: pointer; max-width: 220px;">VOLTAR</button>
         </div>
     `);
+
+    renderLibraryList();
+}
+
+function switchLibrarySection(section) {
+    libraryState.section = section;
+    libraryState.search = '';
+
+    const searchInput = document.getElementById('librarySearch');
+    if (searchInput) searchInput.value = '';
+
+    const controls = document.getElementById('classpectControls');
+    if (controls) {
+        controls.style.display = section === 'classpects' ? 'flex' : 'none';
+    }
+
+    document.querySelectorAll('.library-tab').forEach(btn => {
+        btn.classList.toggle('is-active', btn.textContent.trim().toLowerCase() === (section === 'classpects' ? 'classpects' : section));
+    });
+
+    const title = document.getElementById('libraryListTitle');
+    if (title) {
+        title.textContent = section === 'aspects' ? 'Lista de Aspectos' : section === 'classes' ? 'Lista de Classes' : 'Lista de Classpects';
+    }
+
+    const display = document.getElementById('libraryDisplay');
+    const emptyState = document.getElementById('libraryEmptyState');
+    if (display) display.style.display = 'none';
+    if (emptyState) emptyState.style.display = 'block';
+
+    renderLibraryList();
+}
+
+function setLibrarySearch(value) {
+    libraryState.search = value;
+    renderLibraryList();
+}
+
+function updateLibrarySelector(type, value) {
+    if (type === 'class') {
+        libraryState.selectedClass = value;
+    } else {
+        libraryState.selectedAspect = value;
+    }
+}
+
+function openSelectedClasspect() {
+    const key = `${libraryState.selectedClass}:${libraryState.selectedAspect}`;
+    renderLibraryItem(key);
+}
+
+function renderLibraryList() {
+    const list = document.getElementById('libraryList');
+    const meta = document.getElementById('libraryListMeta');
+    if (!list) return;
+
+    const items = getLibraryFilteredItems();
+
+    if (items.length === 0) {
+        list.innerHTML = `<li class="library-no-results">Nenhum item encontrado.</li>`;
+        return;
+    }
+
+    list.innerHTML = items.map(item => {
+        let style = '';
+        let label = item;
+
+        if (item.includes(':')) {
+            const [, asp] = item.split(':');
+            const colors = getAspectColors(asp);
+            label = item.replace(':', ' of ');
+            style = `--item-color:${colors.main};`;
+        } else if (ASPECT_COLORS[item]) {
+            const colors = getAspectColors(item);
+            style = `--item-color:${colors.main};`;
+        }
+
+        return `<li class="library-list-item" style="${style}" onclick="renderLibraryItem('${item}')">${label}</li>`;
+    }).join('');
 }
 
 function renderLibraryItem(key) {
     const display = document.getElementById('libraryDisplay');
     const title = document.getElementById('libTitle');
     const body = document.getElementById('libBody');
-    
+    const emptyState = document.getElementById('libraryEmptyState');
+
     if (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[key]) {
-        title.innerText = key.toUpperCase();
-        body.innerHTML = classpectDescriptions[key];
+        const aspectName = key.includes(':') ? key.split(':')[1] : (ASPECT_COLORS[key] ? key : '');
+
+        title.innerText = getLibraryTitle(key);
+        let renderedContent = classpectDescriptions[key];
+
+        if (key.includes(':')) {
+            const [cls, asp] = key.split(':');
+            renderedContent = renderedContent.replace(/<h3[^>]*>[\s\S]*?<\/h3>\s*/i, `<h3>${cls.toUpperCase()} OF ${asp.toUpperCase()}</h3>`);
+        }
+
+        body.innerHTML = renderedContent;
         display.style.display = 'block';
-        if (ASPECT_COLORS[key]) {
-            const colors = getAspectColors(key);
+        if (emptyState) emptyState.style.display = 'none';
+
+        if (aspectName && ASPECT_COLORS[aspectName]) {
+            const colors = getAspectColors(aspectName);
             display.style.setProperty('--aspect-main', colors.main);
             display.style.setProperty('--aspect-accent', colors.accent);
             title.style.color = colors.main;
-            title.style.textShadow = `1px 1px 0 #fff, 1px 0 0 ${colors.accent}`;
+            title.style.textShadow = 'none';
         } else {
             display.style.removeProperty('--aspect-main');
             display.style.removeProperty('--aspect-accent');
-            title.style.color = '';
-            title.style.textShadow = '';
+            title.style.color = '#111';
+            title.style.textShadow = 'none';
+        }
+
+        if (key.includes(':')) {
+            const [cls, asp] = key.split(':');
+            libraryState.selectedClass = cls;
+            libraryState.selectedAspect = asp;
+            const clsSelect = document.getElementById('libraryClassSelect');
+            const aspSelect = document.getElementById('libraryAspectSelect');
+            if (clsSelect) clsSelect.value = cls;
+            if (aspSelect) aspSelect.value = asp;
         }
     } else {
         alert("Descrição não encontrada para: " + key);
@@ -390,6 +574,7 @@ function renderLibraryItem(key) {
 }
 
 function renderQuestion(q) {
+
     if(!q) return;
     activeQuestion = q;
     let html = `<h2>${q.t}</h2>`;
