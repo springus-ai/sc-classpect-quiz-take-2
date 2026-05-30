@@ -1075,10 +1075,14 @@ const classpectDescriptions = {
     
     "UI_Intro": `
         <div class="fade-in">
-            <h1>TESTE DE CLASSPECT DA SBURBIO V1.3</h1>
+            <h1>TESTE DE CLASSPECT DA SBURBIO V2.0</h1>
             <p>Oi! Que bom que encontrou esse teste. Eu sou o SC, popularmente conhecido como springus. Talvez você não me conheça, mas espero que bote fé no projeto Sburbio.</p>
-            <p>Nova atualização, novo texto. Dessa vez, alterei algumas das descrições que precisavam de revisão e mexi na matemática para Prince e Bard. Acredito que vamos ver menos resultados errados agora. Lembrando que estamos sempre felizes com comentários na nossa página do Twitter, @sburbio!</p>
-            <p>As perguntas e pontuações são baseadas no que aprendi no PDF "A Treatise on Classpecting", mas me baseio principalmente num coletivo de interpretações individuais e que discuti com meus amigos, GeraFTC, Star e Vozes de Anjos, que me ajudaram na confecção desse quiz. São as outras pessoas que fazem parte do projeto.</p>
+            <p>Após 3 meses desde o lançamento do nosso teste, finalmente temos um update massivo para apresentar a vocês! Demorou bastante, foi um trabalho daqueles pra mudar e descobrir o que podia melhorar e o que deixar como tava, mas agora nosso projeto está bem melhor!</p>
+            <p>Na versão 2.0, eis o que há de novo:</p>
+			<p>- Balanceamento novo das questões (deixamos a parte de aspectos intacta, pois achamos que já está boa do jeito que está. Deu bom da primeira vez, não tem porque mexer agora né?).</p>
+			<p>- 10 novas perguntas para cada bloco de aspecto! Esperamos trazer resultados bem mais precisos assim, tendo mais situações para compensar aquelas questões que você pular.</p>
+			<p>- Novas descrições para todos os classpects! Mudamos alguns termos, já que algumas coisas soavam talvez mais "Time" do que "Life" em alguns casos, coisas do tipo.</p>
+			<p>- Novo design! Ouvimos muitas reclamações do estilo de terminal doer os olhos de quem está fazendo o teste (até comigo começou a incomodar), então adotamos um estilo parecido com o do site de homestuck, tornando a experiência beeem mais confortável para os olhos.</p>
             <p>Agora que tiramos isso do caminho e você confia nesse teste (eu espero), vamos cortar o papo e descobrir um pouco sobre você.</p>
             <button onclick="start()">Bora ver.</button>
         </div>
