@@ -387,7 +387,7 @@ function openLibrary(section = 'aspects') {
 
     render(`
         <div class="fade-in library-shell" style="max-width: 980px; margin: 0 auto;">
-            <h1>ARQUIVOS DO SBURBIO</h1>
+            <h1>ARQUIVOS DA SBURBIO</h1>
             <p class="library-intro">Aqui você pode consultar descrições de Aspectos, Classes e combinações de Classpects sem precisar refazer o quiz.</p>
 
             <div class="library-tabs">
