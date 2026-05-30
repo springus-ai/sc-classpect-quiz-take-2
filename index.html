@@ -7,11 +7,39 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <div id="site-shell">
+        <header id="mspfa-header">
+            <div class="logo-row">
+                <img class="site-logo" src="logo.gif" alt="Logo do Sburbio">
+                <div>
+                    <div class="logo-title">SBURBIO.net</div>
+                    <div class="logo-subtitle">Um quiz de classpect. É do Brasil!</div>
+                </div>
+            </div>
+        </header>
 
-<div id="terminal">
-    <div id="content"></div>
-</div>
+        <nav class="mspfa-menu" aria-label="Navegação principal">
+            <a href="https://www.sburbio.net" target="_blank" rel="noopener noreferrer">Nosso Site</a>
+            <a href="https://x.com/sburbio" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <button type="button" onclick="openLibrary()">Arquivos</button>
+        </nav>
 
-<script src="descriptions.js"></script> <script src="questions.js"></script>    <script src="script.js"></script>       </body>
+        <main id="page-frame">
+            <section id="terminal" aria-live="polite">
+                <div class="page-titlebar">
+                    <span>QUIZ DE CLASSPECT DA SBURBIO</span>
+                </div>
+                <div id="content"></div>
+            </section>
+        </main>
+
+        <footer id="site-footer">
+            <span>© SBURBIO 2026</span>
+        </footer>
+    </div>
+
+    <script src="descriptions.js"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
-
