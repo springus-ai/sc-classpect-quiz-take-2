@@ -252,7 +252,7 @@ function finishClassPhase() {
     let explorationButtons = top3ForButtons.map(item => {
     let aspectName = item[0];
     let score = item[1];
-    const HATE_THRESHOLD = -10;
+    const HATE_THRESHOLD = -7;
 
     let actionText = "TESTAR";
 
