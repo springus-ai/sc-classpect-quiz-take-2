@@ -125,18 +125,17 @@ const classpectDescriptions = {
 	
 	"Heir:Hope": `
 		<h3>HEIR OF HOPE (HERDEIRO/HERDEIRA DA ESPERANÇA)</h3>
-		<p><strong>O que Herda a Esperança / Protegido(a) pela Esperança.</strong></p>
+		<p><strong>O que Herda a Esperança / Protegido pela Esperança.</strong></p>
 		<p>Você parece naturalmente envolvido por possibilidade. Mesmo em situações difíceis, há algo em você que tende a encontrar uma saída, uma coincidência favorável, uma pessoa disposta a ajudar ou uma razão para continuar acreditando. A Esperança chega até você com certa facilidade, como se o mundo abrisse pequenas frestas quando tudo parecia fechado.</p>
 		<p>Essa leveza pode inspirar os outros, mas também pode te deixar passivo. Se as coisas costumam dar certo no final, talvez você demore a perceber quando uma situação exige ação concreta, planejamento ou confronto com limites reais. No seu melhor, você incorpora uma fé tranquila que ajuda o grupo a respirar. Seu desafio é não tratar a própria esperança como garantia automática; até uma bênção precisa ser escolhida para virar caminho.</p>
 	`,
 		
-	"Bard:Hope": `
-		<h3>BARD OF HOPE (BARDO/BARDA DA ESPERANÇA)</h3>
-		<p><strong>O que Convida a Destruição da Esperança.</strong></p>
-		<p>Sua relação com a fé é instável e indireta. Às vezes você trata ideais, promessas e motivações como piada; às vezes se agarra a uma crença de forma tão frágil que qualquer rachadura parece contaminar o ambiente inteiro. Sem necessariamente querer, você pode criar condições para que o grupo perca confiança no plano, no líder, na causa ou na própria possibilidade de vencer.</p>
-		<p>Mas a destruição da Esperança nem sempre é inútil. Você pode revelar quando uma fé era artificial, quando um otimismo estava servindo para evitar problemas reais ou quando todo mundo precisava parar de fingir que acreditava. O risco é deixar o desencanto se espalhar sem direção, desmontando também as convicções que ainda mereciam cuidado. No seu melhor, você permite que esperanças falsas caiam para que uma crença mais honesta possa nascer. Seu desafio é perceber quando sua descrença virou atmosfera, não apenas opinião.</p>
-		`,
-
+	"Bard:Blood": `
+	    <h3>BARD OF BLOOD (BARDO/BARDA DO SANGUE)</h3>
+	    <p><strong>O que Convida a Destruição do Sangue.</strong></p>
+	    <p>Sua relação com compromisso pode começar pelo desapego. Você tende a flutuar entre pessoas, grupos e promessas sem sentir muito peso nas conexões que deixa para trás. Não precisa romper laços ativamente; às vezes basta esquecer de responder, não cumprir o que prometeu ou tratar a presença dos outros como algo garantido. Aos poucos, sua leveza cria uma atmosfera onde ninguém sabe se pode contar com você.</p>
+	    <p>O choque vem quando essa distância cobra o preço. O Bardo do Sangue pode descobrir tarde demais que, ao não cuidar dos vínculos, acabou sozinho, sem ter para quem voltar quando precisa de companhia, apoio ou pertencimento. A partir daí, você pode se agarrar a qualquer relação disponível, fazendo favores, promessas e concessões só para não ser abandonado de novo. No seu pior, sua ausência destrói laços importantes e sua carência te prende a conexões ruins; no seu melhor, você aprende que liberdade não vale muito quando ninguém confia em ficar ao seu lado. Seu desafio é respeitar seus vínculos antes que eles precisem quebrar para parecerem reais.</p>
+	`,
     // --- BLOOD (SANGUE) ---
 	"Maid:Blood": `
 	    <h3>MAID OF BLOOD (CRIADA/CRIADO DO SANGUE)</h3>
@@ -209,7 +208,7 @@ const classpectDescriptions = {
 	
 	"Heir:Blood": `
 	    <h3>HEIR OF BLOOD (HERDEIRO/HERDEIRA DO SANGUE)</h3>
-	    <p><strong>O que Herda o Sangue / Protegido(a) pelo Sangue.</strong></p>
+	    <p><strong>O que Herda o Sangue / Protegido pelo Sangue.</strong></p>
 	    <p>Você parece naturalmente envolvido por vínculos. Pessoas se aproximam, te incluem, te protegem ou te tratam como parte do grupo antes mesmo que você entenda exatamente por quê. O Sangue chega até você como uma rede de relações que se organiza ao seu redor, oferecendo pertencimento, apoio e responsabilidade.</p>
 	    <p>Essa afinidade pode tornar você uma presença estabilizadora, alguém que une pessoas simplesmente por estar ali. Mas também pode gerar passividade: se os laços sempre aparecem, talvez você demore a perceber o trabalho necessário para mantê-los saudáveis. No seu melhor, você incorpora a confiança do grupo e faz as pessoas se sentirem menos sozinhas. Seu desafio é não apenas herdar conexões, mas escolher conscientemente como cuidar delas.</p>
 	`,
@@ -294,7 +293,7 @@ const classpectDescriptions = {
 	
 	"Heir:Breath": `
 	    <h3>HEIR OF BREATH (HERDEIRO/HERDEIRA DO SUSPIRO)</h3>
-	    <p><strong>O que Herda o Suspiro / Protegido(a) pelo Suspiro.</strong></p>
+	    <p><strong>O que Herda o Suspiro / Protegido pelo Suspiro.</strong></p>
 	    <p>Você parece naturalmente envolvido por movimento e liberdade. Obrigações tendem a se deslocar, caminhos se abrem, situações rígidas encontram uma brecha e, muitas vezes, você acaba seguindo adiante sem precisar forçar tanto quanto os outros. O Suspiro chega até você como leveza, autonomia e uma capacidade espontânea de não ficar preso por muito tempo.</p>
 	    <p>Essa afinidade pode inspirar quem se sente sufocado, mas também pode gerar passividade. Se o vento costuma te carregar, talvez você demore a perceber quando precisa escolher uma direção em vez de apenas seguir o fluxo. No seu melhor, você incorpora uma liberdade tranquila que ajuda o grupo a respirar. Seu desafio é não confundir ser levado pelo vento com saber para onde quer ir.</p>
 	`,
@@ -302,8 +301,8 @@ const classpectDescriptions = {
 	"Bard:Breath": `
 	    <h3>BARD OF BREATH (BARDO/BARDA DO SUSPIRO)</h3>
 	    <p><strong>O que Convida a Destruição do Suspiro.</strong></p>
-	    <p>Sua relação com liberdade e movimento pode ser instável e indireta. Às vezes você evita mudanças necessárias, deixa decisões no ar ou cria uma atmosfera onde agir parece cansativo, inútil ou sempre adiável. Sem necessariamente querer, essa postura pode fazer com que o grupo perca impulso, autonomia e vontade de seguir adiante.</p>
-	    <p>Mas a destruição do Suspiro nem sempre é inútil. Você pode revelar quando a liberdade de alguém era só fuga, quando uma mudança estava sendo usada para evitar responsabilidade ou quando todos precisavam parar de correr sem direção. O risco é deixar a estagnação agir sem consciência, sufocando também movimentos que ainda eram necessários. No seu melhor, você permite que liberdades vazias caiam para que escolhas mais honestas possam surgir. Seu desafio é perceber quando sua inércia virou vento contrário.</p>
+	    <p>Sua relação com liberdade pode começar pelo medo dela. Você tende a se prender a vínculos, promessas, opiniões e responsabilidades, evitando agir sozinho ou se afastar de quem depende de você. Decidir por conta própria parece arriscado demais: sempre há alguém para magoar, uma consequência para prever ou uma conexão que pode se romper. Por isso, você pode preferir estabilidade mesmo quando ela te sufoca.</p>
+	    <p>Mas chega um ponto em que tantas obrigações viram falta de ar. A crise do Bardo do Suspiro acontece quando você não aguenta mais ser puxado por todos os lados e simplesmente escapa: some, ignora compromissos, abandona expectativas e passa a seguir apenas o próprio impulso. No seu pior, essa liberdade destrói laços que ainda importavam; no seu melhor, ela revela que vínculo nenhum deveria exigir que você deixasse de ser uma pessoa própria. Seu desafio é aprender que ter liberdade não significa ser abandonado, e pertencimento não precisa ser prisão.</p>
 	`,
 
 // --- VOID (VAZIO) ---
@@ -379,7 +378,7 @@ const classpectDescriptions = {
 	
 	"Heir:Void": `
 	    <h3>HEIR OF VOID (HERDEIRO/HERDEIRA DO VAZIO)</h3>
-	    <p><strong>O que Herda o Vazio / Protegido(a) pelo Vazio.</strong></p>
+	    <p><strong>O que Herda o Vazio / Protegido pelo Vazio.</strong></p>
 	    <p>Você parece naturalmente envolvido por esquecimento, privacidade e mistério. Às vezes as pessoas não notam sua presença, esquecem sua participação ou simplesmente deixam você existir fora do centro da atenção. O Vazio chega até você como uma proteção discreta: menos exposição, menos cobrança direta, mais espaço para ser indefinido.</p>
 	    <p>Essa afinidade pode te dar liberdade para observar, criar e existir sem pressão constante, mas também pode gerar isolamento. Se ninguém te vê com clareza, talvez você demore a entender quem é quando não está apenas escapando do olhar alheio. No seu melhor, você incorpora uma tranquilidade misteriosa que permite ao grupo agir fora dos holofotes. Seu desafio é não confundir ser protegido pelo Vazio com ser condenado à irrelevância.</p>
 	`,
@@ -387,8 +386,8 @@ const classpectDescriptions = {
 	"Bard:Void": `
 	    <h3>BARD OF VOID (BARDO/BARDA DO VAZIO)</h3>
 	    <p><strong>O que Convida a Destruição do Vazio.</strong></p>
-	    <p>Sua relação com segredo, privacidade e silêncio pode ser descuidada ou instável. Sem necessariamente querer, você cria condições para que coisas ocultas venham à tona: confidências escapam, planos discretos ficam expostos, ambiguidades se desfazem e aquilo que deveria permanecer fora do palco acaba recebendo atenção demais.</p>
-	    <p>Mas a destruição do Vazio nem sempre é inútil. Você pode revelar quando um segredo estava protegendo algo tóxico, quando a incerteza estava sendo usada para manipular o grupo ou quando todos precisavam parar de fingir que não sabiam. O risco é deixar a exposição agir sem consciência, destruindo também privacidades que mereciam cuidado. No seu melhor, você permite que silêncios nocivos caiam para que algo mais honesto possa aparecer. Seu desafio é perceber quando sua falta de cuidado com o oculto virou uma forma de revelação forçada.</p>
+	    <p>Sua relação com mistério, silêncio e incerteza pode começar por uma necessidade incômoda de explicação. Você pode não suportar muito bem o que fica ambíguo, escondido ou sem nome, então trata lacunas como erros esperando correção. Não precisa arrancar segredos à força; basta fazer perguntas, expor dúvidas ou agir como se tudo precisasse ser iluminado até que o desconhecido perca o abrigo.</p>
+	    <p>Quando o Vazio se impõe, porém, ele pode te puxar para o extremo oposto: sumiço, omissão, negação ou uma vontade de deixar tudo sem resposta. O Bardo do Vazio pode criar condições para que verdades desapareçam, conversas se percam e coisas importantes sejam engolidas pelo silêncio. No seu pior, você destrói mistérios que precisavam de cuidado ou usa o vazio para apagar responsabilidades; no seu melhor, revela quando uma “verdade” era só ruído e quando o silêncio tinha algo a proteger. Seu desafio é não tratar toda ausência como ameaça nem todo segredo como refúgio.</p>
 	`,
 
 // --- LIGHT (LUZ) ---
@@ -464,7 +463,7 @@ const classpectDescriptions = {
 	
 	"Heir:Light": `
 	    <h3>HEIR OF LIGHT (HERDEIRO/HERDEIRA DA LUZ)</h3>
-	    <p><strong>O que Herda a Luz / Protegido(a) pela Luz.</strong></p>
+	    <p><strong>O que Herda a Luz / Protegido pela Luz.</strong></p>
 	    <p>Você parece naturalmente envolvido por informação, sorte e visibilidade. Respostas aparecem no momento certo, oportunidades surgem quando seriam mais úteis, e às vezes as pessoas prestam atenção em você antes mesmo que você entenda por quê. A Luz chega até você como clareza espontânea, relevância herdada ou uma facilidade curiosa para estar perto do que importa.</p>
 	    <p>Essa afinidade pode inspirar os outros e abrir caminhos, mas também pode gerar passividade. Se a resposta costuma aparecer, talvez você demore a aprender como procurá-la quando ela não vem. No seu melhor, você incorpora uma clareza tranquila que ajuda o grupo a confiar no caminho. Seu desafio é não confundir sorte com mérito automático, nem visibilidade com compreensão verdadeira.</p>
 	`,
@@ -472,8 +471,8 @@ const classpectDescriptions = {
 	"Bard:Light": `
 	    <h3>BARD OF LIGHT (BARDO/BARDA DA LUZ)</h3>
 	    <p><strong>O que Convida a Destruição da Luz.</strong></p>
-	    <p>Sua relação com informação, atenção e clareza pode ser instável e indireta. Às vezes você deixa uma confusão crescer, ignora um dado importante, permite que conclusões erradas circulem ou trata a busca por relevância como algo ridículo demais para levar a sério. Sem necessariamente querer, essa postura pode criar condições para que o grupo perca direção, confiança nos fatos ou senso do que realmente importa.</p>
-	    <p>Mas a destruição da Luz nem sempre é inútil. Você pode revelar quando uma verdade era usada como arma, quando uma reputação dependia de prestígio vazio ou quando todos estavam seguindo uma "resposta certa" que ninguém questionava. O risco é deixar o caos informacional agir sem consciência, destruindo também clarezas que ainda eram necessárias. No seu melhor, você permite que certezas falsas caiam para que uma compreensão mais honesta possa surgir. Seu desafio é perceber quando sua negligência com a Luz virou desinformação, não libertação.</p>
+	    <p>Sua relação com conhecimento, relevância e certeza pode começar pela indiferença. Você talvez deixe informações importantes passarem, trate sinais como coincidência ou aja como se entender a situação não fosse tão necessário assim. Sem esconder nada ativamente, sua postura pode criar um ambiente onde pistas são ignoradas, prioridades ficam confusas e ninguém sabe no que prestar atenção.</p>
+	    <p>Quando a Luz te captura, ela pode vir como uma fixação súbita por significado. O Bardo da Luz pode passar de distraído a obcecado, deixando uma informação, teoria ou revelação crescer até que ela queime todo o resto ao redor. No seu pior, você permite que a ignorância destrua chances reais ou que uma certeza exagerada destrua nuances; no seu melhor, mostra quando uma “verdade importante” era só vaidade disfarçada. Seu desafio é não ser governado nem pela desatenção, nem pelo brilho excessivo de uma única resposta.</p>
 	`,
 
 	// --- SPACE (ESPAÇO) ---
@@ -549,7 +548,7 @@ const classpectDescriptions = {
 	
 	"Heir:Space": `
 	    <h3>HEIR OF SPACE (HERDEIRO/HERDEIRA DO ESPAÇO)</h3>
-	    <p><strong>O que Herda o Espaço / Protegido(a) pelo Espaço.</strong></p>
+	    <p><strong>O que Herda o Espaço / Protegido pelo Espaço.</strong></p>
 	    <p>Você parece naturalmente envolvido por ambientes, objetos, criação e possibilidade. Pessoas, recursos, responsabilidades criativas ou lugares tendem a se organizar ao seu redor, como se o mundo físico abrisse espaço para você ocupar. O Espaço chega até você como presença, território, matéria disponível e uma afinidade espontânea com o ato de criar ou preservar.</p>
 	    <p>Essa afinidade pode tornar você uma presença estabilizadora, alguém ao redor de quem as coisas encontram forma. Mas também pode gerar passividade: se o espaço vem até você, talvez você demore a questionar se aquele lugar realmente foi escolhido ou apenas herdado. No seu melhor, você incorpora uma criatividade paciente que ajuda o grupo a se enraizar. Seu desafio é não apenas aceitar o espaço que te deram, mas decidir que tipo de mundo você quer construir dentro dele.</p>
 	`,
@@ -634,7 +633,7 @@ const classpectDescriptions = {
 	
 	"Heir:Time": `
 	    <h3>HEIR OF TIME (HERDEIRO/HERDEIRA DO TEMPO)</h3>
-	    <p><strong>O que Herda o Tempo / Protegido(a) pelo Tempo.</strong></p>
+	    <p><strong>O que Herda o Tempo / Protegido pelo Tempo.</strong></p>
 	    <p>Você parece naturalmente envolvido por ritmo, oportunidade e inevitabilidade. As coisas chegam até você no momento certo, ciclos se fecham ao seu redor, e muitas vezes você se adapta às mudanças como se já soubesse, instintivamente, que tudo passa. O Tempo chega até você como timing, memória, transformação e uma estranha familiaridade com finais.</p>
 	    <p>Essa afinidade pode te tornar paciente, resiliente e capaz de atravessar mudanças que desestabilizariam outras pessoas. Mas também pode gerar passividade: se tudo passa, talvez você demore a intervir quando algo precisava de escolha ativa. No seu melhor, você incorpora o ritmo dos ciclos e ajuda o grupo a aceitar mudança sem desespero. Seu desafio é não confundir deixar o tempo agir com deixar a própria vida acontecer sem você.</p>
 	`,
@@ -642,8 +641,8 @@ const classpectDescriptions = {
 	"Bard:Time": `
 	    <h3>BARD OF TIME (BARDO/BARDA DO TEMPO)</h3>
 	    <p><strong>O que Convida a Destruição do Tempo.</strong></p>
-	    <p>Sua relação com ritmo, prazo e continuidade pode ser instável e indireta. Às vezes você deixa oportunidades passarem, permite que atrasos se acumulem ou trata a urgência como algo que pode ser ignorado até que o próprio tempo resolva — ou destrua — a situação. Sem necessariamente querer, essa postura cria condições para que ciclos se quebrem, processos percam o compasso e finais cheguem antes que alguém esteja preparado.</p>
-	    <p>Mas a destruição do Tempo nem sempre é inútil. Você pode revelar quando um cronograma era insustentável, quando uma espera só servia para adiar o inevitável ou quando todos estavam presos a um ritmo que já não fazia sentido. O risco é deixar o colapso temporal agir sem consciência, destruindo também oportunidades que ainda podiam ser salvas. No seu melhor, você permite que ritmos falsos caiam para que um tempo mais honesto possa surgir. Seu desafio é perceber quando sua negligência com o Tempo virou perda, não libertação.</p>
+	    <p>Sua relação com mudança, ritmo e urgência pode começar pela recusa em levar o tempo a sério. Você tende a ir no próprio passo, adiar decisões, ignorar prazos ou agir como se as consequências pudessem esperar mais um pouco. Não precisa sabotar nada diretamente; às vezes basta deixar as coisas rolarem até que oportunidades expirem, ciclos se arrastem e todo mundo precise correr para compensar sua demora.</p>
+	    <p>Quando o peso do tempo finalmente cai, ele pode vir como pânico, pressa ou uma necessidade súbita de acelerar tudo. O Bardo do Tempo pode sair da inércia para uma urgência quase caótica, empurrando acontecimentos antes que alguém esteja pronto. No seu pior, você deixa o tempo destruir por abandono ou por excesso de velocidade; no seu melhor, mostra quando um ritmo antigo já estava morto e precisava ser encerrado. Seu desafio é não esperar a crise para lembrar que o relógio também conta para você.</p>
 	`,
 
     // --- HEART (CORAÇÃO) ---
@@ -719,7 +718,7 @@ const classpectDescriptions = {
 	
 	"Heir:Heart": `
 	    <h3>HEIR OF HEART (HERDEIRO/HERDEIRA DO CORAÇÃO)</h3>
-	    <p><strong>O que Herda o Coração / Protegido(a) pelo Coração.</strong></p>
+	    <p><strong>O que Herda o Coração / Protegido pelo Coração.</strong></p>
 	    <p>Você parece naturalmente envolvido por emoção, carisma e identidade. Paixões surgem com força, pessoas projetam significado em você, e muitas vezes sua presença desperta afeto, identificação ou reconhecimento sem que você precise fazer muito. O Coração chega até você como instinto, magnetismo e uma facilidade espontânea para tocar a individualidade dos outros.</p>
 	    <p>Essa afinidade pode te tornar expressivo, inspirador e emocionalmente marcante, mas também pode gerar passividade. Se sentimentos e papéis chegam até você com facilidade, talvez você demore a perguntar quais deles realmente escolheu. No seu melhor, você incorpora autenticidade de forma natural e ajuda os outros a se sentirem mais vivos. Seu desafio é não apenas herdar paixões, identidades e projeções, mas escolher quem você quer ser no meio delas.</p>
 	`,
@@ -727,8 +726,8 @@ const classpectDescriptions = {
 	"Bard:Heart": `
 	    <h3>BARD OF HEART (BARDO/BARDA DO CORAÇÃO)</h3>
 	    <p><strong>O que Convida a Destruição do Coração.</strong></p>
-	    <p>Sua relação com identidade e emoção pode ser instável e indireta. Às vezes você evita vulnerabilidade, trata sentimentos como piada, assume máscaras por tempo demais ou deixa relações perderem intimidade por falta de presença emocional. Sem necessariamente querer, essa postura cria condições para que identidades se confundam, afetos se desgastem e verdades emocionais deixem de ser cuidadas.</p>
-	    <p>Mas a destruição do Coração nem sempre é inútil. Você pode revelar quando uma identidade era só prisão, quando uma paixão estava sustentando autoengano ou quando todos precisavam parar de fingir sentimentos que não existiam mais. O risco é deixar o colapso emocional agir sem consciência, destruindo também vínculos e expressões que ainda mereciam cuidado. No seu melhor, você permite que máscaras falsas caiam para que algo mais verdadeiro possa existir. Seu desafio é perceber quando sua distância emocional virou erosão, não liberdade.</p>
+	    <p>Sua relação com identidade, sentimento e autenticidade pode começar pela distância de si. Você talvez evite definir o que sente, trate mudanças internas como drama ou deixe que os outros decidam quem você é. Sem atacar diretamente a individualidade de ninguém, sua indefinição pode criar um ambiente onde desejos são abafados, máscaras ficam confortáveis demais e ninguém sabe exatamente onde termina o papel e começa a pessoa.</p>
+	    <p>Quando o Coração rompe essa distância, ele pode vir como uma onda de emoção e autoafirmação difícil de conter. O Bardo do Coração pode deixar sentimentos crescerem até esmagarem limites, relações ou versões antigas de si mesmo. No seu pior, você permite que identidades se dissolvam por omissão ou que uma verdade emocional destrua tudo ao redor; no seu melhor, revela quando uma persona já não servia e precisava cair. Seu desafio é não fugir de si até precisar se tornar inteiro de uma vez só.</p>
 	`,
 
 	// --- MIND (MENTE) ---
@@ -804,7 +803,7 @@ const classpectDescriptions = {
 	
 	"Heir:Mind": `
 	    <h3>HEIR OF MIND (HERDEIRO/HERDEIRA DA MENTE)</h3>
-	    <p><strong>O que Herda a Mente / Protegido(a) pela Mente.</strong></p>
+	    <p><strong>O que Herda a Mente / Protegido pela Mente.</strong></p>
 	    <p>Você parece naturalmente envolvido por lógica, adaptação e escolhas oportunas. Muitas vezes, a resposta certa surge para você como intuição racional: você muda de postura conforme o contexto, percebe como agir em cada situação e encontra um caminho que simplesmente faz sentido. A Mente chega até você como flexibilidade, leitura de ambiente e facilidade para navegar alternativas.</p>
 	    <p>Essa afinidade pode te tornar preciso, adaptável e difícil de encurralar, mas também pode gerar passividade. Se as escolhas parecem se organizar sozinhas, talvez você demore a perguntar quais valores estão guiando suas decisões. No seu melhor, você incorpora uma lucidez flexível que ajuda o grupo a encontrar rotas viáveis. Seu desafio é não apenas seguir a lógica do momento, mas escolher conscientemente que tipo de pessoa suas escolhas estão construindo.</p>
 	`,
@@ -812,8 +811,8 @@ const classpectDescriptions = {
 	"Bard:Mind": `
 	    <h3>BARD OF MIND (BARDO/BARDA DA MENTE)</h3>
 	    <p><strong>O que Convida a Destruição da Mente.</strong></p>
-	    <p>Sua relação com decisão, planejamento e consequência pode ser instável e indireta. Às vezes você deixa escolhas em aberto, desmonta certezas sem oferecer alternativa ou trata decisões importantes como se elas fossem reversíveis para sempre. Sem necessariamente querer, essa postura cria condições para que o grupo perca clareza, agência ou confiança no próprio julgamento.</p>
-	    <p>Mas a destruição da Mente nem sempre é inútil. Você pode revelar quando um plano era rígido demais, quando uma escolha "racional" escondia medo ou quando todos estavam presos a uma lógica que já não servia. O risco é deixar a confusão agir sem consciência, destruindo também estruturas mentais que ainda eram necessárias. No seu melhor, você permite que sistemas de pensamento falsos caiam para que escolhas mais honestas possam surgir. Seu desafio é perceber quando sua recusa em decidir virou decisão por omissão.</p>
+	    <p>Sua relação com lógica, escolha e consequência pode começar pela recusa em calcular demais. Você pode preferir deixar decisões no ar, agir no improviso ou tratar análises como frieza desnecessária. Não precisa quebrar planos diretamente; basta não escolher, não considerar os efeitos ou deixar que outras pessoas lidem com a bagunça até que a clareza do grupo se desgaste.</p>
+	    <p>Quando a Mente assume o volante, ela pode vir como excesso de cálculo. O Bardo da Mente pode ficar preso em possibilidades, justificativas e estratégias, criando um clima onde toda decisão parece armadilha e toda ação precisa ser defendida como se fosse um julgamento. No seu pior, você destrói escolhas por descuido ou por paralisia; no seu melhor, revela quando uma lógica era só desculpa para evitar responsabilidade. Seu desafio é entender que pensar não precisa matar o impulso, e agir não precisa matar a consequência.</p>
 	`,
 	
 	// --- RAGE (IRA) ---
@@ -889,7 +888,7 @@ const classpectDescriptions = {
 	
 	"Heir:Rage": `
 	    <h3>HEIR OF RAGE (HERDEIRO/HERDEIRA DA IRA)</h3>
-	    <p><strong>O que Herda a Ira / Protegido(a) pela Ira.</strong></p>
+	    <p><strong>O que Herda a Ira / Protegido pela Ira.</strong></p>
 	    <p>Você parece naturalmente envolvido por conflito, recusa e intensidade. Tensões aparecem ao seu redor, verdades inconvenientes chegam até você, e muitas vezes sua própria presença faz aquilo que estava reprimido vir à tona. A Ira chega até você como resistência, pele grossa, ceticismo e uma capacidade espontânea de sobreviver a ambientes difíceis.</p>
 	    <p>Essa afinidade pode te tornar resiliente e difícil de manipular, mas também pode gerar familiaridade demais com a hostilidade. Se conflito é o terreno onde você aprendeu a se mover, a paz pode parecer estranha, frágil ou até suspeita. No seu melhor, você incorpora uma força de recusa que ajuda o grupo a não se dobrar diante do intolerável. Seu desafio é não confundir calma com falsidade, nem harmonia com armadilha.</p>
 	`,
@@ -897,8 +896,8 @@ const classpectDescriptions = {
 	"Bard:Rage": `
 	    <h3>BARD OF RAGE (BARDO/BARDA DA IRA)</h3>
 	    <p><strong>O que Convida a Destruição da Ira.</strong></p>
-	    <p>Sua relação com conflito, indignação e verdade crua pode ser instável e indireta. Às vezes você evita encarar tensões, trata preocupações sérias como exagero ou desfaz a raiva dos outros com humor, distração ou aparente indiferença. Sem necessariamente querer, essa postura cria condições para que a capacidade crítica do grupo se enfraqueça ou para que conflitos importantes sejam adiados até perderem forma.</p>
-	    <p>Mas a destruição da Ira nem sempre é inútil. Você pode revelar quando uma revolta virou hábito, quando uma desconfiança estava corroendo tudo sem motivo ou quando todos estavam presos a um ciclo de hostilidade que já não servia a ninguém. O risco é deixar a negação agir sem consciência, apagando também raivas que ainda precisavam ser ouvidas. No seu melhor, você permite que rancores falsos caiam para que uma verdade menos venenosa possa aparecer. Seu desafio é perceber quando sua recusa em levar a Ira a sério virou cumplicidade com o que deveria ser confrontado.</p>
+	    <p>Sua relação com revolta, verdade dura e conflito pode começar pela tentativa de manter tudo suportável. Você talvez evite confrontos, desvie de assuntos desagradáveis ou trate raiva como exagero de quem não sabe se controlar. Sem silenciar ninguém à força, sua leveza pode criar um ambiente onde incômodos reais são empurrados para baixo do tapete até que a indignação perca força.</p>
+	    <p>Quando a Ira finalmente aparece, ela pode vir sem filtro. O Bardo da Ira pode passar da evasão para um estado de confronto intenso, deixando verdades feias, ressentimentos e caos se espalharem além do necessário. No seu pior, você sufoca revoltas legítimas ou permite que elas explodam destruindo tudo; no seu melhor, revela quando a paz era apenas uma mentira bem-comportada. Seu desafio é não ser governado nem pela anestesia, nem pelo prazer de ver tudo pegar fogo.</p>
 	`,
 
 	// --- LIFE (VIDA) ---
@@ -974,7 +973,7 @@ const classpectDescriptions = {
 	
 	"Heir:Life": `
 	    <h3>HEIR OF LIFE (HERDEIRO/HERDEIRA DA VIDA)</h3>
-	    <p><strong>O que Herda a Vida / Protegido(a) pela Vida.</strong></p>
+	    <p><strong>O que Herda a Vida / Protegido pela Vida.</strong></p>
 	    <p>Você parece naturalmente envolvido por vitalidade, oportunidade e crescimento. Recursos aparecem, portas se abrem, pessoas se renovam ao seu redor ou sua própria energia acaba puxando situações para um estado mais vivo. A Vida chega até você como abundância, recuperação, desejo e uma facilidade espontânea para continuar crescendo.</p>
 	    <p>Essa afinidade pode te tornar inspirador, resistente e capaz de levantar ambientes apagados, mas também pode gerar passividade. Se as coisas costumam florescer ao seu redor, talvez você demore a perceber o esforço que outras pessoas precisam fazer para sobreviver. No seu melhor, você incorpora uma vitalidade tranquila que ajuda o grupo a recuperar fôlego. Seu desafio é não confundir abundância recebida com mérito automático, nem crescimento natural com ausência de responsabilidade.</p>
 	`,
@@ -982,8 +981,8 @@ const classpectDescriptions = {
 	"Bard:Life": `
 	    <h3>BARD OF LIFE (BARDO/BARDA DA VIDA)</h3>
 	    <p><strong>O que Convida a Destruição da Vida.</strong></p>
-	    <p>Sua relação com crescimento, cuidado e vitalidade pode ser instável e indireta. Às vezes você ignora necessidades do corpo, deixa recursos se perderem, adia cuidados básicos ou trata oportunidades de crescimento como algo que pode esperar indefinidamente. Sem necessariamente querer, essa postura cria condições para que energia, saúde, projetos ou ambientes comecem a definhar.</p>
-	    <p>Mas a destruição da Vida nem sempre é inútil. Você pode revelar quando um crescimento era artificial, quando uma abundância escondia excesso prejudicial ou quando todos estavam sustentando algo apenas porque parecia "saudável" por fora. O risco é deixar o abandono agir sem consciência, destruindo também vitalidades que ainda mereciam cuidado. No seu melhor, você permite que formas falsas de crescimento caiam para que uma vida mais honesta possa surgir. Seu desafio é perceber quando sua negligência com a Vida virou desperdício, não liberdade.</p>
+	    <p>Sua relação com crescimento, cuidado e vitalidade pode começar por uma resistência ao excesso de vida. Você talvez se sinta sufocado por demandas, necessidades, melhorias e gente querendo que tudo floresça o tempo todo. Sem recusar cuidado de forma explícita, sua passividade pode criar um ambiente onde coisas vivas murcham: hábitos se perdem, relações ficam sem nutrição e oportunidades de crescimento são adiadas até secarem.</p>
+	    <p>Quando a Vida te toma, ela pode vir como abundância sem controle. O Bardo da Vida pode deixar desejos, cuidados e expansões crescerem demais, alimentando situações que já deveriam ter sido podadas. No seu pior, você permite que algo definhe por negligência ou que cresça até virar sufocante; no seu melhor, revela quando uma forma de cuidado era invasiva, falsa ou insustentável. Seu desafio é aprender que nutrir não é abandonar nem deixar tudo crescer sem limite.</p>
 	`,
 
 	// --- DOOM (DESTINO) ---
@@ -1059,7 +1058,7 @@ const classpectDescriptions = {
 	
 	"Heir:Doom": `
 	    <h3>HEIR OF DOOM (HERDEIRO/HERDEIRA DO DESTINO)</h3>
-	    <p><strong>O que Herda o Destino / Protegido(a) pelo Destino.</strong></p>
+	    <p><strong>O que Herda o Destino / Protegido pelo Destino.</strong></p>
 	    <p>Você parece naturalmente envolvido por regras, limites e consequências. Sistemas rígidos, responsabilidades, perdas ou estruturas difíceis tendem a se organizar ao seu redor, e muitas vezes você aprende a se mover dentro delas com uma familiaridade que outras pessoas não têm. O Destino chega até você como adaptação, resistência e uma capacidade estranha de continuar mesmo em ambientes pesados.</p>
 	    <p>Essa afinidade pode te tornar prudente, resiliente e capaz de sobreviver a situações que desestabilizariam outros. Mas também pode gerar complacência: se restrições sempre pareceram parte natural da vida, talvez você demore a questionar quais delas são injustas ou desnecessárias. No seu melhor, você incorpora aceitação sem desespero e ajuda o grupo a lidar com consequências reais. Seu desafio é não confundir estar acostumado ao limite com merecer viver preso a ele.</p>
 	`,
@@ -1067,8 +1066,8 @@ const classpectDescriptions = {
 	"Bard:Doom": `
 	    <h3>BARD OF DOOM (BARDO/BARDA DO DESTINO)</h3>
 	    <p><strong>O que Convida a Destruição do Destino.</strong></p>
-	    <p>Sua relação com limites, regras e consequências pode ser instável e indireta. Às vezes você ignora avisos, trata restrições como exagero ou deixa estruturas de segurança se desgastarem até que algo inevitável deixe de ser administrável. Sem necessariamente querer, essa postura cria condições para que regras caiam, proteções falhem e consequências cheguem de forma mais dura do que precisavam.</p>
-	    <p>Mas a destruição do Destino nem sempre é inútil. Você pode revelar quando uma regra só existia para manter medo, quando uma limitação era artificial ou quando todos estavam obedecendo a uma sentença que já não precisava valer. O risco é deixar a irresponsabilidade agir sem consciência, destruindo também limites que protegiam pessoas reais. No seu melhor, você permite que fatalismos falsos caiam para que uma forma mais livre de viver possa surgir. Seu desafio é perceber quando sua recusa em respeitar o Destino virou negligência, não libertação.</p>
+	    <p>Sua relação com limites, regras e inevitabilidade pode começar pela negação. Você talvez aja como se consequências fossem problema de depois, como se restrições fossem opcionais ou como se nada de ruim fosse realmente acontecer enquanto ninguém olhar diretamente para isso. Sem quebrar o sistema com as próprias mãos, sua postura pode deixar riscos se acumularem até que as regras falhem sozinhas.</p>
+	    <p>Quando o Destino chega, ele pode vir como uma aceitação pesada demais. O Bardo do Destino pode passar a enxergar limites em tudo, permitindo que medo, culpa ou fatalismo ditem o caminho de todos. No seu pior, você ignora avisos até ser tarde demais ou deixa a ideia de destino destruir qualquer tentativa de mudança; no seu melhor, revela quando uma regra já estava podre e precisava cair. Seu desafio é reconhecer limites sem virar servo deles.</p>
 	`,
 
 // --- TEXTOS DO SISTEMA ---
