@@ -670,7 +670,7 @@ const classpectDescriptions = {
 	"Mage:Heart": `
 	    <h3>MAGE OF HEART (MAGO/MAGA DO CORAÇÃO)</h3>
 	    <p><strong>O que Entende o Coração / Entende com o Coração.</strong></p>
-	    <p>Você entende identidade, desejo e emoção porque já precisou encarar essas coisas de perto. Talvez tenha aprendido através de rejeição, paixão, autodescoberta difícil, conflitos íntimos ou da experiência de perceber que pessoas raramente são tão simples quanto dizem ser. Para você, o Coração não é teoria: é contradição vivida, instinto, máscara, vontade e ferida.</p>
+	    <p>Você entende identidade, desejo e emoção porque já precisou encarar essas coisas de perto. Talvez tenha aprendido através de rejeição, paixão, autodescoberta difícil, conflitos íntimos ou da experiência de perceber que pessoas raramente são tão simples quanto dizem ser. Para você, o Coração é contradição vivida, instinto, máscara, vontade e ferida.</p>
 	    <p>Essa experiência te dá uma percepção afiada sobre motivações e autenticidade. Você percebe quando alguém está performando, se escondendo ou agindo contra o que realmente deseja. O risco é confiar tanto nessa leitura que você passa a tratar seus instintos como verdades absolutas. No seu melhor, você entende as pessoas em profundidade sem reduzi-las ao que acha que viu nelas. Seu desafio é transformar sensibilidade emocional em sabedoria, não em sentença.</p>
 	`,
 	
