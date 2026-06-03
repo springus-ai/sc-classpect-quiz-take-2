@@ -130,11 +130,11 @@ const classpectDescriptions = {
 		<p>Essa leveza pode inspirar os outros, mas também pode te deixar passivo. Se as coisas costumam dar certo no final, talvez você demore a perceber quando uma situação exige ação concreta, planejamento ou confronto com limites reais. No seu melhor, você incorpora uma fé tranquila que ajuda o grupo a respirar. Seu desafio é não tratar a própria esperança como garantia automática; até uma bênção precisa ser escolhida para virar caminho.</p>
 	`,
 		
-	"Bard:Blood": `
-	    <h3>BARD OF BLOOD (BARDO/BARDA DO SANGUE)</h3>
-	    <p><strong>O que Convida a Destruição do Sangue.</strong></p>
-	    <p>Sua relação com compromisso pode começar pelo desapego. Você tende a flutuar entre pessoas, grupos e promessas sem sentir muito peso nas conexões que deixa para trás. Não precisa romper laços ativamente; às vezes basta esquecer de responder, não cumprir o que prometeu ou tratar a presença dos outros como algo garantido. Aos poucos, sua leveza cria uma atmosfera onde ninguém sabe se pode contar com você.</p>
-	    <p>O choque vem quando essa distância cobra o preço. O Bardo do Sangue pode descobrir tarde demais que, ao não cuidar dos vínculos, acabou sozinho, sem ter para quem voltar quando precisa de companhia, apoio ou pertencimento. A partir daí, você pode se agarrar a qualquer relação disponível, fazendo favores, promessas e concessões só para não ser abandonado de novo. No seu pior, sua ausência destrói laços importantes e sua carência te prende a conexões ruins; no seu melhor, você aprende que liberdade não vale muito quando ninguém confia em ficar ao seu lado. Seu desafio é respeitar seus vínculos antes que eles precisem quebrar para parecerem reais.</p>
+	"Bard:Hope": `
+		<h3>BARD OF HOPE (BARDO/BARDA DA ESPERANÇA)</h3>
+		<p><strong>O que Convida a Destruição da Esperança.</strong></p>
+		<p>Sua relação com fé, sentido e possibilidade pode começar pelo desencanto. Você não precisa atacar diretamente os ideais de ninguém; muitas vezes basta tratar tudo com ironia, distância ou indiferença até que o entusiasmo ao redor comece a parecer bobo demais para continuar de pé. Seu ceticismo pode virar uma atmosfera: planos perdem brilho, promessas soam frágeis e a confiança do grupo vai ficando na beirada da mesa, esperando qualquer esbarrão para cair.</p>
+		<p>Quando uma crença finalmente te captura, porém, ela pode vir como uma onda. O Bardo da Esperança passa da descrença para uma fé intensa, eufórica e difícil de conter, como se uma porta tivesse sido aberta e agora ninguém conseguisse fechá-la. Você pode deixar essa esperança crescer até ocupar espaço demais, levando todos junto numa direção que talvez ninguém tenha escolhido com clareza. No seu pior, sua fé cria condições para delírios e decepções enormes; no seu melhor, você permite que esperanças falsas desabem para que algo mais honesto possa nascer. Seu desafio é não ser governado(a) nem pelo cinismo, nem pelo êxtase da própria esperança.</p>
 	`,
     // --- BLOOD (SANGUE) ---
 	"Maid:Blood": `
