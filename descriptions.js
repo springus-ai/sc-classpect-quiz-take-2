@@ -136,6 +136,7 @@ const classpectDescriptions = {
 		<p>Sua relação com fé, sentido e possibilidade pode começar pelo desencanto. Você não precisa atacar diretamente os ideais de ninguém; muitas vezes basta tratar tudo com ironia, distância ou indiferença até que o entusiasmo ao redor comece a parecer bobo demais para continuar de pé. Seu ceticismo pode virar uma atmosfera: planos perdem brilho, promessas soam frágeis e a confiança do grupo vai ficando na beirada da mesa, esperando qualquer esbarrão para cair.</p>
 		<p>Quando uma crença finalmente te captura, porém, ela pode vir como uma onda. O Bardo da Esperança passa da descrença para uma fé intensa, eufórica e difícil de conter, como se uma porta tivesse sido aberta e agora ninguém conseguisse fechá-la. Você pode deixar essa esperança crescer até ocupar espaço demais, levando todos junto numa direção que talvez ninguém tenha escolhido com clareza. No seu pior, sua fé cria condições para delírios e decepções enormes; no seu melhor, você permite que esperanças falsas desabem para que algo mais honesto possa nascer. Seu desafio é não ser governado(a) nem pelo cinismo, nem pelo êxtase da própria esperança.</p>
 	`,
+	
     // --- BLOOD (SANGUE) ---
 	"Maid:Blood": `
 	    <h3>MAID OF BLOOD (CRIADA/CRIADO DO SANGUE)</h3>
