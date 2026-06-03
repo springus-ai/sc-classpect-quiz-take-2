@@ -558,7 +558,7 @@ const classpectDescriptions = {
 	    <h3>BARD OF SPACE (BARDO/BARDA DO ESPAÇO)</h3>
 	    <p><strong>O que Convida a Destruição do Espaço.</strong></p>
 	    <p>Sua relação com criação, ambiente e manutenção pode ser instável e indireta. Às vezes você deixa projetos se acumularem sem forma, ignora problemas materiais, abandona espaços que precisavam de cuidado ou trata o processo criativo como algo que pode esperar indefinidamente. Sem necessariamente querer, essa postura cria condições para que potencial se perca, ambientes se deteriorem e possibilidades deixem de ter onde crescer.</p>
-	    <p>Mas a destruição do Espaço nem sempre é inútil. Você pode revelar quando um projeto só existia por obrigação, quando um ambiente estava sustentando uma vida que ninguém queria mais ou quando a criação precisava parar de ser preservada a qualquer custo. O risco é deixar o abandono agir sem consciência, destruindo também coisas que ainda mereciam cuidado. No seu melhor, você permite que formas gastas caiam para que algo mais honesto possa ocupar lugar. Seu desafio é perceber quando sua negligência com o Espaço virou perda, não libertação.</p>
+	    <p>Mas a destruição do Espaço nem sempre é inútil. Quando o Espaço finalmente toma conta, a ruptura pode vir como uma pausa exagerada, uma fuga para o conforto ou uma vontade de abandonar toda estrutura. O Bardo do Espaço pode deixar projetos desmoronarem porque descanso, distração ou novas possibilidades se tornam mais sedutores que continuidade. No seu melhor, você sabe quando um ambiente estava apertado demais para qualquer coisa viva crescer. Seu desafio é perceber quando sua negligência com o Espaço virou perda, não libertação.</p>
 	`,
 
 	// --- TIME (TEMPO) ---
