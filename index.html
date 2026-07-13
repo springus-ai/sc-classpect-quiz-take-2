@@ -91,6 +91,20 @@ document.write(
 </script>
 
 <script src="script.js"></script>
+    
+<script>
+const lang = localStorage.getItem("language") || "pt";
+
+document.write(
+    `<script src="descriptions_${lang}.js"><\/script>`
+);
+
+document.write(
+    `<script src="questions_${lang}.js"><\/script>`
+);
+</script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
