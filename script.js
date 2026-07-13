@@ -10,6 +10,13 @@ let state = {
     history: []
 };
 
+function getUIText(key, fallback) {
+    if (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[key]) {
+        return classpectDescriptions[key];
+    }
+    return fallback;
+}
+
 let activeQuestion = null;
 let viewerClass = "";
 let viewerAspect = "";
@@ -573,7 +580,6 @@ function renderLibraryItem(key) {
 }
 
 function renderQuestion(q) {
-
     if(!q) return;
     activeQuestion = q;
     let html = `<h2>${q.t}</h2>`;
@@ -584,11 +590,16 @@ function renderQuestion(q) {
     html += `</div>`;
     html += `<div class="navigation-controls" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">`;
 
+    // Pegando a chave correta do seu index.html ("language")
+    const isEn = localStorage.getItem("language") === "en";
+    const txtBack = isEn ? "Back" : "Voltar";
+    const txtSkip = isEn ? "None of the above." : "Nenhuma das anteriores.";
+
     if (state.questionCount > 0 || state.stage === "class_quiz") {
-        html += `<button class="back-button" onclick="handleBack()">Voltar</button>`;
+        html += `<button class="back-button" onclick="handleBack()">${txtBack}</button>`;
     }
     
-    html += `<button class="skip-button" onclick="handleSkip()">Nenhuma das anteriores.</button>`;
+    html += `<button class="skip-button" onclick="handleSkip()">${txtSkip}</button>`;
     html += `</div>`;
     
     render(html);
@@ -664,24 +675,20 @@ function render(html) {
 }
 
 function renderNullEnding() {
-    const html = `
-        <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
-            
-            <h1>TEM ALGO DE ERRADO AQUI.</h1>
-            <p style="opacity: 0.8;">PORRA OF NENHUMA.</p>
-            
-            <img src="https://i.imgur.com/zcNK5Dk.png" alt="Void Glitch" style="max-width: 250px; width: 100%; height: auto; margin: 20px auto; display: block; border: 1px solid #ff0000; box-shadow: 0 0 10px rgba(255,0,0,0.5);">
-
-            <div class="analysis-text" style="margin-top: 2rem;">
-                <p>Você me fez morder a fronha. Quer dizer que você abriu esse teste só para clicar em "Nenhuma das anteriores" tipo, 30 vezes? Poxa.</p>
-                
-                <p><strong>Vem, vamos de novo. Eu sei que você quer saber o seu resultado de verdade.</strong></p>
+    if (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_NullEnding"]) {
+        render(classpectDescriptions["UI_NullEnding"]);
+    } else {
+        render(`
+            <div class="fade-in result-container" style="text-align: center; padding: 2rem;">
+                <h1>TEM ALGO DE ERRADO AQUI.</h1>
+                <p style="font-style: italic; opacity: 0.8;">NENHUM CLASSPECT ATRIBUÍDO.</p>
+                <div class="analysis-text" style="margin-top: 2rem;">
+                    <p>Você me fez morder a fronha. Quer dizer que você abriu esse teste só para clicar em "Nenhuma das anteriores" tipo, 30 vezes? Poxa.</p>
+                </div>
+                <button class="retry-button" onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px;">Tente novamente.</button>
             </div>
-            
-            <button class="retry-button" onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px;">Tente novamente.</button>
-        </div>
-    `;
-    render(html);
+        `);
+    }
 }
 
 function retryClassTest(aspectName) {
@@ -706,13 +713,3 @@ window.onload = () => {
 
     render(introText);
 };
-
-
-
-
-
-
-
-
-
-
