@@ -6,105 +6,68 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
-
 <body>
-
-<div id="site-shell">
-
-    <header id="mspfa-header">
-        <div class="logo-row">
-            <img class="site-logo" src="logo.gif" alt="Logo do Sburbio">
-
-            <div>
-                <div class="logo-title">SBURBIO.net</div>
-                <div class="logo-subtitle" id="siteSubtitle">
-                    Um quiz de classpect. É do Brasil!
+    <div id="site-shell">
+        <header id="mspfa-header">
+            <div class="logo-row">
+                <img class="site-logo" src="logo.gif" alt="Logo do Sburbio">
+                <div>
+                    <div id="quizTitle" class="logo-title">SBURBIO.net</div>
+                    <div id="siteSubtitle" class="logo-subtitle">Um quiz de classpect. É do Brasil!</div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <nav class="mspfa-menu" aria-label="Navegação principal">
+        <nav class="mspfa-menu" aria-label="Navegação principal">
+            <a id="websiteLink" href="https://www.sburbio.net" target="_blank" rel="noopener noreferrer">Nosso Site</a>
+            <a href="https://x.com/sburbio" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://discord.gg/85wjjDGZXj" target="_blank" rel="noopener noreferrer">Discord</a>
+            <button type="button" id="libraryButton" onclick="openLibrary()">Arquivos</button>
+            
+            <select id="languageSwitcher">
+                <option value="pt">PT</option>
+                <option value="en">EN</option>
+            </select>
+        </nav>
 
-        <a id="websiteLink"
-           href="https://www.sburbio.net"
-           target="_blank"
-           rel="noopener noreferrer">
-            Nosso Site
-        </a>
+        <main id="page-frame">
+            <section id="terminal" aria-live="polite">
+                <div class="page-titlebar">
+                    <span>QUIZ DE CLASSPECT DA SBURBIO</span>
+                </div>
+                <div id="content"></div>
+            </section>
+        </main>
 
-        <a href="https://x.com/sburbio"
-           target="_blank"
-           rel="noopener noreferrer">
-            Twitter
-        </a>
+        <footer id="site-footer">
+            <span>© SBURBIO 2026</span>
+        </footer>
+    </div>
 
-        <a href="https://discord.gg/85wjjDGZXj"
-           target="_blank"
-           rel="noopener noreferrer">
-            Discord
-        </a>
+    <script>
+    const languageSwitcher = document.getElementById("languageSwitcher");
+    const lang = localStorage.getItem("language") || "pt";
 
-        <button id="libraryButton"
-                type="button"
-                onclick="openLibrary()">
-            Arquivos
-        </button>
+    languageSwitcher.value = lang;
 
-        <select id="languageSwitcher">
-            <option value="pt">Português</option>
-            <option value="en">English</option>
-        </select>
+    if (lang === "en") {
+        document.documentElement.lang = "en";
+        document.title = "SBURBIO Classpect Quiz";
+        document.getElementById("siteSubtitle").textContent = "A Classpect Quiz. Made in Brazil!";
+        document.getElementById("websiteLink").textContent = "Our Website";
+        document.getElementById("libraryButton").textContent = "Archives";
+        document.getElementById("quizTitle").textContent = "SBURBIO.net";
+    }
 
-    </nav>
+    languageSwitcher.onchange = () => {
+        localStorage.setItem("language", languageSwitcher.value);
+        location.reload();
+    };
+	
+    document.write(`<script src="descriptions_${lang}.js"><\/script>`);
+    document.write(`<script src="questions_${lang}.js"><\/script>`);
+    </script>
 
-    <main id="page-frame">
-        <section id="terminal" aria-live="polite">
-
-            <div class="page-titlebar">
-                <span id="quizTitle">
-                    QUIZ DE CLASSPECT DA SBURBIO
-                </span>
-            </div>
-
-            <div id="content"></div>
-
-        </section>
-    </main>
-
-    <footer id="site-footer">
-        <span>© SBURBIO 2026</span>
-    </footer>
-
-</div>
-
-<script>
-const lang = localStorage.getItem("language") || "pt";
-
-document.write(
-    `<script src="descriptions_${lang}.js"><\/script>`
-);
-
-document.write(
-    `<script src="questions_${lang}.js"><\/script>`
-);
-</script>
-
-<script src="script.js"></script>
-    
-<script>
-const lang = localStorage.getItem("language") || "pt";
-
-document.write(
-    `<script src="descriptions_${lang}.js"><\/script>`
-);
-
-document.write(
-    `<script src="questions_${lang}.js"><\/script>`
-);
-</script>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
