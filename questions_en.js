@@ -434,138 +434,138 @@ const questionsByAspect = {
         { txt: "I poke at the person's insecurities until they start revealing where their own narrative falls apart.", w: { Witch: 3, Thief: 2, Sylph: -1 } },
         { txt: "I want to believe it at first, but any odd detail makes me lose trust very quickly.", w: { Bard: 3, Page: 2 } }
     ]},
-    { t: "Você sente que alguém está tentando minimizar uma preocupação sua com um 'relaxa, não é nada'.", opts: [
-        { txt: "Insisto no incômodo. Se algo acendeu meu alerta, não vou deixar outra pessoa desligar isso por conveniência.", w: { Heir: 3, Rogue: 2 } },
-        { txt: "Tento entender se minha reação vem de experiência real ou se estou projetando medo onde talvez não exista.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Aponto o risco concreto que estão ignorando, mesmo que isso me faça parecer negativo.", w: { Seer: 3, Sylph: 2 } },
-        { txt: "Começo a duvidar da minha própria reação e acabo deixando a pessoa me convencer de que estou exagerando.", w: { Page: 3, Rogue: 2, Heir: -1 } },
-        { txt: "Uso a irritação para resolver a situação logo, antes que alguém consiga me empurrar para a passividade.", w: { Knight: 3, Maid: 2 } }
+    { t: "2. You feel like someone is trying to downplay a concern of yours by saying, 'Relax, it's nothing.'", opts: [
+        { txt: "I stand my ground regarding my unease. If something triggered my alarm, I won't let someone else turn it off just for the sake of convenience.", w: { Heir: 3, Rogue: 2 } },
+        { txt: "I try to figure out if my reaction stems from actual experience or if I'm projecting fear where there might not be any.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I point out the concrete risk they're ignoring, even if it makes me come across as negative.", w: { Seer: 3, Sylph: 2 } },
+        { txt: "I start to doubt my own reaction and end up letting the person convince me that I'm overreacting.", w: { Page: 3, Rogue: 2, Heir: -1 } },
+        { txt: "I channel my irritation into resolving the situation quickly, before anyone can push me into passivity.", w: { Knight: 3, Maid: 2 } }
     ]},
-    { t: "Você vê uma campanha publicitária usando uma causa séria para parecer profunda, mas sem dizer nada de concreto.", opts: [
-        { txt: "Transformo minha irritação em crítica pública; se a mensagem é vazia, alguém precisa apontar o truque.", w: { Knight: 3, Prince: 2 } },
-        { txt: "Uso a própria estética da campanha contra ela, criando uma paródia que expõe o quanto tudo ali é falso.", w: { Witch: 3, Bard: 2 } },
-        { txt: "Tento explicar por que aquilo prejudica a causa que finge defender, mesmo que as pessoas achem exagero.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Aproveito a indignação que a campanha gerou para puxar atenção para minha própria crítica.", w: { Thief: 3, Witch: 2 } },
-        { txt: "No começo eu caio na mensagem bonita, mas quando percebo o vazio por trás fico com vergonha de ter acreditado.", w: { Page: 3, Bard: 1 } }
+   { t: "3. You see an advertising campaign using a serious cause to appear profound, but without saying anything concrete.", opts: [
+		{ txt: "I transform my irritation into public criticism; if the message is empty, someone needs to point out the trick.", w: { Knight: 3, Prince: 2 } },
+		{ txt: "I use the campaign's own aesthetics against it, creating a parody that exposes how fake everything is.", w: { Witch: 3, Bard: 2 } },
+		{ txt: "I try to explain why it harms the cause it pretends to defend, even if people think it's an exaggeration.", w: { Sylph: 3, Maid: 2 } },
+		{ txt: "I take advantage of the indignation the campaign generated to draw attention to my own criticism.", w: { Thief: 3, Witch: 2 } },
+		{ txt: "At first I fall for the pretty message, but when I perceive the emptiness behind it, and I'm ashamed for having believed it.", w: { Page: 3, Bard: 1 } }
+	]},
+    { t: "4. A group conversation turns into a contest to see who is the most righteous, pure, or enlightened.", opts: [
+        { txt: "I cut the dynamic short before it turns into moral posturing. No one is trying to solve anything—they’re just trying to outdo each other's image.", w: { Prince: 3, Knight: 2 } },
+        { txt: "I use the tension to my advantage and provoke contradictions in everyone until their masks slip.", w: { Witch: 3, Thief: 2, Rogue: -1 } },
+        { txt: "I try to redirect the anger toward something useful, because competing for superiority changes nothing.", w: { Maid: 3, Sylph: 2, Bard: -1 } },
+        { txt: "I stay quiet for fear of saying the wrong thing, but I end up absorbing the entire group's paranoia.", w: { Page: 3, Bard: 2 } },
+        { txt: "I stand up for the person being crushed by the conversation, even if they expressed themselves poorly.", w: { Rogue: 3, Sylph: 2 } }
     ]},
-    { t: "Uma conversa em grupo vira uma disputa para ver quem é mais correto, puro ou consciente.", opts: [
-        { txt: "Corto a dinâmica antes que vire teatro moral. Ninguém está tentando resolver nada, só vencer a pose.", w: { Prince: 3, Knight: 2 } },
-        { txt: "Uso a tensão a meu favor e provoco as contradições de cada pessoa até a máscara cair.", w: { Witch: 3, Thief: 2, Rogue: -1 } },
-        { txt: "Tento redirecionar a raiva para algo útil, porque só competir por superioridade não muda nada.", w: { Maid: 3, Sylph: 2, Bard: -1 } },
-        { txt: "Fico quieto por medo de falar errado, mas acabo absorvendo a paranoia do grupo inteiro.", w: { Page: 3, Bard: 2 } },
-        { txt: "Defendo quem está sendo esmagado pela conversa, mesmo que a pessoa tenha se expressado mal.", w: { Rogue: 3, Sylph: 2 } }
+    { t: "5. You encounter a work of art clearly designed to disturb, provoke disgust, or make the audience uncomfortable.", opts: [
+        { txt: "I like it precisely because it doesn't try to be pleasant; sometimes the function of art is to unsettle.", w: { Bard: 3, Heir: 1 } },
+        { txt: "I try to understand which social lie the work is tearing apart before deciding if the provocation works.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I use the work as a starting point to discuss what people prefer to pretend doesn't exist.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I find it cowardly when a work shocks just for the sake of shocking. If it’s going to shatter comfort, let it shatter something real.", w: { Knight: 3, Prince: 2 } },
+        { txt: "I want to create something even more unsettling, just to see how much the audience can stand to face.", w: { Thief: 3, Witch: 2, Sylph: -1 } }
     ]},
-    { t: "Você encontra uma obra de arte feita claramente para incomodar, provocar nojo ou deixar o público desconfortável.", opts: [
-        { txt: "Gosto justamente porque ela não tenta ser agradável; às vezes a função da arte é perturbar.", w: { Bard: 3, Heir: 1 } },
-        { txt: "Tento entender qual mentira social a obra está rasgando antes de decidir se a provocação funciona.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Uso a obra como ponto de partida para discutir o que as pessoas preferem fingir que não existe.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Acho covarde quando a obra só choca por chocar. Se vai destruir conforto, que destrua alguma coisa real.", w: { Knight: 3, Prince: 2 } },
-        { txt: "Quero fazer algo ainda mais incômodo, só para ver até onde o público aguenta encarar.", w: { Thief: 3, Witch: 2, Sylph: -1 } }
+     { t: "6. A rumor starts circulating, and no one knows if it's true, yet everyone is already reacting.", opts: [
+        { txt: "I spread doubt back to the group. If no one knows anything, no one should feel comfortable.", w: { Bard: 3, Witch: 2, Maid: -1 } },
+        { txt: "I try to establish a basic way to verify the facts before paranoia actually hurts someone.", w: { Maid: 3, Seer: 2, Bard: -1 } },
+        { txt: "I use the rumor to find out who is taking advantage of the chaos and who is trying to protect others.", w: { Thief: 3, Mage: 1 } },
+        { txt: "I ask the people involved direct questions, even if it immediately makes the atmosphere worse.", w: { Knight: 3, Prince: 1 } },
+        { txt: "I waver between belief and doubt, reacting too strongly to every new version that pops up.", w: { Page: 3, Bard: 2 } }
     ]},
-    { t: "Um boato começa a circular, e ninguém sabe se é verdade, mas todo mundo já está reagindo.", opts: [
-        { txt: "Espalho a dúvida de volta para o grupo. Se ninguém sabe de nada, ninguém deveria estar confortável.", w: { Bard: 3, Witch: 2, Maid: -1 } },
-        { txt: "Tento criar um caminho mínimo de verificação antes que a paranoia machuque alguém de verdade.", w: { Maid: 3, Seer: 2, Bard: -1 } },
-        { txt: "Uso o boato para descobrir quem se aproveita do caos e quem tenta proteger os outros.", w: { Thief: 3, Mage: 1 } },
-        { txt: "Faço perguntas diretas às pessoas envolvidas, mesmo que isso torne o clima imediatamente pior.", w: { Knight: 3, Prince: 1 } },
-        { txt: "Fico entre acreditar e duvidar, reagindo forte demais a cada nova versão que aparece.", w: { Page: 3, Bard: 2 } }
+    { t: "7. You realize a rule exists solely to keep people obedient, not because it makes sense.", opts: [
+        { txt: "I break the rule in public to prove it only works as long as everyone pretends to believe in it.", w: { Bard: 3, Prince: 2, Maid: -1 } },
+        { txt: "I look for a loophole and use the rule's own structure against those trying to enforce it.", w: { Witch: 3, Thief: 2 } },
+        { txt: "I organize a practical way to resist without leaving people more vulnerable to punishment.", w: { Maid: 3, Rogue: 2, Bard: -1 } },
+        { txt: "I dismantle the rule before others do and view their rebellion as lagging behind; if anyone is going to truly see through the charade, it will be me.", w: { Thief: 3, Prince: 2, Sylph: -1 } },
+        { txt: "I want to defy it, but I wait for someone braver to start so I can see if it's safe.", w: { Page: 3, Rogue: 1 } }
     ]},
-    { t: "Você percebe que uma regra existe só para manter as pessoas obedientes, não porque ela faz sentido.", opts: [
-        { txt: "Quebro a regra em público para provar que ela só funciona enquanto todo mundo finge acreditar.", w: { Bard: 3, Prince: 2, Maid: -1 } },
-        { txt: "Procuro uma brecha e uso a própria estrutura da regra contra quem tenta aplicá-la.", w: { Witch: 3, Thief: 2 } },
-        { txt: "Organizo uma forma prática de resistir sem deixar as pessoas mais vulneráveis ao castigo.", w: { Maid: 3, Rogue: 2, Bard: -1 } },
-        { txt: "Desmonto a regra antes dos outros e trato a revolta deles como atraso; se alguém vai enxergar a farsa direito, vai ser por mim.", w: { Thief: 3, Prince: 2, Sylph: -1 } },
-        { txt: "Tenho vontade de desafiar, mas espero alguém mais corajoso começar para saber se é seguro.", w: { Page: 3, Rogue: 1 } }
+    { t: "8. During an argument, someone uses calm and politeness to mask a cruel remark.", opts: [
+        { txt: "I strip away the feigned kindness and respond to what the person actually meant.", w: { Prince: 3, Knight: 2 } },
+        { txt: "I reply in the same polite tone, but twist the words until their cruelty becomes impossible to hide.", w: { Witch: 3, Thief: 2, Sylph: -1 } },
+        { txt: "I step in to protect the person who was targeted, even if the cruel individual tries to appear reasonable.", w: { Sylph: 3, Rogue: 2, Thief: -1 } },
+        { txt: "I channel my anger into a firm response, refusing to let the veneer of politeness intimidate me.", w: { Knight: 3, Maid: 2 } },
+        { txt: "I hesitate to react because the remark seems acceptable on the surface, and only later do I realize why it hurt me.", w: { Page: 3, Mage: 1 } }
     ]},
-    { t: "Durante uma discussão, alguém usa calma e educação para esconder uma fala cruel.", opts: [
-        { txt: "Arranco a gentileza falsa da conversa e respondo ao que a pessoa realmente quis dizer.", w: { Prince: 3, Knight: 2 } },
-        { txt: "Devolvo no mesmo tom polido, mas torcendo as palavras até a crueldade dela ficar impossível de esconder.", w: { Witch: 3, Thief: 2, Sylph: -1 } },
-        { txt: "Intervenho para proteger quem foi atingido, mesmo que a pessoa cruel tente se fazer de razoável.", w: { Sylph: 3, Rogue: 2, Thief: -1 } },
-        { txt: "Uso minha raiva para sustentar uma resposta firme, sem deixar o verniz de educação me intimidar.", w: { Knight: 3, Maid: 2 } },
-        { txt: "Demoro para reagir porque a fala parece aceitável por fora, e só depois entendo por que me machucou.", w: { Page: 3, Mage: 1 } }
+    { t: "9. You come across an absurd theory that several people are taking seriously.", opts: [
+        { txt: "I make fun of the theory until it loses the aura of mystery that was convincing people.", w: { Bard: 3, Prince: 1, Sylph: -1 } },
+        { txt: "I delve into its logic and twist the premises until the theory contradicts itself.", w: { Witch: 3, Mage: 2 } },
+        { txt: "I try to construct an accessible explanation to steer people away from it without humiliating them.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I use the theory as ammunition to win an argument against someone who thought they were too smart.", w: { Thief: 3, Seer: 1 } },
+        { txt: "I’m afraid I won’t be able to refute it properly and will end up looking just as lost as those who believe it.", w: { Page: 3, Rogue: 1 } }
     ]},
-    { t: "Você se depara com uma teoria absurda que várias pessoas estão levando a sério.", opts: [
-        { txt: "Faço piada da teoria até ela perder a aura de mistério que estava convencendo as pessoas.", w: { Bard: 3, Prince: 1, Sylph: -1 } },
-        { txt: "Entro no raciocínio dela por dentro e torço as premissas até a própria teoria se contradizer.", w: { Witch: 3, Mage: 2 } },
-        { txt: "Tento montar uma explicação acessível para tirar as pessoas dali sem humilhá-las.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Uso a teoria como munição para ganhar discussão com quem estava se achando inteligente demais.", w: { Thief: 3, Seer: 1 } },
-        { txt: "Fico com medo de não conseguir refutar direito e acabar parecendo tão perdido quanto quem acredita.", w: { Page: 3, Rogue: 1 } }
+   { t: "10. You are at a protest, debate, or rally, and the collective anger begins to spiral out of control.", opts: [
+        { txt: "I channel the energy into concrete action before the uprising turns into a mere disorganized explosion.", w: { Maid: 3, Knight: 2, Bard: -1 } },
+        { txt: "I push the crowd to the breaking point. Sometimes order really needs to shatter.", w: { Bard: 3, Witch: 2, Sylph: -1 } },
+        { txt: "I protect those becoming vulnerable amidst the chaos, even if it takes me away from the center of the action.", w: { Rogue: 3, Sylph: 2, Thief: -1 } },
+        { txt: "I step to the forefront of the confrontation, because hesitation in that moment only hands power back to the oppressors.", w: { Knight: 3, Thief: 1 } },
+        { txt: "I want to participate, but the intensity scares me, and I end up following the crowd.", w: { Page: 3, Heir: 1 } }
     ]},
-    { t: "Você está em um protesto, debate ou mobilização, e a raiva coletiva começa a sair do controle.", opts: [
-        { txt: "Canalizo a energia para uma ação concreta antes que a revolta vire só explosão desorganizada.", w: { Maid: 3, Knight: 2, Bard: -1 } },
-        { txt: "Empurro a multidão para o ponto de ruptura. Às vezes a ordem precisa realmente quebrar.", w: { Bard: 3, Witch: 2, Sylph: -1 } },
-        { txt: "Defendo quem está ficando vulnerável no meio do caos, mesmo que isso me tire do centro da ação.", w: { Rogue: 3, Sylph: 2, Thief: -1 } },
-        { txt: "Tomo a frente do confronto, porque hesitação naquele momento só devolve poder para quem oprime.", w: { Knight: 3, Thief: 1 } },
-        { txt: "Quero participar, mas a intensidade me assusta e acabo seguindo o movimento dos outros.", w: { Page: 3, Heir: 1 } }
+   { t: "11. Someone accuses you of being too negative because you always point out what could go wrong.", opts: [
+        { txt: "I own the reputation. If everyone wants comfort, someone has to face the ugly side of things.", w: { Heir: 3, Knight: 1 } },
+        { txt: "I try to turn my warnings into concrete procedures so it doesn't just sound like complaining.", w: { Maid: 3, Seer: 2, Bard: -1 } },
+        { txt: "I turn the accusation back on them: maybe they only call it negativity because it's something they don't want to admit.", w: { Thief: 3, Witch: 2 } },
+        { txt: "I get insecure and start downplaying my concerns too much, until they lose their impact.", w: { Page: 3, Sylph: 1 } },
+        { txt: "I cut the conversation short. I’m not going to perform optimism just to make someone feel comfortable.", w: { Prince: 3, Rogue: 1 } }
     ]},
-    { t: "Alguém te acusa de ser negativo demais por sempre apontar o que pode dar errado.", opts: [
-        { txt: "Assumo a fama. Se todo mundo quer conforto, alguém precisa ficar encarando a parte feia.", w: { Heir: 3, Knight: 1 } },
-        { txt: "Tento transformar meus alertas em procedimentos concretos, para não parecer só reclamação.", w: { Maid: 3, Seer: 2, Bard: -1 } },
-        { txt: "Uso a acusação contra a pessoa: talvez ela só chame de negatividade aquilo que não quer admitir.", w: { Thief: 3, Witch: 2 } },
-        { txt: "Fico inseguro e começo a suavizar demais minhas preocupações, até elas perderem a força.", w: { Page: 3, Sylph: 1 } },
-        { txt: "Corto a conversa. Não vou performar otimismo para deixar alguém confortável.", w: { Prince: 3, Rogue: 1 } }
+    { t: "12. You realize that an entire community is sustaining itself on a convenient collective fantasy.", opts: [
+        { txt: "I plant small seeds of doubt at strategic points until the fantasy begins to crack from within.", w: { Witch: 3, Bard: 2 } },
+        { txt: "I try to build a more honest ground for people to land on, so they don't completely destroy themselves.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I use the collapse of the fantasy to claim a position that was previously shielded by it.", w: { Thief: 3, Prince: 1, Rogue: -1 } },
+        { txt: "I gather those who were already suspicious, because no one should have to face a truth like that alone.", w: { Rogue: 3, Sylph: 2 } },
+        { txt: "I let the fantasy collapse when it’s time for it to collapse. Sometimes chaos teaches more than any warning.", w: { Bard: 3, Heir: 1, Knight: -1 } }
     ]},
-    { t: "Você percebe que uma comunidade inteira está se sustentando em uma fantasia coletiva conveniente.", opts: [
-        { txt: "Planto dúvidas pequenas em pontos estratégicos até a fantasia começar a rachar por dentro.", w: { Witch: 3, Bard: 2 } },
-        { txt: "Tento construir um chão mais honesto para as pessoas caírem sem se destruírem completamente.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Uso a queda da fantasia para ocupar uma posição que antes estava protegida pela fantasia.", w: { Thief: 3, Prince: 1, Rogue: -1 } },
-        { txt: "Reúno quem já estava desconfiando, porque ninguém deveria encarar uma verdade dessas sozinho.", w: { Rogue: 3, Sylph: 2 } },
-        { txt: "Deixo a fantasia colapsar quando tiver que colapsar. Às vezes o caos ensina mais do que aviso nenhum.", w: { Bard: 3, Heir: 1, Knight: -1 } }
+    { t: "13. You notice a group accepting a convenient explanation simply because it makes everyone feel more comfortable.", opts: [
+        { txt: "I reject the explanation immediately. A comfortable version doesn't become true just because it avoids conflict.", w: { Heir: 3, Prince: 2 } },
+        { txt: "I start pointing out flaws in the accepted version until people are forced to confront the inconsistencies.", w: { Seer: 3, Sylph: 2 } },
+        { txt: "I try to show how this false sense of calm could harm someone later on.", w: { Sylph: 3, Mage: 2 } },
+        { txt: "I use the doubt no one wants to touch to steer the conversation in my favor.", w: { Thief: 3, Witch: 2 } },
+        { txt: "I observe who actually believes the explanation and who is merely accepting it to keep the peace.", w: { Mage: 3, Seer: 2 } }
     ]},
-    { t: "Você percebe que um grupo está aceitando uma explicação conveniente só porque ela deixa todo mundo mais confortável.", opts: [
-        { txt: "Recuso a explicação na hora. Uma versão confortável não vira verdadeira só porque evita conflito.", w: { Heir: 3, Prince: 2 } },
-        { txt: "Começo a apontar as falhas da versão aceita até as pessoas precisarem encarar o que não fecha.", w: { Seer: 3, Sylph: 2 } },
-        { txt: "Tento mostrar como essa falsa tranquilidade pode prejudicar alguém depois.", w: { Sylph: 3, Mage: 2 } },
-        { txt: "Uso a dúvida que ninguém quer tocar para virar a conversa a meu favor.", w: { Thief: 3, Witch: 2 } },
-        { txt: "Observo quem realmente acredita na explicação e quem só está aceitando para manter o clima.", w: { Mage: 3, Seer: 2 } }
+    { t: "14. You discover that a goal you’ve pursued for years might not be possible in the way you imagined.", opts: [
+        { txt: "I try to understand exactly where the limitation lies, because knowing the reality hurts less than continuing to flail in the dark.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I keep looking for signs that there’s still a way through, even if everyone else has already given up.", w: { Heir: 3, Witch: 2 } },
+        { txt: "I turn my frustration into the strength to try a different approach—even if it’s just out of sheer stubbornness.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I downplay the goal so I don’t get hung up on it; if it can’t happen, maybe it didn’t deserve that much importance anyway.", w: { Prince: 3, Bard: 2 } },
+        { txt: "I seek out others who have hit the same wall, because it’s easier to deal with the frustration when it isn’t mine alone.", w: { Rogue: 3, Sylph: 2 } }
     ]},
-    { t: "Você descobre que uma meta que perseguiu por anos talvez não seja possível do jeito que imaginava.", opts: [
-        { txt: "Tento entender exatamente onde está a limitação, porque saber o que é real dói menos do que continuar batendo no escuro.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Fico procurando sinais de que ainda existe uma brecha, mesmo que todo mundo já tenha desistido.", w: { Heir: 3, Witch: 2 } },
-        { txt: "Transformo a frustração em força para tentar de outro jeito, nem que seja por pura teimosia.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Desvalorizo a meta para não ficar preso nela. Se aquilo não pode acontecer, talvez nem merecesse tanta importância.", w: { Prince: 3, Bard: 2 } },
-        { txt: "Procuro pessoas que também bateram nesse limite, porque é mais fácil lidar com a frustração quando ela não é só minha.", w: { Rogue: 3, Sylph: 2 } }
+    { t: "15. You know you need to say 'no' to someone, but they are expecting you to give in.", opts: [
+        { txt: "I say no and stand by the decision, even if they try to make me look difficult or cruel.", w: { Rogue: 3, Heir: 2 } },
+        { txt: "I use the refusal to change a dynamic that had been wrong for too long.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I try to appear firm, but if they insist in the right way, I end up reacting exactly as they wanted.", w: { Page: 3, Bard: 2, Knight: -1 } },
+        { txt: "I show that their persistence only proves why that boundary needed to exist.", w: { Prince: 3, Mage: 2 } },
+        { txt: "I shut down the conversation before it turns into a negotiation. My 'no' doesn't need an audience.", w: { Heir: 3, Knight: 2 } }
     ]},
-    { t: "Você sabe que precisa dizer 'não' para alguém, mas a pessoa está esperando que você ceda.", opts: [
-        { txt: "Digo não e sustento a decisão, mesmo que a pessoa tente me fazer parecer difícil ou cruel.", w: { Rogue: 3, Heir: 2 } },
-        { txt: "Uso a recusa para mudar uma dinâmica que já estava errada há tempo demais.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Tento parecer firme, mas se a pessoa insistir do jeito certo eu acabo reagindo exatamente como ela queria.", w: { Page: 3, Bard: 2, Knight: -1 } },
-        { txt: "Mostro que a insistência da pessoa só prova por que esse limite precisava existir.", w: { Prince: 3, Mage: 2 } },
-        { txt: "Fecho a conversa antes que vire negociação. Meu 'não' não precisa de audiência.", w: { Heir: 3, Knight: 2 } }
+    { t: "16. You realize you're being misled during an important conversation.", opts: [
+        { txt: "I interrupt and point out the contradiction before the person can keep pretending everything is normal.", w: { Prince: 3, Heir: 2 } },
+        { txt: "I pretend not to notice for a few more minutes to understand exactly what lie they're trying to maintain.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I ask specific questions until the person struggles to stick to their story.", w: { Seer: 3, Knight: 2 } },
+        { txt: "I use the conversation's tension to turn the pressure back on them and make them lose their composure.", w: { Witch: 3, Thief: 2, Sylph: -1 } },
+        { txt: "I get so indignant that I might react too strongly before grasping the full picture.", w: { Page: 3, Knight: 2 } }
     ]},
-    { t: "Você percebe que está sendo passado para trás em uma conversa importante.", opts: [
-        { txt: "Interrompo e coloco a contradição na mesa antes que a pessoa consiga seguir fingindo normalidade.", w: { Prince: 3, Heir: 2 } },
-        { txt: "Finjo que não percebi por mais alguns minutos para entender exatamente qual mentira estão tentando sustentar.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Faço perguntas específicas até a pessoa ter dificuldade de manter a versão dela.", w: { Seer: 3, Knight: 2 } },
-        { txt: "Uso a tensão da conversa para virar a pressão contra a pessoa e fazê-la perder segurança.", w: { Witch: 3, Thief: 2, Sylph: -1 } },
-        { txt: "Fico tão indignado que posso reagir forte demais antes de entender todo o jogo.", w: { Page: 3, Knight: 2 } }
+    { t: "17. You realize the world is more unjust and absurd than you would like to believe.", opts: [
+        { txt: "This reinforces my distrust. You can't treat the world as if it were naturally just.", w: { Heir: 3, Mage: 2 } },
+        { txt: "I try to turn that indignation into something useful—even if it's just a routine, a small action, or a firmer refusal.", w: { Maid: 3, Knight: 2, Bard: -1 } },
+        { txt: "I seek out people who share the same outrage, because dealing with it alone just makes everything feel heavier.", w: { Rogue: 3, Sylph: 2 } },
+        { txt: "I use people's anger to spur a reaction they might not have had the courage to initiate on their own.", w: { Witch: 3, Thief: 2 } },
+        { txt: "I laugh at the absurdity and try not to take things too seriously, because facing it all head-on all the time would break me.", w: { Bard: 3, Page: 2, Knight: -1 } }
     ]},
-    { t: "Você percebe que o mundo é mais injusto e absurdo do que gostaria de acreditar.", opts: [
-        { txt: "Isso reforça minha desconfiança. Não dá para tratar o mundo como se ele fosse naturalmente justo.", w: { Heir: 3, Mage: 2 } },
-        { txt: "Tento transformar a indignação em algo útil, nem que seja uma rotina, uma ação pequena ou uma recusa mais firme.", w: { Maid: 3, Knight: 2, Bard: -1 } },
-        { txt: "Procuro pessoas que compartilham da mesma revolta, porque lidar sozinho com isso só deixa tudo mais pesado.", w: { Rogue: 3, Sylph: 2 } },
-        { txt: "Uso a raiva das pessoas para empurrar uma reação que elas talvez não tivessem coragem de assumir sozinhas.", w: { Witch: 3, Thief: 2 } },
-        { txt: "Rio do absurdo e tento não levar tão a sério, porque encarar tudo de frente o tempo todo me quebraria.", w: { Bard: 3, Page: 2, Knight: -1 } }
+    { t: "18. You discover that someone you admired was far less genuine than they appeared.", opts: [
+        { txt: "I’m not exactly surprised. Sometimes the fall just confirms something I already suspected.", w: { Mage: 3, Heir: 2 } },
+        { txt: "I try to understand which signs I ignored so I don't fall for that kind of false image again.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I cut off my admiration immediately. Once I see the charade, I can't keep treating them the same way.", w: { Prince: 3, Heir: 2 } },
+        { txt: "I use the situation to warn others who are still taken in by that image.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "At first, I try to pretend it didn't affect me, but later I start to distrust anyone similar.", w: { Bard: 3, Page: 2 } }
     ]},
-    { t: "Você descobre que uma pessoa que admirava era bem mais falsa do que parecia.", opts: [
-        { txt: "Não fico exatamente surpreso. Às vezes a queda só confirma algo que eu já desconfiava.", w: { Mage: 3, Heir: 2 } },
-        { txt: "Procuro entender quais sinais eu ignorei para não cair no mesmo tipo de imagem falsa de novo.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Corto minha admiração de uma vez. Depois que vejo a farsa, não consigo continuar tratando como se fosse igual.", w: { Prince: 3, Heir: 2 } },
-        { txt: "Uso o caso para alertar outras pessoas que ainda estão presas naquela imagem.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "No começo tento fingir que não abalou nada, mas depois passo a desconfiar de todo mundo parecido.", w: { Bard: 3, Page: 2 } }
+    { t: "19. Everyone around you is excited about something new, but you feel like something isn't right.", opts: [
+        { txt: "I’m the first to say I don’t trust it, even knowing I’ll look like a killjoy.", w: { Heir: 3, Rogue: 2 } },
+        { txt: "I investigate the source of my unease to see if it’s just paranoia or if there’s actually something fake going on.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I start pointing out flaws to dampen the excitement before it turns into collective blindness.", w: { Prince: 3, Sylph: 2 } },
+        { txt: "I use the first crack in the excitement to steer people toward my own interpretation of the situation.", w: { Thief: 3, Witch: 2 } },
+        { txt: "I reject the new thing almost automatically—more to prove I’m not easily influenced than because I actually grasp the problem.", w: { Page: 3, Bard: 2 } }
     ]},
-    { t: "Todo mundo ao seu redor está animado com uma novidade, mas você sente que existe algo errado ali.", opts: [
-        { txt: "Sou a primeira pessoa a dizer que não confio, mesmo sabendo que vou parecer estraga-prazeres.", w: { Heir: 3, Rogue: 2 } },
-        { txt: "Investigo a origem do incômodo para saber se é paranoia minha ou se existe mesmo algo falso ali.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Começo a apontar falhas para diminuir a empolgação antes que ela vire cegueira coletiva.", w: { Prince: 3, Sylph: 2 } },
-        { txt: "Uso a primeira rachadura na empolgação para puxar as pessoas para a minha leitura da situação.", w: { Thief: 3, Witch: 2 } },
-        { txt: "Rejeito a novidade meio no automático, mais para provar que não sou influenciável do que por entender o problema.", w: { Page: 3, Bard: 2 } }
-    ]},
-    { t: "Você precisa escolher entre ser honesto e perder uma chance, ou distorcer a verdade para conseguir o que quer.", opts: [
-        { txt: "Falo a verdade, mesmo que isso feche a porta. Prefiro um 'não' real a uma chance construída em cima de mentira.", w: { Heir: 3, Seer: 2, Thief: -2 } },
-        { txt: "Avalio quem seria prejudicado pela mentira antes de decidir. O problema não é só mentir, é o que a mentira faz depois.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Minto se a situação já é injusta comigo. Se o jogo veio viciado, eu não vou ser o único obedecendo regra.", w: { Thief: 3, Witch: 2 } },
-        { txt: "Sou honesto de um jeito duro demais, quase como se estivesse punindo a situação por me colocar nessa escolha.", w: { Knight: 3, Prince: 2 } },
-        { txt: "Tento escapar da escolha até ser obrigado a responder, porque qualquer opção parece suja de um jeito diferente.", w: { Rogue: 3, Bard: 2 } }
+    { t: "20. You have to choose between being honest and losing an opportunity, or twisting the truth to get what you want.", opts: [
+        { txt: "I tell the truth, even if it closes the door. I prefer a real 'no' to a chance built on a lie.", w: { Heir: 3, Seer: 2, Thief: -2 } },
+        { txt: "I weigh who might be harmed by the lie before deciding. The problem isn't just the lie itself, but the consequences that follow.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I lie if the situation is already unfair to me. If the game is rigged, I’m not going to be the only one playing by the rules.", w: { Thief: 3, Witch: 2 } },
+        { txt: "I am brutally honest—almost as if I’m punishing the situation for forcing me to make this choice.", w: { Knight: 3, Prince: 2 } },
+        { txt: "I try to avoid the choice until I’m forced to answer, because every option feels tainted in its own way.", w: { Rogue: 3, Bard: 2 } }
     ]}
 	],
     "Light": [
