@@ -569,145 +569,145 @@ const questionsByAspect = {
     ]}
 	],
     "Light": [
-    { t: "Você começa a estudar um assunto novo e percebe que todo mundo ao redor parece entender mais do que você.", opts: [
-        { txt: "Finjo que acompanho a conversa e repito termos que ainda não entendo direito, torcendo para não ser questionado.", w: { Page: 3, Bard: 1 } },
-        { txt: "Volto para as bases e tento entender o mecanismo real por trás do assunto, mesmo que isso me faça parecer atrasado.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Transformo o estudo em rotina: resumos, fichas, exemplos e um jeito próprio de organizar a informação.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Procuro uma brecha no método tradicional e aprendo por caminhos menos óbvios, até a informação fazer sentido para mim.", w: { Witch: 3, Page: 2 } },
-        { txt: "Aceito que algumas coisas vão se revelar com o tempo, sem precisar dominar tudo imediatamente.", w: { Heir: 3, Rogue: 1 } }
+   { t: "1. You start studying a new subject and realize that everyone around you seems to understand it better than you do.", opts: [
+        { txt: "I pretend to follow the conversation and repeat terms I don't quite understand yet, hoping I won't be questioned.", w: { Page: 3, Bard: 1 } },
+        { txt: "I go back to the basics and try to understand the actual mechanism behind the subject, even if it makes me look like I'm lagging behind.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I turn studying into a routine: summaries, flashcards, examples, and my own way of organizing the information.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I look for a loophole in the traditional method and learn through less obvious paths until the information makes sense to me.", w: { Witch: 3, Page: 2 } },
+        { txt: "I accept that some things will reveal themselves over time, without needing to master everything immediately.", w: { Heir: 3, Rogue: 1 } }
     ]},
-    { t: "Você encontra uma fonte antiga que contradiz a versão mais famosa de um acontecimento.", opts: [
-        { txt: "Investigo de onde a fonte veio, quem a preservou, quem a ignorou e por que ela perdeu relevância.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Uso a fonte para reconstruir a narrativa com mais contexto, mesmo que a versão final fique menos simples.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Destaco essa fonte antes de todo mundo, porque encontrar algo raro também é uma forma de ganhar vantagem.", w: { Thief: 3, Witch: 1 } },
-        { txt: "Fico obcecado com a possibilidade de ter achado a peça que muda tudo, mesmo sem saber ainda como provar.", w: { Page: 3, Heir: 2 } },
-        { txt: "Questiono a fama da versão aceita. Se uma história depende de apagar outra, talvez mereça perder o brilho.", w: { Prince: 3, Seer: 1 } }
+    { t: "2. You find an ancient source that contradicts the most famous version of an event.", opts: [
+        { txt: "I investigate where the source came from, who preserved it, who ignored it, and why it lost its relevance.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I use the source to reconstruct the narrative with more context, even if the final version becomes less simple.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I highlight this source before anyone else does, because finding something rare is also a way to gain an advantage.", w: { Thief: 3, Witch: 1 } },
+        { txt: "I become obsessed with the possibility that I’ve found the piece that changes everything, even without knowing yet how to prove it.", w: { Page: 3, Heir: 2 } },
+        { txt: "I question the renown of the accepted version. If a story relies on erasing another, perhaps it deserves to lose its luster.", w: { Prince: 3, Seer: 1 } }
     ]},
-    { t: "Um conteúdo seu recebe atenção repentina por causa do algoritmo, mas não pelo motivo que você queria.", opts: [
-        { txt: "Aproveito o foco enquanto dura. Se a atenção veio pelo caminho errado, ainda posso redirecioná-la para mim.", w: { Thief: 3, Witch: 2, Rogue: -2 } },
-        { txt: "Tento ajustar título, contexto e apresentação para que as pessoas entendam o ponto certo.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Analiso por que aquilo viralizou: palavra, imagem, timing, público, erro de leitura ou puro azar.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Fico inseguro, porque ser visto do jeito errado parece pior do que não ser visto.", w: { Page: 3, Rogue: 2 } },
-        { txt: "Deixo a interpretação correr solta. Depois que algo cai no público, controlar o significado dá trabalho demais.", w: { Bard: 3, Heir: 1, Knight: -1 } }
+    { t: "3. A piece of your content suddenly gets attention due to the algorithm, but not for the reason you intended.", opts: [
+        { txt: "I make the most of the spotlight while it lasts. Even if the attention came the wrong way, I can still redirect it toward myself.", w: { Thief: 3, Witch: 2, Rogue: -2 } },
+        { txt: "I try to tweak the title, context, and presentation so people grasp the intended point.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I analyze why it went viral: the wording, image, timing, audience, a misinterpretation, or just plain bad luck.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I feel insecure, because being seen the wrong way seems worse than not being seen at all.", w: { Page: 3, Rogue: 2 } },
+        { txt: "I let the interpretation run wild. Once something is out in the public eye, controlling its meaning takes too much effort.", w: { Bard: 3, Heir: 1, Knight: -1 } }
     ]},
-    { t: "Você recebe uma crítica dizendo que sua pesquisa está correta, mas mal explicada.", opts: [
-        { txt: "Reorganizo a informação até ela ficar clara, útil e apresentável para quem não acompanhou meu raciocínio.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Volto para entender onde meu pensamento pulou etapas que pareciam óbvias só para mim.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Fico na defensiva; se a informação está certa, parte de mim acha injusto ser cobrado pela embalagem.", w: { Page: 3, Prince: 1 } },
-        { txt: "Mudo o formato da explicação: exemplo, metáfora, diagrama, comparação, qualquer coisa que faça a ideia acender.", w: { Witch: 3, Maid: 2 } },
-        { txt: "Aceito que nem toda verdade precisa ser didática para todo mundo. Quem quiser entender, que acompanhe.", w: { Prince: 3, Bard: 1 } }
+    { t: "4. You receive feedback stating that your research is correct but poorly explained.", opts: [
+        { txt: "I reorganize the information until it is clear, useful, and presentable to those who didn't follow my train of thought.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I retrace my steps to understand where my thinking skipped over points that seemed obvious only to me.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I get defensive; if the information is correct, part of me feels it's unfair to be criticized for the presentation.", w: { Page: 3, Prince: 1 } },
+        { txt: "I change the format of the explanation—an example, metaphor, diagram, comparison, anything to make the idea click.", w: { Witch: 3, Maid: 2 } },
+        { txt: "I accept that not every truth needs to be explained in a way that suits everyone; those who want to understand can keep up.", w: { Prince: 3, Bard: 1 } }
     ]},
-    { t: "Você está em uma prova, jogo ou situação de sorte, e vence por um detalhe improvável.", opts: [
-        { txt: "Tento entender quais condições aumentaram minha chance, para transformar sorte em método da próxima vez.", w: { Mage: 3, Knight: 2 } },
-        { txt: "Aceito a vitória como sinal de que eu estava no caminho certo, mesmo sem conseguir explicar tudo.", w: { Heir: 3, Page: 1 } },
-        { txt: "Uso a vitória para ganhar destaque antes que alguém reduza meu mérito a acaso.", w: { Thief: 3, Prince: 1 } },
-        { txt: "Fico com medo de ter vencido sem merecer e começo a estudar para compensar a sorte depois.", w: { Page: 3, Maid: 2 } },
-        { txt: "Compartilho o que funcionou para que outras pessoas também consigam melhorar suas chances.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
+    { t: "5. You are in a contest, game, or a situation involving chance, and you win thanks to an unlikely detail.", opts: [
+        { txt: "I try to understand the conditions that boosted my odds, so I can turn luck into a method for next time.", w: { Mage: 3, Knight: 2 } },
+        { txt: "I accept the victory as a sign I was on the right track, even if I can't explain every detail.", w: { Heir: 3, Page: 1 } },
+        { txt: "I use the victory to gain recognition before anyone can dismiss my achievement as mere chance.", w: { Thief: 3, Prince: 1 } },
+        { txt: "I worry that I didn't truly earn the win, so I start studying to make up for the luck later.", w: { Page: 3, Maid: 2 } },
+        { txt: "I share what worked so that others can improve their own chances, too.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
     ]},
-    { t: "Você percebe que um detalhe pequeno em uma imagem, texto ou conversa muda completamente a interpretação.", opts: [
-        { txt: "Sigo o detalhe até entender toda a cadeia de significado que ele revela.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Aponto o detalhe para todo mundo, porque ignorá-lo faria a conclusão inteira ficar errada.", w: { Seer: 3, Sylph: 2 } },
-        { txt: "Uso esse detalhe para virar a leitura dominante a meu favor antes que os outros percebam.", w: { Thief: 3, Witch: 2, Rogue: -1 } },
-        { txt: "Tento transformar o detalhe em uma explicação maior, dando forma para algo que parecia coincidência.", w: { Maid: 3, Mage: 1 } },
-        { txt: "Fico preso nesse detalhe e começo a duvidar se entendi qualquer coisa antes dele aparecer.", w: { Page: 3, Heir: 1 } }
+    { t: "6. You realize that a small detail in an image, text, or conversation completely changes the interpretation.", opts: [
+        { txt: "I follow the detail until I understand the entire chain of meaning it reveals.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I point the detail out to everyone, because ignoring it would make the whole conclusion wrong.", w: { Seer: 3, Sylph: 2 } },
+        { txt: "I use that detail to turn the prevailing interpretation to my advantage before others notice it.", w: { Thief: 3, Witch: 2, Rogue: -1 } },
+        { txt: "I try to turn the detail into a larger explanation, giving shape to something that seemed like a coincidence.", w: { Maid: 3, Mage: 1 } },
+        { txt: "I get stuck on that detail and start doubting whether I understood anything at all before it appeared.", w: { Page: 3, Heir: 1 } }
     ]},
-    { t: "Alguém pede que você ensine algo que você sabe, mas aprendeu de um jeito bagunçado e autodidata.", opts: [
-        { txt: "Explico pelo caminho que funcionou para mim, mesmo que ele pareça estranho ou fora da ordem tradicional.", w: { Witch: 3, Mage: 2 } },
-        { txt: "Recrio o percurso desde o começo, separando etapas para que a pessoa não tropece onde eu tropecei.", w: { Mage: 3, Sylph: 2 } },
-        { txt: "Faço um material organizado para a pessoa consultar depois, com exemplos e fontes fáceis de seguir.", w: { Maid: 3, Seer: 1 } },
-        { txt: "Tenho medo de ensinar errado e acabar revelando que meu conhecimento tem buracos.", w: { Page: 3, Rogue: 2 } },
-        { txt: "Prefiro mostrar só o resultado e deixar a pessoa descobrir o processo por conta própria.", w: { Prince: 3, Thief: 1, Sylph: -1 } }
+    { t: "7. Someone asks you to teach something you know, but learned in a haphazard, self-taught way.", opts: [
+        { txt: "I explain it using the method that worked for me, even if it seems strange or out of the traditional order.", w: { Witch: 3, Mage: 2 } },
+        { txt: "I map out the path from the very beginning, breaking it into steps so the person doesn't stumble where I did.", w: { Mage: 3, Sylph: 2 } },
+        { txt: "I create organized materials for them to consult later, with easy-to-follow examples and sources.", w: { Maid: 3, Seer: 1 } },
+        { txt: "I'm afraid of teaching it wrong and ending up revealing the gaps in my own knowledge.", w: { Page: 3, Rogue: 2 } },
+        { txt: "I prefer to show just the result and let the person figure out the process on their own.", w: { Prince: 3, Thief: 1, Sylph: -1 } }
     ]},
-    { t: "Você vê alguém receber crédito por uma descoberta que só aconteceu porque outras pessoas juntaram pistas antes.", opts: [
-        { txt: "Reconstruo o caminho da descoberta para mostrar quem iluminou qual parte do processo.", w: { Maid: 3, Seer: 2 } },
-        { txt: "Redireciono a atenção para quem ficou invisível, mesmo que isso tire brilho da pessoa celebrada.", w: { Rogue: 3, Sylph: 2, Thief: -2 } },
-        { txt: "Tomo a narrativa para mim se fui a pessoa que enxergou como as pistas se conectavam.", w: { Thief: 3, Mage: 1, Rogue: -2 } },
-        { txt: "Analiso por que uma pessoa virou símbolo da descoberta enquanto as outras viraram nota de rodapé.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Fico incomodado, mas não sei como corrigir sem parecer que estou mendigando reconhecimento.", w: { Page: 3, Rogue: 1 } }
+    { t: "8. You see someone receive credit for a discovery that only happened because others had pieced together clues beforehand.", opts: [
+        { txt: "I reconstruct the path of the discovery to show who illuminated which part of the process.", w: { Maid: 3, Seer: 2 } },
+        { txt: "I redirect attention to those who went unnoticed, even if it diminishes the spotlight on the person being celebrated.", w: { Rogue: 3, Sylph: 2, Thief: -2 } },
+        { txt: "I claim the narrative for myself if I was the one who saw how the clues connected.", w: { Thief: 3, Mage: 1, Rogue: -2 } },
+        { txt: "I analyze why one person became the face of the discovery while the others became mere footnotes.", w: { Mage: 3, Seer: 2 } },
+        { txt: "It bothers me, but I don't know how to set the record straight without looking like I'm begging for recognition.", w: { Page: 3, Rogue: 1 } }
     ]},
-    { t: "Você descobre que estava defendendo uma informação errada com muita confiança.", opts: [
-        { txt: "Volto pela cadeia de fontes para entender exatamente onde a informação falsa entrou.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Corrijo publicamente e deixo a versão certa mais visível do que o erro.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Fico envergonhado e passo a duvidar da minha capacidade de saber qualquer coisa com segurança.", w: { Page: 3, Heir: 1 } },
-        { txt: "Desvalorizo a discussão inteira para não ficar preso ao peso de ter errado.", w: { Bard: 3, Prince: 2, Mage: -1 } },
-        { txt: "Mudo rapidamente de posição e tento usar a correção como prova de que sou mais esperto por me adaptar.", w: { Thief: 3, Witch: 2 } }
+    { t: "9. You discover that you had been confidently defending incorrect information.", opts: [
+        { txt: "I trace back through the chain of sources to understand exactly where the false information entered.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I publicly correct it and make the right version more visible than the error.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I feel embarrassed and start doubting my ability to know anything with certainty.", w: { Page: 3, Heir: 1 } },
+        { txt: "I downplay the entire discussion so I don't get weighed down by having been wrong.", w: { Bard: 3, Prince: 2, Mage: -1 } },
+        { txt: "I quickly change my stance and try to use the correction as proof that I'm smarter for adapting.", w: { Thief: 3, Witch: 2 } }
     ]},
-    { t: "Você encontra um tema obscuro que quase ninguém conhece, mas que parece cheio de conexões importantes.", opts: [
-        { txt: "Mergulho no tema até entender por que ele ficou fora do olhar público por tanto tempo.", w: { Mage: 3, Heir: 2 } },
-        { txt: "Começo a montar um guia para tornar esse conhecimento acessível sem destruir sua complexidade.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Uso o tema como marca pessoal; ser uma das poucas pessoas que entende disso me dá vantagem.", w: { Thief: 3, Prince: 1, Rogue: -2 } },
-        { txt: "Fico fascinado, mas perdido, pulando de link em link sem saber o que é base e o que é detalhe.", w: { Page: 3, Heir: 1 } },
-        { txt: "Mudo o ângulo de apresentação até o tema parecer relevante para pessoas que nunca ligariam para ele.", w: { Witch: 3, Seer: 1 } }
-    ]},	
-    { t: "Você faz parte de uma equipe que realizou um feito notável, mas apenas uma pessoa será o rosto público desse sucesso. Como você se posiciona?", opts: [
-        { txt: "Certifico-me de que minha contribuição seja a mais visível; se o resultado é excelente, é justo que eu detenha o controle da narrativa.", w: { Thief: 3, Witch: 2, Rogue: -2 } },
-        { txt: "Prefiro apagar minha participação e ficar fora dos holofotes; a atenção pública é um ruído invasivo que prefiro evitar.", w: { Prince: 3, Rogue: 2, Thief: -3 } },
-        { txt: "Faço questão de destacar o esforço de quem menos apareceu, garantindo que o reconhecimento seja dividido.", w: { Rogue: 3, Sylph: 2, Thief: -2 } },
-        { txt: "Eu nem ligo se sabem que fui eu. Se esquecerem meu nome na hora dos créditos, paciência. A fama dá muito trabalho.", w: { Bard: 3, Heir: 2 } },
-        { txt: "Não forço nada. Se as pessoas notarem meu valor, ótimo; se não, sei que eventualmente minha contribuição será reconhecida.", w: { Heir: 3, Seer: 1 } }
+    { t: "10. You come across an obscure topic that almost no one knows about, yet it seems full of important connections.", opts: [
+        { txt: "I dive into the topic until I understand why it stayed out of the public eye for so long.", w: { Mage: 3, Heir: 2 } },
+        { txt: "I start putting together a guide to make this knowledge accessible without destroying its complexity.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I use the topic as a personal brand; being one of the few people who understands it gives me an edge.", w: { Thief: 3, Prince: 1, Rogue: -2 } },
+        { txt: "I’m fascinated but lost, jumping from link to link without knowing what’s foundational and what’s just a detail.", w: { Page: 3, Heir: 1 } },
+        { txt: "I shift the angle of presentation until the topic seems relevant to people who would never have cared about it otherwise.", w: { Witch: 3, Seer: 1 } }
     ]},
-    { t: "Você descobre uma informação importante antes de todo mundo, mas ainda não sabe se deve compartilhar.", opts: [
-        { txt: "Guardo por enquanto e observo quem mais percebe. Informação vale mais quando você sabe o momento certo de usar.", w: { Knight: 3, Mage: 2 } },
-        { txt: "Conto imediatamente, porque se isso é importante as pessoas precisam saber antes de tomarem decisões no escuro.", w: { Sylph: 3, Seer: 2 } },
-        { txt: "Uso a informação para me colocar numa posição melhor. Se fui eu que descobri, faz sentido que isso me favoreça primeiro.", w: { Thief: 3, Prince: 1, Rogue: -2 } },
-        { txt: "Fico inseguro sobre se entendi direito e tento confirmar com alguém antes de me colocar como fonte.", w: { Rogue: 3, Knight: 2 } },
-        { txt: "Começo a pesquisar mais fundo, porque talvez essa informação seja só a ponta de algo muito maior.", w: { Heir: 3, Seer: 2 } }
+    { t: "11. You are part of a team that achieved a remarkable feat, but only one person will be the public face of that success. How do you position yourself?", opts: [
+        { txt: "I ensure my contribution is the most visible; if the result is excellent, it is only fair that I control the narrative.", w: { Thief: 3, Witch: 2, Rogue: -2 } },
+        { txt: "I prefer to downplay my involvement and stay out of the spotlight; public attention is an intrusive noise I’d rather avoid.", w: { Prince: 3, Rogue: 2, Thief: -3 } },
+        { txt: "I make a point of highlighting the efforts of those who were less visible, ensuring the recognition is shared.", w: { Rogue: 3, Sylph: 2, Thief: -2 } },
+        { txt: "I don't even care if people know it was me. If my name gets left out of the credits, so be it. Fame is too much work.", w: { Bard: 3, Heir: 2 } },
+        { txt: "I don't force anything. If people notice my worth, great; if not, I know my contribution will eventually be recognized.", w: { Heir: 3, Seer: 1 } }
     ]},
-    { t: "Você está pesquisando um assunto e percebe que existem versões diferentes, contraditórias e aparentemente bem fundamentadas.", opts: [
-        { txt: "Comparo as fontes e tento descobrir qual interpretação realmente ilumina o quadro maior.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Mergulho cada vez mais fundo. Se existem tantas versões, deve haver algum detalhe escondido explicando a diferença.", w: { Heir: 3, Knight: 1 } },
-        { txt: "Tento criar minha própria síntese a partir do que encontrei, em vez de aceitar passivamente uma explicação pronta.", w: { Maid: 3, Witch: 2 } },
-        { txt: "Começo a desconfiar que a disputa de interpretações é mais importante do que o fato original em si.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Finjo que entendi melhor do que entendi e acabo repetindo a versão que parece mais impressionante.", w: { Page: 3, Thief: 1, Mage: -2 } }
+    { t: "12. You discover an important piece of information before anyone else, but you aren't sure yet if you should share it.", opts: [
+        { txt: "I keep it to myself for now and watch to see who else notices. Information is worth more when you know the right moment to use it.", w: { Knight: 3, Mage: 2 } },
+        { txt: "I tell everyone immediately; if it's important, people need to know before making decisions in the dark.", w: { Sylph: 3, Seer: 2 } },
+        { txt: "I use the information to put myself in a better position. Since I was the one who discovered it, it makes sense for it to benefit me first.", w: { Thief: 3, Prince: 1, Rogue: -2 } },
+        { txt: "I'm unsure if I understood it correctly and try to confirm with someone else before identifying myself as the source.", w: { Rogue: 3, Knight: 2 } },
+        { txt: "I start digging deeper, because this information might just be the tip of the iceberg regarding something much bigger.", w: { Heir: 3, Seer: 2 } }
     ]},
-    { t: "Um erro pessoal seu é exposto publicamente e você se torna o centro das atenções e julgamentos. Como reage?", opts: [
-        { txt: "Decido que a opinião alheia é irrelevante. Trato a exposição como algo sem valor e sigo em frente.", w: { Prince: 3, Bard: 1, Page: -2 } },
-        { txt: "Assumo a falha e começo a trabalhar de forma punitiva para corrigir os fatos e restaurar minha reputação.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Eu levo na esportiva. Se minha reputação foi pro lixo, pelo menos a história foi engraçada. Não vou me matar pra limpar meu nome.", w: { Bard: 3, Heir: 2, Knight: -2 } },
-        { txt: "Uso a vergonha da exposição como combustível para estudar onde errei e garantir que nunca mais aconteça.", w: { Page: 3, Knight: 2, Mage: 1 } },
-        { txt: "Tento desviar o foco do meu erro para outro assunto que seja mais relevante no momento.", w: { Thief: 3, Witch: 2 } }
+    { t: "13. You are researching a subject and realize there are different, contradictory, and seemingly well-founded versions.", opts: [
+        { txt: "I compare the sources and try to figure out which interpretation truly sheds light on the bigger picture.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I dive deeper and deeper. If there are so many versions, there must be some hidden detail explaining the difference.", w: { Heir: 3, Knight: 1 } },
+        { txt: "I try to create my own synthesis from what I’ve found, rather than passively accepting a ready-made explanation.", w: { Maid: 3, Witch: 2 } },
+        { txt: "I begin to suspect that the clash of interpretations is more important than the original fact itself.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I pretend I understand it better than I actually do and end up repeating the version that seems most impressive.", w: { Page: 3, Thief: 1, Mage: -2 } }
     ]},
-    { t: "Você percebe que uma coisa considerada irrelevante por todos pode ter um significado importante.", opts: [
-        { txt: "Começo a dar forma e contexto para aquilo, até que deixe de parecer aleatório e passe a significar algo.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Tento convencer as pessoas a olharem de novo. O problema é que ninguém está prestando atenção do jeito certo.", w: { Sylph: 3, Seer: 2 } },
-        { txt: "Fico preso analisando aquilo por horas, porque a possibilidade de existir um significado escondido não sai da minha cabeça.", w: { Heir: 3, Knight: 2 } },
-        { txt: "Uso minha interpretação para mudar o valor da coisa; se todo mundo achava irrelevante, talvez eu consiga inverter isso.", w: { Witch: 3, Maid: 2 } },
-        { txt: "Descarto a importância antiga que deram a isso e substituo por uma leitura que faz mais sentido para mim.", w: { Prince: 3, Witch: 2 } }
+   { t: "14. A personal mistake of yours is publicly exposed, and you become the center of attention and judgment. How do you react?", opts: [
+        { txt: "I decide that others' opinions are irrelevant. I treat the exposure as meaningless and move on.", w: { Prince: 3, Bard: 1, Page: -2 } },
+        { txt: "I own up to the mistake and set to work—punishingly so—to set the record straight and restore my reputation.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I take it in stride. If my reputation is ruined, at least the story was funny. I’m not going to kill myself trying to clear my name.", w: { Bard: 3, Heir: 2, Knight: -2 } },
+        { txt: "I use the shame of the exposure as fuel to analyze where I went wrong and ensure it never happens again.", w: { Page: 3, Knight: 2, Mage: 1 } },
+        { txt: "I try to shift the focus away from my mistake to a topic that is more relevant at the moment.", w: { Thief: 3, Witch: 2 } }
     ]},
-    { t: "Como você lida com a necessidade de ser 'visto' ou validado pelos outros no seu cotidiano?", opts: [
-        { txt: "Sinto que preciso provar meu valor constantemente; se eu não estiver sendo notado, perco minha relevância.", w: { Page: 3, Knight: 3, Maid: 1, Prince: -2 } },
-        { txt: "Sinto-me agredido pela atenção constante. Prefiro o anonimato e a escuridão.", w: { Prince: 3, Rogue: 2, Thief: -3 } },
-        { txt: "Não ligo se me veem ou não. Às vezes sou o centro das atenções, às vezes sou invisível. Deixo acontecer sem forçar.", w: { Bard: 3, Heir: 2 } },
-        { txt: "Prefiro que meu mérito seja redirecionado para o que eu produzo ou para o grupo; detesto ser o foco central.", w: { Rogue: 3, Sylph: 2, Thief: -2 } },
-        { txt: "Uso minha imagem e visibilidade apenas como uma ferramenta pontual para conseguir o que quero.", w: { Witch: 3, Thief: 3 } }
+    { t: "15. You realize that something considered irrelevant by everyone might hold significant meaning.", opts: [
+        { txt: "I start giving it shape and context until it stops seeming random and begins to mean something.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I try to convince people to take another look. The problem is that no one is paying attention in the right way.", w: { Sylph: 3, Seer: 2 } },
+        { txt: "I get stuck analyzing it for hours because the possibility of a hidden meaning won't leave my mind.", w: { Heir: 3, Knight: 2 } },
+        { txt: "I use my interpretation to change the thing's value; if everyone thought it was irrelevant, maybe I can flip that.", w: { Witch: 3, Maid: 2 } },
+        { txt: "I discard the old importance assigned to it and replace it with an interpretation that makes more sense to me.", w: { Prince: 3, Witch: 2 } }
     ]},
-    { t: "Ao se deparar com várias versões conflitantes de uma mesma história, como você decide em qual acreditar?", opts: [
-        { txt: "Busco a versão factual e lógica. A verdade não deve ser moldada pela conveniência.", w: { Seer: 3, Mage: 3, Witch: -2 } },
-        { txt: "Escolho a versão que melhor serve aos meus objetivos ou que cria a narrativa mais útil.", w: { Witch: 3, Thief: 2, Seer: -2 } },
-        { txt: "Eu não acredito em nenhuma. Deixo as pessoas brigarem pela 'verdade' enquanto eu assisto de longe, achando graça da confusão.", w: { Bard: 3, Rogue: 1, Knight: -1 } },
-        { txt: "Acredito que não existe uma verdade absoluta; deixo que cada versão flua e o tempo revele qual terá mais peso.", w: { Heir: 3, Bard: 1 } },
-        { txt: "Adoto a versão que exige mais responsabilidade e ação da minha parte, usando-a como um mapa.", w: { Knight: 3, Page: 2 } }
+    { t: "16. How do you handle the need to be 'seen' or validated by others in your daily life?", opts: [
+        { txt: "I feel I constantly need to prove my worth; if I’m not being noticed, I lose my relevance.", w: { Page: 3, Knight: 3, Maid: 1, Prince: -2 } },
+        { txt: "I feel assaulted by constant attention. I prefer anonymity and the shadows.", w: { Prince: 3, Rogue: 2, Thief: -3 } },
+        { txt: "I don't care whether I'm seen or not. Sometimes I'm the center of attention, sometimes I'm invisible. I let things happen naturally.", w: { Bard: 3, Heir: 2 } },
+        { txt: "I prefer for the credit to go to what I produce or to the group; I hate being the main focus.", w: { Rogue: 3, Sylph: 2, Thief: -2 } },
+        { txt: "I use my image and visibility only as a strategic tool to get what I want.", w: { Witch: 3, Thief: 3 } }
     ]},
-    { t: "Você descobre que uma história muito repetida sobre você está distorcendo o que realmente aconteceu.", opts: [
-        { txt: "Reúno a versão correta, os detalhes e o contexto para reconstruir a narrativa com mais precisão.", w: { Maid: 3, Seer: 2 } },
-        { txt: "Uso a versão distorcida a meu favor se ela me coloca numa posição mais importante.", w: { Thief: 3, Prince: 1, Rogue: -2 } },
-        { txt: "Destruo a importância dessa história. Se ela não serve mais, prefiro que pare de significar qualquer coisa.", w: { Prince: 3, Bard: 2, Maid: -1 } },
-        { txt: "Fico inseguro em corrigir porque talvez pareça que estou tentando chamar atenção demais para mim.", w: { Rogue: 3, Page: 2 } },
-        { txt: "Analiso como a distorção se espalhou, porque entender o caminho da informação ajuda a controlar o estrago.", w: { Mage: 3, Knight: 2 } }
+    { t: "17. When faced with several conflicting versions of the same story, how do you decide which one to believe?", opts: [
+        { txt: "I seek the factual and logical version. Truth should not be shaped by convenience.", w: { Seer: 3, Mage: 3, Witch: -2 } },
+        { txt: "I choose the version that best serves my goals or creates the most useful narrative.", w: { Witch: 3, Thief: 2, Seer: -2 } },
+        { txt: "I don't believe any of them. I let people fight over the 'truth' while I watch from afar, amused by the confusion.", w: { Bard: 3, Rogue: 1, Knight: -1 } },
+        { txt: "I believe there is no absolute truth; I let each version flow and allow time to reveal which one carries the most weight.", w: { Heir: 3, Bard: 1 } },
+        { txt: "I adopt the version that demands the most responsibility and action from me, using it as a map.", w: { Knight: 3, Page: 2 } }
     ]},
-    { t: "Você está em uma discussão acalorada onde sabe, com 100% de certeza, que a outra pessoa está errada sobre um fato técnico ou histórico. Como você age?", opts: [
-        { txt: "Interrompo e apresento as provas. Não suporto ver a desinformação prosperar quando a verdade está disponível.", w: { Sylph: 3, Maid: 2, Knight: 2, Prince: -2 } },
-        { txt: "Deixo que ela continue falando o que quiser. A ignorância alheia é irrelevante para mim.", w: { Prince: 3, Bard: 1, Seer: -2 } },
-        { txt: "Eu deixo a pessoa falar besteira. É divertido ver alguém tão confiante no erro, e não vou gastar minha energia corrigindo.", w: { Bard: 3, Thief: 1, Knight: -1 } },
-        { txt: "Uso o erro dela como vantagem estratégica, deixando que ela se exponha até eu usar a verdade para desarmá-la.", w: { Thief: 3, Witch: 2, Seer: 2, Rogue: -2 } },
-        { txt: "Tento corrigir a pessoa de forma sutil, compartilhando o conhecimento como se fosse algo que estamos descobrindo juntos.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
+    { t: "18. You discover that a frequently repeated story about you is distorting what actually happened.", opts: [
+        { txt: "I gather the correct version, details, and context to reconstruct the narrative more accurately.", w: { Maid: 3, Seer: 2 } },
+        { txt: "I use the distorted version to my advantage if it puts me in a more important position.", w: { Thief: 3, Prince: 1, Rogue: -2 } },
+        { txt: "I destroy the story's importance. If it no longer serves a purpose, I’d rather it cease to mean anything at all.", w: { Prince: 3, Bard: 2, Maid: -1 } },
+        { txt: "I feel insecure about correcting it, as it might look like I’m trying to draw too much attention to myself.", w: { Rogue: 3, Page: 2 } },
+        { txt: "I analyze how the distortion spread, because understanding the flow of information helps control the damage.", w: { Mage: 3, Knight: 2 } }
     ]},
-    { t: "Em uma situação tensa, você percebe que a transparência das informações está causando conflitos. Qual sua atitude?", opts: [
-        { txt: "Defendo que a clareza é a única cura. Tudo deve ser exposto para resolver o problema pela raiz.", w: { Sylph: 3, Seer: 2, Prince: -3 } },
-        { txt: "Acredito que o segredo é uma forma de proteção; algumas coisas devem permanecer no escuro.", w: { Prince: 3, Rogue: 1, Sylph: -3 } },
-        { txt: "Eu solto a verdade e saio de perto. Se a clareza vai causar briga, que cause. O circo pegando fogo é mais interessante.", w: { Bard: 3, Thief: 2, Seer: -1 } },
-        { txt: "Organizo as informações de forma pragmática, revelando apenas o necessário para manter a ordem.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Compartilho a verdade de forma diluída, tentando fazer com que o peso da informação seja dividido.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
+    { t: "19. You are in a heated argument where you know, with 100% certainty, that the other person is wrong about a technical or historical fact. How do you act?", opts: [
+        { txt: "I interrupt and present the evidence. I can't stand seeing misinformation thrive when the truth is available.", w: { Sylph: 3, Maid: 2, Knight: 2, Prince: -2 } },
+        { txt: "I let them keep saying whatever they want. Other people's ignorance is irrelevant to me.", w: { Prince: 3, Bard: 1, Seer: -2 } },
+        { txt: "I let the person spout nonsense. It's amusing to see someone so confident while being wrong, and I'm not going to waste my energy correcting them.", w: { Bard: 3, Thief: 1, Knight: -1 } },
+        { txt: "I use their error to my strategic advantage, letting them expose themselves until I use the truth to disarm them.", w: { Thief: 3, Witch: 2, Seer: 2, Rogue: -2 } },
+        { txt: "I try to correct the person subtly, sharing the knowledge as if it were something we are discovering together.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
+    ]},
+    { t: "20. In a tense situation, you realize that information transparency is causing conflict. What is your approach?", opts: [
+        { txt: "I maintain that clarity is the only solution. Everything must be brought to light to resolve the problem at its root.", w: { Sylph: 3, Seer: 2, Prince: -3 } },
+        { txt: "I believe secrecy is a form of protection; some things should remain in the dark.", w: { Prince: 3, Rogue: 1, Sylph: -3 } },
+        { txt: "I drop the truth and walk away. If clarity causes a fight, so be it. Watching the chaos unfold is more interesting.", w: { Bard: 3, Thief: 2, Seer: -1 } },
+        { txt: "I organize the information pragmatically, revealing only what is necessary to maintain order.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I share the truth in a diluted form, trying to ensure the weight of the information is shared among others.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
     ]}
     ],
     "Void": [
