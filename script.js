@@ -78,7 +78,6 @@ function handleInput(optIndex) {
     let selectedOpt = currentQ.opts[optIndex];
     
     if (state.stage === "aspect_quiz") {
-        // 1. Processar os Pesos (ISSO FICA)
         for (let [key, val] of Object.entries(selectedOpt.w)) {
             state.aspectScores[key] = (state.aspectScores[key] || 0) + val;
         } 
