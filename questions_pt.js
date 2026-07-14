@@ -986,12 +986,12 @@ const questionsByAspect = {
         { txt: "Tento tirar o peso emocional da situação e responder só ao que realmente precisa ser resolvido.", w: { Sylph: 3, Maid: 2, Bard: -2 } },
         { txt: "Respondo do jeito que parece mais verdadeiro pra mim no momento. Ficar calculando cada consequência só deixaria tudo artificial.", w: { Bard: 3, Prince: 1, Knight: -2 } }
     ]},
-    { t: "20. Você percebe que a explicação de alguém parece lógica na superfície, mas alguma coisa nela não encaixa com o que a pessoa está fazendo na prática.", opts: [
-        { txt: "Questiono as premissas da explicação. Talvez o problema não esteja na conclusão, mas nas regras que a pessoa usou para chegar até ela.", w: { Witch: 3, Seer: 2 } },
-        { txt: "Comparo o discurso com o comportamento. Se a lógica não aparece nas ações, então ela provavelmente é só uma justificativa conveniente.", w: { Prince: 3, Mage: 2 } },
-        { txt: "Tento identificar o padrão por trás da contradição, porque esse tipo de raciocínio costuma aparecer de novo em outras situações.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Evito bater de frente e observo como outras pessoas reagem à explicação antes de decidir se minha leitura faz sentido.", w: { Rogue: 3, Heir: 2 } },
-        { txt: "Tento provar que consigo acompanhar o raciocínio, mas acabo defendendo ou atacando a ideia antes de realmente entender todas as partes.", w: { Page: 3, Bard: 2 } }
+    { t: "20. Você precisa pedir um favor importante para alguém. Antes da conversa, qual é sua tendência mais natural?", opts: [
+        { txt: "Penso em como a pessoa costuma reagir e adapto minha abordagem para aumentar as chances de conseguir o que preciso.", w: { Witch: 3, Thief: 2 } },
+        { txt: "Organizo exatamente o que vou dizer para que a conversa siga o caminho mais claro e eficiente possível.", w: { Maid: 3, Knight: 2 } },
+        { txt: "Imagino tantos cenários possíveis que acabo demorando mais do que gostaria para iniciar a conversa.", w: { Page: 3, Mage: 2 } },
+        { txt: "Começo a conversa sem um plano rígido e ajusto minha postura conforme a reação da outra pessoa.", w: { Heir: 3, Rogue: 2 } },
+        { txt: "Prefiro não ensaiar nada. Se eu pensar demais, a conversa perde a espontaneidade.", w: { Bard: 3, Prince: 1 } }
     ]}
 	],
    "Heart": [
