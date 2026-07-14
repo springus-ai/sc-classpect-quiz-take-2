@@ -6,69 +6,140 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
+
 <body>
     <div id="site-shell">
+
         <header id="mspfa-header">
             <div class="logo-row">
                 <img class="site-logo" src="logo.gif" alt="Logo do Sburbio">
+
                 <div>
                     <div id="quizTitle" class="logo-title">SBURBIO.net</div>
-                    <div id="siteSubtitle" class="logo-subtitle">Um quiz de classpect. É do Brasil!</div>
+                    <div id="siteSubtitle" class="logo-subtitle">
+                        Um quiz de classpect. É do Brasil!
+                    </div>
                 </div>
             </div>
         </header>
 
+
         <nav class="mspfa-menu" aria-label="Navegação principal">
-            <a id="websiteLink" href="https://www.sburbio.net" target="_blank" rel="noopener noreferrer">Nosso Site</a>
-            <a href="https://x.com/sburbio" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="https://discord.gg/85wjjDGZXj" target="_blank" rel="noopener noreferrer">Discord</a>
-            <button type="button" id="libraryButton" onclick="openLibrary()">Arquivos</button>
-            
+
+            <a id="websiteLink" href="https://www.sburbio.net" target="_blank" rel="noopener noreferrer">
+                Nosso Site
+            </a>
+
+            <a href="https://x.com/sburbio" target="_blank" rel="noopener noreferrer">
+                Twitter
+            </a>
+
+            <a href="https://discord.gg/85wjjDGZXj" target="_blank" rel="noopener noreferrer">
+                Discord
+            </a>
+
+            <button type="button" id="libraryButton" onclick="openLibrary()">
+                Arquivos
+            </button>
+
+
             <select id="languageSwitcher">
                 <option value="pt">PT</option>
                 <option value="en">EN</option>
             </select>
-        </nav>
 
+        </nav>
+		
         <main id="page-frame">
+
             <section id="terminal" aria-live="polite">
+
                 <div class="page-titlebar">
-                    <span id="pageTitlebar">QUIZ DE CLASSPECT DA SBURBIO</span>
+                    <span id="pageTitlebar">
+                        QUIZ DE CLASSPECT DA SBURBIO
+                    </span>
                 </div>
+
                 <div id="content"></div>
+
             </section>
+
         </main>
+
 
         <footer id="site-footer">
             <span>© SBURBIO 2026</span>
         </footer>
+
+
     </div>
 
-    <script>
-    const languageSwitcher = document.getElementById("languageSwitcher");
-    const lang = localStorage.getItem("language") || "pt";
 
-    languageSwitcher.value = lang;
+<script>
 
-    if (lang === "en") {
-        document.documentElement.lang = "en";
-        document.title = "SBURBIO Classpect Quiz";
-        document.getElementById("siteSubtitle").textContent = "A Classpect Quiz. Made in Brazil!";
-        document.getElementById("websiteLink").textContent = "Our Website";
-        document.getElementById("libraryButton").textContent = "Archives";
-        document.getElementById("quizTitle").textContent = "SBURBIO.net";
-        document.getElementById("pageTitlebar").textContent = "SBURBIO CLASSPECT QUIZ";
-    }
+const languageSwitcher = document.getElementById("languageSwitcher");
 
-    languageSwitcher.onchange = () => {
-        localStorage.setItem("language", languageSwitcher.value);
-        location.reload();
-    };
-	
-    document.write(`<script src="descriptions_${lang}.js"><\/script>`);
-    document.write(`<script src="questions_${lang}.js"><\/script>`);
-    </script>
+const lang = localStorage.getItem("language") || "pt";
 
-    <script src="script.js"></script>
+languageSwitcher.value = lang;
+
+if (lang === "en") {
+
+    document.documentElement.lang = "en";
+
+    document.title = "SBURBIO Classpect Quiz";
+
+    document.getElementById("siteSubtitle").textContent =
+        "A Classpect Quiz. Made in Brazil!";
+
+    document.getElementById("websiteLink").textContent =
+        "Our Website";
+
+    document.getElementById("libraryButton").textContent =
+        "Archives";
+
+    document.getElementById("pageTitlebar").textContent =
+        "SBURBIO CLASSPECT QUIZ";
+}
+
+languageSwitcher.onchange = () => {
+
+    localStorage.setItem(
+        "language",
+        languageSwitcher.value
+    );
+
+    location.reload();
+
+};
+
+const descScript = document.createElement("script");
+descScript.src = `descriptions_${lang}.js`;
+
+
+
+const questionsScript = document.createElement("script");
+questionsScript.src = `questions_${lang}.js`;
+
+document.body.appendChild(descScript);
+
+
+document.body.appendChild(questionsScript);
+
+
+questionsScript.onload = () => {
+
+    const mainScript = document.createElement("script");
+
+    mainScript.src = "script.js";
+
+    document.body.appendChild(mainScript);
+
+};
+
+
+</script>
+
+
 </body>
 </html>
