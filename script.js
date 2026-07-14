@@ -16,7 +16,6 @@ function resetQuiz() {
     localStorage.removeItem("quiz_state");
     location.reload();
 }
-};
 
 const isEn = localStorage.getItem("language") === "en";
 
