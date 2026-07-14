@@ -10,6 +10,8 @@ let state = {
     history: []
 };
 
+const isEn = localStorage.getItem("language") === "en";
+
 function getUIText(key, fallback) {
     if (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[key]) {
         return classpectDescriptions[key];
@@ -391,15 +393,42 @@ function openLibrary(section = 'aspects') {
     libraryState.section = section;
     libraryState.search = '';
 
+    // Traduções dos textos estáticos
+    const titleHeader = isEn ? "SBURBIO ARCHIVES" : "ARQUIVOS DA SBURBIO";
+    const introText = isEn 
+        ? "Here you can consult descriptions of Aspects, Classes, and Classpect combinations without retaking the quiz."
+        : "Aqui você pode consultar descrições de Aspectos, Classes e combinações de Classpects sem precisar refazer o quiz.";
+    
+    const tabAspects = isEn ? "Aspects" : "Aspectos";
+    const tabClasses = isEn ? "Classes" : "Classes";
+    const tabClasspects = isEn ? "Classpects" : "Classpects";
+    
+    const searchPlaceholder = isEn ? "Search by name..." : "Buscar por nome...";
+    const labelClass = isEn ? "Class" : "Classe";
+    const labelAspect = isEn ? "Aspect" : "Aspecto";
+    const btnRead = isEn ? "Read combination" : "Read combination"; // Se quiser mudar ou manter "Read combination"
+    
+    const sidebarTitle = section === 'aspects' 
+        ? (isEn ? 'Aspects List' : 'Lista de Aspectos') 
+        : section === 'classes' 
+            ? (isEn ? 'Classes List' : 'Lista de Classes') 
+            : (isEn ? 'Classpects List' : 'Lista de Classpects');
+
+    const emptyText = isEn 
+        ? "Choose an item from the list to open the description." 
+        : "Escolha um item na lista para abrir a descrição.";
+        
+    const btnBack = isEn ? "BACK" : "VOLTAR";
+
     render(`
         <div class="fade-in library-shell" style="max-width: 980px; margin: 0 auto;">
-            <h1>ARQUIVOS DA SBURBIO</h1>
-            <p class="library-intro">Aqui você pode consultar descrições de Aspectos, Classes e combinações de Classpects sem precisar refazer o quiz.</p>
+            <h1>${titleHeader}</h1>
+            <p class="library-intro">${introText}</p>
 
             <div class="library-tabs">
-                <button type="button" class="library-tab ${section === 'aspects' ? 'is-active' : ''}" onclick="switchLibrarySection('aspects')">Aspectos</button>
-                <button type="button" class="library-tab ${section === 'classes' ? 'is-active' : ''}" onclick="switchLibrarySection('classes')">Classes</button>
-                <button type="button" class="library-tab ${section === 'classpects' ? 'is-active' : ''}" onclick="switchLibrarySection('classpects')">Classpects</button>
+                <button type="button" class="library-tab ${section === 'aspects' ? 'is-active' : ''}" onclick="switchLibrarySection('aspects')">${tabAspects}</button>
+                <button type="button" class="library-tab ${section === 'classes' ? 'is-active' : ''}" onclick="switchLibrarySection('classes')">${tabClasses}</button>
+                <button type="button" class="library-tab ${section === 'classpects' ? 'is-active' : ''}" onclick="switchLibrarySection('classpects')">${tabClasspects}</button>
             </div>
 
             <div class="library-toolbar">
@@ -407,7 +436,7 @@ function openLibrary(section = 'aspects') {
                     id="librarySearch"
                     class="library-search"
                     type="text"
-                    placeholder="Buscar por nome..."
+                    placeholder="${searchPlaceholder}"
                     value=""
                     oninput="setLibrarySearch(this.value)"
                 >
@@ -415,30 +444,30 @@ function openLibrary(section = 'aspects') {
 
             <div id="classpectControls" class="classpect-controls" style="display:${section === 'classpects' ? 'flex' : 'none'};">
                 <label>
-                    Classe
+                    ${labelClass}
                     <select id="libraryClassSelect" onchange="updateLibrarySelector('class', this.value)">
                         ${LIBRARY_CLASSES.map(cls => `<option value="${cls}" ${cls === libraryState.selectedClass ? 'selected' : ''}>${cls}</option>`).join('')}
                     </select>
                 </label>
                 <label>
-                    Aspecto
+                    ${labelAspect}
                     <select id="libraryAspectSelect" onchange="updateLibrarySelector('aspect', this.value)">
                         ${LIBRARY_ASPECTS.map(asp => `<option value="${asp}" ${asp === libraryState.selectedAspect ? 'selected' : ''}>${asp}</option>`).join('')}
                     </select>
                 </label>
-                <button type="button" class="library-open-button" onclick="openSelectedClasspect()">Ler combinação</button>
+                <button type="button" class="library-open-button" onclick="openSelectedClasspect()">${btnRead}</button>
             </div>
 
             <div class="library-layout">
                 <aside class="library-sidebar">
-                    <h3 id="libraryListTitle">${section === 'aspects' ? 'Lista de Aspectos' : section === 'classes' ? 'Lista de Classes' : 'Lista de Classpects'}</h3>
+                    <h3 id="libraryListTitle">${sidebarTitle}</h3>
                     <div id="libraryListMeta" class="library-list-meta"></div>
                     <ul id="libraryList" class="library-list"></ul>
                 </aside>
 
                 <section class="library-main">
                     <div id="libraryEmptyState" class="library-empty-state">
-                        <p>Escolha um item na lista para abrir a descrição.</p>
+                        <p>${emptyText}</p>
                     </div>
                     <div id="libraryDisplay" style="padding: 25px; margin: 0 auto; text-align: justify; max-width: 800px; display:none;">
                         <h2 id="libTitle" style="margin-top:0;"></h2>
@@ -447,7 +476,7 @@ function openLibrary(section = 'aspects') {
                 </section>
             </div>
 
-            <button onclick="location.reload()" style="margin-top:20px; padding: 10px 20px; font-size: 1em; cursor: pointer; max-width: 220px;">VOLTAR</button>
+            <button onclick="location.reload()" style="margin-top:20px; padding: 10px 20px; font-size: 1em; cursor: pointer; max-width: 220px;">${btnBack}</button>
         </div>
     `);
 
@@ -466,13 +495,22 @@ function switchLibrarySection(section) {
         controls.style.display = section === 'classpects' ? 'flex' : 'none';
     }
 
+    // Ajuste na verificação de classe ativa para suportar os botões traduzidos
     document.querySelectorAll('.library-tab').forEach(btn => {
-        btn.classList.toggle('is-active', btn.textContent.trim().toLowerCase() === (section === 'classpects' ? 'classpects' : section));
+        const text = btn.textContent.trim().toLowerCase();
+        const isTabActive = (section === 'aspects' && (text === 'aspectos' || text === 'aspects')) ||
+                            (section === 'classes' && text === 'classes') ||
+                            (section === 'classpects' && text === 'classpects');
+        btn.classList.toggle('is-active', isTabActive);
     });
 
     const title = document.getElementById('libraryListTitle');
     if (title) {
-        title.textContent = section === 'aspects' ? 'Lista de Aspectos' : section === 'classes' ? 'Lista de Classes' : 'Lista de Classpects';
+        title.textContent = section === 'aspects' 
+            ? (isEn ? 'Aspects List' : 'Lista de Aspectos') 
+            : section === 'classes' 
+                ? (isEn ? 'Classes List' : 'Lista de Classes') 
+                : (isEn ? 'Classpects List' : 'Lista de Classpects');
     }
 
     const display = document.getElementById('libraryDisplay');
@@ -509,7 +547,7 @@ function renderLibraryList() {
     const items = getLibraryFilteredItems();
 
     if (items.length === 0) {
-        list.innerHTML = `<li class="library-no-results">Nenhum item encontrado.</li>`;
+        list.innerHTML = `<li class="library-no-results">${isEn ? "No items found." : "Nenhum item encontrado."}</li>`;
         return;
     }
 
@@ -530,7 +568,6 @@ function renderLibraryList() {
         return `<li class="library-list-item" style="${style}" onclick="renderLibraryItem('${item}')">${label}</li>`;
     }).join('');
 }
-
 function renderLibraryItem(key) {
     const display = document.getElementById('libraryDisplay');
     const title = document.getElementById('libTitle');
@@ -590,8 +627,6 @@ function renderQuestion(q) {
     html += `</div>`;
     html += `<div class="navigation-controls" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">`;
 
-    // Pegando a chave correta do seu index.html ("language")
-    const isEn = localStorage.getItem("language") === "en";
     const txtBack = isEn ? "Back" : "Voltar";
     const txtSkip = isEn ? "None of the above." : "Nenhuma das anteriores.";
 
