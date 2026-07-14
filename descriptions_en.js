@@ -1082,7 +1082,7 @@ const classpectDescriptions = {
 			<p>- New descriptions for all Classpects! We tweaked some wording—changing things that sounded more like "Time" than "Life" in certain instances, and so on.</p>
 			<p>- New design! We heard a lot of complaints about the terminal-style layout hurting users' eyes (it started bothering me, too), so we adopted a style similar to the Homestuck website, making the experience much easier on the eyes.</p>
             <p>Now that we've got that out of the way—and assuming you trust this quiz (I hope you do)—let's cut to the chase and find out a little about you.</p>
-            <button onclick="start()">Let's do it..</button>
+            <button onclick="start()">Let's do it.</button>
         </div>
     `,
 
