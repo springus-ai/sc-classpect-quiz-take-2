@@ -711,287 +711,287 @@ const questionsByAspect = {
     ]}
     ],
     "Void": [
-    { t: "Você descobre um segredo íntimo de um conhecido que mudaria a percepção de todos sobre ele, mas ninguém mais sabe disso.", opts: [
-        { txt: "Eu revelo a verdade imediatamente. Odeio segredos; eles são buracos na realidade que precisam ser preenchidos com fatos.", w: { Prince: 3, Seer: 2 } },
-        { txt: "Guardo essa informação como um trunfo pessoal, sentindo que o conhecimento oculto me dá uma vantagem.", w: { Thief: 3, Witch: 2, Mage: 1 } },
-        { txt: "Acabo soltando o segredo sem querer em uma conversa aleatória. Não sou bom em guardar coisas que não me importam muito.", w: { Bard: 3, Page: 2, Seer: -2 } },
-        { txt: "Protejo essa informação com o máximo de discrição. Se o segredo existe, é porque deve permanecer no escuro.", w: { Maid: 3, Knight: 2, Prince: -1 } },
-        { txt: "Observo como esse 'não-dito' influencia as interações, deixando que o mistério siga seu curso natural.", w: { Mage: 3, Heir: 2, Bard: 1 } }
+    { t: "1. You discover an intimate secret about an acquaintance that would change everyone's perception of them, but no one else knows it.", opts: [
+        { txt: "I reveal the truth immediately. I hate secrets; they are holes in reality that need to be filled with facts.", w: { Prince: 3, Seer: 2 } },
+        { txt: "I keep this information as a personal trump card, feeling that hidden knowledge gives me an advantage.", w: { Thief: 3, Witch: 2, Mage: 1 } },
+        { txt: "I end up blurting out the secret unintentionally during a casual conversation. I'm not good at keeping things to myself that don't matter much to me.", w: { Bard: 3, Page: 2, Seer: -2 } },
+        { txt: "I guard this information with the utmost discretion. If the secret exists, it is because it is meant to remain in the dark.", w: { Maid: 3, Knight: 2, Prince: -1 } },
+        { txt: "I observe how this 'unspoken' fact influences interactions, letting the mystery take its natural course.", w: { Mage: 3, Heir: 2, Bard: 1 } }
     ]},
-    { t: "Em um ambiente social, você percebe que suas contribuições são ignoradas e você se sente um 'zero à esquerda'.", opts: [
-        { txt: "Eu prefiro assim. Fico no meu canto, invisível, fazendo minhas coisas sem ninguém para me encher a paciência.", w: { Bard: 3, Heir: 2, Rogue: 1, Prince: -2 } },
-        { txt: "Aceito o anonimato. Há uma liberdade imensa em não ser notado, permitindo que eu aja sem o peso da expectativa.", w: { Heir: 3, Rogue: 2 } },
-        { txt: "Isso me fere, então passo a agir com uma competência performática, tentando provar meu valor.", w: { Page: 3, Knight: 2, Maid: 1 } },
-        { txt: "Eu forço minha presença. Não aceito ser ignorado; faço barulho ou causo uma cena para que minha relevância seja notada.", w: { Prince: 3, Thief: 2, Heir: -2 } },
-        { txt: "Procuro outros que também estão sendo excluídos e tento criar um espaço onde nossa 'invisibilidade' não seja um desconforto.", w: { Sylph: 3, Rogue: 3, Page: 1 } }
+    { t: "2. In a social setting, you notice your contributions are being ignored and you feel like a 'nobody'.", opts: [
+		{ txt: "I prefer it that way. I stay in my own corner, invisible, doing my own thing without anyone pestering me.", w: { Bard: 3, Heir: 2, Rogue: 1, Prince: -2 } },
+		{ txt: "I embrace the anonymity. There is immense freedom in not being noticed, allowing me to act without the weight of expectation.", w: { Heir: 3, Rogue: 2 } },
+		{ txt: "It hurts me, so I start acting with performative competence, trying to prove my worth.", w: { Page: 3, Knight: 2, Maid: 1 } },
+		{ txt: "I force my presence. I won't accept being ignored; I make noise or cause a scene so my relevance is noticed.", w: { Prince: 3, Thief: 2, Heir: -2 } },
+		{ txt: "I seek out others who are also being excluded and try to create a space where our 'invisibility' isn't uncomfortable.", w: { Sylph: 3, Rogue: 3, Page: 1 } }
     ]},
-    { t: "Você encontra uma pasta antiga sem nome, cheia de arquivos sem data, sem autor e sem explicação.", opts: [
-        { txt: "Investigo metadados, padrões de arquivo e ausências estranhas para entender o que aquela pasta tenta esconder.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Tomo os arquivos para mim antes que alguém perceba que eles existem. O que ninguém sabe que está ali pode ser útil.", w: { Thief: 3, Witch: 1, Rogue: -2 } },
-        { txt: "Organizo o material do zero, criando nomes, pastas e contexto para que aquilo deixe de ser um buraco incompreensível.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Altero a estrutura da pasta para confundir ainda mais quem tentar rastrear o conteúdo depois.", w: { Witch: 3, Thief: 2 } },
-        { txt: "Deixo a pasta quieta. Nem tudo que está perdido precisa voltar a ter dono ou explicação.", w: { Heir: 3, Bard: 1 } }
+   { t: "3. You find an old, unnamed folder filled with files lacking dates, authors, or explanations.", opts: [
+        { txt: "I investigate metadata, file patterns, and strange omissions to understand what the folder is trying to hide.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I claim the files for myself before anyone notices they exist. What remains unknown to others might prove useful.", w: { Thief: 3, Witch: 1, Rogue: -2 } },
+        { txt: "I organize the material from scratch, creating names, folders, and context so it ceases to be an incomprehensible void.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I alter the folder's structure to further confuse anyone who might try to trace the contents later.", w: { Witch: 3, Thief: 2 } },
+        { txt: "I leave the folder alone. Not everything that is lost needs to regain an owner or an explanation.", w: { Heir: 3, Bard: 1 } }
     ]},
-    { t: "Você percebe que alguém está usando o silêncio para se proteger de uma exposição injusta.", opts: [
-        { txt: "Protejo esse silêncio ativamente, desviando perguntas e impedindo que a pessoa seja arrancada do escuro à força.", w: { Knight: 3, Maid: 2 } },
-        { txt: "Crio uma saída discreta para a pessoa, para que ela não precise se explicar nem desaparecer completamente.", w: { Sylph: 3, Rogue: 2 } },
-        { txt: "Uso a confusão ao redor para pegar uma vantagem que ninguém está olhando, sem tocar diretamente no segredo dela.", w: { Thief: 3, Witch: 2 } },
-        { txt: "Observo quem tenta quebrar o silêncio e quem respeita o limite sem precisar saber tudo.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Se o silêncio está machucando outras pessoas, tento rasgar a cortina e expor o que está sendo escondido.", w: { Prince: 3, Knight: 1 } }
+    { t: "4. You notice someone using silence to protect themselves from unfair exposure.", opts: [
+        { txt: "I actively protect that silence, deflecting questions and preventing the person from being forcibly dragged out of the shadows.", w: { Knight: 3, Maid: 2 } },
+        { txt: "I create a discreet way out for the person, so they don't have to explain themselves or disappear completely.", w: { Sylph: 3, Rogue: 2 } },
+        { txt: "I use the surrounding confusion to gain an advantage while no one is looking, without directly touching upon their secret.", w: { Thief: 3, Witch: 2 } },
+        { txt: "I observe who tries to break the silence and who respects the boundary without needing to know everything.", w: { Seer: 3, Mage: 2 } },
+        { txt: "If the silence is hurting others, I try to tear down the curtain and expose what is being hidden.", w: { Prince: 3, Knight: 1 } }
     ]},
-    { t: "Você está em um fórum anônimo onde ninguém sabe quem é quem, mas algumas pessoas começam a ganhar influência.", opts: [
-        { txt: "Uso o anonimato para me mover entre conversas diferentes e coletar vantagens sem associá-las ao meu nome.", w: { Thief: 3, Witch: 2, Rogue: -1 } },
-        { txt: "Analiso padrões de escrita, horários e escolhas de palavra para descobrir quem pode estar por trás de cada conta.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Crio regras silenciosas de convivência para que o anonimato não vire só abuso sem consequência.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Ajudo usuários novos ou ignorados a encontrar um lugar onde possam falar sem serem engolidos pelo ruído.", w: { Sylph: 3, Rogue: 2 } },
-        { txt: "Mudo de postura, nome e voz conforme a sala. Se ninguém sabe quem eu sou, posso ser o que a situação pedir.", w: { Witch: 3, Page: 1 } }
+    { t: "5. You are on an anonymous forum where no one knows who is who, yet some people begin to gain influence.", opts: [
+        { txt: "I use the anonymity to move between different conversations and gain advantages without attaching them to my name.", w: { Thief: 3, Witch: 2, Rogue: -1 } },
+        { txt: "I analyze writing patterns, timestamps, and word choices to figure out who might be behind each account.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I establish unspoken rules of conduct so that anonymity doesn't just turn into abuse without consequences.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I help new or overlooked users find a space where they can speak without being drowned out by the noise.", w: { Sylph: 3, Rogue: 2 } },
+        { txt: "I shift my stance, name, and voice depending on the room. If no one knows who I am, I can be whatever the situation calls for.", w: { Witch: 3, Page: 1 } }
     ]},
-    { t: "Uma conversa importante termina com algo claramente não dito, mas todo mundo finge que nada ficou pendente.", opts: [
-        { txt: "Fico atento ao formato do vazio: quem mudou de assunto, quem evitou olhar e onde a frase foi cortada.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Puxo o não-dito para fora de maneira indireta, criando uma situação em que a verdade escapa sem parecer interrogatório.", w: { Witch: 3, Seer: 1 } },
-        { txt: "Uso o silêncio pendente para me posicionar melhor, esperando até que alguém precise de mim para preencher a lacuna.", w: { Thief: 3, Mage: 1, Rogue: -1 } },
-        { txt: "Tento cuidar do desconforto sem obrigar ninguém a revelar o que ainda não consegue dizer.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Deixo a lacuna existir. Às vezes o que não foi dito explica mais do que qualquer confissão.", w: { Heir: 3, Bard: 1 } }
+    { t: "6. An important conversation ends with something clearly left unsaid, yet everyone pretends nothing was left hanging.", opts: [
+        { txt: "I pay attention to the shape of the void: who changed the subject, who avoided eye contact, and where the sentence was cut off.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I draw out the unsaid indirectly, creating a situation where the truth slips out without it feeling like an interrogation.", w: { Witch: 3, Seer: 1 } },
+        { txt: "I use the lingering silence to position myself better, waiting until someone needs me to fill the gap.", w: { Thief: 3, Mage: 1, Rogue: -1 } },
+        { txt: "I try to address the discomfort without forcing anyone to reveal what they aren't yet able to say.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I let the gap exist. Sometimes, what remains unsaid explains more than any confession.", w: { Heir: 3, Bard: 1 } }
     ]},
-    { t: "Você apaga sem querer uma mensagem, imagem ou arquivo importante antes de entender seu valor.", opts: [
-        { txt: "Procuro rastros, backups, cache, nomes parciais e qualquer sombra digital que tenha sobrado.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Transformo a perda em outra coisa, recriando o sentido do arquivo a partir do que ainda lembro.", w: { Maid: 3, Page: 2 } },
-        { txt: "Uso o fato de ninguém mais ter acesso ao arquivo para controlar a versão do que havia nele.", w: { Thief: 3, Witch: 2, Sylph: -1 } },
-        { txt: "Aceito que desapareceu e tento não violentar o vazio com uma reconstrução falsa.", w: { Heir: 3, Rogue: 1 } },
-        { txt: "Fico inseguro sobre admitir a perda, então tento compensar em silêncio antes que alguém note.", w: { Page: 3, Knight: 1 } }
+    { t: "7. You accidentally delete an important message, image, or file before realizing its value.", opts: [
+        { txt: "I search for traces, backups, cache, partial names, and any digital shadow that remains.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I transform the loss into something else, recreating the file's meaning from what I still remember.", w: { Maid: 3, Page: 2 } },
+        { txt: "I use the fact that no one else has access to the file to control the version of what was in it.", w: { Thief: 3, Witch: 2, Sylph: -1 } },
+        { txt: "I accept that it is gone and try not to violate the void with a false reconstruction.", w: { Heir: 3, Rogue: 1 } },
+        { txt: "I feel insecure about admitting the loss, so I try to compensate in silence before anyone notices.", w: { Page: 3, Knight: 1 } }
     ]},
-    { t: "Você entra em um lugar abandonado onde quase tudo foi removido, mas ainda restam marcas de quem viveu ali.", opts: [
-        { txt: "Leio marcas nas paredes, móveis ausentes, manchas e objetos esquecidos para imaginar o que aconteceu ali.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Pego um objeto pequeno que ninguém vai sentir falta, como se pudesse levar comigo um pedaço daquele esquecimento.", w: { Thief: 3, Rogue: 1 } },
-        { txt: "Tenho vontade de preservar o lugar como está, impedindo que o último vestígio dele seja apagado.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Reimagino o espaço completamente, pensando em como transformar aquele abandono em outra coisa.", w: { Witch: 3, Sylph: 1 } },
-        { txt: "Sinto conforto no vazio do lugar. Sem função, sem dono, sem explicação, ele parece respirar melhor.", w: { Heir: 3, Bard: 2 } }
+    { t: "8. You enter an abandoned place where almost everything has been removed, yet traces of those who lived there remain.", opts: [
+        { txt: "I read the marks on the walls, the missing furniture, the stains, and the forgotten objects to imagine what happened there.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I take a small object that no one will miss, as if I could carry a piece of that oblivion away with me.", w: { Thief: 3, Rogue: 1 } },
+        { txt: "I feel an urge to preserve the place as it is, preventing its last traces from being erased.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I completely reimagine the space, thinking of how to transform that abandonment into something else.", w: { Witch: 3, Sylph: 1 } },
+        { txt: "I find comfort in the place's emptiness. Without function, owner, or explanation, it seems to breathe more freely.", w: { Heir: 3, Bard: 2 } }
     ]},
-    { t: "Alguém te conta algo confuso, contraditório e cheio de lacunas, esperando que você entenda o que nem ela sabe explicar.", opts: [
-        { txt: "Escuto o que falta na história, não só o que foi dito, e tento mapear as ausências que organizam o relato.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Ajudo a pessoa a dar forma ao que está nebuloso, sem forçar uma verdade mais clara do que ela realmente tem.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Pego uma das lacunas e uso como chave para conduzir a conversa na direção que me interessa.", w: { Thief: 3, Witch: 2, Rogue: -1 } },
-        { txt: "Crio uma estrutura provisória para a pessoa conseguir continuar falando mesmo sem entender tudo ainda.", w: { Maid: 3, Sylph: 1 } },
-        { txt: "Me perco junto com a pessoa e começo a duvidar se qualquer versão daquela história faz sentido.", w: { Page: 3, Heir: 1 } }
+    { t: "9. Someone tells you something confusing, contradictory, and full of gaps, expecting you to understand what even they cannot explain.", opts: [
+        { txt: "I listen for what is missing from the story—not just what was said—and try to map the absences that shape the account.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I help the person give shape to what is hazy, without forcing a clearer truth than what they actually possess.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I pick one of the gaps and use it as a key to steer the conversation in the direction that interests me.", w: { Thief: 3, Witch: 2, Rogue: -1 } },
+        { txt: "I create a provisional structure so the person can keep talking, even without understanding everything yet.", w: { Maid: 3, Sylph: 1 } },
+        { txt: "I get lost along with the person and begin to doubt whether any version of that story makes sense.", w: { Page: 3, Heir: 1 } }
     ]},
-    { t: "Você precisa passar despercebido em uma situação onde chamar atenção poderia te prejudicar.", opts: [
-        { txt: "Uso o anonimato como vantagem, deixando que outras pessoas ocupem o foco enquanto eu consigo o que preciso.", w: { Thief: 3, Rogue: 1 } },
-        { txt: "Ajusto roupa, postura, fala e presença para me misturar ao ambiente sem parecer que estou tentando.", w: { Witch: 3, Knight: 1 } },
-        { txt: "Observo quais comportamentos são ignorados naquele lugar e imito o padrão até me tornar parte do fundo.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Fico tão preocupado em não ser notado que acabo rígido demais, como se meu esforço me denunciasse.", w: { Page: 3, Knight: 2 } },
-        { txt: "Protejo outra pessoa do foco, desviando a atenção para o ruído geral ao invés de para ela.", w: { Sylph: 3, Rogue: 2 } }
+    { t: "10. You need to go unnoticed in a situation where drawing attention could work against you.", opts: [
+        { txt: "I use anonymity to my advantage, letting others take the spotlight while I get what I need.", w: { Thief: 3, Rogue: 1 } },
+        { txt: "I adjust my clothing, posture, speech, and presence to blend into the surroundings without looking like I'm trying.", w: { Witch: 3, Knight: 1 } },
+        { txt: "I observe which behaviors go ignored in that place and mimic the pattern until I become part of the background.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I get so worried about not being noticed that I end up too stiff, as if my very effort gives me away.", w: { Page: 3, Knight: 2 } },
+        { txt: "I shield someone else from the spotlight, diverting attention toward the general background noise instead of them.", w: { Sylph: 3, Rogue: 2 } }
     ]},
-    { t: "Você percebe que uma pessoa do grupo sempre faz trabalho invisível que ninguém reconhece.", opts: [
-        { txt: "Tento tornar esse trabalho visível sem expor a pessoa de um jeito que ela não pediu.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Assumo parte desse trabalho em silêncio, porque algumas funções só precisam ser feitas para o grupo continuar inteiro.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Uso a invisibilidade desse trabalho para aprender como o grupo realmente se sustenta por baixo da superfície.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Tomo para mim a função invisível mais estratégica, porque quem controla os bastidores controla mais do que parece.", w: { Thief: 3, Witch: 2, Rogue: -1 } },
-        { txt: "Acho injusto, mas fico sem saber como interferir sem piorar a situação ou chamar atenção errada.", w: { Page: 3, Rogue: 1 } }
+    { t: "11. You notice that someone in your group is always doing invisible work that no one ever acknowledges.", opts: [
+        { txt: "I try to make that work visible without exposing the person in a way they didn't ask for.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I quietly take on part of that work myself, because some responsibilities simply need to be handled for the group to stay together.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I use the invisibility of that work to understand how the group truly sustains itself beneath the surface.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I take on the most strategic invisible role, because the one who controls what happens behind the scenes controls more than people realize.", w: { Thief: 3, Witch: 2, Rogue: -1 } },
+        { txt: "I think it's unfair, but I don't know how to intervene without making things worse or drawing the wrong kind of attention.", w: { Page: 3, Rogue: 1 } }
     ]},
-    { t: "Você encontra uma senha, código ou sistema criptografado que protege algo que ninguém deveria acessar facilmente.", opts: [
-        { txt: "Tento entender a lógica do código, porque o modo como algo se esconde revela o que ele teme mostrar.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Quebro a proteção e pego o que estava escondido antes que alguém perceba que o segredo deixou de ser seguro.", w: { Thief: 3, Prince: 1, Sylph: -1 } },
-        { txt: "Altero a criptografia para que o segredo continue protegido, mas agora segundo as minhas regras.", w: { Witch: 3, Knight: 1 } },
-        { txt: "Reforço a proteção e aviso quem precisa saber, sem espalhar o conteúdo escondido.", w: { Knight: 3, Maid: 2, Thief: -1 } },
-        { txt: "Crio um caminho seguro para revelar só o necessário, sem destruir a privacidade que o código estava guardando.", w: { Sylph: 3, Rogue: 2 } }
+    { t: "12. You discover a password, code, or encrypted system protecting something that shouldn't be easy for just anyone to access.", opts: [
+        { txt: "I try to understand the logic behind the code, because the way something hides reveals what it's afraid of showing.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I break through the protection and take what's hidden before anyone realizes the secret is no longer safe.", w: { Thief: 3, Prince: 1, Sylph: -1 } },
+        { txt: "I rewrite the encryption so the secret stays protected—but now according to my own rules.", w: { Witch: 3, Knight: 1 } },
+        { txt: "I reinforce the security and notify the people who need to know, without exposing what was being protected.", w: { Knight: 3, Maid: 2, Thief: -1 } },
+        { txt: "I create a safe way to reveal only what's necessary without destroying the privacy the code was protecting.", w: { Sylph: 3, Rogue: 2 } }
     ]},
-    { t: "Você recebe uma tarefa importante, mas não lhe dão instruções ou qualquer pista de como começar.", opts: [
-        { txt: "Começo do zero absoluto. Se não há nada construído, eu crio minhas próprias regras e preencho esse vazio.", w: { Maid: 3, Witch: 2, Page: 1 } },
-        { txt: "Analiso o que 'não foi dito'. O silêncio nas instruções me revela mais sobre as intenções reais do que as palavras.", w: { Mage: 3, Seer: 2, Knight: 1 } },
-        { txt: "Recuso-me a trabalhar no escuro. Exijo clareza total imediatamente; não movo um dedo sem saber exatamente o que é.", w: { Prince: 3, Knight: 2, Heir: -1 } },
-        { txt: "Faço de qualquer jeito ou nem faço. Se não explicaram direito, o problema é deles quando o resultado vier em branco.", w: { Bard: 3, Heir: 1, Maid: -1 } },
-        { txt: "Divido a incerteza com o grupo, buscando uma solução que não dependa de ordens claras para avançar.", w: { Sylph: 3, Rogue: 2, Heir: 1 } }
+    { t: "13. You're given an important task, but no instructions or clues about how to begin.", opts: [
+        { txt: "I start from absolute scratch. If nothing has been built, I'll create my own rules and fill the void myself.", w: { Maid: 3, Witch: 2, Page: 1 } },
+        { txt: "I analyze what wasn't said. The silence in the instructions tells me more about the real intentions than the words do.", w: { Mage: 3, Seer: 2, Knight: 1 } },
+        { txt: "I refuse to work in the dark. I demand complete clarity before I lift a finger.", w: { Prince: 3, Knight: 2, Heir: -1 } },
+        { txt: "I either wing it or don't do it at all. If they couldn't explain it properly, it's their problem when the result comes back empty.", w: { Bard: 3, Heir: 1, Maid: -1 } },
+        { txt: "I share the uncertainty with the group, looking for a solution that doesn't depend on clear orders to move forward.", w: { Sylph: 3, Rogue: 2, Heir: 1 } }
     ]},
-    { t: "Um boato vago e confuso sobre você começa a circular, mas ninguém consegue confirmar se é verdade ou mentira.", opts: [
-        { txt: "Uso o mistério a meu favor. Mantenho uma postura enigmática que confunde ainda mais as pessoas.", w: { Knight: 3, Page: 2, Witch: 1 } },
-        { txt: "Manipulo a narrativa silenciosamente, inserindo novas dúvidas até que o boato original perca todo o sentido.", w: { Witch: 3, Thief: 2, Mage: 1 } },
-        { txt: "Ignoro e foco em ajudar as pessoas afetadas pela confusão, agindo como um porto seguro de silêncio.", w: { Sylph: 3, Maid: 2, Rogue: 1 } },
-        { txt: "Exponho a origem do boato e os fatos crus. Detesto que buracos na verdade sejam usados para me definir.", w: { Prince: 3, Seer: 2, Mage: 1 } },
-        { txt: "Nem confirmo nem nego. Deixo o povo falar. Acho engraçado ver as teorias absurdas que criam sobre mim.", w: { Bard: 3, Heir: 2 } }
+    { t: "14. A vague and confusing rumor about you starts spreading, but no one can confirm whether it's true or false.", opts: [
+        { txt: "I use the mystery to my advantage. I maintain an enigmatic attitude that only confuses people even more.", w: { Knight: 3, Page: 2, Witch: 1 } },
+        { txt: "I quietly manipulate the narrative, planting new doubts until the original rumor loses all meaning.", w: { Witch: 3, Thief: 2, Mage: 1 } },
+        { txt: "I ignore it and focus on helping the people affected by the confusion, becoming a quiet source of stability.", w: { Sylph: 3, Maid: 2, Rogue: 1 } },
+        { txt: "I expose where the rumor came from and present the plain facts. I hate when gaps in the truth are used to define me.", w: { Prince: 3, Seer: 2, Mage: 1 } },
+        { txt: "I neither confirm nor deny it. I just let people talk. It's funny seeing the ridiculous theories they come up with about me.", w: { Bard: 3, Heir: 2 } }
     ]},
-    { t: "Você conhece alguém fascinante, mas a pessoa é um mistério completo: nunca fala de si ou de suas intenções.", opts: [
-        { txt: "A incerteza me atrai. Sinto que posso aprender muito sobre o mundo apenas observando o que essa pessoa esconde.", w: { Mage: 3, Seer: 2, Heir: 1 } },
-        { txt: "Tento 'quebrar' esse mistério. Faço perguntas diretas e invasivas; odeio não saber com quem estou lidando.", w: { Prince: 3, Thief: 2, Witch: 1 } },
-        { txt: "Respeito o vazio. Não sinto necessidade de cavar a vida de ninguém; aceito o que a pessoa apresenta no agora.", w: { Heir: 3, Rogue: 2, Sylph: 1 } },
-        { txt: "Não ligo. Se a pessoa não fala nada, a gente fica em silêncio. É menos esforço pra mim do que tentar decifrar enigma.", w: { Bard: 3, Heir: 1, Seer: -2 } },
-        { txt: "Sinto desconfiança. Se não há transparência, não há base para uma relação; tento forçar uma clareza ou me afasto.", w: { Prince: 3, Knight: 2, Page: 1 } }
+    { t: "15. You meet someone fascinating, but they're a complete mystery—they never talk about themselves or their intentions.", opts: [
+        { txt: "The uncertainty draws me in. I feel like I can learn a lot about the world simply by observing what this person chooses to hide.", w: { Mage: 3, Seer: 2, Heir: 1 } },
+        { txt: "I try to break the mystery. I ask direct, intrusive questions because I hate not knowing who I'm dealing with.", w: { Prince: 3, Thief: 2, Witch: 1 } },
+        { txt: "I respect the emptiness. I don't feel the need to dig into anyone's life; I'm content with what they choose to show me.", w: { Heir: 3, Rogue: 2, Sylph: 1 } },
+        { txt: "I don't really care. If they don't talk, then we can just sit in silence. That's less effort than trying to solve a puzzle.", w: { Bard: 3, Heir: 1, Seer: -2 } },
+        { txt: "It makes me suspicious. Without transparency there's no foundation for a relationship, so I either push for clarity or walk away.", w: { Prince: 3, Knight: 2, Page: 1 } }
     ]},
-    { t: "Algo essencial para o grupo desapareceu e ninguém sabe onde está ou como recuperar.", opts: [
-        { txt: "Trabalho dobrado para suprir a falta do que foi perdido, garantindo que o grupo não desmorone.", w: { Maid: 3, Sylph: 2, Knight: 1 } },
-        { txt: "Encorajo o grupo a desapegar. Talvez a perda seja uma oportunidade para abandonarmos o que era obsoleto.", w: { Rogue: 3, Heir: 2, Prince: 1 } },
-        { txt: "Rastreio o 'nada'. Entendo que a ausência do objeto deixa pistas e uso essa falta de informação para encontrá-lo.", w: { Seer: 3, Mage: 3, Witch: 1 } },
-        { txt: "Eu nem tinha percebido que sumiu. E se sumiu, deve aparecer uma hora dessas. Não me estresso procurando.", w: { Bard: 3, Heir: 2, Seer: -2 } },
-        { txt: "Tento criar algo novo do nada para substituir a perda, agindo para que o vácuo não nos consuma.", w: { Page: 3, Maid: 2, Witch: 1 } }
+    { t: "16. Something essential to the group has gone missing, and no one knows where it is or how to get it back.", opts: [
+        { txt: "I work twice as hard to make up for what's been lost, making sure the group doesn't fall apart.", w: { Maid: 3, Sylph: 2, Knight: 1 } },
+        { txt: "I encourage the group to let go. Maybe this loss is an opportunity to leave behind what had become obsolete.", w: { Rogue: 3, Heir: 2, Prince: 1 } },
+        { txt: "I trace the absence itself. A missing object leaves clues, and I use that lack of information to find it.", w: { Seer: 3, Mage: 3, Witch: 1 } },
+        { txt: "I hadn't even noticed it was gone. And if it's missing, it'll probably turn up eventually. I'm not going to stress over it.", w: { Bard: 3, Heir: 2, Seer: -2 } },
+        { txt: "I try to create something new from nothing to replace what was lost, making sure the void doesn't consume us.", w: { Page: 3, Maid: 2, Witch: 1 } }
     ]},
-    { t: "Você realiza um trabalho hercúleo nos bastidores, mas outra pessoa recebe todo o crédito público.", opts: [
-        { txt: "Tanto faz. Se o crédito for para outro, a responsabilidade de manter o sucesso também é dele. Eu fico livre.", w: { Bard: 3, Heir: 2, Rogue: 2 } },
-        { txt: "Não me importo. O fato de o trabalho ter sido feito no anonimato me agrada; a relevância é um fardo.", w: { Rogue: 3, Heir: 2, Thief: -2 } },
-        { txt: "Isso é inaceitável. Exponho minha participação e exijo reconhecimento; não serei um figurante na minha própria obra.", w: { Prince: 3, Thief: 2, Heir: -2 } },
-        { txt: "Mantenho o silêncio. Minha segurança vem da competência interna, e o anonimato me protege de interferências.", w: { Knight: 3, Maid: 2, Page: 1 } },
-        { txt: "Uso meu anonimato para continuar ajudando de forma desinteressada, onde ninguém pode me vigiar.", w: { Sylph: 3, Seer: 2, Rogue: 1 } }
+    { t: "17. You do an enormous amount of work behind the scenes, but someone else receives all the public credit.", opts: [
+        { txt: "Doesn't matter to me. If someone else gets the credit, then they're the one responsible for keeping that success going. I'm free.", w: { Bard: 3, Heir: 2, Rogue: 2 } },
+        { txt: "I don't mind. I actually like that the work was done anonymously; recognition feels more like a burden than a reward.", w: { Rogue: 3, Heir: 2, Thief: -2 } },
+        { txt: "That's unacceptable. I make my contribution known and demand recognition. I refuse to be a supporting character in my own work.", w: { Prince: 3, Thief: 2, Heir: -2 } },
+        { txt: "I stay silent. My confidence comes from my own competence, and anonymity protects me from unnecessary interference.", w: { Knight: 3, Maid: 2, Page: 1 } },
+        { txt: "I use my anonymity to keep helping others selflessly, where no one can watch or judge me.", w: { Sylph: 3, Seer: 2, Rogue: 1 } }
     ]},
-    { t: "Você está diante de uma decisão onde todos os caminhos levam ao desconhecido, sem garantias de segurança.", opts: [
-        { txt: "Confio no fluxo do incerto. Sinto que o caminho correto se revelará enquanto eu caminho pela escuridão.", w: { Heir: 3, Seer: 2, Mage: 1 } },
-        { txt: "Tento eliminar todas as variáveis desconhecidas antes de agir. Detesto operar sem o controle da informação.", w: { Prince: 3, Knight: 2, Heir: -1 } },
-        { txt: "Escolho qualquer um sem pensar muito. Se é tudo desconhecido mesmo, planejar é perda de tempo.", w: { Bard: 3, Page: 1 } },
-        { txt: "Escolho o caminho mais vazio. Vou moldar a realidade conforme ela surgir, criando algo onde hoje não existe nada.", w: { Page: 3, Witch: 2, Maid: 2 } },
-        { txt: "Aceito a incerteza. O melhor plano é não ter plano e deixar que o vácuo nos leve a lugares novos.", w: { Heir: 3, Rogue: 2, Mage: 1 } }
+    { t: "18. You're faced with a decision where every possible path leads into the unknown, with no guarantee of safety.", opts: [
+        { txt: "I trust the flow of uncertainty. I believe the right path will reveal itself as I walk through the darkness.", w: { Heir: 3, Seer: 2, Mage: 1 } },
+        { txt: "I try to eliminate every unknown variable before taking action. I hate operating without control over the available information.", w: { Prince: 3, Knight: 2, Heir: -1 } },
+        { txt: "I just pick one without overthinking it. If they're all unknown anyway, planning is a waste of time.", w: { Bard: 3, Page: 1 } },
+        { txt: "I choose the emptiest path. I'll shape reality as it unfolds, creating something where nothing exists yet.", w: { Page: 3, Witch: 2, Maid: 2 } },
+        { txt: "I embrace the uncertainty. The best plan is having no plan at all and letting the void carry us somewhere new.", w: { Heir: 3, Rogue: 2, Mage: 1 } }
     ]},
-    { t: "Você encontra um objeto quebrado que todos consideram lixo, sem utilidade ou relevância.", opts: [
-        { txt: "Eu o descarto. Se algo não tem utilidade clara, é apenas ruído que deve ser eliminado do meu espaço.", w: { Prince: 3, Knight: 1, Sylph: -1 } },
-        { txt: "Eu perco ele de novo. Provavelmente vou esquecer onde coloquei cinco minutos depois de pegar.", w: { Bard: 3, Heir: 1, Seer: -2 } },
-        { txt: "Eu o guardo. Sinto uma conexão com o que foi esquecido e encontro conforto em possuir o que ninguém valoriza.", w: { Rogue: 3, Page: 2, Knight: 1 } },
-        { txt: "Tento consertá-lo ou dar uma função nova. Recuso-me a aceitar que algo possa ser simplesmente inútil.", w: { Maid: 3, Sylph: 2, Witch: 2 } },
-        { txt: "Deixo-o onde está. O ciclo de obsolescência é natural; não há necessidade de intervir no que volta ao nada.", w: { Heir: 3, Mage: 1 } }
+    { t: "19. You come across a broken object that everyone else considers useless junk, with no value or purpose.", opts: [
+        { txt: "I throw it away. If something has no clear purpose, it's just noise that should be removed from my space.", w: { Prince: 3, Knight: 1, Sylph: -1 } },
+        { txt: "I lose it again. I'll probably forget where I put it five minutes after picking it up.", w: { Bard: 3, Heir: 1, Seer: -2 } },
+        { txt: "I keep it. I feel connected to forgotten things and find comfort in owning what no one else values.", w: { Rogue: 3, Page: 2, Knight: 1 } },
+        { txt: "I try to repair it or give it a new purpose. I refuse to accept that anything can be truly useless.", w: { Maid: 3, Sylph: 2, Witch: 2 } },
+        { txt: "I leave it where it is. Obsolescence is a natural cycle; there's no need to interfere with what is returning to nothingness.", w: { Heir: 3, Mage: 1 } }
     ]},
-    { t: "Você sente que não possui uma personalidade fixa, agindo apenas como um reflexo do que esperam de você.",  opts: [
-        { txt: "Isso me desespera. Me esforço para construir uma identidade marcante para que ninguém duvide da minha existência.", w: { Prince: 3, Page: 2, Knight: 2, Heir: -1 } },
-        { txt: "Sinto-me em paz. Se sou 'nada' por dentro, posso ser 'qualquer coisa' por fora, sem ser aprisionado por rótulos.", w: { Heir: 3, Rogue: 2, Sylph: 1 } },
-        { txt: "Uso essa fluidez como ferramenta. Mudo quem eu sou conforme a necessidade para obter o que desejo.", w: { Witch: 3, Thief: 3, Mage: 1 } },
-        { txt: "Eu só deixo rolar. É mais fácil concordar com o que acham que eu sou do que tentar explicar algo que nem eu sei.", w: { Bard: 3, Heir: 2, Page: 1 } },
-        { txt: "Observo esse vazio. Entender que o 'eu' é uma ilusão me permite ver as verdades atrás das máscaras alheias.", w: { Seer: 3, Mage: 3, Sylph: 1 } }
+    { t: "20. You feel like you don't have a fixed personality, acting only as a reflection of what others expect you to be.", opts: [
+        { txt: "It terrifies me. I do everything I can to build a strong identity so no one can ever doubt my existence.", w: { Prince: 3, Page: 2, Knight: 2, Heir: -1 } },
+        { txt: "I'm at peace with it. If I'm 'nothing' on the inside, I can become 'anything' on the outside without being trapped by labels.", w: { Heir: 3, Rogue: 2, Sylph: 1 } },
+        { txt: "I use that fluidity as a tool. I become whoever I need to be in order to get what I want.", w: { Witch: 3, Thief: 3, Mage: 1 } },
+        { txt: "I just go with the flow. It's easier to agree with whatever people think I am than to explain something even I don't fully understand.", w: { Bard: 3, Heir: 2, Page: 1 } },
+        { txt: "I observe that emptiness. Understanding that the 'self' is an illusion allows me to see the truths hidden behind everyone else's masks.", w: { Seer: 3, Mage: 3, Sylph: 1 } }
     ]}
 	],
     "Mind": [
-    { t: "Você recebe uma mensagem enorme de alguém claramente irritado com você. Antes de responder, passa vários minutos relendo cada frase e tentando prever qual resposta evitaria o pior desfecho possível.", opts: [
-        { txt: "Reescrevo a mensagem várias vezes e acabo demorando tanto tentando prever todas as reações possíveis que quase não respondo.", w: { Page: 3, Seer: 2, Knight: 1 } },
-        { txt: "Puxo da memória conversas parecidas que já deram certo e adapto o padrão pra encaixar na situação atual.", w: { Thief: 3, Mage: 2 } },
-        { txt: "Assumo o controle do ritmo da conversa imediatamente, pressionando os argumentos mais frágeis da outra pessoa.", w: { Knight: 3, Prince: 2, Page: -2 } },
-        { txt: "Perco a paciência com o teatro social e respondo exatamente o que penso, mesmo sabendo que isso provavelmente vai piorar tudo.", w: { Prince: 3, Bard: 2, Sylph: -2 } },
-        { txt: "Exponho a falha moral do plano para que o grupo lide com o peso da escolha, retirando minha responsabilidade direta.", w: { Rogue: 3, Heir: 2 } }
+    { t: "1. You receive a long message from someone who's clearly upset with you. Before replying, you spend several minutes rereading every sentence and trying to predict which response would avoid the worst possible outcome.", opts: [
+        { txt: "I rewrite my reply over and over until I've considered every possible reaction. By the time I'm done, I've barely answered at all.", w: { Page: 3, Seer: 2, Knight: 1 } },
+        { txt: "I think back to similar conversations that went well and adapt what worked before to fit the current situation.", w: { Thief: 3, Mage: 2 } },
+        { txt: "I immediately take control of the conversation's pace, putting pressure on the weakest parts of the other person's argument.", w: { Knight: 3, Prince: 2, Page: -2 } },
+        { txt: "I lose patience with all the social theater and say exactly what's on my mind, even knowing it'll probably make everything worse.", w: { Prince: 3, Bard: 2, Sylph: -2 } },
+        { txt: "I point out the moral flaw in the situation so everyone else has to confront the weight of the choice, keeping myself out of direct responsibility.", w: { Rogue: 3, Heir: 2 } }
     ]},
-    { t: "Você percebe que duas pessoas próximas brigaram porque interpretaram completamente errado as intenções uma da outra. Nenhuma delas parece disposta a ceder.", opts: [
-        { txt: "Tento reorganizar a conversa de um jeito mais racional, traduzindo o que cada lado provavelmente quis dizer antes que a situação piore ainda mais.", w: { Sylph: 3, Seer: 2, Maid: 1 } },
-        { txt: "Mesmo em situações tensas, consigo me distanciar emocionalmente o bastante pra analisar os diferentes lados antes de agir.", w: { Heir: 3, Knight: 1 } },
-        { txt: "Conforme a discussão escala, começo a interromper os dois lados constantemente porque fica claro pra mim que ninguém ali está percebendo onde essa situação vai acabar.", w: { Prince: 3, Seer: 2, Bard: -2 } },
-        { txt: "Evito me envolver diretamente. Discussões assim normalmente se resolvem sozinhas quando as pessoas cansam de reagir no impulso.", w: { Bard: 3, Heir: 1, Sylph: -2 } },
-        { txt: "Mudo minha abordagem dependendo de com quem estou falando, tentando fazer cada pessoa baixar a guarda separadamente.", w: { Witch: 3, Thief: 2 } }
+    { t: "2. You notice that two people close to you have fallen out because they completely misunderstood each other's intentions. Neither of them seems willing to back down.", opts: [
+        { txt: "I try to reorganize the conversation more rationally, translating what each person probably meant before things spiral any further.", w: { Sylph: 3, Seer: 2, Maid: 1 } },
+        { txt: "Even when things get heated, I can distance myself emotionally enough to weigh both sides before acting.", w: { Heir: 3, Knight: 1 } },
+        { txt: "As the argument escalates, I keep interrupting because it's painfully obvious where this is heading, and nobody else seems to notice.", w: { Prince: 3, Seer: 2, Bard: -2 } },
+        { txt: "I stay out of it. Fights like these usually burn themselves out once everyone gets tired of reacting on impulse.", w: { Bard: 3, Heir: 1, Sylph: -2 } },
+        { txt: "I change the way I approach each of them, trying to lower their guard one person at a time.", w: { Witch: 3, Thief: 2 } }
     ]},
-    { t: "Um erro grave foi cometido por um colega e a culpa está recaindo sobre o grupo todo. Como você se posiciona?", opts: [
-        { txt: "Utilizo a falha dele para demonstrar minha própria competência, garantindo que minha posição saia fortalecida.", w: { Thief: 3, Prince: 2, Rogue: -2 } },
-        { txt: "Assumo parte da culpa ou tento redistribuir a responsabilidade para que o peso não destrua a carreira dele.", w: { Rogue: 3, Sylph: 2, Prince: -2 } },
-        { txt: "Não faço nada. Deixo o erro seguir seu curso lógico. Se ele errou, a consequência é natural e eu não vou interferir.", w: { Bard: 3, Mage: 1, Maid: -2 } },
-        { txt: "Trabalho dobrado nos bastidores para consertar o erro logicamente, sem buscar reconhecimento.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Analiso friamente como esse erro aconteceu e uso o evento como estudo para mudar padrões futuros.", w: { Mage: 3, Seer: 2, Witch: 1 } }
+    { t: "3. A coworker has made a serious mistake, and now the entire group is being blamed. How do you respond?", opts: [
+        { txt: "I use their mistake to highlight my own competence, making sure I come out of the situation in a stronger position.", w: { Thief: 3, Prince: 2, Rogue: -2 } },
+        { txt: "I take on part of the blame—or spread the responsibility around—so the consequences don't destroy their career.", w: { Rogue: 3, Sylph: 2, Prince: -2 } },
+        { txt: "I don't interfere. They made the mistake, so whatever follows is simply the natural consequence.", w: { Bard: 3, Mage: 1, Maid: -2 } },
+        { txt: "I quietly work twice as hard behind the scenes to fix the problem without expecting any recognition.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I analyze exactly how the mistake happened and treat it as a case study for improving future decisions.", w: { Mage: 3, Seer: 2, Witch: 1 } }
     ]},
-    { t: "Ao planejar algo importante, como uma mudança de carreira, qual é o seu processo mental predominante?", opts: [
-        { txt: "Crio planos de contingência para cada falha possível. Se eu não prever o caminho, sinto que vou colapsar.", w: { Knight: 3, Seer: 2 } },
-        { txt: "Tento não pensar demais. Confio que, se eu seguir meu instinto, a lógica das coisas se resolverá sozinha.", w: { Prince: 3, Bard: 2, Maid: -3 } },
-        { txt: "Eu não planejo. Vou empurrando com a barriga até a decisão se tornar inevitável ou alguém decidir por mim.", w: { Bard: 3, Rogue: 2, Knight: -2 } },
-        { txt: "Busco o conselho de várias pessoas, tentando sintetizar a visão delas em uma estratégia justa.", w: { Sylph: 3, Heir: 2 } },
-        { txt: "Procuro atalhos ou formas de influenciar o sistema a meu favor, focando no melhor resultado com menor esforço.", w: { Thief: 3, Witch: 3, Rogue: -2 } }
+    { t: "4. When you're planning something important—like changing careers—what's your usual way of thinking?", opts: [
+        { txt: "I build contingency plans for every possible failure. If I can't see the road ahead, I feel like everything might collapse.", w: { Knight: 3, Seer: 2 } },
+        { txt: "I try not to overthink it. If I trust my instincts, everything else tends to fall into place on its own.", w: { Prince: 3, Bard: 2, Maid: -3 } },
+        { txt: "I don't really plan. I keep putting it off until the decision becomes unavoidable—or someone else makes it for me.", w: { Bard: 3, Rogue: 2, Knight: -2 } },
+        { txt: "I ask for advice from several different people, then try to weave their perspectives into a fair strategy.", w: { Sylph: 3, Heir: 2 } },
+        { txt: "I look for shortcuts or ways to bend the system in my favor, aiming for the best possible outcome with the least effort.", w: { Thief: 3, Witch: 3, Rogue: -2 } }
     ]},
-    { t: "Você percebe que duas escolhas disponíveis vão gerar problemas inevitáveis, mas uma delas mantém a situação mais estável a longo prazo.", opts: [
-        { txt: "Escolho a opção mais estável, mesmo sabendo que algumas pessoas vão ficar insatisfeitas com isso.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Continuo revisando mentalmente cada possibilidade porque tenho medo de deixar passar algum detalhe óbvio que mudaria completamente a decisão correta.", w: { Page: 3, Knight: 2, Seer: 1 } },
-        { txt: "Tento reorganizar a situação pra criar uma terceira alternativa que evite os piores efeitos dos dois lados.", w: { Witch: 3, Maid: 2 } },
-        { txt: "Acabo assumindo a responsabilidade pela decisão porque confiar que os outros vão escolher direito parece arriscado demais.", w: { Prince: 3, Thief: 2, Bard: -2 } },
-        { txt: "Aceito que toda escolha importante acaba favorecendo alguém e prejudicando outra pessoa, então prefiro garantir que eu não seja quem sai perdendo.", w: { Thief: 3, Mage: 2, Sylph: -2 } }
+    { t: "5. You realize that both available options will lead to unavoidable problems, but one of them will keep things more stable in the long run.", opts: [
+        { txt: "I choose the more stable option, even if I know some people won't be happy with it.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I keep replaying every possibility in my head because I'm terrified I'll miss one obvious detail that changes everything.", w: { Page: 3, Knight: 2, Seer: 1 } },
+        { txt: "I try to reshape the situation entirely, looking for a third option that avoids the worst consequences of both.", w: { Witch: 3, Maid: 2 } },
+        { txt: "I end up taking responsibility for the decision myself because trusting other people to choose correctly feels too risky.", w: { Prince: 3, Thief: 2, Bard: -2 } },
+        { txt: "I accept that every meaningful choice benefits someone while hurting someone else, so I'd rather make sure I'm not the one who loses.", w: { Thief: 3, Mage: 2, Sylph: -2 } }
     ]},
-    { t: "Você percebe que uma pessoa próxima está tomando uma decisão ruim, mas ela parece convencida de que está sendo totalmente racional.", opts: [
-        { txt: "Em vez de discutir a escolha diretamente, tento mudar o jeito como ela está enxergando o problema para abrir outras possibilidades.", w: { Witch: 3, Sylph: 2 } },
-        { txt: "Aponto que ela não está sendo tão imparcial quanto pensa. A decisão já parece tomada, ela só está inventando uma justificativa bonita.", w: { Prince: 3, Mage: 2 } },
-        { txt: "Evito dizer o que ela deve fazer. Tenho medo de interferir demais e depois descobrir que minha leitura estava errada.", w: { Rogue: 3, Page: 2, Prince: -2 } },
-        { txt: "Uso o raciocínio dela para entender o que ela valoriza e aproveito essa informação quando eu precisar tomar decisões parecidas.", w: { Thief: 3, Mage: 2 } },
-        { txt: "Tento mostrar que eu também consigo analisar a situação friamente, mas acabo deixando claro demais que estou pessoalmente incomodado.", w: { Page: 3, Bard: 2 } }
+    { t: "6. You notice that someone close to you is making a bad decision, but they're completely convinced they're being rational.", opts: [
+        { txt: "Instead of arguing against the decision itself, I try to change the way they're looking at the situation so other possibilities become visible.", w: { Witch: 3, Sylph: 2 } },
+        { txt: "I point out that they're not nearly as objective as they think. They've already made up their mind—they're just dressing it up with good-sounding reasons.", w: { Prince: 3, Mage: 2 } },
+        { txt: "I avoid telling them what they should do. I'd rather stay quiet than find out later that my judgment was wrong.", w: { Rogue: 3, Page: 2, Prince: -2 } },
+        { txt: "I pay attention to their reasoning so I can understand what they value, then keep that in mind for similar decisions I might face later.", w: { Thief: 3, Mage: 2 } },
+        { txt: "I try to show that I can look at the situation logically too, but I end up making it obvious that I'm personally bothered by it.", w: { Page: 3, Bard: 2 } }
     ]},
-    { t: "Você está jogando um jogo de tabuleiro complexo pela primeira vez, e percebe que as regras permitem estratégias bem diferentes.", opts: [
-        { txt: "Observo algumas rodadas até entender naturalmente como as escolhas se conectam, sem precisar dominar tudo antes de jogar.", w: { Heir: 3, Seer: 1 } },
-        { txt: "Procuro a brecha no sistema: uma combinação de regras que ninguém está usando direito ainda.", w: { Witch: 3, Thief: 2 } },
-        { txt: "Explico as regras para quem está perdido, tentando fazer todo mundo conseguir jogar sem travar.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Fico com medo de fazer uma jogada burra e passo tempo demais perguntando se entendi cada detalhe.", w: { Page: 3, Rogue: 1 } },
-        { txt: "Distribuo dicas e possibilidades para equilibrar a mesa, mesmo que isso enfraqueça minha própria vantagem.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
+    { t: "7. You're playing a complex board game for the first time, and you realize the rules allow for very different strategies.", opts: [
+        { txt: "I watch a few rounds first until I naturally understand how the decisions connect, instead of trying to master every rule immediately.", w: { Heir: 3, Seer: 1 } },
+        { txt: "I start hunting for loopholes—a combination of rules nobody else seems to be taking advantage of yet.", w: { Witch: 3, Thief: 2 } },
+        { txt: "I explain the rules to anyone who's feeling lost, making sure everyone can actually enjoy the game.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I'm afraid of making a stupid move, so I spend way too much time asking whether I've understood every little detail correctly.", w: { Page: 3, Rogue: 1 } },
+        { txt: "I share strategies and suggestions to keep the game balanced, even if that means giving up my own advantage.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
     ]},
-    { t: "Você precisa escolher uma rota em um jogo ou história interativa, sabendo que cada decisão pode bloquear cenas futuras.", opts: [
-        { txt: "Sigo o caminho que parece coerente com o personagem que estou interpretando, mesmo sem saber todas as consequências.", w: { Heir: 3, Page: 1 } },
-        { txt: "Tento prever quais escolhas liberam mais possibilidades depois, como se estivesse mapeando uma árvore de decisões.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Procuro uma forma de manipular o sistema para ver mais caminhos do que ele parecia permitir.", w: { Witch: 3, Thief: 1 } },
-        { txt: "Salvo antes de cada decisão importante porque não confio na minha leitura do que vai acontecer.", w: { Page: 3, Knight: 2 } },
-        { txt: "Escolho pensando em quais personagens ou aliados sairiam menos prejudicados no longo prazo.", w: { Rogue: 3, Sylph: 2 } }
+    { t: "8. You're choosing a route in a game or interactive story, knowing each decision could lock you out of future scenes.", opts: [
+        { txt: "I follow the path that feels true to the character I'm roleplaying, even without knowing where it'll lead.", w: { Heir: 3, Page: 1 } },
+        { txt: "I try to predict which choices will unlock the most possibilities later, almost like mapping out a decision tree.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I look for ways to bend the system so I can see more paths than the game intended.", w: { Witch: 3, Thief: 1 } },
+        { txt: "I save the game before every important choice because I don't trust my own ability to predict the outcome.", w: { Page: 3, Knight: 2 } },
+        { txt: "I choose whichever route leaves my favorite characters—or allies—with the least long-term damage.", w: { Rogue: 3, Sylph: 2 } }
     ]},
-    { t: "Um amigo te pede ajuda para decidir entre duas opções, mas claramente quer que você escolha por ele.", opts: [
-        { txt: "Organizo os prós, contras e consequências para que ele consiga decidir sem empurrar a responsabilidade para mim.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Assumo a decisão se a pessoa estiver travada demais; alguém precisa fazer a jogada antes que o tabuleiro piore.", w: { Knight: 3, Prince: 1, Page: -1 } },
-        { txt: "Devolvo a escolha para ele de um jeito mais claro, separando o que é medo, desejo e consequência real.", w: { Rogue: 3, Sylph: 2 } },
-        { txt: "Uso a hesitação dele para entender que tipo de escolha ele evita, e guardo esse padrão para depois.", w: { Mage: 3, Thief: 1 } },
-        { txt: "Fico inseguro de influenciar demais e acabar sendo culpado se a escolha der errado.", w: { Page: 3, Rogue: 2 } }
+    { t: "9. A friend asks you to help them choose between two options, but it's obvious they really want you to decide for them.", opts: [
+        { txt: "I lay out the pros, cons, and consequences so they can make the choice themselves instead of handing me the responsibility.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "If they're completely stuck, I'll make the call for them. Someone has to make a move before the situation gets worse.", w: { Knight: 3, Prince: 1, Page: -1 } },
+        { txt: "I hand the decision back to them in a clearer way, separating what's fear, what's desire, and what's an actual consequence.", w: { Rogue: 3, Sylph: 2 } },
+        { txt: "Their hesitation tells me a lot about the kinds of choices they avoid. I quietly file that pattern away for future reference.", w: { Mage: 3, Thief: 1 } },
+        { txt: "I worry about influencing them too much and ending up blamed if things go wrong.", w: { Page: 3, Rogue: 2 } }
     ]},
-    { t: "Você entra em um grupo onde cada pessoa parece ter uma função implícita: líder, piadista, mediador, alvo, conselheiro.", opts: [
-        { txt: "Percebo rapidamente qual papel está vazio e acabo ocupando esse lugar sem pensar muito.", w: { Heir: 3, Maid: 1 } },
-        { txt: "Analiso quem toma decisões, quem influencia por trás e quem parece ter menos escolha do que os outros.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Mudo meu comportamento conforme o papel que me dá mais margem de movimento naquele grupo.", w: { Witch: 3, Thief: 2 } },
-        { txt: "Tento redistribuir as funções para ninguém ficar preso no mesmo papel desconfortável para sempre.", w: { Rogue: 3, Sylph: 2 } },
-        { txt: "Fico tentando descobrir qual papel esperam de mim e acabo agindo de forma artificial demais.", w: { Page: 3, Knight: 1 } }
+    { t: "10. You join a group where everyone seems to have an unspoken role: leader, comedian, mediator, punching bag, advisor...", opts: [
+        { txt: "I quickly notice which role nobody's filling and naturally slip into it without really thinking.", w: { Heir: 3, Maid: 1 } },
+        { txt: "I pay attention to who's making decisions, who's pulling strings behind the scenes, and who seems to have the least freedom.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I adjust my behavior depending on which role gives me the most room to maneuver within that group.", w: { Witch: 3, Thief: 2 } },
+        { txt: "I try to redistribute those roles so no one gets trapped in the same uncomfortable position forever.", w: { Rogue: 3, Sylph: 2 } },
+        { txt: "I spend too much time trying to figure out what role everyone expects me to play, and I end up acting unnaturally.", w: { Page: 3, Knight: 1 } }
     ]},
-    { t: "Você percebe que uma discussão não é sobre quem está certo, mas sobre quais regras cada pessoa acha que estão valendo.", opts: [
-        { txt: "Tento nomear as regras escondidas da conversa para que todo mundo saiba qual jogo está jogando.", w: { Sylph: 3, Seer: 2 } },
-        { txt: "Uso a diferença entre os sistemas de regra para mudar a conversa para um terreno onde eu tenha vantagem.", w: { Witch: 3, Thief: 2, Rogue: -1 } },
-        { txt: "Aceito que cada pessoa está operando com uma lógica própria e tento navegar entre elas sem forçar uma única estrutura.", w: { Heir: 3, Rogue: 2 } },
-        { txt: "Fico preso tentando descobrir qual conjunto de regras é o verdadeiro antes de falar qualquer coisa.", w: { Page: 3, Mage: 2 } },
-        { txt: "Crio um meio-termo para a conversa continuar sem que ninguém precise abandonar completamente sua lógica.", w: { Maid: 3, Sylph: 2 } }
+    { t: "11. You realize an argument isn't really about who's right, but about which set of rules each person believes they're playing by.", opts: [
+        { txt: "I try to identify the hidden rules behind the conversation so everyone understands what game they're actually playing.", w: { Sylph: 3, Seer: 2 } },
+        { txt: "I use the clash between their different systems of rules to steer the conversation onto ground where I have the advantage.", w: { Witch: 3, Thief: 2, Rogue: -1 } },
+        { txt: "I accept that each person is operating under their own internal logic and try to move between them instead of forcing a single framework.", w: { Heir: 3, Rogue: 2 } },
+        { txt: "I get stuck trying to figure out which set of rules is the 'real' one before I say anything at all.", w: { Page: 3, Mage: 2 } },
+        { txt: "I build a middle ground so the conversation can continue without anyone having to abandon their own logic entirely.", w: { Maid: 3, Sylph: 2 } }
     ]},
-    { t: "Você precisa montar um cronograma, mas o problema não é tempo: é decidir a ordem lógica das etapas.", opts: [
-        { txt: "Organizo as etapas como uma cadeia de causa e efeito, para cada ação preparar a próxima.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Simulo diferentes ordens mentalmente até perceber qual delas cria menos conflitos depois.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Deixo a sequência se formar enquanto faço; às vezes a próxima etapa fica óbvia só depois da anterior existir.", w: { Heir: 3, Rogue: 1 } },
-        { txt: "Reorganizo as etapas para criar uma rota mais esperta do que a ordem padrão sugeria.", w: { Witch: 3, Thief: 1 } },
-        { txt: "Travado entre muitas ordens possíveis, começo a copiar um modelo pronto mesmo sem saber se ele encaixa.", w: { Page: 3, Bard: 1 } }
+    { t: "12. You need to put together a schedule, but time isn't the problem. It's deciding the logical order of the steps.", opts: [
+        { txt: "I arrange the steps as a chain of cause and effect, making each action naturally prepare the next.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I mentally test different sequences until I find the one that's least likely to create problems later.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I let the order emerge as I work. Sometimes the next step only becomes obvious after the previous one exists.", w: { Heir: 3, Rogue: 1 } },
+        { txt: "I reorganize the process into a smarter route than the standard order suggests.", w: { Witch: 3, Thief: 1 } },
+        { txt: "Overwhelmed by too many possible orders, I end up copying an existing template even if I'm not convinced it fits.", w: { Page: 3, Bard: 1 } }
     ]},
-    { t: "Você descobre que uma regra injusta está sendo aplicada de forma diferente dependendo de quem quebra.", opts: [
-        { txt: "Mapeio o padrão das exceções para entender quem o sistema protege e quem ele pune.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Uso a inconsistência para abrir uma brecha que outras pessoas também possam usar.", w: { Rogue: 3, Witch: 2 } },
-        { txt: "Mudo a forma como o grupo lida com a regra, criando um procedimento mais justo do que o oficial.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Tiro vantagem da exceção se ela finalmente me favorece; não fui eu que fiz o sistema ser hipócrita.", w: { Thief: 3, Prince: 1, Rogue: -2 } },
-        { txt: "Tenho medo de apontar a injustiça e virar o próximo exemplo de punição.", w: { Page: 3, Rogue: 1 } }
+    { t: "13. You discover that an unfair rule is being enforced differently depending on who breaks it.", opts: [
+        { txt: "I map out the pattern behind the exceptions to understand who the system protects and who it punishes.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I use the inconsistency to open up a loophole that other people can benefit from as well.", w: { Rogue: 3, Witch: 2 } },
+        { txt: "I change the way the group handles the rule, creating a process that's fairer than the official one.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I take advantage of the exception if it finally works in my favor. I'm not the one who made the system hypocritical.", w: { Thief: 3, Prince: 1, Rogue: -2 } },
+        { txt: "I'm afraid that if I point out the injustice, I'll become the next example.", w: { Page: 3, Rogue: 1 } }
     ]},
-    { t: "Você está tentando entender uma pessoa que sempre age de forma diferente dependendo do contexto.", opts: [
-        { txt: "Vejo isso como natural. Pessoas mudam de papel conforme a situação pede; não preciso fixar uma versão única delas.", w: { Heir: 3, Seer: 1 } },
-        { txt: "Comparo os contextos para descobrir quais condições ativam cada comportamento.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Tento ajudar a pessoa a perceber esses padrões sem tratá-la como falsa ou incoerente.", w: { Sylph: 3, Rogue: 2 } },
-        { txt: "Uso essa flexibilidade dela para prever qual abordagem vai funcionar melhor comigo.", w: { Thief: 3, Witch: 1 } },
-        { txt: "Fico inseguro porque não sei qual versão da pessoa é a 'real' e qual resposta minha seria adequada.", w: { Page: 3, Knight: 1 } }
+    { t: "14. You're trying to understand someone who always seems to behave differently depending on the situation.", opts: [
+        { txt: "That feels perfectly natural to me. People take on different roles depending on what the situation calls for—I don't need to pin down a single 'true' version of them.", w: { Heir: 3, Seer: 1 } },
+        { txt: "I compare the different situations to figure out what conditions bring out each side of them.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I try to help them notice those patterns without making them feel fake or inconsistent.", w: { Sylph: 3, Rogue: 2 } },
+        { txt: "I use that flexibility to predict which approach is most likely to work on them.", w: { Thief: 3, Witch: 1 } },
+        { txt: "It makes me uneasy because I can't tell which version of them is the 'real' one—or what the right way to respond is.", w: { Page: 3, Knight: 1 } }
     ]},
-    { t: "Um plano coletivo está falhando porque cada pessoa está tomando decisões boas isoladamente, mas ruins em conjunto.", opts: [
-        { txt: "Reorganizo o sistema de escolhas para que uma decisão individual não atrapalhe a consequência coletiva.", w: { Maid: 3, Sylph: 2 } },
-        { txt: "Redistribuo tarefas e opções para cada pessoa tomar decisões onde causa menos dano e mais benefício.", w: { Rogue: 3, Knight: 1 } },
-        { txt: "Observo a rede inteira de consequências até entender onde as escolhas estão se sabotando.", w: { Seer: 3, Mage: 2 } },
-        { txt: "Manipulo algumas condições do plano para forçar decisões melhores sem precisar convencer todo mundo diretamente.", w: { Witch: 3, Thief: 2, Sylph: -1 } },
-        { txt: "Tento ajudar, mas fico perdido quando percebo que uma escolha certa para uma pessoa pode ser errada para o grupo.", w: { Page: 3, Rogue: 1 } }
+    { t: "15. A group plan is falling apart because everyone is making individually good decisions that become bad once they're combined.", opts: [
+        { txt: "I reorganize the decision-making process so that one person's choice can't undermine the group's overall outcome.", w: { Maid: 3, Sylph: 2 } },
+        { txt: "I redistribute responsibilities and options so each person makes decisions where they'll do the least harm and the most good.", w: { Rogue: 3, Knight: 1 } },
+        { txt: "I study the entire web of consequences until I understand where the decisions are working against each other.", w: { Seer: 3, Mage: 2 } },
+        { txt: "I manipulate certain parts of the plan to steer people toward better choices without having to convince everyone directly.", w: { Witch: 3, Thief: 2, Sylph: -1 } },
+        { txt: "I genuinely try to help, but I get lost once I realize the right choice for one person can be the wrong choice for the group.", w: { Page: 3, Rogue: 1 } }
     ]},
-    { t: "Você percebe que está sempre escolhendo a opção mais racional, mesmo quando isso te deixa infeliz.", opts: [
-        { txt: "Tento entender qual regra interna está decidindo por mim antes mesmo de eu sentir o que quero.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Procuro uma escolha que preserve minha lógica sem apagar completamente minhas necessidades.", w: { Sylph: 3, Maid: 2 } },
-        { txt: "Aceito que minha mente funciona assim; nem toda escolha precisa parecer emocionalmente satisfatória para ser correta.", w: { Heir: 3, Knight: 1 } },
-        { txt: "Tento agir contra meu próprio padrão só para provar que não sou escravo da minha lógica.", w: { Witch: 3, Prince: 1 } },
-        { txt: "Fico preso entre fazer o que faz sentido e admitir que talvez eu nem saiba escolher por vontade própria.", w: { Page: 3, Rogue: 1 } }
+    { t: "16. You realize you're always choosing the most rational option, even when it leaves you unhappy.", opts: [
+        { txt: "I try to understand which inner rule is making my decisions before I even have the chance to feel what I actually want.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I look for a choice that preserves my logic without completely ignoring my own needs.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "I accept that this is simply how my mind works. Not every good decision has to feel emotionally satisfying.", w: { Heir: 3, Knight: 1 } },
+        { txt: "I deliberately go against my own pattern just to prove I'm not a slave to my own logic.", w: { Witch: 3, Prince: 1 } },
+        { txt: "I get stuck between doing what makes sense and admitting that maybe I don't even know how to choose based on what I truly want.", w: { Page: 3, Rogue: 1 } }
     ]},
-    { t: "Você está diante de uma escolha onde todos os caminhos levam a algum tipo de perda. Como sua mente processa a paralisia?", opts: [
-        { txt: "Escolho o caminho que preserva a lógica do sistema maior, mesmo que eu sofra. Sacrifício racional.", w: { Maid: 3, Knight: 2, Prince: -2 } },
-        { txt: "Recuso-me a escolher. Deixo que o acaso decida, pois não quero carregar o peso da consequência.", w: { Bard: 3, Heir: 2, Witch: -2 } },
-        { txt: "Tento criar uma 'terceira via' forçada através da manipulação, recusando as opções dadas.", w: { Witch: 3, Thief: 2 } },
-        { txt: "Analiso qual perda é mais útil a longo prazo. Se algo deve ser destruído, que seja o menos eficiente.", w: { Prince: 3, Mage: 2 } },
-        { txt: "Paraliso e não faço nada. Se eu não escolher, tecnicamente a culpa do resultado não é minha.", w: { Bard: 3, Page: 2, Knight: -2 } }
+    { t: "17. You're faced with a choice where every possible path leads to some kind of loss. How does your mind process the paralysis?", opts: [
+        { txt: "I choose the path that preserves the logic of the larger system, even if it hurts me. A rational sacrifice.", w: { Maid: 3, Knight: 2, Prince: -2 } },
+        { txt: "I refuse to choose. I let chance decide because I don't want to carry the weight of the consequences.", w: { Bard: 3, Heir: 2, Witch: -2 } },
+        { txt: "I try to force a 'third option' into existence by manipulating the situation instead of accepting the choices I've been given.", w: { Witch: 3, Thief: 2 } },
+        { txt: "I analyze which loss will be more useful in the long run. If something has to be destroyed, let it be whatever serves the least purpose.", w: { Prince: 3, Mage: 2 } },
+        { txt: "I freeze and do nothing. If I never make the choice, then technically the outcome isn't my fault.", w: { Bard: 3, Page: 2, Knight: -2 } }
     ]},
-    { t: "Você entra em um ambiente novo onde todo mundo parece seguir regras sociais que ninguém explicou claramente.", opts: [
-        { txt: "Observo como as pessoas agem, copio o básico para não chamar atenção e vou ajustando meu comportamento conforme entendo melhor o clima.", w: { Heir: 3, Maid: 2 } },
-        { txt: "Tento identificar rapidamente quais atitudes ali são recompensadas ou punidas, porque entender essas regras evita problemas depois.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Adoto uma postura educada e neutra até entender qual papel faz sentido naquele espaço. Melhor criar uma base segura antes de agir demais.", w: { Maid: 3, Knight: 2 } },
-        { txt: "Mesmo tentando me encaixar, fico consciente demais de cada gesto e palavra, como se qualquer detalhe pudesse denunciar que não sei o que estou fazendo.", w: { Knight: 3, Page: 2 } },
-        { txt: "Ajo do meu jeito até me darem um motivo real para mudar. Não gosto de fingir que entendi regras que ninguém teve coragem de explicar.", w: { Bard: 3, Prince: 2, Maid: -2 } }
+    { t: "18. You enter a new environment where everyone seems to follow social rules that nobody ever explained.", opts: [
+        { txt: "I watch how people behave, copy the basics so I don't stand out, and gradually adjust as I get a better feel for the atmosphere.", w: { Heir: 3, Maid: 2 } },
+        { txt: "I quickly try to identify which behaviors are rewarded and which are punished, because understanding those rules saves trouble later.", w: { Mage: 3, Seer: 2 } },
+        { txt: "I stay polite and neutral until I understand what role makes sense in that environment. It's better to build a safe foundation before doing too much.", w: { Maid: 3, Knight: 2 } },
+        { txt: "Even while trying to fit in, I become painfully aware of every gesture and every word, as if any small mistake could expose that I have no idea what I'm doing.", w: { Knight: 3, Page: 2 } },
+        { txt: "I act like myself until someone gives me a real reason to change. I don't like pretending to understand rules that nobody was willing to explain.", w: { Bard: 3, Prince: 2, Maid: -2 } }
     ]},
-    { t: "Você percebe que está adiando uma resposta importante porque qualquer escolha de palavras pode mudar completamente o rumo da situação.", opts: [
-        { txt: "Organizo o que preciso dizer em partes claras: o fato, a consequência e a decisão que vem depois disso.", w: { Maid: 3, Seer: 2 } },
-        { txt: "Releio várias vezes procurando onde a mensagem pode ser mal interpretada antes de finalmente enviar.", w: { Knight: 3, Seer: 2 } },
-        { txt: "Percebo qual é o ponto sensível da conversa, mas tenho dificuldade de transformar isso numa resposta que faça sentido para outra pessoa.", w: { Seer: 3, Rogue: 2 } },
-        { txt: "Tento tirar o peso emocional da situação e responder só ao que realmente precisa ser resolvido.", w: { Sylph: 3, Maid: 2, Bard: -2 } },
-        { txt: "Respondo do jeito que parece mais verdadeiro pra mim no momento. Ficar calculando cada consequência só deixaria tudo artificial.", w: { Bard: 3, Prince: 1, Knight: -2 } }
+    { t: "19. You realize you've been putting off an important reply because any choice of words could completely change the course of the situation.", opts: [
+        { txt: "I organize what I need to say into clear parts: the facts, the consequences, and the decision that follows from them.", w: { Maid: 3, Seer: 2 } },
+        { txt: "I reread it over and over, looking for anything that could be misunderstood before I finally hit send.", w: { Knight: 3, Seer: 2 } },
+        { txt: "I can tell where the conversation is most sensitive, but I struggle to turn that insight into a response the other person will actually understand.", w: { Seer: 3, Rogue: 2 } },
+        { txt: "I try to strip away the emotional weight of the situation and respond only to what genuinely needs to be resolved.", w: { Sylph: 3, Maid: 2, Bard: -2 } },
+        { txt: "I answer in whatever way feels most honest to me in that moment. Calculating every possible consequence would only make the conversation feel artificial.", w: { Bard: 3, Prince: 1, Knight: -2 } }
     ]},
-    { t: "Você percebe que a explicação de alguém parece lógica na superfície, mas alguma coisa nela não encaixa com o que a pessoa está fazendo na prática.", opts: [
-        { txt: "Questiono as premissas da explicação. Talvez o problema não esteja na conclusão, mas nas regras que a pessoa usou para chegar até ela.", w: { Witch: 3, Seer: 2 } },
-        { txt: "Comparo o discurso com o comportamento. Se a lógica não aparece nas ações, então ela provavelmente é só uma justificativa conveniente.", w: { Prince: 3, Mage: 2 } },
-        { txt: "Tento identificar o padrão por trás da contradição, porque esse tipo de raciocínio costuma aparecer de novo em outras situações.", w: { Mage: 3, Seer: 2 } },
-        { txt: "Evito bater de frente e observo como outras pessoas reagem à explicação antes de decidir se minha leitura faz sentido.", w: { Rogue: 3, Heir: 2 } },
-        { txt: "Tento provar que consigo acompanhar o raciocínio, mas acabo defendendo ou atacando a ideia antes de realmente entender todas as partes.", w: { Page: 3, Bard: 2 } }
+    { t: "20. You need to ask someone for an important favor. Before the conversation, what's your most natural instinct?", opts: [
+        { txt: "I think about how they're likely to react and adjust my approach to maximize my chances of getting what I need.", w: { Witch: 3, Thief: 2 } },
+        { txt: "I carefully organize what I'm going to say so the conversation follows the clearest and most effective path.", w: { Maid: 3, Knight: 2 } },
+        { txt: "I imagine so many possible outcomes that I end up taking longer than I'd like to actually start the conversation.", w: { Page: 3, Mage: 2 } },
+        { txt: "I begin without a fixed plan and adjust my approach as I see how the other person responds.", w: { Heir: 3, Rogue: 2 } },
+        { txt: "I'd rather not rehearse anything. If I overthink it, the conversation loses its spontaneity.", w: { Bard: 3, Prince: 1 } }
     ]}
 	],
    "Heart": [
