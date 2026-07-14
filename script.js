@@ -1,4 +1,4 @@
-let state = {
+const defaultState = {
     stage: "intro",
     aspectScores: { Time: 0, Space: 0, Void: 0, Light: 0, Mind: 0, Heart: 0, Rage: 0, Hope: 0, Doom: 0, Life: 0, Blood: 0, Breath: 0 },
     classScores: { Prince: 0, Bard: 0, Thief: 0, Rogue: 0, Mage: 0, Seer: 0, Witch: 0, Heir: 0, Knight: 0, Page: 0, Maid: 0, Sylph: 0 },
@@ -8,6 +8,14 @@ let state = {
     questionCount: 0,
     currentQueue: [],
     history: []
+};
+
+let state = JSON.parse(localStorage.getItem("quiz_state")) || defaultState;
+
+function resetQuiz() {
+    localStorage.removeItem("quiz_state");
+    location.reload();
+}
 };
 
 const isEn = localStorage.getItem("language") === "en";
@@ -173,7 +181,8 @@ function finishAspectPhase() {
 }
 
 function showAspectResultScreen() {
-    document.body.classList.remove('red-mode'); 
+    state.stage = "aspect_result";
+    document.body.classList.remove('red-mode');
 
     let description = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[state.dominantAspect]) 
         ? classpectDescriptions[state.dominantAspect] 
@@ -201,6 +210,7 @@ function showAspectResultScreen() {
             <button onclick="startClassPhase()">${btnContinue}</button>
         </div>
     `);
+    localStorage.setItem("quiz_state", JSON.stringify(state));
 }
 
 function startClassPhase() {
@@ -221,6 +231,7 @@ function startClassPhase() {
 }
 
 function finishClassPhase() {
+    state.stage = "final_result";
     const sortedAspects = Object.entries(state.aspectScores).sort((a, b) => b[1] - a[1]);
     const sortedClasses = Object.entries(state.classScores).sort((a, b) => b[1] - a[1]);
 
@@ -317,6 +328,8 @@ function finishClassPhase() {
     `);
 
     renderResultContent();
+
+    localStorage.setItem("quiz_state", JSON.stringify(state));
 }
 
 function updateResultExplorer(type, name) {
@@ -651,6 +664,8 @@ function renderQuestion(q) {
     html += `</div>`;
     
     render(html);
+    
+    localStorage.setItem("quiz_state", JSON.stringify(state));
 }
 let lastSkipTime = 0;
 
@@ -723,6 +738,7 @@ function render(html) {
 }
 
 function renderNullEnding() {
+    state.stage = "null_ending";
     if (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_NullEnding"]) {
         render(classpectDescriptions["UI_NullEnding"]);
     } else {
@@ -737,6 +753,7 @@ function renderNullEnding() {
             </div>
         `);
     }
+    localStorage.setItem("quiz_state", JSON.stringify(state));
 }
 
 function retryClassTest(aspectName) {
@@ -755,9 +772,37 @@ function retryClassTest(aspectName) {
 }
 
 window.onload = () => {
-    const introText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_Intro"]) 
-        ? classpectDescriptions["UI_Intro"] 
-        : "<div class='fade-in'><h1>ERRO</h1><p>Tem algo de errado nos bastidores, mas já estou mexendo nisso.</p><button onclick='start()'>Iniciar.</button></div>";
+    if (state.stage === "aspect_quiz") {
+        if (typeof aspectQuestions !== 'undefined' && aspectQuestions[state.questionCount]) {
+            renderQuestion(aspectQuestions[state.questionCount]);
+        } else {
+            resetQuiz();
+        }
+    } 
+    else if (state.stage === "aspect_result") {
+        showAspectResultScreen();
+    } 
+    else if (state.stage === "class_quiz") {
+        if (typeof questionsByAspect !== 'undefined') {
+            state.currentQueue = questionsByAspect[state.dominantAspect] || [];
+        }
+        if (state.currentQueue && state.currentQueue[state.questionCount]) {
+            renderQuestion(state.currentQueue[state.questionCount]);
+        } else {
+            finishClassPhase();
+        }
+    } 
+    else if (state.stage === "final_result") {
+        finishClassPhase();
+    }
+    else if (state.stage === "null_ending") {
+        renderNullEnding();
+    }
+    else {
+        const introText = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions["UI_Intro"]) 
+            ? classpectDescriptions["UI_Intro"] 
+            : "<div class='fade-in'><h1>ERRO</h1><p>Tem algo de errado nos bastidores, mas já estou mexendo nisso.</p><button onclick='start()'>Iniciar.</button></div>";
 
-    render(introText);
+        render(introText);
+    }
 };
