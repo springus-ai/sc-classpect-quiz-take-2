@@ -748,7 +748,7 @@ function renderNullEnding() {
                 <div class="analysis-text" style="margin-top: 2rem;">
                     <p>Você me fez morder a fronha. Quer dizer que você abriu esse teste só para clicar em "Nenhuma das anteriores" tipo, 30 vezes? Poxa.</p>
                 </div>
-                <button class="retry-button" onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px;">Tente novamente.</button>
+                <button class="retry-button" onclick="resetQuiz()" style="margin-top: 20px; padding: 10px 20px;">Tente novamente.</button>
             </div>
         `);
     }
