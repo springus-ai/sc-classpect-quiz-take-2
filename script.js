@@ -175,27 +175,42 @@ function finishAspectPhase() {
 function showAspectResultScreen() {
     document.body.classList.remove('red-mode'); 
 
+    let fallbackDesc = isEn 
+        ? "The influence of this aspect over you is undeniable." 
+        : "A influência deste aspecto sobre você é inegável.";
+
     let description = (typeof classpectDescriptions !== 'undefined' && classpectDescriptions[state.dominantAspect]) 
         ? classpectDescriptions[state.dominantAspect] 
-        : "A influência deste aspecto sobre você é inegável.";
+        : fallbackDesc;
     
     let isForced = (state.aspectScores[state.dominantAspect] === 1 && Object.values(state.aspectScores).reduce((a,b)=>a+b,0) === 1);
     
     let transitionText;
     if (isForced) {
-         transitionText = `O universo escolheu por você. Tente não desperdiçar essa segunda chance nas Classes.`;
+         transitionText = isEn
+            ? `The universe chose for you. Try not to waste this second chance on the Classes.`
+            : `O universo escolheu por você. Tente não desperdiçar essa segunda chance nas Classes.`;
     } else {
-         transitionText = state.highDestruction
-            ? `Sua conexão com ${state.dominantAspect} é... complicada. Parece haver um conflito ou rejeição ativa aqui.`
-            : `Passamos da primeira parte. Agora vamos ver como você interage com esse aspecto.`;
+         if (state.highDestruction) {
+             transitionText = isEn
+                ? `Your connection to ${state.dominantAspect} is... complicated. There seems to be an active conflict or rejection here.`
+                : `Sua conexão com ${state.dominantAspect} é... complicada. Parece haver um conflito ou rejeição ativa aqui.`;
+         } else {
+             transitionText = isEn
+                ? `We've passed the first part. Now let's see how you interact with this aspect.`
+                : `Passamos da primeira parte. Agora vamos ver como você interage com esse aspecto.`;
+         }
     }
+
+    const labelAspect = isEn ? "ASPECT" : "ASPECTO";
+    const btnContinue = isEn ? "CONTINUE TO CLASSES" : "CONTINUAR PARA CLASSES";
 
     render(`
         <div class="fade-in">
-            <h1>ASPECTO: ${state.dominantAspect.toUpperCase()}</h1>
+            <h1>${labelAspect}: ${state.dominantAspect.toUpperCase()}</h1>
             <div style="text-align: justify; margin: 20px 0;">${description}</div>
             <p style="color: #00aa00; margin-top: 20px; font-weight: bold;">${transitionText}</p>
-            <button onclick="startClassPhase()">CONTINUAR PARA CLASSES</button>
+            <button onclick="startClassPhase()">${btnContinue}</button>
         </div>
     `);
 }
