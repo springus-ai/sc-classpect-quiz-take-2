@@ -33,7 +33,7 @@
         <main id="page-frame">
             <section id="terminal" aria-live="polite">
                 <div class="page-titlebar">
-                    <span>QUIZ DE CLASSPECT DA SBURBIO</span>
+                    <span id="pageTitlebar">QUIZ DE CLASSPECT DA SBURBIO</span>
                 </div>
                 <div id="content"></div>
             </section>
@@ -57,6 +57,7 @@
         document.getElementById("websiteLink").textContent = "Our Website";
         document.getElementById("libraryButton").textContent = "Archives";
         document.getElementById("quizTitle").textContent = "SBURBIO CLASSPECT QUIZ";
+        document.getElementById("pageTitlebar").textContent = "SBURBIO CLASSPECT QUIZ";
     }
 
     languageSwitcher.onchange = () => {
