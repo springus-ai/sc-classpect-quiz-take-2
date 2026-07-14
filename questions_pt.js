@@ -1421,7 +1421,7 @@ const questionsByAspect = {
     ]}    
 	],
     "Life": [
-    { t: "1. Você descobriu que só conseguiu seu emprego atual porque seu pai conhecia o chefe (nepotismo), e não por mérito próprio. Como isso faz você se sentir?", opts: [
+    { t: "1. Você descobriu que só conseguiu seu emprego atual porque seu pai conhecia o chefe, e não por mérito próprio. Como isso faz você se sentir?", opts: [
         { txt: "Não sinto vergonha alguma. Se o mundo me ofereceu um atalho, eu pego. Prefiro estar empregado com vantagem do que ser um mártir.", w: { Thief: 3, Witch: 2 } },
         { txt: "Sinto-me uma fraude completa. Trabalho o triplo do que meus colegas para provar (para eles e para mim) que eu mereço ocupar este espaço.", w: { Page: 3, Knight: 2, Maid: 1 } },
         { txt: "Rejeito a vantagem. Peço demissão ou busco outro lugar onde eu possa começar do zero, destruindo esse privilégio que mancha minha autonomia.", w: { Prince: 3, Knight: 2, Thief: -3 } },
