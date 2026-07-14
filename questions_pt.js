@@ -1101,7 +1101,7 @@ const questionsByAspect = {
         { txt: "Exagero na certeza e ajo como se essa vontade fosse destino, mesmo sem ter maturidade para lidar com tudo que ela envolve.", w: { Page: 3, Bard: 2 } }
     ]},
     { t: "16. Um amigo demonstra vergonha de uma parte muito sincera da própria personalidade.", opts: [
-        { txt: "Tento fazer ele enxergar beleza naquela característica, mesmo que eu precise coddar um pouco demais no processo.", w: { Sylph: 3, Maid: 2 } },
+        { txt: "Tento fazer ele enxergar beleza naquela característica, mesmo que eu acabe protegendo um pouco demais no processo.", w: { Sylph: 3, Maid: 2 } },
         { txt: "Falo sobre minhas próprias esquisitices para criar espaço para ele se abrir também.", w: { Heir: 3, Rogue: 2 } },
         { txt: "Fico desconfortável porque reconheço nele uma vergonha parecida com a minha.", w: { Mage: 3, Rogue: 2 } },
         { txt: "Tento mudar a relação dele com essa parte de si, como se ela pudesse virar força em vez de defeito.", w: { Witch: 3, Sylph: 2 } },
