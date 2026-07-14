@@ -1425,7 +1425,7 @@ const questionsByAspect = {
 		{ txt: "I feel no shame whatsoever. If the world offered me a shortcut, I'll take it. I prefer to be employed with an advantage than to be a martyr.", w: { Thief: 3, Witch: 2 } },
 		{ txt: "I feel like a complete fraud. I work three times as hard as my colleagues to prove (to them and to myself) that I deserve to occupy this space.", w: { Page: 3, Knight: 2, Maid: 1 } },
 		{ txt: "I reject the advantage. I resign or look for another place where I can start from scratch, destroying this privilege that tarnishes my autonomy.", w: { Prince: 3, Knight: 2, Thief: -3 } },
-		{ txt: "I don't even think about it. I continue "At work, doing the bare minimum. If they gave me the job, it's their problem, not mine.", w: { Bard: 3, Heir: 2, Rogue: 1 } },
+		{ txt: "I don't even think about it. I continue at work, doing the bare minimum. If they gave me the job, it's their problem, not mine.", w: { Bard: 3, Heir: 2, Rogue: 1 } },
 		{ txt: "I use my privileged position to make life easier for my colleagues, advocating for raises or improvements, redistributing my luck.", w: { Rogue: 3, Sylph: 2, Thief: -2 } }
 	]},
     { t: "2. In a group project, one member is clearly incompetent and dragging everyone toward failure. The deadline is tomorrow.", opts: [
