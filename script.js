@@ -240,7 +240,6 @@ function finishClassPhase() {
         otherAspects[1]
     ];
 
-
     let aspectListHTML = sortedAspects.map((item, index) => {
         let isWinner = item[0] === finalAspect;
         let colorStyle = `color: #000; font-weight:${isWinner ? 'bold' : 'normal'};`;
@@ -261,50 +260,59 @@ function finishClassPhase() {
     }).join('');
 
     let explorationButtons = top3ForButtons.map(item => {
-    let aspectName = item[0];
-    let score = item[1];
-    const HATE_THRESHOLD = -7;
+        let aspectName = item[0];
+        let score = item[1];
+        const HATE_THRESHOLD = -7;
 
-    let actionText = "TESTAR";
+        let actionText = isEn ? "TEST" : "TESTAR";
 
-    if (aspectName === state.dominantAspect) {
-        actionText = "REFAZER";
-    } 
-    else if (score <= HATE_THRESHOLD) {
-        actionText = "CONFRONTAR";
-    }
-    else if (score < 0) {
-        actionText = "EXPLORAR";
-    }
+        if (aspectName === state.dominantAspect) {
+            actionText = isEn ? "RETAKE" : "REFAZER";
+        } 
+        else if (score <= HATE_THRESHOLD) {
+            actionText = isEn ? "CONFRONT" : "CONFRONTAR";
+        }
+        else if (score < 0) {
+            actionText = isEn ? "EXPLORE" : "EXPLORAR";
+        }
 
-    return `<button class="possibility-button" onclick="retryClassTest('${aspectName}')">
-            ${actionText} ${aspectName.toUpperCase()}
-            </button>`;
-}).join('')
+        return `<button class="possibility-button" onclick="retryClassTest('${aspectName}')">
+                ${actionText} ${aspectName.toUpperCase()}
+                </button>`;
+    }).join('');
+
+    const uiText = {
+        definitiveTitle: isEn ? "Your definitive title is:" : "Seu título definitivo é:",
+        analysisComplete: isEn ? "Your Classpect analysis is complete." : "Sua análise de Classpecto foi concluída.",
+        aspectRankings: isEn ? "ASPECT RANKINGS" : "RANKING DE ASPECTOS",
+        classRankings: isEn ? "CLASS RANKINGS" : "RANKING DE CLASSES",
+        explorePossibilities: isEn ? "EXPLORE POSSIBILITIES?" : "EXPLORAR POSSIBILIDADES?",
+        restartSession: isEn ? "RESTART SESSION" : "REINICIAR SESSÃO"
+    };
 
     render(`
         <div class="fade-in result-box" style="max-width: 900px; margin: 0 auto; text-align: center; ${aspectStyleVars(finalAspect)}">
-            <p style="font-size: 1.2em; margin-bottom: 0;">Seu título definitivo é:</p>
+            <p style="font-size: 1.2em; margin-bottom: 0;">${uiText.definitiveTitle}</p>
             <h1 id="dynamicTitle" style="text-transform:uppercase; font-size: 3em; margin-top: 5px;">...</h1>
-            <p class="result-subtitle" style="font-size: 18px; margin-bottom: 20px;">Sua análise de Classpecto foi concluída.</p>
+            <p class="result-subtitle" style="font-size: 18px; margin-bottom: 20px;">${uiText.analysisComplete}</p>
             <div id="dynamicDescription" style="padding: 25px; margin: 30px auto; text-align: justify; max-width: 800px; line-height: 1.6; min-height: 200px;">...</div>
             <div class="rankings-wrapper" style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; text-align: left;">
                 <div class="ranking-column" style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 20px; border: 1px solid #444;">
-                    <h3 style="border-bottom: 2px solid var(--aspect-main); padding-bottom: 10px; margin-top: 0;">RANKING DE ASPECTOS</h3>
+                    <h3 style="border-bottom: 2px solid var(--aspect-main); padding-bottom: 10px; margin-top: 0;">${uiText.aspectRankings}</h3>
                     <ul style="list-style: none; padding: 0; margin: 0;">${aspectListHTML}</ul>
                 </div>
                 <div class="ranking-column" style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.3); padding: 20px; border: 1px solid #444;">
-                    <h3 style="border-bottom: 2px solid var(--aspect-main); padding-bottom: 10px; margin-top: 0;">RANKING DE CLASSES</h3>
+                    <h3 style="border-bottom: 2px solid var(--aspect-main); padding-bottom: 10px; margin-top: 0;">${uiText.classRankings}</h3>
                     <ul style="list-style: none; padding: 0; margin: 0;">${classListHTML}</ul>
                 </div>
             </div>
             <div class="possibilities-box" style="margin-top: 40px; padding: 20px;">
-                <h3 style="margin-top: 0;">EXPLORAR POSSIBILIDADES?</h3>
+                <h3 style="margin-top: 0;">${uiText.explorePossibilities}</h3>
                 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
                     ${explorationButtons}
                 </div>
             </div>
-            <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">REINICIAR SESSÃO</button>
+            <button onclick="location.reload()" style="margin-top: 30px; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">${uiText.restartSession}</button>
         </div>
     `);
 
@@ -348,10 +356,14 @@ function renderResultContent() {
             content = classpectDescriptions[dbKey];
         } 
         else {
-            content = `<p>Descrição combinada não encontrada para [${dbKey}]. Verifique o arquivo de descrições.</p>`;
+            content = isEn
+                ? `<p>Combined description not found for [${dbKey}]. Check the descriptions file.</p>`
+                : `<p>Descrição combinada não encontrada para [${dbKey}]. Verifique o arquivo de descrições.</p>`;
         }
     } else {
-        content = "<p>Banco de dados offline.</p>";
+        content = isEn 
+            ? "<p>Database offline.</p>" 
+            : "<p>Banco de dados offline.</p>";
     }
 
     descEl.innerHTML = content;
