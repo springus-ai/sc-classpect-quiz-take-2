@@ -393,7 +393,6 @@ function openLibrary(section = 'aspects') {
     libraryState.section = section;
     libraryState.search = '';
 
-    // Traduções dos textos estáticos
     const titleHeader = isEn ? "SBURBIO ARCHIVES" : "ARQUIVOS DA SBURBIO";
     const introText = isEn 
         ? "Here you can consult descriptions of Aspects, Classes, and Classpect combinations without retaking the quiz."
@@ -406,7 +405,7 @@ function openLibrary(section = 'aspects') {
     const searchPlaceholder = isEn ? "Search by name..." : "Buscar por nome...";
     const labelClass = isEn ? "Class" : "Classe";
     const labelAspect = isEn ? "Aspect" : "Aspecto";
-    const btnRead = isEn ? "Read combination" : "Read combination"; // Se quiser mudar ou manter "Read combination"
+    const btnRead = isEn ? "Read combination" : "Read combination"; 
     
     const sidebarTitle = section === 'aspects' 
         ? (isEn ? 'Aspects List' : 'Lista de Aspectos') 
@@ -495,7 +494,6 @@ function switchLibrarySection(section) {
         controls.style.display = section === 'classpects' ? 'flex' : 'none';
     }
 
-    // Ajuste na verificação de classe ativa para suportar os botões traduzidos
     document.querySelectorAll('.library-tab').forEach(btn => {
         const text = btn.textContent.trim().toLowerCase();
         const isTabActive = (section === 'aspects' && (text === 'aspectos' || text === 'aspects')) ||
