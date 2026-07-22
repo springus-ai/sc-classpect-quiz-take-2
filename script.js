@@ -379,6 +379,60 @@ function renderResultContent() {
     descEl.innerHTML = content;
 }
 
+function openClassTest() {
+    const titleText = isEn ? "CLASS TEST" : "TESTE DE CLASSES";
+    const introText = isEn 
+        ? "Select an Aspect to take its focused Class Test:" 
+        : "Escolha um Aspecto para fazer o teste de classes focado nele:";
+    const btnBack = isEn ? "BACK" : "VOLTAR";
+
+    let aspectButtons = LIBRARY_ASPECTS.map(asp => {
+        const colors = getAspectColors(asp);
+        
+        const imagePath = `./aspectos/${asp}.webp`;
+
+        return `
+            <button 
+                type="button"
+                onclick="retryClassTest('${asp}')" 
+                style="
+                    background: ${colors.main}; 
+                    color: #fff; 
+                    border: 1px solid ${colors.accent}; 
+                    padding: 10px 14px; 
+                    font-weight: bold; 
+                    cursor: pointer; 
+                    text-transform: uppercase; 
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                "
+            >
+                <img 
+                    src="${imagePath}" 
+                    alt="${asp}" 
+                    style="width: 24px; height: 24px; object-fit: contain;" 
+                    onerror="this.style.display='none'"
+                />
+                <span>${asp}</span>
+            </button>
+        `;
+    }).join('');
+
+    render(`
+        <div class="fade-in class-test-shell" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h1>${titleText}</h1>
+            <p style="margin-bottom: 25px;">${introText}</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 30px;">
+                ${aspectButtons}
+            </div>
+            <button onclick="location.reload()" style="padding: 10px 20px; font-size: 1em; cursor: pointer;">${btnBack}</button>
+        </div>
+    `);
+}
+
 function getLibraryTitle(key) {
     if (key.includes(':')) {
         const [cls, asp] = key.split(':');
