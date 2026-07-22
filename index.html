@@ -41,7 +41,10 @@
             <button type="button" id="libraryButton" onclick="openLibrary()">
                 Arquivos
             </button>
-
+			
+            <button type="button" id="classTestButton" onclick="openClassTest()">
+                Teste de Classes
+            </button>
 
             <select id="languageSwitcher">
                 <option value="pt">PT</option>
@@ -97,6 +100,9 @@ if (lang === "en") {
 
     document.getElementById("libraryButton").textContent =
         "Archives";
+
+    document.getElementById("classTestButton").textContent =
+        "Class Test";
 
     document.getElementById("pageTitlebar").textContent =
         "SBURBIO CLASSPECT QUIZ";
