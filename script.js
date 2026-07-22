@@ -388,7 +388,6 @@ function openClassTest() {
 
     let aspectButtons = LIBRARY_ASPECTS.map(asp => {
         const colors = getAspectColors(asp);
-        
         const imagePath = `./aspectos/${asp}.webp`;
 
         return `
@@ -407,15 +406,27 @@ function openClassTest() {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: 8px;
+                    gap: 10px;
                 "
             >
-                <img 
-                    src="${imagePath}" 
-                    alt="${asp}" 
-                    style="width: 24px; height: 24px; object-fit: contain;" 
-                    onerror="this.style.display='none'"
-                />
+                <!-- Círculo de fundo para dar contraste ao ícone -->
+                <div style="
+                    background: rgba(255, 255, 255, 0.9); 
+                    border-radius: 50%; 
+                    width: 30px; 
+                    height: 30px; 
+                    display: flex; 
+                    align-items: center; 
+                    justify-content: center;
+                    flex-shrink: 0;
+                ">
+                    <img 
+                        src="${imagePath}" 
+                        alt="${asp}" 
+                        style="width: 20px; height: 20px; object-fit: contain;" 
+                        onerror="this.parentElement.style.display='none'"
+                    />
+                </div>
                 <span>${asp}</span>
             </button>
         `;
