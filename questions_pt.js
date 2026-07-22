@@ -858,7 +858,7 @@ const questionsByAspect = {
         { txt: "Puxo da memória conversas parecidas que já deram certo e adapto o padrão pra encaixar na situação atual.", w: { Thief: 3, Mage: 2 } },
         { txt: "Assumo o controle do ritmo da conversa imediatamente, pressionando os argumentos mais frágeis da outra pessoa.", w: { Knight: 3, Prince: 2, Page: -2 } },
         { txt: "Perco a paciência com o teatro social e respondo exatamente o que penso, mesmo sabendo que isso provavelmente vai piorar tudo.", w: { Prince: 3, Bard: 2, Sylph: -2 } },
-        { txt: "Exponho a falha moral do plano para que o grupo lide com o peso da escolha, retirando minha responsabilidade direta.", w: { Rogue: 3, Heir: 2 } }
+        { txt: "Em vez de escolher sozinho, apresento os prós e contras para que a outra pessoa tire as próprias conclusões. Se a decisão é dela, faz mais sentido que ela assuma as consequências.", w: { Rogue: 3, Heir: 2 } }
     ]},
     { t: "2. Você percebe que duas pessoas próximas brigaram porque interpretaram completamente errado as intenções uma da outra. Nenhuma delas parece disposta a ceder.", opts: [
         { txt: "Tento reorganizar a conversa de um jeito mais racional, traduzindo o que cada lado provavelmente quis dizer antes que a situação piore ainda mais.", w: { Sylph: 3, Seer: 2, Maid: 1 } },
