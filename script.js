@@ -201,17 +201,32 @@ function showAspectResultScreen() {
     const labelAspect = isEn ? "ASPECT" : "ASPECTO";
     const btnContinue = isEn ? "CONTINUE TO CLASSES" : "CONTINUAR PARA CLASSES";
 
+    const imagePath = `./aspectos/${state.dominantAspect}.webp`;
+
     render(`
-        <div class="fade-in">
+        <div class="fade-in" style="max-width: 800px; margin: 0 auto; text-align: center;">
             <h1>${labelAspect}: ${state.dominantAspect.toUpperCase()}</h1>
-            <div style="text-align: justify; margin: 20px 0;">${description}</div>
+            
+            <img 
+                src="${imagePath}" 
+                alt="${state.dominantAspect}" 
+                style="
+                    width: 130px; 
+                    height: 130px; 
+                    object-fit: contain; 
+                    margin: 20px auto; 
+                    display: block;
+                " 
+                onerror="this.style.display='none'"
+            />
+
+            <div style="text-align: justify; margin: 25px 0; line-height: 1.6;">${description}</div>
             <p style="color: #00aa00; margin-top: 20px; font-weight: bold;">${transitionText}</p>
             <button onclick="startClassPhase()">${btnContinue}</button>
         </div>
     `);
     localStorage.setItem("quiz_state", JSON.stringify(state));
 }
-
 function startClassPhase() {
     state.stage = "class_quiz";
     state.questionCount = 0;
